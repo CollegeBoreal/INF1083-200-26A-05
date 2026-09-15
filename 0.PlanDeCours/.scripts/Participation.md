@@ -34,7 +34,7 @@
 | 15 | [300155524](../300155524/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 16 | [300155909](../300155909/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/266869186?s=460&v=4' width=20 height=20></image>](https://github.com/rahouma20t-debug) | :x: | :x: |
 | 17 | [300155927](../300155927/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/236671775?s=460&v=4' width=20 height=20></image>](https://github.com/garvey200) | :x: | :x: |
-| 18 | [300156187](../300156187/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image>](https://github.com/idirislamchili) | :2nd_place_medal: | :heavy_check_mark: |
+| 18 | [300156187](../300156187/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image>](https://github.com/idirislamchili) | :1st_place_medal: | :heavy_check_mark: |
 | 19 | [300156497](../300156497/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 20 | [300156615](../300156615/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 21 | [300156967](../300156967/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
