@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History of Robotics</title>
+
+<style>
+:root{
+    --primary:#00d4ff;
+    --secondary:#0a192f;
+    --accent:#64ffda;
+    --dark:#020c1b;
+    --light:#ccd6f6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--dark);
+    color: white;
+    line-height:1.6;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+      url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 30px;
+    background:var(--primary);
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:var(--accent);
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:60px;
+    font-size:2.5rem;
+}
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:4px;
+    background:var(--primary);
+    top:0;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+    position:relative;
+    width:50%;
+    padding:20px 40px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:.7s;
+}
+
+.timeline-item.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.timeline-item.left{
+    left:0;
+    text-align:right;
+}
+
+.timeline-item.right{
+    left:50%;
+}
+
+.content{
+    background:var(--secondary);
+    padding:20px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 20px rgba(0,212,255,.2);
+}
+
+.date{
+    color:var(--accent);
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.dot{
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:var(--accent);
+    border-radius:50%;
+    top:30px;
+    z-index:10;
+}
+
+.left .dot{
+    right:-9px;
+}
+
+.right .dot{
+    left:-9px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:var(--secondary);
+    padding:40px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.stat h3{
+    font-size:3rem;
+    color:var(--primary);
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:30px;
+    color:#888;
+}
+
+@media(max-width:800px){
+
+.timeline::after{
+    left:20px;
+}
+
+.timeline-item{
+    width:100%;
+    left:0;
+    text-align:left;
+    padding-left:60px;
+}
+
+.timeline-item.right{
+    left:0;
+}
+
+.left .dot,
+.right .dot{
+    left:12px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="hero">
+        <h1>History of Robotics</h1>
+        <p>
+            From ancient mechanical inventions to intelligent humanoid robots,
+            discover how robotics has transformed human civilization.
+        </p>
+        #historyExplore Timeline</a>
+    </div>
+</header>
+
+<section id="history">
+    <h2 class="section-title">Robotics Timeline</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">3000 BCE</div>
+                <h3>Ancient Automatons</h3>
+                <p>
+                    Early automated figures appeared in Egyptian water clocks,
+                    demonstrating humanity's first attempts at mechanical automation.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">400 BCE</div>
+                <h3>Archytas' Mechanical Bird</h3>
+                <p>
+                    Greek inventor Archytas reportedly built a steam-powered
+                    flying pigeon, one of the earliest autonomous machines.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">1495</div>
+                <h3>Leonardo da Vinci</h3>
+                <p>
+                    Designed a mechanical knight capable of sitting,
+                    moving arms, and raising its visor.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">1920</div>
+                <h3>The Word "Robot"</h3>
+                <p>
+                    Czech writer Karel Čapek introduced the term
+                    "robot" in his play R.U.R.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">1942</div>
+                <h3>Isaac Asimov</h3>
+                <p>
+                    Introduced the famous Three Laws of Robotics,
+                    influencing discussions on robot ethics.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">1954</div>
+                <h3>Unimate</h3>
+                <p>
+                    George Devol patented Unimate, the world's first
+                    programmable industrial robot.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">1961</div>
+                <h3>Factory Automation</h3>
+                <p>
+                    Unimate started work at General Motors,
+                    revolutionizing manufacturing.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">2000s</div>
+                <h3>Modern AI Robotics</h3>
+                <p>
+                    Robots gained machine vision, artificial intelligence,
+                    and autonomous decision-making capabilities.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="content">
+                <div class="date">Today</div>
+                <h3>Humanoid Era</h3>
+                <p>
+                    Advanced humanoid robots assist in healthcare,
+                    logistics, research, and everyday tasks.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Robotics Impact</h2>
+
+    <div class="stats">
+        <div class="stat">
+            <h3 id="robots">0</h3>
+            <p>Industrial Robots Worldwide</p>
+        </div>
+
+        <div class="stat">
+            <h3 id="years">0</h3>
+            <p>Years of Innovation</p>
+        </div>
+
+        <div class="stat">
+            <h3 id="ai">0</h3>
+            <p>AI-Powered Systems</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>History of Robotics • Interactive Timeline</p>
+</footer>
+
+<script>
+// Timeline animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.timeline-item')
+.forEach(item => observer.observe(item));
+
+// Animated counters
+function animateCounter(id, target, duration){
+
+    const element = document.getElementById(id);
+    let current = 0;
+    const increment = target / (duration/20);
+
+    const timer = setInterval(() => {
+        current += increment;
+
+        if(current >= target){
+            current = target;
+            clearInterval(timer);
+        }
+
+        element.textContent = Math.floor(current).toLocaleString();
+    },20);
+}
+
+const statObserver = new IntersectionObserver(entries => {
+
+    if(entries[0].isIntersecting){
+        animateCounter('robots', 4000000, 2000);
+        animateCounter('years', 5000, 2000);
+        animateCounter('ai', 100, 2000);
+        statObserver.disconnect();
+    }
+
+});
+
+statObserver.observe(document.querySelector('.stats'));
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href'))
+                .scrollIntoView({
+                    behavior:'smooth'
+                });
+    });
+
+});
+</script>
+
+</body>
+</html>
