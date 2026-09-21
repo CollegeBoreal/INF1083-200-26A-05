@@ -39,11 +39,11 @@
 | 20 | [300156615](../300156615/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 21 | [300156967](../300156967/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 22 | [300157117](../300157117/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
-| 23 | [300157184](../300157184/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image>](https://github.com/topanta) | :x: | :heavy_check_mark: |
+| 23 | [300157184](../300157184/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image>](https://github.com/topanta) | :2nd_place_medal: | :heavy_check_mark: |
 | 24 | [300157275](../300157275/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 25 | [300157301](../300157301/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 26 | [300157330](../300157330/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 27 | [300157374](../300157374/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 28 | [300157416](../300157416/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 29 | [300157424](../300157424/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
-| :abacus: | \$\frac{5}{30}\$ = 16.67% | \$\displaystyle\sum_{i=1}^{30} s_i\$ = 5 |
+| :abacus: | \$\frac{6}{30}\$ = 20% | \$\displaystyle\sum_{i=1}^{30} s_i\$ = 6 |
