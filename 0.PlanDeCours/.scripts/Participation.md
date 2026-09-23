@@ -27,7 +27,7 @@
 | 8 | [300151505](../300151505/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 9 | [300151609](../300151609/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image>](https://github.com/ramzi34000) | :2nd_place_medal: | :x: |
 | 10 | [300151732](../300151732/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
-| 11 | [300151781](../300151781/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :heavy_check_mark: |
+| 11 | [300151781](../300151781/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :2nd_place_medal: | :heavy_check_mark: |
 | 12 | [300151835](../300151835/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 13 | [300153676](../300153676/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 14 | [300154023](../300154023/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/267740367?s=460&v=4' width=20 height=20></image>](https://github.com/silaje123) | :x: | :x: |
@@ -49,4 +49,4 @@
 | 30 | [300157374](../300157374/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 31 | [300157416](../300157416/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: |
-| :abacus: | \$\frac{7}{33}\$ = 21.21% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 7 |
+| :abacus: | \$\frac{8}{33}\$ = 24.24% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 8 |
