@@ -1,3 +1,1 @@
 ﻿# Mon premier travail
-![images alt](<img width="896" height="1195" alt="Gemini_Generated_Image_rmtl3xrmtl3xrmtl" src="https://github.com/user-attachments/assets/cae4ce2d-3bdf-472d-9829-6c2707bcf9c8" />
-)
