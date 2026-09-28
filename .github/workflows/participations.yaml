@@ -45,14 +45,13 @@ jobs:
         run: |
           $chapters = @(
             "0.PlanDeCours"
-            "1.Referentiel/1.IDE"
           )
 
           foreach ($chapter in $chapters) {
               Write-Host "--------------------------------------------"
               Write-Host "Grading chapter $chapter"
               Push-Location $chapter
-              # pwsh .scripts/grading/push_grades.ps1
+              pwsh .scripts/grading/push_grades.ps1
               Pop-Location
           }
 
