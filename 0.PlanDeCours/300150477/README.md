@@ -2,7 +2,7 @@
 
 ## Informations
 
-- Numéro d'étudiant : 123456
+- Numéro d'étudiant : 300150477
 - Cours : INF1083 – Développement d'applications
 - Session : Automne 2026
 
