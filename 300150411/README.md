@@ -1,1 +1,1 @@
-<image src=images/18-iconic-patagonia-torres-del-paine-national-park-chile.jpg width=50% height=50% > </image>
+<image src=images/20260924_152177.jpg width=50% height=50% > </image>
