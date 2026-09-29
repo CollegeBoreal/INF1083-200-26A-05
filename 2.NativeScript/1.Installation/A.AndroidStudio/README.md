@@ -128,7 +128,7 @@ Puis installer le SDK Android depuis Android Studio avant d'exécuter :
 ns doctor
 ```
 
-<details><summary>🪵 Log </summary></details>
+<details><summary>🪵 Log </summary>
 
 ```lua
 
