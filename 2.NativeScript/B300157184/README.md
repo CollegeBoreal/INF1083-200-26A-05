@@ -7,7 +7,7 @@
 
 
 
-![Capture Émulateur Pixel 7](./emulator.png)
+![Capture Émulateur Pixel 7](https://raw.githubusercontent.com/CollegeBoreal/INF1083-200-26A-05/15b6a4d0c93d4e90d51893653253ce1133d06387/2.NativeScript/B300157184/B300157184/emulator.png)
 ---
 
 ## 1. Description du projet
