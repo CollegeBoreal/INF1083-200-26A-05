@@ -15,3 +15,6 @@
 
 ### 4. Lancement
 - `ns run android` : application compilée et installée sur l'émulateur
+
+
+<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
