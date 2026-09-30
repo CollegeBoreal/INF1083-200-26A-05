@@ -17,4 +17,4 @@
 - `ns run android` : application compilée et installée sur l'émulateur
 
 
-<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
+<image src=images/app.png width=50% height=50% > </image>
