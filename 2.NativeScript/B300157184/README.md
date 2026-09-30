@@ -5,6 +5,9 @@
 **Organisation / Dépôt :** `CollegeBoreal/INF1083-200-26A-05`  
 **Identifiant de l'application :** `org.nativescript.B300157184`  
 
+
+
+![Capture Émulateur Pixel 7](./emulator.png)
 ---
 
 ## 1. Description du projet
@@ -51,6 +54,7 @@ git push origin main
 ### Étape 3 : Envoyer la mise à jour sur GitHub
 
 Dans votre terminal PowerShell, tapez ces 3 commandes pour mettre à jour GitHub :
+
 
 ```powershell
 git add .
