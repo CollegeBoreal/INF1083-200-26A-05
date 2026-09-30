@@ -31,3 +31,28 @@ La compilation et le déploiement sur l'émulateur ont été effectués à l'aid
 
 ```powershell
 ns run android
+
+
+git add .
+git commit -m "Labo NativeScript complété - B300157184"
+git pull origin main --rebase
+git push origin main
+
+---
+
+### Étape 2 : Mettre à jour le fichier sur votre ordinateur
+
+1. Ouvrez **Visual Studio Code** (ou le Bloc-notes).
+2. Ouvrez le fichier `README.md` situé dans votre dossier `B300157184`.
+3. Effacez le contenu actuel, collez le texte copié ci-dessus, puis **enregistrez le fichier** (`Ctrl + S`).
+
+---
+
+### Étape 3 : Envoyer la mise à jour sur GitHub
+
+Dans votre terminal PowerShell, tapez ces 3 commandes pour mettre à jour GitHub :
+
+```powershell
+git add .
+git commit -m "Mise à jour du README avec la documentation du labo"
+git push
