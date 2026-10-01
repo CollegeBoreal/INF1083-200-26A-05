@@ -21,7 +21,7 @@
 # FEEDBACK
 # --------------------------------------
 
-$FeedbackLookup = Get-FeedbackLookup -Students $STUDENTS
+# $FeedbackLookup = Get-FeedbackLookup -Students $STUDENTS
 
 Write-ParticipationHeader
 Write-LabHeader -FeedbackLookup $FeedbackLookup
