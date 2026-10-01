@@ -1,4 +1,4 @@
-# Participation au 01-10-2026 15:07
+# Participation au 01-10-2026 19:03
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -20,7 +20,7 @@
 | 1 | [300147065](../300147065/README.md) :point_right: [ahmedboreal](https://github.com/ahmedboreal) <image src='https://avatars0.githubusercontent.com/u/266599103?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 2 | [300150411](../300150411/README.md) :point_right: [brhnkess](https://github.com/brhnkess) <image src='https://avatars0.githubusercontent.com/u/211593030?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 3 | [300150477](../300150477/README.md) :point_right: [Trafalgar-D-Low](https://github.com/Trafalgar-D-Low) <image src='https://avatars0.githubusercontent.com/u/195692630?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 4 | [300150564](../300150564/README.md) :point_right: [wassimbnr](https://github.com/wassimbnr) <image src='https://avatars0.githubusercontent.com/u/102555452?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 4 | [300150564](../300150564/README.md) :point_right: [wassimbnr](https://github.com/wassimbnr) <image src='https://avatars0.githubusercontent.com/u/102555452?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 5 | [300151315](../300151315/README.md) :point_right: [toumiayoub1111-spec](https://github.com/toumiayoub1111-spec) <image src='https://avatars0.githubusercontent.com/u/329685188?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 6 | [300151449](../300151449/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 7 | [300151496](../300151496/README.md) :point_right: [anisouhocine](https://github.com/anisouhocine) <image src='https://avatars0.githubusercontent.com/u/236670164?s=460&v=4' width=20 height=20></image> | :x: | :x: |
@@ -49,4 +49,4 @@
 | 30 | [300157374](../300157374/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 31 | [300157416](../300157416/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| :abacus: | \$\\frac{1}{33}\$ = 3.03% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 1 |
+| :abacus: | \$\\frac{2}{33}\$ = 6.06% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 2 |
