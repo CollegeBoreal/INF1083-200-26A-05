@@ -24,7 +24,6 @@ jobs:
           $chapters = @(
             "0.PlanDeCours"
             "1.Referentiel/1.IDE"
-            "2.NativeScript"
           )
 
           foreach ($chapter in $chapters) {
