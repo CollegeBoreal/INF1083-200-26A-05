@@ -21,12 +21,13 @@
 # FEEDBACK
 # --------------------------------------
 
-$FeedbackLookup = Get-FeedbackLookup -Students $Students
+$FeedbackLookup = Get-FeedbackLookup -Students $STUDENTS
 
 Write-ParticipationHeader
 Write-LabHeader -FeedbackLookup $FeedbackLookup
 
 $s = 0
+$i = 0
 
 foreach ($entry in $STUDENTS) {
     $parts = $entry -split '\|'
@@ -49,6 +50,8 @@ foreach ($entry in $STUDENTS) {
     if (Test-AllRequiredFilesPresent -Checks $checks) {
         $s++
     }
+
+    $i++
 
 }
 
