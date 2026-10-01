@@ -49,4 +49,4 @@
 | 31 | [300157374](../300157374/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: | :x: | :x: À corriger |
 | 32 | [300157416](../300157416/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: | :x: | :x: À corriger |
 | 33 | [300157424](../300157424/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: | :x: | :x: | :x: À corriger |
-| :abacus: | \$\frac{2}{33}\$ = 6.06% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 2 |
+| :abacus: | \$\frac{2}{5}\$ = 40% | \$\displaystyle\sum_{i=1}^{5} s_i\$ = 2 |
