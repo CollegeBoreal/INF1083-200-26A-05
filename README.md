@@ -2,3 +2,5 @@
 INF 1083-200 Développement d'applications
 
 <image src=images/image.jpeg width=% height=% > </image>
+
+

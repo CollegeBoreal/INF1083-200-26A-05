@@ -7,7 +7,7 @@ param(
 )
 
 $STUDENTS = @(
-"300141685|octocat|583231"
+"300141685|soulemaneBRY|157196575"
 "300147065|ahmedboreal|266599103"
 "300150411|brhnkess|211593030"
 "300150477|Trafalgar-D-Low|195692630"
