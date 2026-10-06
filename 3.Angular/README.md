@@ -342,7 +342,7 @@ this.http
 
 ---
 
-# 🛣️ Routage*
+# 🛣️ Routage
 Le routage permet de naviguer ent*e plusieurs pages.
 
 Exemple :
@@ -371,7 +371,7 @@ const routes = [
 
 # 🎨 Style CSS
 
-*# accueil.component.css
+## accueil.component.css
 
 ```css
 h1 {
@@ -381,7 +381,7 @@ h1 {
 
 ---
 
-#*⚡ Pourquoi Angular est populaire ?*
+# *⚡ Pourquoi Angular est populaire ?*
 Angular offre :
 
 ✅ TypeScript
