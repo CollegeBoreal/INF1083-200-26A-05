@@ -24,13 +24,14 @@
 $FeedbackLookup = Get-FeedbackLookup -Students $STUDENTS
 
 Write-ParticipationHeader
-Write-LabHeader -FeedbackLookup $FeedbackLookup
+Write-PresenceHeader -FeedbackLookup $FeedbackLookup
 
 $s = 0
-$i = 0
 
-foreach ($entry in $STUDENTS) {
-    $parts = $entry -split '\|'
+for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
+
+    $parts = $STUDENTS[$i] -split '\|'
+
     $StudentID = $parts[0]
     $GitHubID  = $parts[1]
     $AvatarID  = $parts[2]
@@ -50,8 +51,6 @@ foreach ($entry in $STUDENTS) {
     if (Test-AllRequiredFilesPresent -Checks $checks) {
         $s++
     }
-
-    $i++
 
 }
 
