@@ -9,8 +9,21 @@ $ErrorActionPreference = "Stop"
 . ../../.scripts/functions.ps1
 . ../../.scripts/commons.ps1
 
+# Header
+function Write-LabHeader {
+
+    Write-Output ""
+    Write-Output "## :a: Présence"
+    Write-Output ""
+
+    Write-Output "|:hash:| Boréal :id: | Success |"
+    Write-Output "|------|-------------|---------|"
+}
+
+
+
 Write-ParticipationHeader
-Write-PresenceHeader
+Write-LabHeader
 
 $i = 0
 $s = 0
@@ -43,14 +56,14 @@ foreach ($entry in $STUDENTS) {
     }
 
     $status = if ($exists) {
-        ":heavy_check_mark:"
+        ":tada:"
+        $s++
     }
     else {
         ":x:"
     }
 
-
-    $row = "| $($i + 1) | $url | $repoUrl | $status |"
+    $row = "| $($i + 1) | [$StudentID]($repoUrl) :point_right: $GitHubLink $url | $status |"
     Write-Host $row
 
     $i++
