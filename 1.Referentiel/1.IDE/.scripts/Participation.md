@@ -1,4 +1,4 @@
-# Participation au 06-10-2026 19:56
+# Participation au 06-10-2026 20:05
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -29,24 +29,24 @@
 | 10 | [300151732](../300151732/README.md) :point_right: [nabil17581](https://github.com/nabil17581) <image src='https://avatars0.githubusercontent.com/u/231499758?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
 | 11 | [300151781](../300151781/README.md) :point_right: [lounesallouti](https://github.com/lounesallouti) <image src='https://avatars0.githubusercontent.com/u/257377074?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 12 | [300151835](../300151835/README.md) :point_right: [benhammoucheliza928-eng](https://github.com/benhammoucheliza928-eng) <image src='https://avatars0.githubusercontent.com/u/255944310?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 13 | [300153676](../300153676/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 13 | [300153676](../300153676/README.md) :point_right: [lyes-ik](https://github.com/lyes-ik) <image src='https://avatars0.githubusercontent.com/u/255968971?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 14 | [300154023](../300154023/README.md) :point_right: [silaje123](https://github.com/silaje123) <image src='https://avatars0.githubusercontent.com/u/267740367?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 15 | [300155086](../300155086/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 15 | [300155086](../300155086/README.md) :point_right: [ynsakliii](https://github.com/ynsakliii) <image src='https://avatars0.githubusercontent.com/u/200866288?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 16 | [300155109](../300155109/README.md) :point_right: [alexiakabore](https://github.com/alexiakabore) <image src='https://avatars0.githubusercontent.com/u/231572626?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
-| 17 | [300155466](../300155466/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 17 | [300155466](../300155466/README.md) :point_right: [rekhilahana34-tech](https://github.com/rekhilahana34-tech) <image src='https://avatars0.githubusercontent.com/u/232940163?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 18 | [300155524](../300155524/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 19 | [300155909](../300155909/README.md) :point_right: [rahouma20t-debug](https://github.com/rahouma20t-debug) <image src='https://avatars0.githubusercontent.com/u/266869186?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 20 | [300155927](../300155927/README.md) :point_right: [garvey200](https://github.com/garvey200) <image src='https://avatars0.githubusercontent.com/u/236671775?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
 | 21 | [300156187](../300156187/README.md) :point_right: [idirislamchili](https://github.com/idirislamchili) <image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
 | 22 | [300156497](../300156497/README.md) :point_right: [mounakaci](https://github.com/mounakaci) <image src='https://avatars0.githubusercontent.com/u/231499918?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
-| 23 | [300156615](../300156615/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 23 | [300156615](../300156615/README.md) :point_right: [waliii81](https://github.com/waliii81) <image src='https://avatars0.githubusercontent.com/u/231570011?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 24 | [300156967](../300156967/README.md) :point_right: [malika2714](https://github.com/malika2714) <image src='https://avatars0.githubusercontent.com/u/231502729?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 25 | [300157117](../300157117/README.md) :point_right: [lounisrayan](https://github.com/lounisrayan) <image src='https://avatars0.githubusercontent.com/u/266407954?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 26 | [300157184](../300157184/README.md) :point_right: [topanta](https://github.com/topanta) <image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
-| 27 | [300157275](../300157275/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 27 | [300157275](../300157275/README.md) :point_right: [benkarayahia01-hue](https://github.com/benkarayahia01-hue) <image src='https://avatars0.githubusercontent.com/u/307787126?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 28 | [300157301](../300157301/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 29 | [300157330](../300157330/README.md) :point_right: [toufikmekbel](https://github.com/toufikmekbel) <image src='https://avatars0.githubusercontent.com/u/231571164?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 30 | [300157374](../300157374/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 31 | [300157416](../300157416/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 31 | [300157416](../300157416/README.md) :point_right: [lounisyounes](https://github.com/lounisyounes) <image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | :abacus: | \$\\frac{4}{33}\$ = 12.12% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 4 |
