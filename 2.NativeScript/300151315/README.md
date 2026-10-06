@@ -28,11 +28,12 @@ ns run android
 
 ## Modification
 Fichier modifié : `src/app/people/person.service.ts`
+
 La liste d'informaticiens célèbres a été remplacée par les personnages de One Piece :
 Luffy, Zoro, Nami, Usopp, Sanji, Chopper, Robin, Franky, Brook et Jinbe.
 
 ## Capture d'écran
-![Application One Piece](images/app.jpg)
+<img src="images/image.png" alt="Application One Piece" width="300">
 
 ## Problèmes rencontrés et solutions
 
