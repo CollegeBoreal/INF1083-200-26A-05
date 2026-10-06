@@ -262,3 +262,17 @@ Si oui → **tu sais utiliser Git**
 
 > Git n’est pas compliqué, **il est strict**.
 > Une fois le réflexe pris, tu ne travailles plus jamais sans.
+
+---
+
+# TP Git - Rahma Taib
+
+## Travail réalisé
+
+- Dépôt Git cloné
+- Fichier README.md modifié
+- Modification préparée avec `git add`
+- Commit créé avec un message clair
+- Changements envoyés avec `git push`
+- Historique vérifié avec `git log`
+
