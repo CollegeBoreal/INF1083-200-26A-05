@@ -1,24 +1,20 @@
 import { Injectable, signal } from '@angular/core';
+
 import { Person } from './person';
 
 @Injectable({providedIn: 'root'})
 export class PersonService {
-  items = signal<Person[]>([
-    { id: 1, name: 'Alan Turing', nationality: 'British', notableAchievements: ['WW2 code breaking', 'Father of theoretical computer science and AI' ] },
-    { id: 2, name: 'Grace Hopper', nationality: 'American', notableAchievements: ['COBOL development', 'Navy commander', 'Implementation of computer systems and components testing'] },
-    { id: 3, name: 'Donal Knuth', nationality: 'American', notableAchievements: [ 'Author of The Art of Computer Programming', 'Created TeX typesetting system' ] },
-    { id: 4, name: 'Ada Lovelace', nationality: 'British', notableAchievements: [ 'First computer programmer', 'Worked on Analytical Engine' ]},
-    { id: 5, name: 'John von Neumann', nationality: 'Hungarian/American', notableAchievements: [ 'Von Neumann architecture', 'Game theory', 'Contributed to EDVAC' ] },
-    { id: 6, name: 'Tim Berners-Lee', nationality: 'British', notableAchievements: [ 'Inventor of the World Wide Web' ] },
-    { id: 7, name: 'Edsger Dijkstra', nationality: 'Dutch', notableAchievements: [ 'Shortest path algorithm', 'Structured programming advocate' ] },
-    { id: 8, name: 'Linus Torvalds', nationality: 'Finnish-American', notableAchievements: ['Creator of Linux kernel', 'Creator of Git'] },
-    { id: 9, name: 'John McCarthy', nationality: 'American', notableAchievements: ['Coined term "Artificial Intelligence"', 'Created LISP programming language'] },
-    { id: 10, name: 'Dennis Ritchie', nationality: 'American', notableAchievements: ['Creator of C programming language', 'Co-creator of Unix'] },
-    { id: 11, name: 'Bjarne Stroustrup', nationality: 'Danish', notableAchievements: [ 'Creator of C++ programming language' ] },
-    { id: 12, name: 'Steve Wozniak', nationality: 'American', notableAchievements: ['Co-founder of Apple', 'Designer of Apple I & II', 'Pioneer of personal computing'] },
-    { id: 13, name: 'Tommy Flowers', nationality: 'British', notableAchievements: ['Designer of Colossus', 'Pioneer in electronic computing'] },
-    { id: 14, name: 'John Backus', nationality: 'American', notableAchievements: ['Created FORTRAN', 'Developed Backus-Naur form(BNF) notation'] },
-    { id: 15, name: 'Niklaus Wirth', nationality: 'Swiss', notableAchievements: ['Creator of Pascal, Modula, Oberon languages', 'Software engineering pioneer'] },
+  items = signal([
+    { id: 1, name: 'Michael Jordan', nationality: 'American', notableAchievements: ['6x NBA champion', '5x MVP'] },
+    { id: 2, name: 'LeBron James', nationality: 'American', notableAchievements: ['4x NBA champion', '4x MVP'] },
+    { id: 3, name: 'Stephen Curry', nationality: 'American', notableAchievements: ['4x NBA champion', '2x MVP'] },
+    { id: 4, name: 'Kobe Bryant', nationality: 'American', notableAchievements: ['5x NBA champion', '2x Finals MVP'] },
+    { id: 5, name: "Shaquille O'Neal", nationality: 'American', notableAchievements: ['4x NBA champion', '3x Finals MVP'] },
+    { id: 6, name: 'Kevin Durant', nationality: 'American', notableAchievements: ['2x NBA champion', '2x Finals MVP'] },
+    { id: 7, name: 'Giannis Antetokounmpo', nationality: 'Greek', notableAchievements: ['NBA champion 2021', '2x MVP'] },
+    { id: 8, name: 'Nikola Jokic', nationality: 'Serbian', notableAchievements: ['NBA champion 2023', '3x MVP'] },
+    { id: 9, name: 'Luka Doncic', nationality: 'Slovenian', notableAchievements: ['5x All-Star', 'Scoring champion 2024'] },
+    { id: 10, name: 'Magic Johnson', nationality: 'American', notableAchievements: ['5x NBA champion', '3x MVP'] },
   ]);
 
   getPerson(id: number): Person {
