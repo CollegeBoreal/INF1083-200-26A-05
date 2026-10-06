@@ -1,0 +1,22 @@
+﻿# Laboratoire NativeScript — INF1083
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cd "$HOME\Documents\INF1083-200-26A-05"
+Move-Item "2.NativeScript/B300151496/B300151496" "2.NativeScript/300151496/" -Force
+Remove-Item "2.NativeScript/B300151496" -Recurse -Force
+@'
+node_modules/
+platforms/
