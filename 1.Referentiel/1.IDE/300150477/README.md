@@ -21,7 +21,7 @@ git clone https://github.com/CollegeBoreal/INF1083-200-26A-05.git
 cd INF1083-200-26A-05\1.Referentiel\1.IDE
 mkdir 300150477
 git add 300150477
-git commit --message ":star: Mon premier commentaire"```
+git commit --message ":star: Mon premier commentaire"```cmd
 
 ##2. SSH
 
@@ -29,7 +29,7 @@ J'ai créé une clé SSH avec ssh-keygen, configuré le fichier config et ajout�
 
 ```cmd
 ssh-keygen -t ed25519 -C "300150477@monboreal.ca"
-ssh -T git@github.com```
+ssh -T git@github.com```cmd
 
 ![Image](images/SSH Key.png)
 
@@ -41,7 +41,7 @@ J'ai configuré le dépôt du cours pour utiliser SSH.
 git remote set-url origin git@github.com:CollegeBoreal/INF1083-200-26A-05.git
 git remote --verbose
 git pull --no-edit
-git push```
+git push```cmd
 
 ## Conclusion
 
