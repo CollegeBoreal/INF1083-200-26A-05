@@ -7,7 +7,7 @@ Configurer Git et SSH sur Windows et utiliser GitHub pour soumettre mon travail.
 ## Environnement
 
 - Système : Windows
-- Terminal : Powershell
+- Terminal : CMD
 - Compte GitHub : Anis Benabbas
 
 ## 1. Git
@@ -34,7 +34,7 @@ ssh-keygen -t ed25519 -C "300150477@monboreal.ca"
 ssh -T git@github.com
 ```
 
-![Image](images/SSH Key.png)
+![Image](images/SSH key.png)
 
 ##3. Dépôt SSH
 
