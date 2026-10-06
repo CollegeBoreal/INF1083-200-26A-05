@@ -1,4 +1,4 @@
-# Participation au 06-10-2026 18:06
+# Participation au 06-10-2026 18:18
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -45,8 +45,8 @@
 | 26 | [300157184](../300157184/README.md) :point_right: [topanta](https://github.com/topanta) <image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 27 | [300157275](../300157275/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 28 | [300157301](../300157301/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 29 | [300157330](../300157330/README.md) :point_right: [toufikmekbel](https://github.com/toufikmekbel) <image src='https://avatars0.githubusercontent.com/u/231571164?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 29 | [300157330](../300157330/README.md) :point_right: [toufikmekbel](https://github.com/toufikmekbel) <image src='https://avatars0.githubusercontent.com/u/231571164?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 30 | [300157374](../300157374/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 31 | [300157416](../300157416/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| :abacus: | \$\\frac{2}{33}\$ = 6.06% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 2 |
+| :abacus: | \$\\frac{3}{33}\$ = 9.09% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 3 |
