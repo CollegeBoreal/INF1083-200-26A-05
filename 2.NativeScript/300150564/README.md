@@ -106,7 +106,47 @@ NativeScript a ensuite synchronisé le projet avec l'émulateur Android.
 </p>
 
 ---
+---
 
+## 🔄 Modification de la liste
+
+Pour personnaliser l'application, j'ai modifié les données présentes dans le fichier :
+
+```text
+src/app/people/person.service.ts
+```
+
+La liste originale des **Computer Scientists** a été remplacée par une liste de **15 figures politiques et historiques**.
+
+Le titre de l'application a également été modifié dans :
+
+```text
+src/app/people/person.component.html
+```
+
+Le nouveau titre est :
+
+```text
+Historical Political Figures
+```
+
+Après les modifications, le projet a été recompilé avec :
+
+```powershell
+ns run android
+```
+
+### ✅ Résultat final
+
+L'application affiche maintenant la nouvelle liste sur l'émulateur Android :
+
+<p align="center">
+  <img src="./images/rslt.png" width="650">
+</p>
+
+<p align="center">
+  <em>Figure — Résultat final après la modification des données de l'application.</em>
+</p>
 ## ⚠️ Problème rencontré
 
 Au début, la compilation utilisait **Java 8**, qui était trop ancien pour Gradle.
