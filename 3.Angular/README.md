@@ -255,13 +255,13 @@ Le Data Binding permet de connecter les données TypeScript à l'interface HTML.
 ```
 
 ```typescript
-nom = "Brice";
+nom = "Prof";
 ```
 
 Résultat :
 
 ```text
-Brice
+Prof
 ```
 
 ---
