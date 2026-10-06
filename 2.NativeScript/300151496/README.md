@@ -7,3 +7,5 @@ Le travail a commencé par l'installation de tous les outils nécessaires : Node
 Ensuite, la variable d'environnement ANDROID_HOME a été configurée pour pointer vers le SDK Android, et un émulateur Android a été créé et testé (API 37, image google_apis_playstore). Le projet lui-même a été généré avec la commande ns create B300151496, en choisissant le cadriciel Angular et le modèle de démarrage Hello World. Enfin, l'application a été compilée et lancée sur l'émulateur avec la commande ns run android : la compilation s'est terminée avec succès (« Project successfully built »), l'application a été installée et démarrée sur l'émulateur, et le rechargement à chaud (HMR) est resté actif pendant le développement, permettant de voir les modifications en direct.
 
 Pour relancer le projet, il suffit de disposer de Node.js, de la NativeScript CLI, du JDK 17 et du SDK Android correctement installés et configurés, puis d'exécuter la commande ns run android depuis le dossier du projet. Une capture d'écran de l'application en cours d'exécution sur l'émulateur est disponible dans le dossier images.
+
+<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
