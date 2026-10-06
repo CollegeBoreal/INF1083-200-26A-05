@@ -21,7 +21,9 @@ git clone https://github.com/CollegeBoreal/INF1083-200-26A-05.git
 cd INF1083-200-26A-05\1.Referentiel\1.IDE
 mkdir 300150477
 git add 300150477
-git commit --message ":star: Mon premier commentaire"```cmd
+git commit --message ":star: Mon premier commentaire"
+```
+
 
 ##2. SSH
 
