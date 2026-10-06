@@ -39,7 +39,7 @@ cd Developer
 * allez dans le répertoire du cours
 
 ```sh
-cd INF1083-200-26A-06/1.Referentiel/1.IDE
+cd INF1083-200-26A-05/1.Referentiel/1.IDE
 ```
 
 ### :two: Créer son répertoire dans `(1.IDE)`:
@@ -166,13 +166,13 @@ git pull --no-edit
 1. **revenir au répertoire du cours**
 
    ```sh
-   cd ~/Developer/INF1083-200-26A-06/1.Referentiel/1.IDE
+   cd ~/Developer/INF1083-200-26A-05/1.Referentiel/1.IDE
    ```
 
 2. **Changer l’URL du dépôt distant**
 
    ```sh
-   git remote set-url origin git@github.com:CollegeBoreal/INF1083-200-26A-06.git
+   git remote set-url origin git@github.com:CollegeBoreal/INF1083-200-26A-05.git
    ```
 
 3. **Vérifier la nouvelle configuration du dépôt distant**
@@ -184,8 +184,8 @@ git pull --no-edit
     🖥️ Ce qui affiche actuellement :
 
    ```lua
-   origin  git@github.com:CollegeBoreal/INF1083-200-26A-06.git (fetch)
-   origin  git@github.com:CollegeBoreal/INF1083-200-26A-06.git (push)
+   origin  git@github.com:CollegeBoreal/INF1083-200-26A-05.git (fetch)
+   origin  git@github.com:CollegeBoreal/INF1083-200-26A-05.git (push)
    ```
 
 ### 7️⃣ 🌩️ Envoyer au serveur github.com
