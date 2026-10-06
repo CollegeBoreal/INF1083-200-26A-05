@@ -34,7 +34,7 @@ ssh-keygen -t ed25519 -C "300150477@monboreal.ca"
 ssh -T git@github.com
 ```
 
-![Image](images/SSH key.png)
+![Image](images/SSH%key.png)
 
 ##3. Dépôt SSH
 
