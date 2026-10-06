@@ -1,5 +1,8 @@
 ﻿# Laboratoire NativeScript — INF1083
 
+
+ <image src=images/intfinale.jpeg width=50% height=50% > </image>
+
 Ce projet a été réalisé par Anis Ouhocine (B300151496) dans le cadre du laboratoire du cours INF1083 – Développement d'applications mobiles, session Automne 2026. L'objectif du laboratoire était de mettre en place un environnement complet de développement mobile avec NativeScript, puis de créer, compiler et exécuter une première application sur un émulateur Android.
 
 Le travail a commencé par l'installation de tous les outils nécessaires : Node.js version 24.21.0 avec npm 11.19.0, la NativeScript CLI version 9.1.1 installée globalement via npm, le JDK 17 (distribution Temurin) requis pour la compilation Android, ainsi que le SDK Android comprenant les platform-tools, la plateforme Android (API 36) et les build-tools 36.0.0. Une fois ces installations terminées, l'environnement a été vérifié avec la commande ns doctor, qui a confirmé que tout était correctement configuré avec le message « No issues were detected ».
@@ -11,4 +14,4 @@ Pour relancer le projet, il suffit de disposer de Node.js, de la NativeScript CL
 <image src=images/WhatsApp%20Image%202026-10-06.jpeg width=50% height=50% > </image>
 
 
-<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
+<image src=images/intfinale.jpeg width=50% height=50% > </image>
