@@ -289,12 +289,13 @@ saluer() {
 ## Afficher une condition
 
 ```html
-<div *ngIf="connecte">
-    Connecté*</div*
+<div ngIf="connecte">
+    Connecté
+</div>
 ```
 
 ```typescript
-*onnecte = true;
+connecte = true;
 ```
 
 ---
@@ -303,7 +304,7 @@ saluer() {
 
 ```html
 <ul>
-  <li *ngFor*"let nom of noms">
+  <li  ngFor "let nom of noms">
     {{ nom }}
   </li>
 </ul>
