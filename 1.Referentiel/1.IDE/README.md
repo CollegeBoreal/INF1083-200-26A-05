@@ -33,7 +33,7 @@ cd Developer
    - coller l'URL du répertoire en mémoire dans le presse papier avec RIGHT-CLICK/PASTE
 
    ```sh
-   git clone https://github.com/CollegeBoreal/INF1083-200-26A-06.git
+   git clone https://github.com/CollegeBoreal/INF1083-200-26A-05.git
    ```
    
 * allez dans le répertoire du cours
