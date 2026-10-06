@@ -1,4 +1,4 @@
-# Participation au 06-10-2026 18:30
+# Participation au 06-10-2026 18:45
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -37,8 +37,8 @@
 | 18 | [300155524](../300155524/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 19 | [300155909](../300155909/README.md) :point_right: [rahouma20t-debug](https://github.com/rahouma20t-debug) <image src='https://avatars0.githubusercontent.com/u/266869186?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 20 | [300155927](../300155927/README.md) :point_right: [garvey200](https://github.com/garvey200) <image src='https://avatars0.githubusercontent.com/u/236671775?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 21 | [300156187](../300156187/README.md) :point_right: [idirislamchili](https://github.com/idirislamchili) <image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 22 | [300156497](../300156497/README.md) :point_right: [mounakaci](https://github.com/mounakaci) <image src='https://avatars0.githubusercontent.com/u/231499918?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 21 | [300156187](../300156187/README.md) :point_right: [idirislamchili](https://github.com/idirislamchili) <image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
+| 22 | [300156497](../300156497/README.md) :point_right: [mounakaci](https://github.com/mounakaci) <image src='https://avatars0.githubusercontent.com/u/231499918?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
 | 23 | [300156615](../300156615/README.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 24 | [300156967](../300156967/README.md) :point_right: [malika2714](https://github.com/malika2714) <image src='https://avatars0.githubusercontent.com/u/231502729?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 25 | [300157117](../300157117/README.md) :point_right: [lounisrayan](https://github.com/lounisrayan) <image src='https://avatars0.githubusercontent.com/u/266407954?s=460&v=4' width=20 height=20></image> | :x: | :x: |
