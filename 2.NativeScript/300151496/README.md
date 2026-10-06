@@ -9,3 +9,6 @@ Ensuite, la variable d'environnement ANDROID_HOME a été configurée pour point
 Pour relancer le projet, il suffit de disposer de Node.js, de la NativeScript CLI, du JDK 17 et du SDK Android correctement installés et configurés, puis d'exécuter la commande ns run android depuis le dossier du projet. Une capture d'écran de l'application en cours d'exécution sur l'émulateur est disponible dans le dossier images.
 
 <image src=images/WhatsApp%20Image%202026-10-06.jpeg width=50% height=50% > </image>
+
+
+<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
