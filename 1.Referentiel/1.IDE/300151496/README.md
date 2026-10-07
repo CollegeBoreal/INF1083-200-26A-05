@@ -8,7 +8,7 @@ Exercice 1.IDE — Configuration SSH pour GitHub :
 •  Vérification avec ssh -T git@github.com (voir capture ci-dessous)
 Et l'image va dans un dossier images/ à côté de ton README, référencée comme ça : !Connexion SSH réussie.
 
-<image src=images/IMG_4291.jpeg width=50% height=50% > </image>
+<image src=images/imageIDE.jpeg width=50% height=50% > </image>
 
 
 
