@@ -1,8 +1,6 @@
 # 🚀 Introduction à Angular
 
-|  |
-|-|
-| [Participation](.scripts/Participation.md) |
+[ 🎉 Participation](.scripts/Participation.md)
 
 
 ## 🚀 Créer votre répertoire
