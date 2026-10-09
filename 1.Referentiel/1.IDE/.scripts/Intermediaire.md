@@ -1,4 +1,4 @@
-# Participation au 09-10-2026 22:58
+# Participation au 09-10-2026 23:03
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -22,7 +22,7 @@
 | 3 | [300150477](../300150477.md) :point_right: [Trafalgar-D-Low](https://github.com/Trafalgar-D-Low) <image src='https://avatars0.githubusercontent.com/u/195692630?s=460&v=4' width=20 height=20></image> | :x: |
 | 4 | [300150564](../300150564.md) :point_right: [wassimbnr](https://github.com/wassimbnr) <image src='https://avatars0.githubusercontent.com/u/102555452?s=460&v=4' width=20 height=20></image> | :x: |
 | 5 | [300151315](../300151315.md) :point_right: [toumiayoub1111-spec](https://github.com/toumiayoub1111-spec) <image src='https://avatars0.githubusercontent.com/u/329685188?s=460&v=4' width=20 height=20></image> | :x: |
-| 6 | [300151449](../300151449.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: |
+| 6 | [300151449](../300151449.md) :point_right: [abderrahimalaoui](https://github.com/abderrahimalaoui) <image src='https://avatars0.githubusercontent.com/u/231569522?s=460&v=4' width=20 height=20></image> | :x: |
 | 7 | [300151496](../300151496.md) :point_right: [anisouhocine](https://github.com/anisouhocine) <image src='https://avatars0.githubusercontent.com/u/236670164?s=460&v=4' width=20 height=20></image> | :x: |
 | 8 | [300151505](../300151505.md) :point_right: [300151505](https://github.com/300151505) <image src='https://avatars0.githubusercontent.com/u/232939190?s=460&v=4' width=20 height=20></image> | :x: |
 | 9 | [300151609](../300151609.md) :point_right: [ramzi34000](https://github.com/ramzi34000) <image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image> | :x: |
@@ -34,7 +34,7 @@
 | 15 | [300155086](../300155086.md) :point_right: [ynsakliii](https://github.com/ynsakliii) <image src='https://avatars0.githubusercontent.com/u/200866288?s=460&v=4' width=20 height=20></image> | :x: |
 | 16 | [300155109](../300155109.md) :point_right: [alexiakabore](https://github.com/alexiakabore) <image src='https://avatars0.githubusercontent.com/u/231572626?s=460&v=4' width=20 height=20></image> | :x: |
 | 17 | [300155466](../300155466.md) :point_right: [rekhilahana34-tech](https://github.com/rekhilahana34-tech) <image src='https://avatars0.githubusercontent.com/u/232940163?s=460&v=4' width=20 height=20></image> | :x: |
-| 18 | [300155524](../300155524.md) :point_right: [octocat](https://github.com/octocat) <image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image> | :x: |
+| 18 | [300155524](../300155524.md) :point_right: [Berihan-1995](https://github.com/Berihan-1995) <image src='https://avatars0.githubusercontent.com/u/236676877?s=460&v=4' width=20 height=20></image> | :x: |
 | 19 | [300155909](../300155909.md) :point_right: [rahouma20t-debug](https://github.com/rahouma20t-debug) <image src='https://avatars0.githubusercontent.com/u/266869186?s=460&v=4' width=20 height=20></image> | :x: |
 | 20 | [300155927](../300155927.md) :point_right: [garvey200](https://github.com/garvey200) <image src='https://avatars0.githubusercontent.com/u/236671775?s=460&v=4' width=20 height=20></image> | :x: |
 | 21 | [300156187](../300156187.md) :point_right: [idirislamchili](https://github.com/idirislamchili) <image src='https://avatars0.githubusercontent.com/u/273896373?s=460&v=4' width=20 height=20></image> | :x: |
