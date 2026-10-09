@@ -44,9 +44,9 @@
 | 26 | [300157117](https://github.com/lounisrayan/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/266407954?s=460&v=4' width=20 height=20></image>](https://github.com/lounisrayan) | :x: |
 | 27 | [300157184](https://github.com/topanta/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image>](https://github.com/topanta) | :x: |
 | 28 | [300157275](https://github.com/benkarayahia01-hue/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/307787126?s=460&v=4' width=20 height=20></image>](https://github.com/benkarayahia01-hue) | :x: |
-| 29 | [300157301](https://github.com/octocat/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: |
+| 29 | [300157301](https://github.com/Amhn25/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/258898045?s=460&v=4' width=20 height=20></image>](https://github.com/Amhn25) | :x: |
 | 30 | [300157330](https://github.com/toufikmekbel/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231571164?s=460&v=4' width=20 height=20></image>](https://github.com/toufikmekbel) | :x: |
-| 31 | [300157374](https://github.com/octocat/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: |
+| 31 | [300157374](https://github.com/yanisna/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image>](https://github.com/yanisna) | :x: |
 | 32 | [300157416](https://github.com/lounisyounes/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image>](https://github.com/lounisyounes) | :x: |
-| 33 | [300157424](https://github.com/octocat/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | :x: |
+| 33 | [300157424](https://github.com/MA-JID-06/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image>](https://github.com/MA-JID-06) | :x: |
 | :abacus: | \$\frac{8}{33}\$ = 24.24% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 8 |
