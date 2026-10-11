@@ -19,8 +19,7 @@ Lors de l'initialisation de l'application avec Angular CLI, la page de base par 
 ## 2. Deuxième étape : Version améliorée (DevOpsHub)
 Après la refonte du code HTML/CSS et l'ajout de la structure de l'application, l'interface a été entièrement modernisée sous le nom de **DevOpsHub** :
 
-![Version Améliorée DevOpsHub](Capture%20d’écran%202026-10-10%20173713.png)
-
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/78ecbfae3ea3aa4dd6297f74ac13f75d8f77851d/3.Angular/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-10%20195359.png)
 * **Améliorations majeures apportées :**
   - **En-tête personnalisée :** Intégration du logo DevOpsHub, du menu de navigation et de l'identifiant `B300157184`.
   - **Bannière d'accueil :** Message principal "Apprenez Angular comme un pro" avec boutons d'action.
