@@ -21,11 +21,11 @@
 | 3 | [300150411](https://github.com/brhnkess/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/211593030?s=460&v=4' width=20 height=20></image>](https://github.com/brhnkess) | :x: |
 | 4 | [300150477](https://github.com/Trafalgar-D-Low/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/195692630?s=460&v=4' width=20 height=20></image>](https://github.com/Trafalgar-D-Low) | :x: |
 | 5 | [300150564](https://github.com/wassimbnr/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/102555452?s=460&v=4' width=20 height=20></image>](https://github.com/wassimbnr) | :tada: |
-| 6 | [300151315](https://github.com/toumiayoub1111-spec/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/329685188?s=460&v=4' width=20 height=20></image>](https://github.com/toumiayoub1111-spec) | :x: |
+| 6 | [300151315](https://github.com/toumiayoub1111-spec/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/329685188?s=460&v=4' width=20 height=20></image>](https://github.com/toumiayoub1111-spec) | :tada: |
 | 7 | [300151449](https://github.com/abderrahimalaoui/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231569522?s=460&v=4' width=20 height=20></image>](https://github.com/abderrahimalaoui) | :x: |
 | 8 | [300151496](https://github.com/anisouhocine/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/236670164?s=460&v=4' width=20 height=20></image>](https://github.com/anisouhocine) | :tada: |
 | 9 | [300151505](https://github.com/300151505/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/232939190?s=460&v=4' width=20 height=20></image>](https://github.com/300151505) | :x: |
-| 10 | [300151609](https://github.com/ramzi34000/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image>](https://github.com/ramzi34000) | :x: |
+| 10 | [300151609](https://github.com/ramzi34000/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image>](https://github.com/ramzi34000) | :tada: |
 | 11 | [300151732](https://github.com/nabil17581/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231499758?s=460&v=4' width=20 height=20></image>](https://github.com/nabil17581) | :x: |
 | 12 | [300151781](https://github.com/lounesallouti/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/257377074?s=460&v=4' width=20 height=20></image>](https://github.com/lounesallouti) | :tada: |
 | 13 | [300151835](https://github.com/benhammoucheliza928-eng/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/255944310?s=460&v=4' width=20 height=20></image>](https://github.com/benhammoucheliza928-eng) | :x: |
@@ -49,4 +49,4 @@
 | 31 | [300157374](https://github.com/yanisna/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image>](https://github.com/yanisna) | :x: |
 | 32 | [300157416](https://github.com/lounisyounes/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image>](https://github.com/lounisyounes) | :x: |
 | 33 | [300157424](https://github.com/MA-JID-06/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image>](https://github.com/MA-JID-06) | :x: |
-| :abacus: | \$\frac{6}{33}\$ = 18.18% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 6 |
+| :abacus: | \$\frac{8}{33}\$ = 24.24% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 8 |
