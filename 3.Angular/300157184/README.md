@@ -7,7 +7,7 @@ Ce document présente l'évolution du projet d'application Angular développé d
 ## 1. Première étape : Version initiale de démarrage
 Lors de l'initialisation de l'application avec Angular CLI, la page de base par défaut affichait la structure initiale générée ainsi que le message de confirmation :
 
-![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/571af8c8fd780ad59aa2ba30774664633b1800d5/3.Angular/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-10%20200417.png)
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/571af8c8fd780ad59aa2ba30774664633b1800d5/3.Angular/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-10%20200417.png)![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/e3bf395b19e73f8d14fa7b6d71fa165f59c56f8f/3.Angular/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-09%20194219.png)
 
 * **Caractéristiques de cette étape :**
   - Validation du lancement du serveur Angular (`localhost:4200`).
