@@ -1,5 +1,3 @@
 # 300155927
-<p align="center">
-  <img src="./Screenshot 2026-10-11 201316.png >
-</p>
 
+<image src=images/pngtree-programming-and-web-technology-vector-with-computer-illustration-png-image_4089305.jpg width=50% height=50% > </image>
