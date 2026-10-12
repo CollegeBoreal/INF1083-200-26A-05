@@ -1,6 +1,5 @@
 # 300155927
-
 <p align="center">
-  <img src="./eenshot%202026-10-11%20201316.png
+  <img src="./Screenshot 2026-10-11 201316.png >
 </p>
 
