@@ -37,7 +37,7 @@ https://nativescript.org/blog/angular-10-support/
 
 |  tns v7.0.1                                                                  |  Patrons                          |
 |------------------------------------------------------------------------------|-----------------------------------|
-| `ns create b`:id:` --template @nativescript/template-blank-ng`             |  Hello World                     |
+| `ns create B`:id:` --template @nativescript/template-blank-ng`             |  Hello World                     |
 
 
 :zero: Naviguer vers votre projet et pour l'éditer avec :keyboard: [vsc](https://github.com/CollegeBoreal/Tutoriels/blob/master/W.Web/T.NativeScript/IDE.md), taper:
