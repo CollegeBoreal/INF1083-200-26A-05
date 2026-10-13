@@ -140,6 +140,10 @@ export class HomeComponent {
 
 ```
 
+## 🫵 Résultat:
+
+L'exercice est d'afficher le courriel et l'utilisateur dans la console.
+
 # 📚 References
 
 - [] [NativeScript Application Templates](https://old.docs.nativescript.org/app-templates/app-templates)
