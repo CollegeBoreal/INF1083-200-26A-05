@@ -140,3 +140,6 @@ export class HomeComponent {
 
 ```
 
+# 📚 References
+
+- [] [NativeScript Application Templates](https://old.docs.nativescript.org/app-templates/app-templates)
