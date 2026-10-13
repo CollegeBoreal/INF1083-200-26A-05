@@ -103,14 +103,20 @@ Open up home component template `home.component.html` replace `<GridLayout>` by 
 :bulb: Final Result
 
 ```typescript
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  NativeScriptCommonModule,
+  NativeScriptRouterModule,
+} from '@nativescript/angular';
 
 @Component({
-    selector: "Home",
-    templateUrl: "./home.component.html"
+  selector: 'Home',
+  templateUrl: './home.component.html',
+  imports: [NativeScriptCommonModule, NativeScriptRouterModule],
+  schemas: [NO_ERRORS_SCHEMA],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
     signUpForm: FormGroup;
 
@@ -119,7 +125,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+              // Init your component properties here.
         this.signUpForm = this.formBuilder.group({
             email: ["", Validators.required],
             username: ["", Validators.required],
@@ -127,51 +133,10 @@ export class HomeComponent implements OnInit {
     }
 
     onButtonTap() {
-        console.log(JSON.stringify(this.signUpForm.value));
+       console.log(JSON.stringify(this.signUpForm.value));
     }
+
 }
-```
-
-:two: Add the `forms` providers to the `home` module file `home.module.ts`
-
-:pushpin: Finalement rajouter le module `NativeScriptFormsModule` à `home.module.ts` et le module `ReactiveFormsModule`
 
 ```
-import { NativeScriptFormsModule } from "@nativescript/angular";
-import { ReactiveFormsModule } from "@angular/forms";
-```
 
-le rajouter à `@NgModule` le champ `import`
-
-```
-    imports: [
-        NativeScriptFormsModule,
-        ReactiveFormsModule,
-```
-
-:bulb: Final Result
-
-```typescript
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
-import { NativeScriptCommonModule, NativeScriptFormsModule } from "@nativescript/angular";
-
-import { HomeRoutingModule } from "./home-routing.module";
-import { HomeComponent } from "./home.component";
-
-@NgModule({
-    imports: [
-        NativeScriptFormsModule,
-        ReactiveFormsModule,
-        NativeScriptCommonModule,
-        HomeRoutingModule
-    ],
-    declarations: [
-        HomeComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
-})
-export class HomeModule { }
-```
