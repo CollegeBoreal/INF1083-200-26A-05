@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📱 NativeScript — INF1083
 
 **Étudiant :** Ouassim Ahmed Benamira  
@@ -182,3 +183,6 @@ Ce laboratoire m'a permis de configurer un environnement de développement **Nat
 <p align="center">
   <b>📱 INF1083 — NativeScript | 300150564</b>
 </p>
+=======
+
+>>>>>>> 5296191 (Ajout du projet NativeScript B300150564)

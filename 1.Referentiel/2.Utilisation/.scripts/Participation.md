@@ -15,6 +15,7 @@
 ## :a: Présence
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 |:hash:| Boréal :id: | README.md | images |
 |------|-------------|-----------|--------|
 | 1 | [<image src='https://avatars0.githubusercontent.com/u/157196575?s=460&v=4' width=20 height=20></image>](https://github.com/soulemaneBRY) | https://github.com/soulemaneBRY/MonProjet | :x: |
@@ -52,12 +53,14 @@
 | 33 | [<image src='https://avatars0.githubusercontent.com/u/583231?s=460&v=4' width=20 height=20></image>](https://github.com/octocat) | https://github.com/octocat/MonProjet | :x: |
 | :abacus: | \$\frac{0}{33}\$ = 0% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 0 |
 =======
+=======
+>>>>>>> 6ff357d1a3ff31982ef9225f7553e1c52c0b8cb9
 |:hash:| Boréal :id: | Success |
 |------|-------------|---------|
 | 1 | [300141685](https://github.com/soulemaneBRY/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/157196575?s=460&v=4' width=20 height=20></image>](https://github.com/soulemaneBRY) | :x: |
 | 2 | [300147065](https://github.com/ahmedboreal/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/266599103?s=460&v=4' width=20 height=20></image>](https://github.com/ahmedboreal) | :x: |
 | 3 | [300150411](https://github.com/brhnkess/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/211593030?s=460&v=4' width=20 height=20></image>](https://github.com/brhnkess) | :x: |
-| 4 | [300150477](https://github.com/Trafalgar-D-Low/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/195692630?s=460&v=4' width=20 height=20></image>](https://github.com/Trafalgar-D-Low) | :x: |
+| 4 | [300150477](https://github.com/Trafalgar-D-Low/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/195692630?s=460&v=4' width=20 height=20></image>](https://github.com/Trafalgar-D-Low) | :tada: |
 | 5 | [300150564](https://github.com/wassimbnr/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/102555452?s=460&v=4' width=20 height=20></image>](https://github.com/wassimbnr) | :tada: |
 | 6 | [300151315](https://github.com/toumiayoub1111-spec/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/329685188?s=460&v=4' width=20 height=20></image>](https://github.com/toumiayoub1111-spec) | :tada: |
 | 7 | [300151449](https://github.com/abderrahimalaoui/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/231569522?s=460&v=4' width=20 height=20></image>](https://github.com/abderrahimalaoui) | :x: |
@@ -87,5 +90,9 @@
 | 31 | [300157374](https://github.com/yanisna/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image>](https://github.com/yanisna) | :x: |
 | 32 | [300157416](https://github.com/lounisyounes/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image>](https://github.com/lounisyounes) | :x: |
 | 33 | [300157424](https://github.com/MA-JID-06/MonProjet) :point_right:  [<image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image>](https://github.com/MA-JID-06) | :x: |
+<<<<<<< HEAD
 | :abacus: | \$\frac{8}{33}\$ = 24.24% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 8 |
 >>>>>>> 4f9e901c8b8a148b2039c506a159f23ca6c13da2
+=======
+| :abacus: | \$\frac{9}{33}\$ = 27.27% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 9 |
+>>>>>>> 6ff357d1a3ff31982ef9225f7553e1c52c0b8cb9
