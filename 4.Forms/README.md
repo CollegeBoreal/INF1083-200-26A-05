@@ -43,7 +43,7 @@ https://nativescript.org/blog/angular-10-support/
 :zero: Naviguer vers votre projet et pour l'éditer avec :keyboard: [vsc](https://github.com/CollegeBoreal/Tutoriels/blob/master/W.Web/T.NativeScript/IDE.md), taper:
 
 ```
-$ code .
+code .
 ```
 
 :one: ReactiveForms
