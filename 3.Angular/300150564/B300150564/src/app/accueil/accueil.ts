@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Accueil {
   titre = 'Bienvenue INF1083';
+
+  saluer() {
+    alert('Bonjour !');
+  }
 }
