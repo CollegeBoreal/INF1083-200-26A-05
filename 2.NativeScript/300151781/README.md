@@ -8,13 +8,13 @@ ns create BID300151781
 
 Options choisies : Plain TypeScript, template Hello World.
 
-## Vérification de Java
+## Vérification de Java et lancement
 
-![Vérification de Java et lancement](images/01-java-ns-run.png)
+![Vérification de Java et lancement](images/1.png)
 
 ## Erreur rencontrée
 
-![Erreur de build Gradle](images/02-build-failed.png)
+![Erreur de build Gradle](images/2.png)
 
 L'erreur `Unsupported class file major version` venait d'une
 incompatibilité entre la version de Java et celle de Gradle.
@@ -22,15 +22,15 @@ Solution : <décris ici ce que tu as fait>.
 
 ## Émulateur Android
 
-![Émulateur Pixel 7](images/03-emulateur.png)
+![Émulateur Pixel 7](images/3.png)
 
 ## Application en marche
 
-![Application Computer Scientists](images/04-app.png)
+![Application Computer Scientists](images/runnn.png)
 
 ## Exécution
 
 ```bash
-cd B300151781
+cd BID300151781
 ns run android
 ```
