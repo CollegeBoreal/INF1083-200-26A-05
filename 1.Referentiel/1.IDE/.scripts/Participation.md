@@ -1,4 +1,4 @@
-# Participation au 13-10-2026 17:52
+# Participation au 13-10-2026 18:17
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -44,9 +44,9 @@
 | 25 | [300157117](../300157117/README.md) :point_right: [lounisrayan](https://github.com/lounisrayan) <image src='https://avatars0.githubusercontent.com/u/266407954?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 26 | [300157184](../300157184/README.md) :point_right: [topanta](https://github.com/topanta) <image src='https://avatars0.githubusercontent.com/u/275812708?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 27 | [300157275](../300157275/README.md) :point_right: [benkarayahia01-hue](https://github.com/benkarayahia01-hue) <image src='https://avatars0.githubusercontent.com/u/307787126?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 28 | [300157301](../300157301/README.md) :point_right: [Amhn25](https://github.com/Amhn25) <image src='https://avatars0.githubusercontent.com/u/258898045?s=460&v=4' width=20 height=20></image> | :x: | :x: |
+| 28 | [300157301](../300157301/README.md) :point_right: [Amhn25](https://github.com/Amhn25) <image src='https://avatars0.githubusercontent.com/u/258898045?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 29 | [300157330](../300157330/README.md) :point_right: [toufikmekbel](https://github.com/toufikmekbel) <image src='https://avatars0.githubusercontent.com/u/231571164?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 30 | [300157374](../300157374/README.md) :point_right: [yanisna](https://github.com/yanisna) <image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 31 | [300157416](../300157416/README.md) :point_right: [lounisyounes](https://github.com/lounisyounes) <image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [MA-JID-06](https://github.com/MA-JID-06) <image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| :abacus: | \$\\frac{7}{33}\$ = 21.21% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 7 |
+| :abacus: | \$\\frac{8}{33}\$ = 24.24% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 8 |
