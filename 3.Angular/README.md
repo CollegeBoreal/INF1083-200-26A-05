@@ -1,8 +1,6 @@
 # 🚀 Introduction à Angular
 
-|  |
-|-|
-| [Participation](.scripts/Participation.md) |
+[ 🎉 Participation](.scripts/Participation.md)
 
 
 ## 🚀 Créer votre répertoire
@@ -382,22 +380,24 @@ h1 {
 ---
 
 # *⚡ Pourquoi Angular est populaire ?*
+
 Angular offre :
 
 ✅ TypeScript
 
-✅ *omposants réutilisables
+✅ Composants réutilisables
 
-✅ Routage*intégré
+✅ Routage intégré
 
-✅ Injection de dépendance*
+✅ Injection de dépendances
 
 ✅ Formulaires
 
-✅ HTTP Client*
+✅ HTTP Client
+
 ✅ Outils officiels
 
-✅ Architectur* entreprise
+✅ Architecture d' entreprise
 
 ---
 
@@ -405,7 +405,7 @@ Angular offre :
 
 Angular est souvent utilisé *our :
 
-- Applications*d'entreprise
+- Applications d'entreprise
 - Tableaux de bord
 - portails Web
 - Applications gouvern*mentales

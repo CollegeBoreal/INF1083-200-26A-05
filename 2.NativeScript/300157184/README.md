@@ -8,6 +8,9 @@
 
 
 ![Capture Émulateur Pixel 7](https://raw.githubusercontent.com/CollegeBoreal/INF1083-200-26A-05/15b6a4d0c93d4e90d51893653253ce1133d06387/2.NativeScript/B300157184/B300157184/emulator.png))
+
+
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/98900fc754ae0001e2c082f642ce0e957beb116e/2.NativeScript/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-06%20170441.png)
 ---
 
 ## 1. Description du projet

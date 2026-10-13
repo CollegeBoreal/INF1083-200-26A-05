@@ -24,6 +24,7 @@ jobs:
           $chapters = @(
             "0.PlanDeCours"
             "1.Referentiel/1.IDE"
+            "1.Referentiel/2.Utilisation"
             "2.NativeScript"
           )
 

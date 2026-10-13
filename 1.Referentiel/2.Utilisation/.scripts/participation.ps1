@@ -9,8 +9,26 @@ $ErrorActionPreference = "Stop"
 . ../../.scripts/functions.ps1
 . ../../.scripts/commons.ps1
 
+<<<<<<< HEAD
 Write-ParticipationHeader
 Write-PresenceHeader
+=======
+# Header
+function Write-LabHeader {
+
+    Write-Output ""
+    Write-Output "## :a: Présence"
+    Write-Output ""
+
+    Write-Output "|:hash:| Boréal :id: | Success |"
+    Write-Output "|------|-------------|---------|"
+}
+
+
+
+Write-ParticipationHeader
+Write-LabHeader
+>>>>>>> 4f9e901c8b8a148b2039c506a159f23ca6c13da2
 
 $i = 0
 $s = 0
@@ -43,14 +61,23 @@ foreach ($entry in $STUDENTS) {
     }
 
     $status = if ($exists) {
+<<<<<<< HEAD
         ":heavy_check_mark:"
+=======
+        ":tada:"
+        $s++
+>>>>>>> 4f9e901c8b8a148b2039c506a159f23ca6c13da2
     }
     else {
         ":x:"
     }
 
+<<<<<<< HEAD
 
     $row = "| $($i + 1) | $url | $repoUrl | $status |"
+=======
+    $row = "| $($i + 1) | [$StudentID]($repoUrl) :point_right: $GitHubLink $url | $status |"
+>>>>>>> 4f9e901c8b8a148b2039c506a159f23ca6c13da2
     Write-Host $row
 
     $i++
