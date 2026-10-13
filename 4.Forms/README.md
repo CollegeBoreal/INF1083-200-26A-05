@@ -1,7 +1,20 @@
 # 8.Forms
 
-## [Participation](.scripts/Participation.md)
+[ 🎉 Participation](.scripts/Participation.md)
 
+
+## 🚀 Créer votre répertoire
+
+
+- [ ] Créer un répertoire avec son 🆔 et ajouter le fichier README.md et un répertoire `images` 🖼️
+
+
+## 🎯 Objectif
+
+À la fin de ce laboratoire, vous serez capable de :
+
+- Comprendre le 'layout'
+- Comprendre les 'forms' d'Angular
 
 
 ## [🖼️ layout-containers](https://docs.nativescript.org/ui/#layout-containers)
@@ -10,7 +23,6 @@
 
 
 ## :abacus: Forms
-
 
 2 examples de [`Forms`](https://angular.io/guide/forms) en Angular:
 
