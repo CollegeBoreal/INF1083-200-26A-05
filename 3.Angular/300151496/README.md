@@ -17,8 +17,8 @@ Application Angular : composant accueil, data binding, évènements, directives,
 9. CSS : h1 en bleu
 
 ## Captures
-<image src=images/Appli.jpeg width=50% height=50% > </image>
-<image src=images/ng_v.jpeg width=50% height=50% > </image>
+<image src=images/Appli.png width=50% height=50% > </image>
+<image src=images/ng_v.png width=50% height=50% > </image>
 
 Lancement
 
