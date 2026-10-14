@@ -1,0 +1,41 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+2
+<ActionBar title="Équipe de France 🇫🇷" />
+3
+ 
+4
+<ScrollView>
+5
+<StackLayout class="p-20">
+6
+<Label text="⚽ Les 11 joueurs de France" class="h2 text-center" />
+7
+ 
+8
+<Label text="1. Mike Maignan" class="h3" />
+9
+<Label text="2. Jules Koundé" class="h3" />
+10
+<Label text="3. William Saliba" class="h3" />
+11
+<Label text="4. Ibrahima Konaté" class="h3" />
+12
+<Label text="5. Theo Hernández" class="h3" />
+13
+<Label text="6. Aurélien Tchouaméni" class="h3" />
+14
+<Label text="7. Eduardo Camavinga" class="h3" />
+15
+<Label text="8. Ousmane Dembélé" class="h3" />
+16
+<Label text="9. Michael Olise" class="h3" />
+17
+<Label text="10. Kylian Mbappé" class="h3" />
+18
+<Label text="11. Bradley Barcola" class="h3" />
+19
+</StackLayout>
+20
+</ScrollView>
+21
+</Page>

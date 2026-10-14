@@ -1,0 +1,100 @@
+<ActionBar title="Car Rental"></ActionBar>
+
+<ScrollView>
+  <StackLayout [formGroup]="bookingForm" class="page">
+
+    <!-- HEADER -->
+    <StackLayout class="header">
+      <Label text="🚘  CAR RENTAL" class="header-title"></Label>
+      <Label text="Book Your Car Today" class="header-subtitle"></Label>
+    </StackLayout>
+
+    <!-- PERSONAL INFORMATION -->
+    <StackLayout class="card">
+
+      <Label text="👤  Personal Information" class="section-title"></Label>
+      <Label text="Enter your details" class="section-subtitle"></Label>
+
+      <Label text="Full Name" class="field-label"></Label>
+      <TextField
+        formControlName="fullName"
+        hint="Enter your full name"
+        class="input">
+      </TextField>
+
+      <Label text="Email" class="field-label"></Label>
+      <TextField
+        formControlName="email"
+        hint="Enter your email"
+        keyboardType="email"
+        class="input">
+      </TextField>
+
+      <Label text="Phone Number" class="field-label"></Label>
+      <TextField
+        formControlName="phone"
+        hint="Enter your phone number"
+        keyboardType="phone"
+        class="input">
+      </TextField>
+
+    </StackLayout>
+
+    <!-- RENTAL DETAILS -->
+    <StackLayout class="card">
+
+      <Label text="🚙  Rental Details" class="section-title"></Label>
+      <Label text="Choose your rental information" class="section-subtitle"></Label>
+
+      <Label text="Car Type" class="field-label"></Label>
+      <TextField
+        formControlName="carType"
+        hint="SUV, Sedan, Truck..."
+        class="input">
+      </TextField>
+
+      <Label text="Pick-up Location" class="field-label"></Label>
+      <TextField
+        formControlName="pickupLocation"
+        hint="Example: Toronto"
+        class="input">
+      </TextField>
+
+      <Label text="Pick-up Date" class="field-label"></Label>
+      <TextField
+        formControlName="pickupDate"
+        hint="YYYY-MM-DD"
+        class="input">
+      </TextField>
+
+      <Label text="Return Date" class="field-label"></Label>
+      <TextField
+        formControlName="returnDate"
+        hint="YYYY-MM-DD"
+        class="input">
+      </TextField>
+
+      <!-- INSURANCE -->
+      <GridLayout columns="*, auto" class="insurance">
+        <StackLayout col="0">
+          <Label text="🛡️  Additional Insurance" class="insurance-title"></Label>
+          <Label text="Extra protection for your trip" class="insurance-text"></Label>
+        </StackLayout>
+
+        <Switch
+          col="1"
+          formControlName="insurance">
+        </Switch>
+      </GridLayout>
+
+    </StackLayout>
+
+    <!-- BUTTON -->
+    <Button
+      text="BOOK NOW  →"
+      class="book-button"
+      (tap)="onBookNow()">
+    </Button>
+
+  </StackLayout>
+</ScrollView>

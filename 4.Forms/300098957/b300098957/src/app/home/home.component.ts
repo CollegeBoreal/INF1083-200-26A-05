@@ -13,22 +13,24 @@ import {
 })
 export class HomeComponent {
 
-    signUpForm: FormGroup;
+  signUpForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {
-        // Use the component constructor to inject providers.
-    }
+  constructor(private formBuilder: FormBuilder) {
+      // Use the component constructor to inject providers.
+  }
 
-    ngOnInit(): void {
-              // Init your component properties here.
-        this.signUpForm = this.formBuilder.group({
-            email: ["", Validators.required],
-            username: ["", Validators.required],
-        });
-    }
+  ngOnInit(): void {
 
-    onButtonTap() {
-       console.log(JSON.stringify(this.signUpForm.value));
-    }
+    // Init your component properties here.
+    this.signUpForm = this.formBuilder.group({
+        email: ["", Validators.required],
+        username: ["", Validators.required],
+    });
+
+  }
+
+  onButtonTap(): void {
+        console.log(JSON.stringify(this.signUpForm.value));
+  }
 
 }

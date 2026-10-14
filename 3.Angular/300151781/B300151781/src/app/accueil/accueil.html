@@ -1,0 +1,13 @@
+<h1>{{ titre }}</h1>
+<p>{{ nom }}</p>
+
+<button (click)="saluer()">Cliquez-moi</button>
+@if (connecte) {
+  <div>Connecté</div>
+}
+
+<ul>
+  @for (n of noms; track n) {
+    <li>{{ n }}</li>
+  }
+</ul>
