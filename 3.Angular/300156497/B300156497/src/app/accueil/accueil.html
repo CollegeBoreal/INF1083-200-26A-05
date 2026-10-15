@@ -1,0 +1,21 @@
+<h1>{{ titre }}</h1>
+
+<p><strong>Mouna Kaci</strong></p>
+
+<button (click)="saluer()">
+  Cliquez-moi
+</button>
+
+@if (connecte) {
+  <p>Connecté</p>
+}
+
+<ul>
+  @for (nom of noms; track nom) {
+    <li>{{ nom }}</li>
+  }
+</ul>
+
+<button (click)="chargerUtilisateurs()">
+  Charger les utilisateurs
+</button>
