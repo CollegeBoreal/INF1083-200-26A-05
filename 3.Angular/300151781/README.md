@@ -130,3 +130,21 @@ export const routes: Routes = [
 ## Difficultés rencontrées
 
 - **`ng` non reconnu** :
+
+## 7. Version améliorée
+
+- Page d'accueil stylée (SCSS) : titre, badge « Connecté » avec `@if`, bouton avec événement `(click)`.
+- Liste de 10 utilisateurs récupérés via l'API REST JSONPlaceholder (`HttpClient`, `@for`), affichés en cartes.
+- Routage : menu de navigation avec deux pages, Accueil et Contact (`RouterLink`, `RouterOutlet`).
+
+![Accueil et API](images/accueil-api.png)
+
+![Page Contact](images/menu-contact.png)
+
+## 7. Version améliorée
+
+- Page d'accueil stylée (SCSS) : titre, badge « Connecté » avec `@if`, bouton avec événement `(click)`.
+- Liste de 10 utilisateurs récupérés via l'API REST JSONPlaceholder (`HttpClient`, `@for`), affichés en cartes.
+- Routage : menu de navigation avec deux pages, Accueil et Contact (`RouterLink`, `RouterOutlet`).
+
+![Application](images/app.png)
