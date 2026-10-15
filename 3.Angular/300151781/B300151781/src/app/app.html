@@ -1,2 +1,8 @@
-<app-accueil />
-<router-outlet />
+﻿<nav>
+  <strong>MonApp Angular</strong>
+  <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+  <a routerLink="/contact" routerLinkActive="actif">Contact</a>
+</nav>
+<main>
+  <router-outlet />
+</main>

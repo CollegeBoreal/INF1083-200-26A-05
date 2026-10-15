@@ -1,13 +1,19 @@
-<h1>{{ titre }}</h1>
-<p>{{ nom }}</p>
-
-<button (click)="saluer()">Cliquez-moi</button>
-@if (connecte) {
-  <div>Connecté</div>
-}
-
-<ul>
-  @for (n of noms; track n) {
-    <li>{{ n }}</li>
+﻿<section class="hero">
+  <h1>{{ titre }}</h1>
+  <p>Étudiant : {{ nom }}</p>
+  @if (connecte) {
+    <span class="badge">Connecté</span>
   }
-</ul>
+  <button (click)="saluer()">Cliquez-moi</button>
+</section>
+
+<h2>Utilisateurs (API REST)</h2>
+<div class="grid">
+  @for (u of users(); track u.id) {
+    <div class="card">
+      <h3>{{ u.name }}</h3>
+      <p>{{ u.email }}</p>
+      <small>{{ u.company.name }}</small>
+    </div>
+  }
+</div>
