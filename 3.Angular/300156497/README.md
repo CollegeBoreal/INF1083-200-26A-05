@@ -7,7 +7,7 @@
 # Création et configuration du projet Angular
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300156497/images/Capture%20d'%C3%A9cran%202026-10-14%20184742.png?raw=true)Cette capture montre la création du projet B300156497 avec Angular CLI. Le projet est configuré avec CSS, sans SSR/SSG et sans outil d’IA, puis Angular génère automatiquement les fichiers nécessaires et lance l’installation des packages avec npm.
 
-#Lancement du serveur Angular
+# Lancement du serveur Angular
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300156497/images/Capture%20d'%C3%A9cran%202026-10-14%20185040.png?raw=true)Cette capture montre le lancement du projet B300156497 avec la commande ng serve. Angular compile l’application avec succès et démarre le serveur de développement local sur http://localhost:4200/, ce qui permet d’afficher l’application dans le navigateur.Cette capture montre le lancement du projet B300156497 avec la commande ng serve. Angular compile l’application avec succès et démarre le serveur de développement local sur http://localhost:4200/, ce qui permet d’afficher l’application dans le navigateur.
 
 # Affichage de l’application Angular dans le navigateur
@@ -16,7 +16,7 @@
 # Création du composant Accueil
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300156497/images/Capture%20d'%C3%A9cran%202026-10-14%20190112.png?raw=true)Cette capture montre la création et la configuration du composant Accueil dans le projet Angular. Le fichier accueil.ts définit le composant avec le sélecteur app-accueil et contient la variable title = 'Bienvenue INF1083', qui pourra être affichée dans la page d’accueil.
 
-#Affichage final du composant Accueil
+# Affichage final du composant Accueil
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300156497/images/Capture%20d'%C3%A9cran%202026-10-14%20231228.png?raw=true)Cette capture montre le résultat final de l’application Angular dans le navigateur. La page affiche le titre « Bienvenue INF1083 », le nom Mouna Kaci, un bouton « Cliquez-moi », l’état « Connecté », une liste d’utilisateurs et le bouton « Charger les utilisateurs ».
 
 # Test du bouton « Cliquez-moi »
