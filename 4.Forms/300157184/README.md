@@ -1,7 +1,7 @@
 
 # INF1083 - Laboratoire 8 : Formulaires Réactifs avec NativeScript
 
-**Étudiant :** Antatop  
+**Étudiant :** Anta top  
 **Matricule :** 300157184  
 **Date :** Octobre 2026
 
