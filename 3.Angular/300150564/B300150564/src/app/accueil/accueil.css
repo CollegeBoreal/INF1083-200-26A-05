@@ -1,0 +1,89 @@
+:host {
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef5ff, #ffffff, #f4f1ff);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 520px;
+  max-width: 85%;
+  padding: 55px 45px;
+  background: white;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+}
+
+.angular-logo {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  background: #dd0031;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #111827;
+}
+
+h1 span {
+  color: #1769ff;
+}
+
+h2 {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 30px 0;
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.info p {
+  margin: 10px 0;
+  color: #334155;
+  font-size: 18px;
+}
+
+button {
+  width: 280px;
+  max-width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #1769ff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(23, 105, 255, 0.25);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0d55db;
+  transform: translateY(-2px);
+}
