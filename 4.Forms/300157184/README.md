@@ -29,8 +29,7 @@ L'objectif est de capturer les données saisies par l'utilisateur et de les affi
 
 Voici l'interface de l'application une fois lancée sur l'émulateur Android, avec le formulaire d'inscription visible.
 
-[INSÉRER L'IMAGE 1 : Captures app (L'émulateur affichant le formulaire)]
-*(Exemple: <img src="./captures/app-formulaire.png" width="300">)*
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/8d360310af98e7882c62cacc484a39e6e6d81309/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172133.png)
 
 ### 2. Saisie des données
 
