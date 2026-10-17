@@ -22,30 +22,7 @@ L'objectif est de capturer les données saisies par l'utilisateur et de les affi
 
   ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/b46ede1a9df7f7b43eecd950c7f4aa310ffe4c76/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20171335.png)
 ---
-
-## Démonstration et Captures d'Écran
-
-### 1. L'application lancée sur l'émulateur
-
-Voici l'interface de l'application une fois lancée sur l'émulateur Android, avec le formulaire d'inscription visible.
-
-![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/8d360310af98e7882c62cacc484a39e6e6d81309/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172133.png)
-
-### 2. Saisie des données
-
-L'application affiche les champs remplis avant la soumission.
-
-[INSÉRER L'IMAGE 2 : Capture app (L'émulateur avec les champs remplis, ex: anta.top24@monboreal.ca)]
-*(Exemple: <img src="./captures/app-saisie.png" width="300">)*
-
-### 3. Résultat dans la console
-
-Après avoir cliqué sur le bouton **"Sign Up"**, les données du formulaire sont imprimées dans le terminal de Visual Studio Code.
-
-[INSÉRER L'IMAGE 3 : Capture console (Le terminal montrant la ligne JSON {"email":..., "username":...})]
-*(Exemple: <img src="./captures/console-resultat.png" width="600">)*
-
----
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/e9008f1b78e695babc1de202e84e27285a2b5007/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172319.png)
 
 ## Comment lancer le projet
 
