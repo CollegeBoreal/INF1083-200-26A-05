@@ -128,6 +128,12 @@ Quand je clique sur le bouton, la fonction `saluer()` affiche le message `Bonjou
 
 ![Application Angular](images/06-application-angular-finale.png)
 
+### Test du bouton
+
+Après avoir cliqué sur le bouton **Cliquez-moi**, le message **Bonjour !** s'affiche.
+
+![Test du bouton Bonjour](images/07-bouton-bonjour.png)
+
 ---
 
 ## Conclusion
