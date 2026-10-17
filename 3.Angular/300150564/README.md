@@ -1,271 +1,135 @@
-﻿\# Introduction Ã  Angular - INF1083
+# Introduction à Angular - INF1083
 
+**Étudiant :** Ouassim Ahmed Benamira  
+**Matricule :** 300150564  
+**Programme :** Techniques des systèmes informatiques
 
+---
 
-\*\*Ã‰tudiant :\*\* Ouassim Ahmed Benamira  
+## Objectif
 
-\*\*Matricule :\*\* 300150564  
+L'objectif de ce TP est de découvrir Angular et de créer une première application Web.
 
-\*\*Programme :\*\* Techniques des systÃ¨mes informatiques
+Dans ce TP, j'ai réalisé :
 
+- La vérification de Node.js, npm et Angular CLI
+- La création d'une application Angular
+- La création du composant Accueil
+- Le Data Binding
+- Un événement avec un bouton
+- Le routage Angular
+- L'exécution de l'application avec `ng serve`
 
+---
 
-\---
+## 1. Environnement Angular
 
-
-
-\## Objectif
-
-
-
-L'objectif de ce TP est de dÃ©couvrir Angular et de crÃ©er une premiÃ¨re application Web.
-
-
-
-Dans ce TP, j'ai rÃ©alisÃ© :
-
-
-
-\- La vÃ©rification de Node.js, npm et Angular CLI
-
-\- La crÃ©ation d'une application Angular
-
-\- La crÃ©ation du composant Accueil
-
-\- Le Data Binding
-
-\- Un Ã©vÃ©nement avec un bouton
-
-\- Le routage Angular
-
-\- L'exÃ©cution de l'application avec `ng serve`
-
-
-
-\---
-
-
-
-\## 1. Environnement Angular
-
-
-
-J'ai vÃ©rifiÃ© les versions avec :
-
-
+J'ai vérifié les versions avec :
 
 ```powershell
-
 node --version
-
 npm --version
-
 ng version
-
 ```
 
+Versions utilisées :
 
+- Node.js : v24.21.0
+- npm : 11.19.0
+- Angular CLI : 22.2.2
+- Windows 64 bits
 
-Versions utilisÃ©es :
+![Environnement Angular](images/01-environnement-angular.png)
 
+---
 
+## 2. Création du projet
 
-\- Node.js : v24.21.0
-
-\- npm : 11.19.0
-
-\- Angular CLI : 22.2.2
-
-\- Windows 64 bits
-
-
-
-!\[Environnement Angular](images/01-environnement-angular.png)
-
-
-
-\---
-
-
-
-\## 2. CrÃ©ation du projet
-
-
-
-J'ai crÃ©Ã© mon application Angular avec :
-
-
+J'ai créé mon application Angular avec :
 
 ```powershell
-
 ng new B300150564
-
 ```
-
-
 
 Le projet utilise le routage Angular et CSS.
 
+---
 
+## 3. Composant Accueil
 
-\---
-
-
-
-\## 3. Composant Accueil
-
-
-
-J'ai crÃ©Ã© un composant nommÃ© `accueil`.
-
-
+J'ai créé un composant nommé `accueil`.
 
 Le composant contient :
 
-
-
 ```typescript
-
 titre = 'Bienvenue INF1083';
 
-
-
 saluer() {
-
-&#x20; alert('Bonjour !');
-
+  alert('Bonjour !');
 }
-
 ```
-
-
 
 Dans le fichier HTML :
 
-
-
 ```html
-
 <h1>{{ titre }}</h1>
 
-
-
 <button (click)="saluer()">
-
-&#x20; Cliquez-moi
-
+  Cliquez-moi
 </button>
-
 ```
 
+Cela permet d'utiliser le Data Binding et un événement `click`.
 
+![Composant Accueil](images/02-composant-accueil.png)
 
-Cela permet d'utiliser le Data Binding et un Ã©vÃ©nement `click`.
+---
 
+## 4. Routage Angular
 
-
-!\[Composant Accueil](images/02-composant-accueil.png)
-
-
-
-\---
-
-
-
-\## 4. Routage Angular
-
-
-
-J'ai configurÃ© la route principale pour afficher le composant Accueil.
-
-
+J'ai configuré la route principale pour afficher le composant Accueil.
 
 ```typescript
-
-export const routes: Routes = \[
-
-&#x20; {
-
-&#x20;   path: '',
-
-&#x20;   component: Accueil
-
-&#x20; }
-
+export const routes: Routes = [
+  {
+    path: '',
+    component: Accueil
+  }
 ];
-
 ```
 
+![Routage Angular](images/03-routage-angular.png)
 
+---
 
-!\[Routage Angular](images/03-routage-angular.png)
-
-
-
-\---
-
-
-
-\## 5. ExÃ©cution de l'application
-
-
+## 5. Exécution de l'application
 
 Pour lancer l'application :
 
-
-
 ```powershell
-
 ng serve
-
 ```
-
-
 
 L'application est disponible sur :
 
-
-
 ```text
-
 http://localhost:4200/
-
 ```
 
+![Serveur Angular](images/04-serveur-angular.png)
 
+---
 
-!\[Serveur Angular](images/04-serveur-angular.png)
+## 6. Résultat final
 
-
-
-\---
-
-
-
-\## 6. RÃ©sultat final
-
-
-
-L'application affiche le titre \*\*Bienvenue INF1083\*\* et le bouton \*\*Cliquez-moi\*\*.
-
-
+L'application affiche le titre **Bienvenue INF1083** et le bouton **Cliquez-moi**.
 
 Quand je clique sur le bouton, la fonction `saluer()` affiche le message `Bonjour !`.
 
+![Application Angular](images/06-application-angular-finale.png)
 
+---
 
-!\[Application Angular](images/06-application-angular-finale.png)
+## Conclusion
 
-
-
-\---
-
-
-
-\## Conclusion
-
-
-
-Ce TP m'a permis d'apprendre les bases d'Angular, de crÃ©er un composant, d'utiliser le Data Binding, de gÃ©rer un Ã©vÃ©nement, de configurer le routage et d'exÃ©cuter une application Angular.
-
-
+Ce TP m'a permis d'apprendre les bases d'Angular, de créer un composant, d'utiliser le Data Binding, de gérer un événement, de configurer le routage et d'exécuter une application Angular.
