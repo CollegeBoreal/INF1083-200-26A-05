@@ -1,1 +1,67 @@
 
+# INF1083 - Laboratoire 8 : Formulaires Réactifs avec NativeScript
+
+**Étudiant :** Antatop  
+**Matricule :** 300157184  
+**Date :** Octobre 2026
+
+## Description du Projet
+
+Ce laboratoire consiste à créer une application mobile native simple avec NativeScript et Angular pour expérimenter la mise en place de formulaires réactifs (`Reactive Forms`). L'application contient un formulaire d'inscription de base avec deux champs de saisie et un bouton.
+
+L'objectif est de capturer les données saisies par l'utilisateur et de les afficher sous forme de format JSON dans la console de débogage.
+
+---
+
+## Fonctionnalités
+
+*   Formulaire d'inscription réactif avec Angular.
+*   Champs de saisie pour l'**Email** et le **Nom d'utilisateur**.
+*   Bouton **"Sign Up"**.
+*   Affichage des données saisies en format JSON dans la console lors de la soumission.
+
+---
+
+## Démonstration et Captures d'Écran
+
+### 1. L'application lancée sur l'émulateur
+
+Voici l'interface de l'application une fois lancée sur l'émulateur Android, avec le formulaire d'inscription visible.
+
+[INSÉRER L'IMAGE 1 : Captures app (L'émulateur affichant le formulaire)]
+*(Exemple: <img src="./captures/app-formulaire.png" width="300">)*
+
+### 2. Saisie des données
+
+L'application affiche les champs remplis avant la soumission.
+
+[INSÉRER L'IMAGE 2 : Capture app (L'émulateur avec les champs remplis, ex: anta.top24@monboreal.ca)]
+*(Exemple: <img src="./captures/app-saisie.png" width="300">)*
+
+### 3. Résultat dans la console
+
+Après avoir cliqué sur le bouton **"Sign Up"**, les données du formulaire sont imprimées dans le terminal de Visual Studio Code.
+
+[INSÉRER L'IMAGE 3 : Capture console (Le terminal montrant la ligne JSON {"email":..., "username":...})]
+*(Exemple: <img src="./captures/console-resultat.png" width="600">)*
+
+---
+
+## Comment lancer le projet
+
+Pour exécuter ce projet localement :
+
+1.  Assurez-vous d'avoir l'environnement de développement NativeScript configuré (Node.js, JDK, Android SDK/Emulator).
+2.  Clonez ce dépôt.
+3.  Naviguez dans le dossier du projet :
+    ```bash
+    cd 300157184/B300157184
+    ```
+4.  Installez les dépendances :
+    ```bash
+    npm install
+    ```
+5.  Lancez l'application sur l'émulateur Android :
+    ```bash
+    ns run android
+    ```
