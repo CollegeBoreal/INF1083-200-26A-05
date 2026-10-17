@@ -22,9 +22,12 @@ L'objectif est de capturer les données saisies par l'utilisateur et de les affi
 
   ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/b46ede1a9df7f7b43eecd950c7f4aa310ffe4c76/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20171335.png)
 ---
-![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/e9008f1b78e695babc1de202e84e27285a2b5007/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172319.png)
 
 ![images alt ](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/131283bb98b6c1ece233054cd248af374662e029/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172133.png)
+
+
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/e9008f1b78e695babc1de202e84e27285a2b5007/4.Forms/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-10-17%20172319.png)
+
 
 ## Comment lancer le projet
 
