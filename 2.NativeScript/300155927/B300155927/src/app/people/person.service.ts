@@ -6,93 +6,93 @@ export class PersonService {
   items = signal<Person[]>([
     {
     id: 1,
-    name: 'Lionel Messi',
-    nationality: 'Argentine',
-    notableAchievements: ['8 Ballon d\'Or awards', '2022 FIFA World Cup winner']
+    name: 'Jacques Roumain',
+    nationality: 'Haitian',
+    notableAchievements: ['Author of Masters of the Dew', 'Founder of Haitian Ethnology Office']
   },
   {
     id: 2,
-    name: 'Cristiano Ronaldo',
-    nationality: 'Portuguese',
-    notableAchievements: ['5 Ballon d\'Or awards', 'UEFA Champions League all-time top scorer']
+    name: 'Edwidge Danticat',
+    nationality: 'Haitian-American',
+    notableAchievements: ['Author of Breath, Eyes, Memory', 'Author of Krik? Krak!']
   },
   {
     id: 3,
-    name: 'Neymar Jr.',
-    nationality: 'Brazilian',
-    notableAchievements: ['Olympic Gold Medal winner', 'Champions League winner']
+    name: 'Frankétienne',
+    nationality: 'Haitian',
+    notableAchievements: ['Father of Haitian letters', 'Creator of Spiralism']
   },
   {
     id: 4,
-    name: 'Kylian Mbappé',
-    nationality: 'French',
-    notableAchievements: ['2018 FIFA World Cup winner', 'Multiple Ligue 1 titles']
+    name: 'Dany Laferrière',
+    nationality: 'Haitian-Canadian',
+    notableAchievements: ['Member of the Académie française', 'Author of The Return']
   },
   {
     id: 5,
-    name: 'Luka Modrić',
-    nationality: 'Croatian',
-    notableAchievements: ['2018 Ballon d\'Or winner', 'Multiple Champions League titles']
+    name: 'Jacques Stephen Alexis',
+    nationality: 'Haitian',
+    notableAchievements: ['Author of Compère Général Soleil', 'Major Haitian novelist']
   },
   {
     id: 6,
-    name: 'Kevin De Bruyne',
-    nationality: 'Belgian',
-    notableAchievements: ['Premier League champion', 'Champions League winner']
+    name: 'Marie Vieux-Chauvet',
+    nationality: 'Haitian',
+    notableAchievements: ['Author of Love, Anger, Madness']
   },
   {
     id: 7,
-    name: 'Erling Haaland',
-    nationality: 'Norwegian',
-    notableAchievements: ['Premier League Golden Boot', 'Champions League winner']
+    name: 'René Depestre',
+    nationality: 'Haitian',
+    notableAchievements: ['Poet and novelist', 'Author of Hadriana in All My Dreams']
   },
   {
     id: 8,
-    name: 'Robert Lewandowski',
-    nationality: 'Polish',
-    notableAchievements: ['European Golden Shoe winner', 'Champions League winner']
+    name: 'Yanick Lahens',
+    nationality: 'Haitian',
+    notableAchievements: ['Prix Femina winner', 'Author of Bain de Lune']
   },
   {
     id: 9,
-    name: 'Mohamed Salah',
-    nationality: 'Egyptian',
-    notableAchievements: ['Premier League champion', 'Champions League winner']
+    name: 'Émile Ollivier',
+    nationality: 'Haitian-Canadian',
+    notableAchievements: ['Prominent novelist', 'Author of Passages']
   },
   {
     id: 10,
-    name: 'Lamine Yamal',
-    nationality: 'Spanish',
-    notableAchievements: ['UEFA Euro 2024 winner', 'Golden Boy award winner', 'FC Barcelona rising star']
+    name: 'Anténor Firmin',
+    nationality: 'Haitian',
+    notableAchievements: ['Author of On the Equality of Human Races', 'Scholar and diplomat']
   },
   {
     id: 11,
-    name: 'Karim Benzema',
-    nationality: 'French',
-    notableAchievements: ['2022 Ballon d\'Or winner', 'Multiple Champions League titles']
+    name: 'Oswald Durand',
+    nationality: 'Haitian',
+    notableAchievements: ['Poet of Choucoune', 'National literary figure']
   },
   {
     id: 12,
-    name: 'Harry Kane',
-    nationality: 'English',
-    notableAchievements: ['England captain', 'Multiple Golden Boot awards']
+    name: 'Jean Price-Mars',
+    nationality: 'Haitian',
+    notableAchievements: ['Ethnologist and writer', 'Pioneer of Haitian indigénisme']
   },
   {
     id: 13,
-    name: 'Jude Bellingham',
-    nationality: 'English',
-    notableAchievements: ['Golden Boy award winner', 'La Liga champion']
+    name: 'Makenzy Orcel',
+    nationality: 'Haitian',
+    notableAchievements: ['Award-winning novelist', 'Author of The Immortals']
   },
   {
     id: 14,
-    name: 'Vinícius Júnior',
-    nationality: 'Brazilian',
-    notableAchievements: ['Champions League winner', 'La Liga champion']
+    name: 'Gary Victor',
+    nationality: 'Haitian',
+    notableAchievements: ['Prolific novelist', 'Master of Haitian crime fiction']
   },
   {
     id: 15,
-    name: 'Pedri',
-    nationality: 'Spanish',
-    notableAchievements: ['Golden Boy award winner', 'European Championship participant']
+    name: 'Louis-Philippe Dalembert',
+    nationality: 'Haitian',
+    notableAchievements: ['Internationally acclaimed novelist', 'Multiple literary awards']
   }
 ];
   getPerson(id: number): Person {
