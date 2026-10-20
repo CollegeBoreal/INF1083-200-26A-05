@@ -1,11 +1,80 @@
-<div class="accueil-container">
-  <h1>{{ titre }}</h1>
-  <p>Mon premier composant Angular</p>
-  <button (click)="saluer()">Cliquez-moi</button>
-  <ul class="noms-liste">
-  @for (nom of noms; track nom) {
-    <li>{{ nom }}</li>
-  }
-</ul>
+<div class="page">
+  <!-- Fond animé -->
+  <div class="fond">
+    <span class="orbe orbe-1"></span>
+    <span class="orbe orbe-2"></span>
+    <span class="orbe orbe-3"></span>
+  </div>
 
+  <!-- En-tête -->
+  <header class="entete">
+    <div class="logo">⚡ Nexus<span>Lab</span></div>
+    <div class="entete-droite">
+      <span class="badge-en-ligne"><span class="point"></span> En ligne</span>
+      <span class="badge-nom">👋 Bonjour, Idir</span>
+    </div>
+  </header>
+
+  <!-- Héros -->
+  <section class="hero">
+    <p class="hero-badge">INF1083 · Développement d'applications</p>
+    <h1>{{ titre }}<br><span class="degrade">comme un pro du web</span></h1>
+    <p class="hero-texte">Une application Angular moderne : composants, data binding, API REST et routage — avec des effets dignes d'un vrai produit.</p>
+    <div class="hero-boutons">
+      <button class="btn-principal" (click)="saluer()">👋 Dire bonjour</button>
+      <a class="btn-secondaire" href="#utilisateurs">Voir les utilisateurs</a>
+    </div>
+
+    <!-- Statistiques -->
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-nombre">{{ labos }}</span>
+        <span class="stat-label">Laboratoires</span>
+      </div>
+      <div class="stat">
+        <span class="stat-nombre">{{ projets }}</span>
+        <span class="stat-label">Projets</span>
+      </div>
+      <div class="stat">
+        <span class="stat-nombre">{{ progression }}%</span>
+        <span class="stat-label">Progression</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notions -->
+  <section class="section">
+    <h2>🧠 Notions du module</h2>
+    <div class="grille-notions">
+      @for (n of notions; track n.titre) {
+        <article class="carte-notion" (mousemove)="incliner($event)" (mouseleave)="redresser($event)">
+          <div class="carte-icone">{{ n.icone }}</div>
+          <h3>{{ n.titre }}</h3>
+          <p>{{ n.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Utilisateurs -->
+  <section class="section" id="utilisateurs">
+    <h2>👥 Utilisateurs (API REST)</h2>
+    <div class="grille-utilisateurs">
+      @for (u of utilisateurs; track u.id) {
+        <article class="carte-user apparition" [style.animation-delay.ms]="$index * 90">
+          <div class="avatar">{{ u.name.charAt(0) }}</div>
+          <h3>{{ u.name }}</h3>
+          <p class="user-email">✉️ {{ u.email }}</p>
+          <p class="user-detail">🏢 {{ u.company.name }}</p>
+          <p class="user-detail">📍 {{ u.address.city }}</p>
+        </article>
+      } @empty {
+        <p class="chargement">Chargement des utilisateurs…</p>
+      }
+    </div>
+  </section>
+
+  <footer class="pied">
+    <p>© 2026 NexusLab — Idir Islam Chili · INF1083 · Collège Boréal</p>
+  </footer>
 </div>
