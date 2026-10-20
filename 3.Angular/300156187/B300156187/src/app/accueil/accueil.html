@@ -1,0 +1,11 @@
+<div class="accueil-container">
+  <h1>{{ titre }}</h1>
+  <p>Mon premier composant Angular</p>
+  <button (click)="saluer()">Cliquez-moi</button>
+  <ul class="noms-liste">
+  @for (nom of noms; track nom) {
+    <li>{{ nom }}</li>
+  }
+</ul>
+
+</div>
