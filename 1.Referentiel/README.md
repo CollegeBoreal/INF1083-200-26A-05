@@ -1,6 +1,6 @@
 # 📚 Référentiel (Git & GitHub)
 
-Le référentiel est l'endroit où le code source d'un projet est stocké, organisé et suivi dans le temps. Dans le contexte du développement d'applications, il est généralement associé à Git et GitHub. Cette interprétation n'est pas explicitement indiquée dans le plan de cours, mais le terme apparaît comme une activité évaluée [Plan De Cours](../tree/main/0.PlanDeCours/Automne-2026-INF-1083-200-06-Développement-d'applications.pdf).
+Le référentiel est l'endroit où le code source d'un projet est stocké, organisé et suivi dans le temps. Dans le contexte du développement d'applications, il est généralement associé à Git et GitHub. Cette interprétation n'est pas explicitement indiquée dans le plan de cours, mais le terme apparaît comme une activité évaluée [Plan De Cours](../blob/main/0.PlanDeCours/Automne-2026-INF-1083-200-05-Développement-d'applications.pdf).
 
 ## 🎯 Objectifs du référentiel
 
