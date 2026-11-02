@@ -31,11 +31,7 @@ Découvrir Angular et apprendre à créer une première application web. Compren
 
 10. Style CSS : ajout de styles pour améliorer la présentation de l'application.
 
-## Résultat
 
-Ajouter une capture d'écran de l'application Angular dans le navigateur.
-
-![Application Angular](images/image.png)
 
 ## Conclusion
 
