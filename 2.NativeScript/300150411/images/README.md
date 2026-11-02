@@ -32,7 +32,7 @@ Fichier à modifier : `src/app/people/person.service.ts`
 
 Le travail consiste à modifier la liste des personnages affichés dans l'application. Les personnages choisis sont Luffy, Zoro, Nami, Usopp, Sanji, Chopper, Robin, Franky, Brook et Jinbe.
 
-<image src=images/20260924_1521700.jpg width=50% height=50% > </image>
+  <image src=images/20260924_1521700.jpg width=50% height=50% > </image>
  
 
 ## Problèmes rencontrés et solutions
