@@ -34,6 +34,8 @@ https://rapidapi.com/
 
 Puis récupérez votre clé API.
 
+<image src="images/RapidAPIKey.png" width=50% heigth=50%> </image>
+
 ---
 
 # 🅰️ Créer un projet
