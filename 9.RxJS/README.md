@@ -53,7 +53,7 @@ ns create b300098957 --template @nativescript/template-tab-navigation-ng
 Ouvrir ensuite le projet dans VS Code :
 
 ```bash
-cd b:id:
+cd b🆔
 code .
 ```
 
