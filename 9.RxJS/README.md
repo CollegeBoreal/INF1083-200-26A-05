@@ -1,6 +1,13 @@
 # RxJS
 
-## [Participation](.scripts/Participation.md)
+[ 🎉 Participation](.scripts/Participation.md)
+
+
+## 🚀 Créer votre répertoire
+
+
+- [ ] Créer un répertoire avec son 🆔 et ajouter le fichier README.md et un répertoire `images` 🖼️
+
 
 ## Pourquoi RxJS ?
 
@@ -40,12 +47,12 @@ Puis récupérez votre clé API.
 
 # 🅰️ Créer un projet
 
-Créer un projet avec votre numéro étudiant comme nom.
+Créer un projet avec votre numéro étudiant 🆔 comme nom.
 
 Exemple :
 
 ```bash
-ns create b300098957 --template @nativescript/template-tab-navigation-ng
+ns create b🆔 --template @nativescript/template-tab-navigation-ng
 ```
 
 | Commande | Description |
