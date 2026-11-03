@@ -403,9 +403,7 @@ Ajouter ensuite dans :
 
 ```typescript
 imports :
-
-```typescript
-NativeScriptFormsModule,
+   NativeScriptFormsModule,
 ```
 
 Exemple :
