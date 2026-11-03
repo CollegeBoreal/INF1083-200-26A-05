@@ -15,7 +15,7 @@ RxJS permet de manipuler des flux de données asynchrones à l'aide d'observable
 
 https://rxjs-dev.firebaseapp.com/guide/overview
 
-### 📖 JS vs RxJS
+### 📖 JS vs [RxJS](.documentation)
 
 Voir la documentation du cours.
 
