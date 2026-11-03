@@ -48,12 +48,12 @@ ns create b300098957 --template @nativescript/template-tab-navigation-ng
 
 | Commande | Description |
 |-----------|-----------|
-| `ns create b<ID> --template @nativescript/template-tab-navigation-ng` | Application Angular avec navigation par onglets |
+| `$ ns create b`:id:` --template @nativescript/template-tab-navigation-ng`    |  Application avec onglets         
 
 Ouvrir ensuite le projet dans VS Code :
 
 ```bash
-cd b300098957
+cd b:id:
 code .
 ```
 
