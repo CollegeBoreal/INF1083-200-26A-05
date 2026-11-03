@@ -1,14 +1,10 @@
 #!/usr/bin/env pwsh
-# --------------------------------------
-# Dynamic participation script
-# --------------------------------------
 
-# Pass parameter to students.ps1
+$ErrorActionPreference = "Stop"
+
+
+# Importer la liste des étudiants
 . ../.scripts/students.ps1
-
-# --------------------------------------
-# LOAD CURRENT GROUP
-# --------------------------------------
 
 # Importer les fonctions
 . ../.scripts/functions.ps1
@@ -23,7 +19,7 @@
 
 $FeedbackLookup = Get-FeedbackLookup -Students $STUDENTS
 
-Write-ParticipationHeader
+Write-LabParticipationHeader
 Write-PresenceHeader -FeedbackLookup $FeedbackLookup
 
 $s = 0
@@ -33,12 +29,12 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
     $parts = $STUDENTS[$i] -split '\|'
 
     $StudentID = $parts[0]
-    $GitHubID  = $parts[1]
-    $AvatarID  = $parts[2]
+    $GitHubID = $parts[1]
+    $AvatarID = $parts[2]
 
-    $paths  = Get-StudentPaths -StudentID $StudentID
+    $paths = Get-StudentPaths -StudentID $StudentID
     $checks = Get-StudentChecks -Paths $paths
-    $url    = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
+    $url = Get-GitHubAvatarLink -GitHubID $GitHubID -AvatarID $AvatarID
 
     Write-LabStudentRow `
         -Index ($i + 1) `
@@ -46,7 +42,7 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
         -GitHubLink $url `
         -ReadmePath $Paths.README `
         -Checks $Checks `
-        -FeedbackLookup $FeedbackLookup
+        -FeedbackLookup $FeedbackLookup 
 
     if (Test-AllRequiredFilesPresent -Checks $checks) {
         $s++
@@ -55,3 +51,4 @@ for ($i = 0; $i -lt $STUDENTS.Count; $i++) {
 }
 
 Write-Summary -SuccessCount $s -TotalCount $i
+
