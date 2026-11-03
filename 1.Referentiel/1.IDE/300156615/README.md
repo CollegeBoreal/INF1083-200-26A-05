@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
 
 # 🚀 Rapport – 1.IDE
 
@@ -19,7 +19,15 @@
 
 ## 🖼️ Aperçu du flux de travail
 
-![Schéma du flux Git et SSH entre mon ordinateur et GitHub](images/ide-workflow.svg)
+<div align="center">
+
+**Flux Git et SSH entre mon ordinateur et GitHub**
+
+![Schéma du flux Git et SSH entre mon ordinateur et GitHub](images/ide-workflow.jpg)
+
+*Figure 1 – Schéma du processus de travail avec Git, SSH et GitHub.*
+
+</div>
 
 ---
 
