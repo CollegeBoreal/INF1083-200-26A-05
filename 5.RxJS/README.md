@@ -125,7 +125,7 @@ touch src/app/shared/apicall.service.ts
 Contenu :
 
 ```typescript
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -139,23 +139,16 @@ export class ApicallService {
     constructor(private httpClient: HttpClient) {}
 
     searchCountryByName(name: string): Observable<Country[]> {
-
-        let headers: HttpHeaders = new HttpHeaders();
-
-        headers = headers.append('Accept', 'application/json');
-
-        headers = headers.append(
-            'X-RapidAPI-Key',
-            'VOTRE_CLE_RAPID_API'
-        );
-
         return this.httpClient
-            .get(
-                'https://restcountries-v1.p.rapidapi.com/capital/' + name,
-                { headers }
+            .get<any[]>(
+                'https://countries.nexperts.nl/capital/' + name
             )
             .pipe(
-                map((data: Country[]) => data),
+                map((data: any[]) => data.map((c, i) => ({
+                    id: i,
+                    name: c.name.common,
+                    capital: c.capital ? c.capital[0] : ''
+                } as Country))),
                 catchError(error => {
                     return throwError(
                         () => 'Capital not found!'
