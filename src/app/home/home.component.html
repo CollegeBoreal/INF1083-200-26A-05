@@ -1,8 +1,12 @@
-<ActionBar>
-  <Label text="Home"></Label>
-</ActionBar>
+<StackLayout>
 
-<GridLayout>
-  <!-- Add your page content here -->
-  <Label text="Hello" class="text-lg text-center"></Label>
-</GridLayout>
+<TextField #email hint="Email"></TextField>
+
+<TextField #username hint="Username"></TextField>
+
+<Button
+text="sign up"
+(tap)="onButtonTap(email.text, username.text)">
+</Button>
+
+</StackLayout>

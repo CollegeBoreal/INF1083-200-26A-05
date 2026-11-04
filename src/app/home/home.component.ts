@@ -12,4 +12,11 @@ import {
 })
 export class HomeComponent {
 
+  onButtonTap(email: string, username: string) {
+    console.log(JSON.stringify({
+      email: email,
+      username: username
+    }));
+  }
+
 }
