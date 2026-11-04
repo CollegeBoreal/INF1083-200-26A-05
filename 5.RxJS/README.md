@@ -418,7 +418,7 @@ Exemple :
 ```typescript
 @NgModule({
     imports: [
-        CommonModule,
+        NativeScriptCommonModule,
         NativeScriptFormsModule
     ]
 })
