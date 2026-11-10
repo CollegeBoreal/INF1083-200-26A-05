@@ -1,0 +1,36 @@
+h1 {
+  color: blue;
+}
+
+.source {
+  color: #6b7280;
+  margin-top: -8px;
+}
+
+.erreur {
+  color: #991b1b;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.carte {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.carte h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #1e3a8a;
+}
+
+.carte p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}

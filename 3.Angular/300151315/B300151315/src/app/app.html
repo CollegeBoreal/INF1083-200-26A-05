@@ -1,0 +1,13 @@
+<header class="nav">
+  <span class="logo">{{ title() }}</span>
+  <nav>
+    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+    <a routerLink="/utilisateurs" routerLinkActive="actif">Utilisateurs</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer>INF1083 · Laboratoire Angular · Toumi Ayoub (300151315)</footer>

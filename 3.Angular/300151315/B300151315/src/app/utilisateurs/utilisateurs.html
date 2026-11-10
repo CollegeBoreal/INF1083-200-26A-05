@@ -1,0 +1,14 @@
+<h1>Utilisateurs</h1>
+<p class="source">Source : API REST jsonplaceholder.typicode.com/users</p>
+
+<p *ngIf="chargement()">Chargement…</p>
+<p *ngIf="erreur()" class="erreur">{{ erreur() }}</p>
+
+<div class="grille">
+  <article *ngFor="let u of utilisateurs()" class="carte">
+    <h2>{{ u.name }}</h2>
+    <p>✉️ {{ u.email }}</p>
+    <p>📞 {{ u.phone }}</p>
+    <p>🏢 {{ u.company.name }} · {{ u.address.city }}</p>
+  </article>
+</div>
