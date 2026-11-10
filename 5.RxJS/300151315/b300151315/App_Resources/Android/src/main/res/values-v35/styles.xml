@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Android 15+ : garder les onglets au-dessus de la barre de navigation du téléphone -->
+    <style name="AppTheme" parent="AppThemeBase29">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+
+</resources>

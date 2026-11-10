@@ -1,0 +1,23 @@
+<ActionBar class="barre" title="Search">
+</ActionBar>
+
+<StackLayout class="form">
+  <Label text="Rechercher une capitale" class="titre"></Label>
+  <Label text="Observable RxJS + HttpClient" class="sous-titre"></Label>
+
+  <TextField class="input" hint="Capital" [(ngModel)]="name" returnKeyType="search"
+    (returnPress)="searchCapital()" autocorrect="false"></TextField>
+
+  <Button text="Search" class="btn btn-primary" (tap)="searchCapital()"></Button>
+
+  <Label *ngIf="erreur" [text]="erreur" class="erreur"></Label>
+
+  <ListView [items]="countries" height="650" class="liste" separatorColor="transparent">
+    <ng-template let-item="item">
+      <StackLayout class="carte">
+        <Label [text]="item.name" class="pays"></Label>
+        <Label [text]="'Capitale : ' + item.capital" class="capitale"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</StackLayout>

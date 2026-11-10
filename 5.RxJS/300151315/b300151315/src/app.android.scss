@@ -1,0 +1,17 @@
+// Import common styles
+@import 'app-common';
+
+// Place any CSS rules you want to apply only on Android here
+
+// Garder les onglets au-dessus des boutons du téléphone (Android 15+)
+.onglets {
+  tab-background-color: #ffffff;
+  tab-text-color: #64748b;
+  selected-tab-text-color: #2563eb;
+  android-selected-tab-highlight-color: #2563eb;
+}
+
+ActionBar {
+  background-color: #2563eb;
+  color: #ffffff;
+}
