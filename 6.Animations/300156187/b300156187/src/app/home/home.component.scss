@@ -1,0 +1,66 @@
+@keyframes bgAnimation {
+    0% { background-color: #e74c3c; }
+    50% { background-color: #f39c12; }
+    100% { background-color: #27ae60; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page {
+    background: linear-gradient(180deg, #2b2a6b, #6a5cff);
+    padding-top: 80;
+}
+
+.logo {
+    background-color: white;
+    color: #3b2d8f;
+    font-size: 40;
+    font-weight: bold;
+    width: 70;
+    height: 70;
+    border-radius: 14;
+    margin-bottom: 20;
+}
+
+.titre {
+    color: white;
+    font-size: 32;
+    font-weight: bold;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.sous-titre {
+    color: white;
+    font-size: 16;
+    opacity: 0.8;
+    margin-top: 8;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.fleche {
+    color: white;
+    font-size: 28;
+    margin-top: 30;
+}
+
+.background {
+    animation-name: bgAnimation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    border-radius: 12;
+    color: white;
+    font-size: 28;
+    font-weight: bold;
+    margin-top: 40;
+}

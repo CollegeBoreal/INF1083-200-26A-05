@@ -1,0 +1,20 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<GridLayout class="page__content">
+  <Label class="page__content-icon far" text="&#xf1ea;"></Label>
+      <StackLayout>
+    <AbsoluteLayout width="300" height="300" class="bg-primary m-15" borderRadius="20">
+        <Label #nuage1 text="☁️" fontSize="36" left="180" top="20"></Label>
+        <Label #nuage2 text="☁️" fontSize="28" left="120" top="120"></Label>
+        <Label #cible text="✈️" width="100" height="100" fontSize="48" left="0" top="100" textAlignment="center" verticalAlignment="middle"></Label>
+    </AbsoluteLayout>
+    <Button text="Animate" (tap)="animate(cible, nuage1, nuage2)" class="btn btn-primary btn-active"></Button>
+</StackLayout>
+</GridLayout>

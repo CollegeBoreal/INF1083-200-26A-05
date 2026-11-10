@@ -1,0 +1,19 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<GridLayout class="page__content">
+  <Label class="page__content-icon fas" text="&#xf015;"></Label>
+  <StackLayout class="page">
+    <Label text="N" class="logo" textAlignment="center"></Label>
+    <Label text="NativeScript" class="titre" textAlignment="center"></Label>
+    <Label text="Animations" class="sous-titre" textAlignment="center"></Label>
+    <Label text="↓" class="fleche" textAlignment="center"></Label>
+    <Button text="{N}" class="background"></Button>
+</StackLayout>
+</GridLayout>
