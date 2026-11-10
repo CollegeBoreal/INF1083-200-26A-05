@@ -28,6 +28,7 @@ jobs:
             "2.NativeScript"
             "3.Angular"
             "4.Forms"
+            "5.RxJS"
           )
 
           foreach ($chapter in $chapters) {
@@ -52,6 +53,7 @@ jobs:
             "2.NativeScript"
             "3.Angular"
             "4.Forms"
+            "5.RxJS"
           )
 
           foreach ($chapter in $chapters) {
