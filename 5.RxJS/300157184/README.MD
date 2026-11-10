@@ -184,11 +184,6 @@ Le module n'ayant pas pu être compilé **à l'avance** (AOT) à cause du n°5, 
 
 ### 7. `git push` rejeté
 
-![Push rejeté](images/git-push-rejete.png)
-
-```
-```
-
 Un autre étudiant avait poussé entre-temps. GitHub refuse pour ne rien écraser.
 
 ```powershell
