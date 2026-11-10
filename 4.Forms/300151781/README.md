@@ -1,0 +1,18 @@
+﻿# Forms - 300151781
+
+Formulaire réactif (ReactiveForms) avec email et username dans NativeScript + Angular. Au clic sur « sign up », les valeurs s'affichent dans la console.
+
+## Application
+![Application 1](images/app1.png)
+
+![Application 2](images/app2.png)
+
+## Console
+![Console](images/app3.png)
+
+Résultat affiché : `{"email":"300151781@monboreal.com","username":"Lounes"}`
+
+## Difficultés rencontrées
+
+- **Émulateur `offline`** : processus d'émulateur bloqués, résolu avec `adb kill-server`, arrêt des processus `qemu`, puis Cold Boot.
+- **Erreur NG01203** (`No value accessor for form control name`) : `NativeScriptFormsModule` manquait dans `imports` de `home.component.ts`. L'énoncé oubliait aussi `ReactiveFormsModule`.

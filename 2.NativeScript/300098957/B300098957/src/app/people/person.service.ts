@@ -4,21 +4,16 @@ import { Person } from './person';
 @Injectable({providedIn: 'root'})
 export class PersonService {
   items = signal<Person[]>([
-    { id: 1, name: 'Alan Turing', nationality: 'British', notableAchievements: ['WW2 code breaking', 'Father of theoretical computer science and AI' ] },
-    { id: 2, name: 'Grace Hopper', nationality: 'American', notableAchievements: ['COBOL development', 'Navy commander', 'Implementation of computer systems and components testing'] },
-    { id: 3, name: 'Donal Knuth', nationality: 'American', notableAchievements: [ 'Author of The Art of Computer Programming', 'Created TeX typesetting system' ] },
-    { id: 4, name: 'Ada Lovelace', nationality: 'British', notableAchievements: [ 'First computer programmer', 'Worked on Analytical Engine' ]},
-    { id: 5, name: 'John von Neumann', nationality: 'Hungarian/American', notableAchievements: [ 'Von Neumann architecture', 'Game theory', 'Contributed to EDVAC' ] },
-    { id: 6, name: 'Tim Berners-Lee', nationality: 'British', notableAchievements: [ 'Inventor of the World Wide Web' ] },
-    { id: 7, name: 'Edsger Dijkstra', nationality: 'Dutch', notableAchievements: [ 'Shortest path algorithm', 'Structured programming advocate' ] },
-    { id: 8, name: 'Linus Torvalds', nationality: 'Finnish-American', notableAchievements: ['Creator of Linux kernel', 'Creator of Git'] },
-    { id: 9, name: 'John McCarthy', nationality: 'American', notableAchievements: ['Coined term "Artificial Intelligence"', 'Created LISP programming language'] },
-    { id: 10, name: 'Dennis Ritchie', nationality: 'American', notableAchievements: ['Creator of C programming language', 'Co-creator of Unix'] },
-    { id: 11, name: 'Bjarne Stroustrup', nationality: 'Danish', notableAchievements: [ 'Creator of C++ programming language' ] },
-    { id: 12, name: 'Steve Wozniak', nationality: 'American', notableAchievements: ['Co-founder of Apple', 'Designer of Apple I & II', 'Pioneer of personal computing'] },
-    { id: 13, name: 'Tommy Flowers', nationality: 'British', notableAchievements: ['Designer of Colossus', 'Pioneer in electronic computing'] },
-    { id: 14, name: 'John Backus', nationality: 'American', notableAchievements: ['Created FORTRAN', 'Developed Backus-Naur form(BNF) notation'] },
-    { id: 15, name: 'Niklaus Wirth', nationality: 'Swiss', notableAchievements: ['Creator of Pascal, Modula, Oberon languages', 'Software engineering pioneer'] },
+    { id: 1, name: 'Jean-Joseph Rabearivelo', nationality: 'Malagasy', notableAchievements: ['Modern Malagasy poetry pioneer', 'Promoted Malagasy literature and cultural identity'] },
+    { id: 2, name: 'Jacques Rabemananjara', nationality: 'Malagasy', notableAchievements: ['Poet, writer and intellectual', 'Celebrated Malagasy heritage through literature'] },
+    { id: 3, name: 'Elie Rajaonarison', nationality: 'Malagasy', notableAchievements: ['Prominent Malagasy poet', 'Contributed to the revival of poetic expression in Madagascar'] },
+    { id: 4, name: 'Flavien Ranaivo', nationality: 'Malagasy', notableAchievements: ['Known for poetic works', 'Helped shape modern Malagasy literary voices'] },
+    { id: 5, name: 'Jean-Luc Raharimanana', nationality: 'Malagasy', notableAchievements: ['Writer and poet', 'Blended Malagasy cultural themes with modern storytelling'] },
+    { id: 6, name: 'Daniel Rakotondravony', nationality: 'Malagasy', notableAchievements: ['Poet of Malagasy literature', 'Noted for lyrical reflections on identity and memory'] },
+    { id: 7, name: 'Rado Raveloson', nationality: 'Malagasy', notableAchievements: ['Contemporary Malagasy poet', 'Known for expressive and socially engaged verse'] },
+    { id: 8, name: 'Mialy Rindranirina', nationality: 'Malagasy', notableAchievements: ['Modern poet and writer', 'Contributed to contemporary Malagasy cultural expression'] },
+    { id: 9, name: 'Haja Ramanjato', nationality: 'Malagasy', notableAchievements: ['Poet and cultural advocate', 'Using poetry to preserve Malagasy language and traditions'] },
+    { id: 10, name: 'Tiana Rakotomalala', nationality: 'Malagasy', notableAchievements: ['Malagasy poet and literary voice', 'Celebrated for lyrical works and public culture'] },
   ]);
 
   getPerson(id: number): Person {

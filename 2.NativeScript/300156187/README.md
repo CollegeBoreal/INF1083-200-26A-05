@@ -34,4 +34,4 @@ Le projet lui-même a été généré avec la commande `ns create B300156187`, e
 
 Pour relancer le projet, il suffit de disposer de Node.js et de la NativeScript CLI correctement installés, puis d'exécuter la commande `ns preview --no-hmr` depuis le dossier du projet et de scanner le QR code avec l'iPhone. Une photo de l'application en cours d'exécution sur l'iPhone est disponible dans le dossier images.
 
-![Application en cours d'exécution sur iPhone](images/app.jpg)
+![Application en cours d'exécution sur iPhone](images/BLUE.jpeg)

@@ -1,0 +1,37 @@
+<div class="page">
+  <div class="card">
+    <h1>Créer un compte</h1>
+    <p class="subtitle">Inscris-toi pour commencer.</p>
+
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label for="email">Adresse courriel</label>
+        <input id="email" type="email" formControlName="email" placeholder="ex. marie@exemple.ca">
+        @if (inscriptionForm.get('email')?.touched && inscriptionForm.get('email')?.errors?.['required']) {
+          <p class="error">Le courriel est requis.</p>
+        } @else if (inscriptionForm.get('email')?.touched && inscriptionForm.get('email')?.errors?.['email']) {
+          <p class="error">Le format du courriel est invalide.</p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" type="text" formControlName="username" placeholder="ex. marie.d">
+        @if (inscriptionForm.get('username')?.touched && inscriptionForm.get('username')?.invalid) {
+          <p class="error">Le nom d'utilisateur est requis.</p>
+        }
+      </div>
+
+      <button type="submit" [disabled]="inscriptionForm.invalid">S'inscrire</button>
+    </form>
+
+    @if (soumis) {
+      <div class="success">
+        ✅ Inscription réussie !<br>
+        Courriel : {{ inscriptionForm.value.email }}<br>
+        Utilisateur : {{ inscriptionForm.value.username }}
+      </div>
+    }
+  </div>
+</div>
+

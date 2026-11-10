@@ -1,0 +1,5 @@
+﻿nav { display: flex; gap: 20px; align-items: center; padding: 14px 24px; background: #1e1b4b; }
+nav strong { color: white; margin-right: auto; }
+nav a { color: #c7d2fe; text-decoration: none; }
+nav a.actif { color: white; border-bottom: 2px solid #818cf8; }
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }

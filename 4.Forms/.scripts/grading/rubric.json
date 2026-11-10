@@ -1,0 +1,48 @@
+{
+  "assignmentId": 56,
+  "files": [
+    "./.scripts/Participation.md"
+  ],
+  "criteria": [
+    {
+      "name": "readme",
+      "col": 3,
+      "criterionid": 238,
+      "remark": "Quantité README.md",
+      "levels": [
+        577,
+        578,
+        579
+      ]
+    },
+    {
+      "name": "image",
+      "col": 4,
+      "criterionid": 239,
+      "remark": "Présence répertoire images",
+      "levels": [
+        580,
+        581
+      ]
+    },
+    {
+      "name": "app",
+      "col": 5,
+      "criterionid": 240,
+      "remark": "comments",
+      "levels": [
+        582,
+        583,
+        584,
+        585,
+        586
+      ]
+    }
+  ],
+  "impliedPass": {
+    "when": "readme",
+    "exceeds": 579,
+    "set": "image",
+    "levelid": 581
+  }
+}

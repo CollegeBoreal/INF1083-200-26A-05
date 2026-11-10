@@ -32,6 +32,11 @@ curl -X POST "https://${LMS_URL}/webservice/rest/server.php" \
   "cmid": 51,
   "name": "0.PlanDeCours"
 }
+{
+  "id": 56,
+  "cmid": 66,
+  "name": "2.NativeScript"
+}
 ```
 
 </details>

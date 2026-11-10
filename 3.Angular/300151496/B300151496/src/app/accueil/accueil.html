@@ -1,0 +1,26 @@
+﻿<nav class="navbar">
+  <span class="brand">Mon App Angular</span>
+  <span class="badge" *ngIf="connecte">Connecté</span>
+</nav>
+
+<main class="container">
+  <h1>{{ titre }}</h1>
+  <p class="prof">{{ nom }}</p>
+  <button class="btn" (click)="saluer()">Cliquez-moi</button>
+
+  <h2>Liste</h2>
+  <ul class="noms">
+    <li *ngFor="let nom of noms">{{ nom }}</li>
+  </ul>
+
+  <h2>Utilisateurs</h2>
+  <div class="cards">
+    <div class="card" *ngFor="let u of utilisateurs">
+      <div class="avatar">{{ u.name.charAt(0) }}</div>
+      <div>
+        <div class="name">{{ u.name }}</div>
+        <div class="email">{{ u.email }}</div>
+      </div>
+    </div>
+  </div>
+</main>
