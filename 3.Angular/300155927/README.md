@@ -1,6 +1,5 @@
 # 300155927
 
-
 # Projet Angular — B300155927
 
 Documentation des étapes de création et de personnalisation d'une application Angular (cours **INF1083**, dossier `3.Angular`).
@@ -53,16 +52,28 @@ Au premier lancement, Angular affiche sa page de bienvenue : **« Bonjour, B3001
 
 ![Page par défaut Angular](images/etape-03-page-par-defaut.png)
 
-### 5. Personnalisation de la page d'accueil
+### 5. Création du composant Accueil
+
+Un composant dédié à la page d'accueil est créé avec Angular CLI :
+
+```powershell
+ng generate component accueil
+```
+
+Il apparaît dans `src/app/accueil/` avec ses fichiers `accueil.ts`, `accueil.html`, `accueil.css` et `accueil.spec.ts`, et sa route est déclarée dans `app.routes.ts`. Le fichier `accueil.css` contient les styles de la page : barre de navigation sombre (`#1e293b`) en flexbox et section principale (*hero*) avec un dégradé violet (`linear-gradient(135deg, #4f46e5, #9333ea)`).
+
+![Code du composant Accueil dans VS Code](images/etape-04-code-composant-accueil.png)
+
+### 6. Personnalisation de la page d'accueil
 
 La page par défaut est remplacée par une page personnalisée :
 
 - **En-tête** « Mon site Angular » avec un menu de navigation : *Accueil*, *Services*, *Contact*
 - **Section principale** sur fond dégradé violet : titre « Bienvenue sur mon site », texte « Projet développé avec Angular » et bouton **Découvrir**
 
-![Page d'accueil personnalisée](images/etape-04-page-accueil.png)
+![Page d'accueil personnalisée](images/etape-05-page-accueil.png)
 
-### 6. Statistiques et services
+### 7. Statistiques et services
 
 Deux sections sont ajoutées sous la page d'accueil :
 
@@ -72,7 +83,7 @@ Deux sections sont ajoutées sous la page d'accueil :
   - *Conception réactive* — Compatible mobile, tablette et PC
   - *Sécurité* — Applications fiables et performantes
 
-![Statistiques et services](images/etape-05-services-statistiques.png)
+![Statistiques et services](images/etape-06-services-statistiques.png)
 
 ## Commandes utilisées
 
@@ -81,4 +92,5 @@ ng version     # vérifier les versions installées
 ng new B300155927   # créer le projet
 cd B300155927       # entrer dans le dossier
 ng serve            # lancer le serveur (http://localhost:4200/)
+ng generate component accueil   # créer le composant Accueil
 ```
