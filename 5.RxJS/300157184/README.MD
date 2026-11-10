@@ -45,7 +45,7 @@ b300157184/
         └── search.module.ts       ← ajout de NativeScriptFormsModule
 ```
 
-![Structure dans VS Code](images/structure-projet.png)
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/4238ed69d716bfef4b59ed08d64643a00a45ae89/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20125022.png)
 
 ---
 
