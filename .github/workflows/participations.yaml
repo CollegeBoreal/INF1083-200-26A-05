@@ -29,6 +29,7 @@ jobs:
             "3.Angular"
             "4.Forms"
             "5.RxJS"
+            "6.Animations"
           )
 
           foreach ($chapter in $chapters) {
