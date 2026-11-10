@@ -21,10 +21,10 @@ Application mobile **NativeScript + Angular** qui recherche un pays à partir du
 | Outil | Version |
 |---|---|
 | Système | Windows 11 |
-| Node.js | `X.X.X` (`node -v`) |
-| NativeScript CLI | `X.X.X` (`ns --version`) |
+| Node.js | 24.21.0 |
+| NativeScript CLI | 9.1.1 |
 | @nativescript/core | 9.1.3 |
-| Angular | `X.X.X` (`npm ls @angular/core`) |
+| Angular | 22.0.8 |
 | webpack | **5.97.1** (version fixée, voir problème n°4) |
 | Émulateur | Android – Pixel 7 |
 
