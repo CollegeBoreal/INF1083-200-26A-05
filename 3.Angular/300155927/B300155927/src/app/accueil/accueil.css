@@ -1,0 +1,110 @@
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+}
+
+.page-accueil {
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: #1e293b;
+  color: white;
+}
+
+.menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.hero {
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #9333ea
+  );
+
+  color: white;
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.stats{
+  display:flex;
+  gap:30px;
+  margin-top:50px;
+}
+
+.box{
+  background:white;
+  padding:25px;
+  width:150px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.box h2{
+  color:#4f46e5;
+  margin-bottom:10px;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+  transition:.3s;
+}
+
+.services{
+  padding:80px;
+  text-align:center;
+  background:#f8fafc;
+}
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  width:300px;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  transition:.3s;
+}
