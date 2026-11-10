@@ -18,7 +18,7 @@ J'ai installé Node.js, npm et Angular CLI. Ensuite, j'ai vérifié les versions
 
 J'ai créé un nouveau projet nommé B300155909 et organisé les fichiers du projet.
 
-![Projet Angular](images/angular-running.png)
+![Projet Angular](images/angular-running.png-02.png)
 
 ## 4. Création du composant Accueil
 
