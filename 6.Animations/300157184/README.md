@@ -63,7 +63,7 @@ code .
 
 Le modèle **drawer** affiche un menu latéral (☰) avec les pages Home, Browse, Search, Featured et Settings.
 
-![Projet ouvert dans VS Code](images/01-projet-cree-vscode.png)
+![imagees alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/38e253d78cac78190d9f399644515bf6d936d707/6.Animations/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20140519.png)
 
 ---
 
