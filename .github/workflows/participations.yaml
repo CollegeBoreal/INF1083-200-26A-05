@@ -27,6 +27,7 @@ jobs:
             "1.Referentiel/2.Utilisation"
             "2.NativeScript"
             "3.Angular"
+            "4.Forms"
           )
 
           foreach ($chapter in $chapters) {
@@ -50,6 +51,7 @@ jobs:
             "0.PlanDeCours"
             "2.NativeScript"
             "3.Angular"
+            "4.Forms"
           )
 
           foreach ($chapter in $chapters) {
