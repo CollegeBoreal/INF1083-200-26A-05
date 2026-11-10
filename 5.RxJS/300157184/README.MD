@@ -1,5 +1,5 @@
 
-# 🛰️ Labo 5 – RxJS : recherche de pays par capitale
+#  Labo 5 – RxJS : recherche de pays par capitale
 
 **Étudiant :** 300157184
 **Cours :** INF1083 – Développement d'applications mobiles
@@ -9,14 +9,14 @@ Application mobile **NativeScript + Angular** qui recherche un pays à partir du
 
 ---
 
-## 📱 Résultat
+## Résultat
 
 | Recherche « Dakar » | Données reçues (console) |
 |:---:|:---:|
-| ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/ac279a0bf0ef84f6e67ef63b17550f8a2362cd05/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20123619.png) |
+| ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/ac279a0bf0ef84f6e67ef63b17550f8a2362cd05/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20123619.png) | ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/7aa187128ef0ca894e46c7a85fa683a71883771c/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20124105.png)
 ---
 
-## 🧰 Environnement et versions
+##  Environnement et versions
 
 | Outil | Version |
 |---|---|
@@ -30,7 +30,7 @@ Application mobile **NativeScript + Angular** qui recherche un pays à partir du
 
 ---
 
-## 🗂️ Structure du projet
+##  Structure du projet
 
 ```
 b300157184/
@@ -49,7 +49,7 @@ b300157184/
 
 ---
 
-## 🔄 Fonctionnement
+##  Fonctionnement
 
 ```mermaid
 flowchart LR
@@ -69,7 +69,7 @@ flowchart LR
 
 ---
 
-## 💡 Notions RxJS utilisées
+##  Notions RxJS utilisées
 
 | Notion | Rôle dans le projet |
 |---|---|
@@ -107,7 +107,7 @@ searchCountryByName(name: string): Observable<Country[]> {
 
 ---
 
-## 🐞 Problèmes rencontrés et solutions
+##  Problèmes rencontrés et solutions
 
 | # | Problème | Cause | Solution |
 |:-:|---|---|---|
