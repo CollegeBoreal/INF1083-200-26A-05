@@ -26,6 +26,7 @@ jobs:
             "1.Referentiel/1.IDE"
             "1.Referentiel/2.Utilisation"
             "2.NativeScript"
+            "3.Angular"
           )
 
           foreach ($chapter in $chapters) {
@@ -47,6 +48,8 @@ jobs:
         run: |
           $chapters = @(
             "0.PlanDeCours"
+            "2.NativeScript"
+            "3.Angular"
           )
 
           foreach ($chapter in $chapters) {
