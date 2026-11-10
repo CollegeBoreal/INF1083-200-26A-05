@@ -168,8 +168,6 @@ npm install webpack@5.97.1 --save-dev
 
 ### 5. Angular : `NG6008 – Component SearchComponent is standalone`
 
-![Erreur standalone](images/erreur-standalone.png)
-
 Depuis les versions récentes d'Angular, un composant est **standalone** par défaut et ne peut plus être déclaré dans `declarations` d'un `NgModule`.
 
 ```typescript
@@ -182,8 +180,6 @@ Depuis les versions récentes d'Angular, un composant est **standalone** par dé
 
 ### 6. `JIT compilation failed` / `'@angular/compiler' is not available`
 
-![Erreur JIT](images/erreur-jit.png)
-
 Le module n'ayant pas pu être compilé **à l'avance** (AOT) à cause du n°5, Angular essayait de le compiler **sur le téléphone** (JIT), ce qui est impossible. Après correction : `Ctrl + C`, puis `ns run android`.
 
 ### 7. `git push` rejeté
@@ -191,7 +187,6 @@ Le module n'ayant pas pu être compilé **à l'avance** (AOT) à cause du n°5, 
 ![Push rejeté](images/git-push-rejete.png)
 
 ```
-! [rejected]  main -> main (fetch first)
 ```
 
 Un autre étudiant avait poussé entre-temps. GitHub refuse pour ne rien écraser.
