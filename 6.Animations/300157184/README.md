@@ -77,8 +77,6 @@ npm install webpack@5.97.1 --save-dev
 
 Les messages `npm warn install-scripts` ne sont que des avertissements.
 
-![npm install webpack](images/02-npm-webpack-html-dans-terminal.png)
-
 > Sur cette capture, on voit aussi une erreur rouge : j'avais collé du **HTML dans le terminal**. Le terminal n'accepte que des commandes ; le code se colle dans le **fichier ouvert dans l'éditeur**.
 
 ---
@@ -88,8 +86,6 @@ Les messages `npm warn install-scripts` ne sont que des avertissements.
 ### Étape 3 – Le template `home.component.html`
 
 Fichier d'origine :
-
-![home.component.html avant](images/03-home-html-avant.jpg)
 
 L'icône et le texte d'exemple sont remplacés par un bouton portant la classe `background` :
 
@@ -134,8 +130,6 @@ Nouveau fichier créé dans le dossier `home` :
 | `animation-duration: 2s` | Durée de 2 secondes |
 | `animation-fill-mode: forwards` | Le bouton **garde** l'état final (vert) |
 
-![home.component.scss](images/04-home-scss.jpg)
-
 ### Étape 5 – Relier le style au composant
 
 Dans `home.component.ts`, on ajoute `styleUrls` (une **liste** : plusieurs fichiers possibles) et `standalone: false` :
@@ -149,8 +143,6 @@ Dans `home.component.ts`, on ajoute `styleUrls` (une **liste** : plusieurs fichi
 })
 ```
 
-![home.component.ts](images/05-home-ts-styleurls.jpg)
-
 ### Étape 6 – Lancer et tester
 
 ```powershell
@@ -159,13 +151,9 @@ ns run android
 
 Au démarrage, l'émulateur affiche encore l'**ancienne appli** (RxJS) pendant la compilation. Les deux projets ayant le même identifiant, la nouvelle appli la remplace.
 
-![Ancienne appli pendant la compilation](images/06-emulateur-ancienne-appli.jpg)
-
-![Build réussi](images/07-build-reussi.jpg)
 
  **Résultat :** le bouton `{N}` passe du rouge au vert et reste vert.
 
-![Animation CSS réussie](images/08-resultat-animation-css.jpg)
 
 > 💡 Pour revoir l'animation : menu ☰ → Browse, puis revenir sur Home.
 
@@ -202,7 +190,6 @@ Au démarrage, l'émulateur affiche encore l'**ancienne appli** (RxJS) pendant l
 
 >  Ce template diffère de l'énoncé sur deux points : `$any(cible)` (problème n°3) et une fusée Font Awesome au lieu de `res://icon` (problème n°4).
 
-![Template Browse](images/09-browse-html-erreur-animate.jpg)
 
 ### Étape 8 – La méthode `animate()` dans `browse.component.ts`
 
@@ -257,9 +244,6 @@ export class BrowseComponent implements OnInit {
 
 Chaque étape dure 300 ms (≈ 2,4 s au total). `.catch()` affiche une éventuelle erreur dans la console.
 
- **Résultat :**
-
-![Animation impérative réussie](images/14-resultat-animation-fusee.jpg)
 
 ---
 
@@ -273,8 +257,6 @@ git pull
 git status
 ```
 
-![git pull et git status](images/15-git-pull-status.jpg)
-
 Copie du projet **sans** `node_modules`, `platforms`, `hooks` et `.git` :
 
 ```powershell
@@ -286,8 +268,6 @@ git push
 ```
 
 Les avertissements `LF will be replaced by CRLF` concernent seulement les fins de ligne (Windows/Linux) et ne sont pas des erreurs.
-
-![git add](images/16-git-add-crlf.jpg)
 
 ---
 
@@ -306,11 +286,8 @@ Les avertissements `LF will be replaced by CRLF` concernent seulement les fins d
 
 Après avoir écrit le template, l'erreur est d'abord attendue (la méthode `animate` n'existe pas encore) :
 
-![Erreur : animate n'existe pas encore](images/09-browse-html-erreur-animate.jpg)
-
 Mais elle persiste après l'ajout de `animate(view: View)`, pointant sur `templateUrl` (ligne 7) :
 
-![Erreur de type persistante](images/10-erreur-template-type.jpg)
 
 **Cause :** avec Angular 22, les templates sont vérifiés strictement. Angular ne connaît pas les balises NativeScript : `#cible` est typé `HTMLElement`, alors que `animate()` attend un `View`. À l'exécution, c'est pourtant bien un `View`.
 
@@ -320,7 +297,6 @@ Mais elle persiste après l'ajout de `animate(view: View)`, pointant sur `templa
 <Button text="Animate" (tap)="animate($any(cible))" ...></Button>
 ```
 
-![Erreur corrigée](images/11-correction-any.jpg)
 
 ### Problème 4 – Image invisible : `Missing Image with resourceID`
 
@@ -330,11 +306,8 @@ L'animation fonctionnait (`Animation finished` dans la console), mais le carré 
 Missing Image with resourceID: res://icon
 ```
 
-![res://icon introuvable](images/12-erreur-res-icon.jpg)
-
 Le nom `res://ic_launcher` n'a pas fonctionné non plus :
 
-![res://ic_launcher introuvable](images/13-erreur-res-ic-launcher.jpg)
 
 **Cause :** l'énoncé a été écrit pour une ancienne version de NativeScript ; l'icône de l'application n'est plus accessible sous ce nom.
 
@@ -348,7 +321,6 @@ Le nom `res://ic_launcher` n'a pas fonctionné non plus :
 
 `git push` répondait `Everything up-to-date` et `git pull` un simple `Fast-forward` : le **commit n'avait pas été fait**, donc il n'y avait rien à envoyer.
 
-![Push sans commit](images/17-git-push-sans-commit.jpg)
 
  **Solution :** vérifier avec `git status`, puis :
 
