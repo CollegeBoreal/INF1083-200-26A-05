@@ -34,3 +34,5 @@ une animation déclarative en CSS et une animation impérative en code.
 - ⚡ src/app/browse/browse.component.ts : méthode animate(view, nuage1, nuage2)
 
 ## 🖼️ Captures
+![Écran Home](images/home.png)
+![Écran Browse - avion](images/browse.png)
