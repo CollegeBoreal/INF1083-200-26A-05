@@ -11,7 +11,7 @@ Application mobile **NativeScript + Angular** qui recherche un pays à partir du
 
 ## 📱 Résultat
 
-| Recherche « Ottawa » | Données reçues (console) |
+| Recherche « Dakar » | Données reçues (console) |
 |:---:|:---:|
 | ![Résultat dans l'émulateur](images/resultat.png) | ![Console](images/console-resultat.png) |
 
