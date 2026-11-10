@@ -121,7 +121,7 @@ Javac is installed and is configured properly.
 The Java Development Kit (JDK) is installed and is configured properly.
 ```
 
-![Vérification de l'environnement NativeScript](images/ns-doctor.png)
+![Vérification de l'environnement NativeScript](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/capture%201%20ns%20doctor.png?raw=true)
 
 ---
 
@@ -141,7 +141,7 @@ La présence de l'émulateur a été vérifiée avec :
 emulator -list-avds
 ```
 
-![Configuration de l'émulateur Android](images/emulator.png)
+![Configuration de l'émulateur Android](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/capture%202%20emulator.png?raw=true)
 
 ---
 
@@ -170,27 +170,23 @@ Le fichier APK généré est :
 platforms/android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-![Compilation réussie du projet Android](images/compilation.png)
+![Compilation réussie du projet Android](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/capture%203%20compilation%20reussi.png?raw=true)
 
 ---
 
 ## 📲 Exécution de l'application
 
-*Cette section sera complétée après le démarrage de l'émulateur Android et l'installation de l'application.*
-
-La commande prévue pour lancer l'application est :
+La commande pour lancer l'application est :
 
 ```powershell
 ns run android
 ```
 
-![Exécution de l'application](images/ns-run.png)
+![Exécution de l'application](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/capture%204%20ns%20run.png?raw=true)
 
 ### Résultat final
 
-*Une capture d'écran de l'application exécutée sur l'émulateur sera ajoutée ici.*
-
-![Résultat final de l'application](images/resultat.png)
+![Résultat final de l'application](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/capture%205%20application%20lancer.png?raw=true)
 
 ---
 
