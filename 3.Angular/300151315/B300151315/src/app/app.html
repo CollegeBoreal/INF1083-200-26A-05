@@ -1,9 +1,14 @@
 <header class="nav">
-  <span class="logo">{{ title() }}</span>
-  <nav>
-    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
-    <a routerLink="/utilisateurs" routerLinkActive="actif">Utilisateurs</a>
-  </nav>
+  <div class="nav-contenu">
+    <a class="logo" routerLink="/">
+      <span class="logo-icone">A</span>
+      {{ title() }}
+    </a>
+    <nav>
+      <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+      <a routerLink="/utilisateurs" routerLinkActive="actif">Utilisateurs</a>
+    </nav>
+  </div>
 </header>
 
 <main>

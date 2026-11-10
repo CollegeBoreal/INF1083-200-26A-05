@@ -1,25 +1,40 @@
-<h1>{{ titre }}</h1>
-
-<section class="carte">
-  <h2>Data Binding</h2>
-  <p>{{ nom }}</p>
+<section class="hero">
+  <p class="badge">Laboratoire Angular</p>
+  <h1>{{ titre }}</h1>
+  <p class="sous-titre">Composants, data binding, évènements, directives et API REST.</p>
 </section>
 
-<section class="carte">
-  <h2>Évènements</h2>
-  <button (click)="saluer()">Cliquez-moi</button>
-</section>
+<div class="grille">
+  <section class="carte">
+    <span class="etiquette" ngNonBindable>{{ }}</span>
+    <h2>Data Binding</h2>
+    <p class="valeur">{{ nom }}</p>
+  </section>
 
-<section class="carte">
-  <h2>Directives : *ngIf</h2>
-  <div *ngIf="connecte" class="statut ok">Connecté</div>
-  <div *ngIf="!connecte" class="statut ko">Déconnecté</div>
-  <button (click)="basculerConnexion()">Changer l'état</button>
-</section>
+  <section class="carte">
+    <span class="etiquette">(click)</span>
+    <h2>Évènements</h2>
+    <button (click)="saluer()">Cliquez-moi</button>
+  </section>
 
-<section class="carte">
-  <h2>Directives : *ngFor</h2>
-  <ul>
-    <li *ngFor="let nom of noms">{{ nom }}</li>
-  </ul>
-</section>
+  <section class="carte">
+    <span class="etiquette">*ngIf</span>
+    <h2>Condition</h2>
+    <div class="ligne">
+      <div *ngIf="connecte" class="statut ok">● Connecté</div>
+      <div *ngIf="!connecte" class="statut ko">● Déconnecté</div>
+      <button class="secondaire" (click)="basculerConnexion()">Changer l'état</button>
+    </div>
+  </section>
+
+  <section class="carte">
+    <span class="etiquette">*ngFor</span>
+    <h2>Liste</h2>
+    <ul>
+      <li *ngFor="let nom of noms">
+        <span class="initiale">{{ nom[0] }}</span>
+        {{ nom }}
+      </li>
+    </ul>
+  </section>
+</div>

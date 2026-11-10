@@ -24,6 +24,15 @@ export class Utilisateurs implements OnInit {
   chargement = signal(true);
   erreur = signal('');
 
+  initiales(nom: string) {
+    return nom
+      .split(' ')
+      .filter(mot => /^[A-Z]/.test(mot))
+      .slice(0, 2)
+      .map(mot => mot[0])
+      .join('');
+  }
+
   ngOnInit() {
     this.http
       .get<Utilisateur[]>('https://jsonplaceholder.typicode.com/users')

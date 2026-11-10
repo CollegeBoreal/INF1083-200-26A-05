@@ -1,14 +1,30 @@
-<h1>Utilisateurs</h1>
-<p class="source">Source : API REST jsonplaceholder.typicode.com/users</p>
+<section class="hero">
+  <p class="badge">HttpClient · API REST</p>
+  <h1>Utilisateurs</h1>
+  <p class="sous-titre">
+    Données chargées depuis
+    <a href="https://jsonplaceholder.typicode.com/users" target="_blank">jsonplaceholder.typicode.com/users</a>
+    <span *ngIf="!chargement() && !erreur()" class="compte">{{ utilisateurs().length }} résultats</span>
+  </p>
+</section>
 
-<p *ngIf="chargement()">Chargement…</p>
 <p *ngIf="erreur()" class="erreur">{{ erreur() }}</p>
 
 <div class="grille">
+  <ng-container *ngIf="chargement()">
+    <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="carte squelette"></div>
+  </ng-container>
+
   <article *ngFor="let u of utilisateurs()" class="carte">
-    <h2>{{ u.name }}</h2>
-    <p>✉️ {{ u.email }}</p>
-    <p>📞 {{ u.phone }}</p>
-    <p>🏢 {{ u.company.name }} · {{ u.address.city }}</p>
+    <div class="entete">
+      <span class="avatar">{{ initiales(u.name) }}</span>
+      <div>
+        <h2>{{ u.name }}</h2>
+        <p class="ville">{{ u.address.city }}</p>
+      </div>
+    </div>
+    <p class="info"><span class="icone">✉</span>{{ u.email }}</p>
+    <p class="info"><span class="icone">☎</span>{{ u.phone }}</p>
+    <p class="info"><span class="icone">⌂</span>{{ u.company.name }}</p>
   </article>
 </div>

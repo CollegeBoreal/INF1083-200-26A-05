@@ -1,40 +1,112 @@
+.hero {
+  margin-bottom: 28px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
 h1 {
-  color: blue;
+  color: var(--bleu);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.sous-titre {
+  margin-top: 10px;
+  color: var(--texte-doux);
+  font-size: 1.05rem;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
 .carte {
-  background: white;
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 22px;
+  box-shadow: var(--ombre);
+}
+
+.etiquette {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--bleu);
+  background: var(--bleu-clair);
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
 h2 {
-  margin-top: 0;
-  font-size: 1.05rem;
-  color: #1e3a8a;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 14px;
+}
+
+.valeur {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 button {
-  background: #2563eb;
+  background: var(--bleu);
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
 }
 
 button:hover {
   background: #1d4ed8;
 }
 
+button:active {
+  transform: scale(0.97);
+}
+
+button.secondaire {
+  background: var(--fond);
+  color: var(--texte);
+  border: 1px solid var(--bordure);
+}
+
+button.secondaire:hover {
+  background: var(--bordure);
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
 .statut {
-  display: inline-block;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
-  margin-right: 12px;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .ok {
@@ -45,4 +117,31 @@ button:hover {
 .ko {
   background: #fee2e2;
   color: #991b1b;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.initiale {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bleu-clair);
+  color: var(--bleu);
+  font-size: 0.8rem;
+  font-weight: 700;
 }

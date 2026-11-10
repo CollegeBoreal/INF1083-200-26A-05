@@ -11,12 +11,15 @@ Application Angular `B300151315` avec deux pages :
 Une barre de navigation permet de passer d'une page à l'autre (routage).
 
 ## Installation
+Node.js et Angular CLI étaient déjà installés sur mon PC, car je les avais utilisés avant ce laboratoire. Je n'ai donc pas eu à refaire l'installation, seulement à vérifier les versions :
+
 ```
-node --version
+node --version    # v24.13.0
 npm --version
-npm install -g @angular/cli
-ng version
+ng version        # Angular CLI 21
 ```
+
+Pour une première installation, il faudrait faire `choco install nodejs-lts -y` puis `npm install -g @angular/cli`.
 
 ## Création du projet
 ```
@@ -72,6 +75,8 @@ this.http
 
 ### Page Utilisateurs (API REST)
 <img src="images/utilisateurs.png" alt="Page Utilisateurs" width="700">
+
+L'interface est responsive : sur un téléphone, les cartes s'affichent sur une seule colonne.
 
 ## Problèmes rencontrés et solutions
 
