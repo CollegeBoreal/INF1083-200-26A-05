@@ -1,4 +1,4 @@
-# 🤡 Labo 6 – Animations NativeScript
+# Labo 6 – Animations NativeScript
 
 **Étudiant :** 300157184
 **Cours :** INF1083 – Développement d'applications mobiles
@@ -13,7 +13,7 @@ Application mobile **NativeScript + Angular** (modèle *drawer navigation*) qui 
 
 ---
 
-## 📱 Résultats
+##  Résultats
 
 | Animation CSS (Home) | Animation impérative (Browse) |
 |:---:|:---:|
@@ -22,7 +22,7 @@ Application mobile **NativeScript + Angular** (modèle *drawer navigation*) qui 
 
 ---
 
-## 🧰 Environnement
+##  Environnement
 
 | Outil | Version |
 |---|---|
@@ -36,7 +36,7 @@ Application mobile **NativeScript + Angular** (modèle *drawer navigation*) qui 
 
 ---
 
-## 📑 Sommaire
+##  Sommaire
 
 1. [Créer le projet](#étape-1--créer-le-projet)
 2. [Fixer la version de webpack](#étape-2--fixer-la-version-de-webpack)
@@ -79,11 +79,11 @@ Les messages `npm warn install-scripts` ne sont que des avertissements.
 
 ![npm install webpack](images/02-npm-webpack-html-dans-terminal.png)
 
-> ⚠️ Sur cette capture, on voit aussi une erreur rouge : j'avais collé du **HTML dans le terminal**. Le terminal n'accepte que des commandes ; le code se colle dans le **fichier ouvert dans l'éditeur**.
+> Sur cette capture, on voit aussi une erreur rouge : j'avais collé du **HTML dans le terminal**. Le terminal n'accepte que des commandes ; le code se colle dans le **fichier ouvert dans l'éditeur**.
 
 ---
 
-## 🅰️ Partie A – Animation déclarative (CSS)
+##  Partie A – Animation déclarative (CSS)
 
 ### Étape 3 – Le template `home.component.html`
 
@@ -108,7 +108,7 @@ L'icône et le texte d'exemple sont remplacés par un bouton portant la classe `
 </GridLayout>
 ```
 
-> 💡 L'icône d'origine a aussi été retirée : un `GridLayout` sans lignes ni colonnes superpose ses éléments au même endroit.
+>  L'icône d'origine a aussi été retirée : un `GridLayout` sans lignes ni colonnes superpose ses éléments au même endroit.
 
 ### Étape 4 – Le fichier `home.component.scss`
 
@@ -163,7 +163,7 @@ Au démarrage, l'émulateur affiche encore l'**ancienne appli** (RxJS) pendant l
 
 ![Build réussi](images/07-build-reussi.jpg)
 
-✅ **Résultat :** le bouton `{N}` passe du rouge au vert et reste vert.
+ **Résultat :** le bouton `{N}` passe du rouge au vert et reste vert.
 
 ![Animation CSS réussie](images/08-resultat-animation-css.jpg)
 
@@ -171,7 +171,7 @@ Au démarrage, l'émulateur affiche encore l'**ancienne appli** (RxJS) pendant l
 
 ---
 
-## 🅱️ Partie B – Animation impérative
+##  Partie B – Animation impérative
 
 ### Étape 7 – Le template `browse.component.html`
 
@@ -200,7 +200,7 @@ Au démarrage, l'émulateur affiche encore l'**ancienne appli** (RxJS) pendant l
 | `(tap)="animate($any(cible))"` | Au toucher, passe l'élément à la méthode `animate()` |
 | `&#xf135;` | Icône **fusée** de Font Awesome |
 
-> ⚠️ Ce template diffère de l'énoncé sur deux points : `$any(cible)` (problème n°3) et une fusée Font Awesome au lieu de `res://icon` (problème n°4).
+>  Ce template diffère de l'énoncé sur deux points : `$any(cible)` (problème n°3) et une fusée Font Awesome au lieu de `res://icon` (problème n°4).
 
 ![Template Browse](images/09-browse-html-erreur-animate.jpg)
 
@@ -257,7 +257,7 @@ export class BrowseComponent implements OnInit {
 
 Chaque étape dure 300 ms (≈ 2,4 s au total). `.catch()` affiche une éventuelle erreur dans la console.
 
-✅ **Résultat :**
+ **Résultat :**
 
 ![Animation impérative réussie](images/14-resultat-animation-fusee.jpg)
 
@@ -291,7 +291,7 @@ Les avertissements `LF will be replaced by CRLF` concernent seulement les fins d
 
 ---
 
-## 🐞 Problèmes rencontrés et solutions
+##  Problèmes rencontrés et solutions
 
 | # | Problème | Cause | Solution |
 |:-:|---|---|---|
@@ -314,7 +314,7 @@ Mais elle persiste après l'ajout de `animate(view: View)`, pointant sur `templa
 
 **Cause :** avec Angular 22, les templates sont vérifiés strictement. Angular ne connaît pas les balises NativeScript : `#cible` est typé `HTMLElement`, alors que `animate()` attend un `View`. À l'exécution, c'est pourtant bien un `View`.
 
-✅ **Solution :** `$any(...)` désactive la vérification de type pour cette valeur.
+ **Solution :** `$any(...)` désactive la vérification de type pour cette valeur.
 
 ```html
 <Button text="Animate" (tap)="animate($any(cible))" ...></Button>
@@ -338,7 +338,7 @@ Le nom `res://ic_launcher` n'a pas fonctionné non plus :
 
 **Cause :** l'énoncé a été écrit pour une ancienne version de NativeScript ; l'icône de l'application n'est plus accessible sous ce nom.
 
-✅ **Solution :** animer une icône de la police **Font Awesome**, déjà incluse dans le projet (c'est elle qui affiche le ☰). Un `Label` étant un `View`, la méthode `animate()` reste identique.
+ **Solution :** animer une icône de la police **Font Awesome**, déjà incluse dans le projet (c'est elle qui affiche le ☰). Un `Label` étant un `View`, la méthode `animate()` reste identique.
 
 ```html
 <Label #cible class="fas" text="&#xf135;" fontSize="80" color="white" left="110" top="100"></Label>
@@ -350,18 +350,18 @@ Le nom `res://ic_launcher` n'a pas fonctionné non plus :
 
 ![Push sans commit](images/17-git-push-sans-commit.jpg)
 
-✅ **Solution :** vérifier avec `git status`, puis :
+ **Solution :** vérifier avec `git status`, puis :
 
 ```powershell
 git commit -m "Labo 6 Animations - 300157184"
 git push
 ```
 
-> 💡 Un commit réussi affiche `[main xxxxxxx] ...` et `XX files changed` ; un push réussi affiche `xxxxxxx..yyyyyyy  main -> main`.
+>  Un commit réussi affiche `[main xxxxxxx] ...` et `XX files changed` ; un push réussi affiche `xxxxxxx..yyyyyyy  main -> main`.
 
 ---
 
-## ⚠️ Conseils pour les autres étudiants
+##  Conseils pour les autres étudiants
 
 **Avant de commencer**
 - Si un projet `b<ID>` existe déjà (labo précédent), créez le nouveau dans un **autre dossier**.
@@ -386,7 +386,7 @@ git push
 
 ---
 
-## ▶️ Lancer le projet
+##  Lancer le projet
 
 ```powershell
 cd b300157184
