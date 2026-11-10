@@ -17,7 +17,7 @@ Application mobile **NativeScript + Angular** (modèle *drawer navigation*) qui 
 
 | Animation CSS (Home) | Animation impérative (Browse) |
 |:---:|:---:|
-| ![Bouton devenu vert](images/08-resultat-animation-css.jpg) | ![Fusée animée](images/14-resultat-animation-fusee.jpg) |
+| ![images](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/6945af064ed4f087297deabb1770517af17bceae/6.Animations/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20132430.png) | ![Fusée animée](images/14-resultat-animation-fusee.jpg) |
 | Le bouton `{N}` passe du rouge au vert en 2 s et reste vert. | La fusée disparaît, se déplace, grossit puis tourne. La console affiche `Animation finished`. |
 
 ---
