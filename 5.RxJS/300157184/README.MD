@@ -147,7 +147,7 @@ git checkout src/app/app.component.ts
 
 ### 4. webpack : `MODULE_NOT_FOUND`
 
-![Erreur webpack](images/erreur-webpack.png)
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/cf6e9258e037a15c0e2a4f7fd7009a6364934158/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20125402.png)
 
 Le terminal n'affichait que la fin de l'erreur. Pour lire le message complet, j'ai enregistré la sortie dans un fichier :
 
