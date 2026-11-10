@@ -1,0 +1,22 @@
+<ActionBar title="Inscription"></ActionBar>
+
+<StackLayout [formGroup]="signUpForm" class="page">
+  <Label text="Créer un compte" class="titre"></Label>
+  <Label text="Formulaire réactif Angular (ReactiveForms)" class="sous-titre"></Label>
+
+  <Label text="Courriel" class="etiquette"></Label>
+  <TextField formControlName="email" hint="Email" keyboardType="email" autocorrect="false"
+    autocapitalizationType="none" class="champ"></TextField>
+
+  <Label text="Nom d'utilisateur" class="etiquette"></Label>
+  <TextField formControlName="username" hint="Username" autocorrect="false"
+    autocapitalizationType="none" class="champ"></TextField>
+
+  <Button text="sign up" (tap)="onButtonTap()" [isEnabled]="signUpForm.valid" class="bouton"></Button>
+
+  <StackLayout *ngIf="envoye" class="resultat">
+    <Label text="Valeurs affichées dans la console" class="resultat-titre"></Label>
+    <Label [text]="'Courriel : ' + envoye.email" class="resultat-ligne"></Label>
+    <Label [text]="'Utilisateur : ' + envoye.username" class="resultat-ligne"></Label>
+  </StackLayout>
+</StackLayout>

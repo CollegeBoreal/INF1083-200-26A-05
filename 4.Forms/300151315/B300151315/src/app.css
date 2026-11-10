@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ActionBar {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.page {
+  padding: 24;
+  background-color: #f4f6fb;
+}
+
+.titre {
+  font-size: 26;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.sous-titre {
+  font-size: 14;
+  color: #64748b;
+  margin-bottom: 24;
+}
+
+.etiquette {
+  font-size: 14;
+  font-weight: bold;
+  color: #334155;
+  margin-top: 12;
+  margin-bottom: 6;
+}
+
+.champ {
+  font-size: 16;
+  padding: 14;
+  border-width: 1;
+  border-color: #e2e8f0;
+  border-radius: 12;
+  background-color: #ffffff;
+  placeholder-color: #94a3b8;
+}
+
+.bouton {
+  margin-top: 28;
+  height: 52;
+  font-size: 16;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #2563eb;
+  border-radius: 12;
+}
+
+.bouton[isEnabled=false] {
+  background-color: #93b4f5;
+}
+
+.resultat {
+  margin-top: 24;
+  padding: 16;
+  border-radius: 12;
+  background-color: #eff4ff;
+  border-width: 1;
+  border-color: #c7d7fe;
+}
+
+.resultat-titre {
+  font-size: 12;
+  font-weight: bold;
+  color: #1d4ed8;
+  margin-bottom: 8;
+}
+
+.resultat-ligne {
+  font-size: 16;
+  color: #0f172a;
+  margin-top: 2;
+}
