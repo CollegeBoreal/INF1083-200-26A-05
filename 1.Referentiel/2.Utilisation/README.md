@@ -1,5 +1,7 @@
 # 🚀 Exemple complet d'utilisation de Git
 
+[:tada: Participation](.scripts/Participation.md) 
+
 ## 📁 1. Créer un nouveau projet
 
 Créer un dossier pour le projet :

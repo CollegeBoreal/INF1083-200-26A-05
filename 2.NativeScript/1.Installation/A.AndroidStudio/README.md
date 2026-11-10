@@ -124,4 +124,35 @@ open -a "Android Studio"
 
 Puis installer le SDK Android depuis Android Studio avant d'exécuter :
 
+```
 ns doctor
+```
+
+<details><summary>🪵 Log </summary>
+
+```lua
+
+ns doctor
+✔ Getting environment information 
+
+No issues were detected.
+✔ Your ANDROID_HOME environment variable is set and points to correct directory.
+✔ Your adb from the Android SDK is correctly installed.
+✔ The Android SDK is installed.
+✔ A compatible Android SDK for compilation is found.
+✔ Javac is installed and is configured properly.
+✔ The Java Development Kit (JDK) is installed and is configured properly.
+✔ Xcode is installed and is configured properly.
+✔ xcodeproj is installed and is configured properly.
+✔ CocoaPods are installed.
+✔ CocoaPods update is not required.
+✔ CocoaPods are configured properly.
+✔ Your current CocoaPods version is newer than 1.0.0.
+✔ Python installed and configured correctly.
+✔ Xcode version 26.6 satisfies minimum required version 10.
+✔ Getting NativeScript components versions information...
+⚠ Update available for component nativescript. Your current version is 9.1.1 and the latest available version is undefined.
+
+```
+
+</details>

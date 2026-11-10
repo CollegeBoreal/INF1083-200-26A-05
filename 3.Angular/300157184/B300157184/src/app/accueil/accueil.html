@@ -1,0 +1,73 @@
+<div class="page-accueil">
+
+  <nav class="navbar">
+    <h2>🚀 DevOps<span>Hub</span></h2>
+    <ul>
+      @for (lien of liens; track lien) {
+        <li><a href="#">{{ lien }}</a></li>
+      }
+    </ul>
+ <div class="user-zone">
+  @if (connecte) {
+    <span class="badge">● Connecté</span>
+  } @else {
+    <span class="badge hors-ligne">○ Déconnecté</span>
+  }
+  <button class="btn-outline">
+    👋 Bonjour {{ nom }}
+    <small class="matricule">{{ etudiant }}</small>
+  </button>
+</div>
+  </nav>
+
+  <header class="hero">
+    <h1>Apprenez <span>Angular</span><br>comme un pro</h1>
+    <p>Une plateforme moderne pour maîtriser le développement web.</p>
+    <div class="hero-actions">
+      <button class="btn" (click)="saluer()">Commencer</button>
+      <button class="btn-outline">En savoir plus</button>
+    </div>
+  </header>
+
+  <section class="stats">
+    @for (s of stats; track s.libelle) {
+      <div class="stat">
+        <strong>{{ s.valeur }}</strong>
+        <span>{{ s.libelle }}</span>
+      </div>
+    }
+  </section>
+
+   <section class="cartes">
+    @for (c of cartes; track c.titre) {
+      <article class="carte">
+        <div class="icone">{{ c.icone }}</div>
+        <h3>{{ c.titre }}</h3>
+        <p>{{ c.texte }}</p>
+      </article>
+    }
+  </section>
+
+  <section class="utilisateurs">
+    <h2>👥 Utilisateurs (API REST)</h2>
+
+    @if (erreur()) {
+      <p class="erreur">Impossible de charger les utilisateurs.</p>
+    } @else if (utilisateurs().length === 0) {
+      <p>Chargement...</p>
+    } @else {
+      <div class="grille-users">
+        @for (u of utilisateurs(); track u.id) {
+          <article class="user">
+            <div class="avatar">{{ u.name.charAt(0) }}</div>
+            <h3>{{ u.name }}</h3>
+            <p>{{ u.email }}</p>
+            <small>{{ u.company.name }}</small>
+          </article>
+        }
+      </div>
+    }
+  </section>
+
+  <footer>© 2026 DevOpsHub - INF1083</footer>
+</div>

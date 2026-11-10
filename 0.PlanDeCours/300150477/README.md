@@ -1,11 +1,15 @@
 # INF1083 – Développement d'applications
 
-## Informations
+## Présentation
 
-- Numéro d'étudiant : 300150477
-- Cours : INF1083 – Développement d'applications
-- Session : Automne 2026
+Bonjour, je m'appelle Anis Benabbas.
 
-## Image
+Je suis étudiant au Collège Boréal en Techniques des systèmes informatiques.
 
-![Mon image](images/Law.webp)
+Ce répertoire contient mes travaux et mes images pour le cours **INF1083 – Développement d'applications**.
+
+## Images
+
+Voici une image liée à mon travail :
+
+![Image](images/Anis.png)

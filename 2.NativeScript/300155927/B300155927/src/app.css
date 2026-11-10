@@ -1,0 +1,31 @@
+ActionBar {
+    background-color: #2563eb;
+    color: white;
+}
+
+.container {
+    padding: 30;
+    vertical-align: center;
+}
+
+.title {
+    font-size: 34;
+    font-weight: bold;
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 20;
+}
+
+.subtitle {
+    font-size: 18;
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30;
+}
+
+.btn {
+    background-color: #2563eb;
+    color: white;
+    border-radius: 10;
+    padding: 15;
+}

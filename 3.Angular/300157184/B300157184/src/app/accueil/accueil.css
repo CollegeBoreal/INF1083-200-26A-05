@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f9ff;
+  color: #1e1b4b;
+}
+
+* { box-sizing: border-box; }
+
+.page-accueil { min-height: 100vh; }
+
+/* Barre de navigation */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6%;
+  background: white;
+  box-shadow: 0 2px 15px #1725540d;
+  position: sticky;
+  top: 0;
+}
+.navbar h2 { margin: 0; font-size: 24px; color: #4f46e5; }
+.navbar h2 span { color: #ec4899; }
+.navbar ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.navbar a { text-decoration: none; color: #475569; font-weight: 500; }
+.navbar a:hover { color: #4f46e5; }
+
+/* Boutons */
+.btn, .btn-outline {
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn {
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #4f46e540; }
+.btn-outline { background: transparent; border: 2px solid #4f46e5; color: #4f46e5; }
+.btn-outline:hover { background: #4f46e5; color: white; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 6% 70px;
+  background: linear-gradient(180deg, #eef2ff, #f8f9ff);
+}
+.hero h1 { font-size: 56px; line-height: 1.15; margin: 0 0 20px; }
+.hero h1 span {
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p { font-size: 20px; color: #64748b; margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; }
+
+/* Statistiques */
+.stats { display: flex; justify-content: center; gap: 40px; padding: 40px 6%; flex-wrap: wrap; }
+.stat {
+  background: white;
+  padding: 24px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px #1725540d;
+}
+.stat strong { display: block; font-size: 36px; color: #4f46e5; }
+.stat span { color: #64748b; }
+
+/* Cartes */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 40px 6% 80px;
+}
+.carte {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px #1725540d;
+  transition: transform .25s, box-shadow .25s;
+}
+.carte:hover { transform: translateY(-8px); box-shadow: 0 16px 35px #4f46e526; }
+.icone {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  font-size: 28px;
+  background: #eef2ff;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.carte h3 { margin: 0 0 8px; }
+.carte p { margin: 0; color: #64748b; }
+
+/* Pied de page */
+footer { text-align: center; padding: 30px; background: #1e1b4b; color: #c7d2fe; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .navbar ul { display: none; }
+  .hero h1 { font-size: 36px; }
+}
+
+.user-zone { display: flex; align-items: center; gap: 14px; }
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 14px;
+  font-weight: 600;
+}
+.badge.hors-ligne { background: #fee2e2; color: #991b1b; }
+
+.utilisateurs { padding: 20px 6% 80px; text-align: center; }
+.utilisateurs h2 { font-size: 32px; margin-bottom: 30px; }
+.erreur { color: #dc2626; }
+.grille-users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+.user {
+  background: white;
+  padding: 26px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px #1725540d;
+  transition: transform .25s;
+}
+.user:hover { transform: translateY(-6px); }
+.avatar {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  margin-bottom: 14px;
+}
+.user h3 { margin: 0 0 6px; }
+.user p { margin: 0 0 6px; color: #64748b; }
+.user small { color: #4f46e5; font-weight: 600; }
+
+.matricule { display: block; font-size: 12px; opacity: .7; }
