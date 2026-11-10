@@ -13,8 +13,7 @@ Application mobile **NativeScript + Angular** qui recherche un pays à partir du
 
 | Recherche « Dakar » | Données reçues (console) |
 |:---:|:---:|
-| ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/ac279a0bf0ef84f6e67ef63b17550f8a2362cd05/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20123619.png) | ![Console](images/console-resultat.png) |
-
+| ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/ac279a0bf0ef84f6e67ef63b17550f8a2362cd05/5.RxJS/300157184/images/Capture%20d%E2%80%99%C3%A9cran%202026-11-10%20123619.png) |
 ---
 
 ## 🧰 Environnement et versions
