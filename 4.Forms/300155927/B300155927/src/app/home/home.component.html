@@ -1,0 +1,17 @@
+<StackLayout [formGroup]="signUpForm">
+    <TextField
+        formControlName="email"
+        hint="Email"
+        keyboardType="email">
+    </TextField>
+
+    <TextField
+        formControlName="username"
+        hint="Username">
+    </TextField>
+
+    <Button
+        text="Sign Up"
+        (tap)="onButtonTap()">
+    </Button>
+</StackLayout>
