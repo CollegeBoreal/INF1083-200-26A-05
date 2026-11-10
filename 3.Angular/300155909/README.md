@@ -12,7 +12,7 @@ Dans ce TP, j'ai réalisé une application web avec Angular. L'objectif est de d
 
 J'ai installé Node.js, npm et Angular CLI. Ensuite, j'ai vérifié les versions et préparé l'environnement de développement.
 
-![Installation](images/installation.png)
+![Installation](images/installation.png-01.png)
 
 ## 3. Création du projet Angular
 
