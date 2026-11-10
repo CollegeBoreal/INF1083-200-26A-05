@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout>
+  <AbsoluteLayout width="300" height="300" class="bg-primary m-15" borderRadius="20">
+    <Label #cible class="fas" text="&#xf135;" fontSize="80" color="white" left="110" top="100"></Label>
+  </AbsoluteLayout>
+  <Button text="Animate" (tap)="animate($any(cible))" class="btn btn-primary btn-active"></Button>
+</StackLayout>
