@@ -224,4 +224,4 @@ https://nativescripting.com/posts/using-angular-animations-in-nativescript
 https://nativescripting.com/posts/animations-using-angular-directives
 
 ### Gestures
-https://docs.nativescript.org/angular/ui/ng-components/gestures
+https://v7.docs.nativescript.org/angular/ui/ng-components/gestures
