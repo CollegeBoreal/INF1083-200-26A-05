@@ -10,13 +10,15 @@ Exemple testé dans le navigateur : Paris 🇫🇷 -> France, capitale Paris, ca
 
 ## 📁 Fichiers
 - 🔍 src/app/search/search.component.ts : composant de recherche
-- 🌍 src/app/search/country.ts : modèle Country
-- 🔗 src/app/search/apicall.service.ts : service HTTP, GET /capital/{name}
+- 🌍 src/app/shared/country.ts : modèle Country
+- 🔗 src/app/shared/apicall.service.ts : service HTTP, GET /capital/{name}
+- 📦 src/app/shared/data.service.ts : service de données
 - 📦 src/app/app.module.ts : NativeScriptHttpClientModule
 - 📝 src/app/search/search.module.ts : NativeScriptFormsModule
 
 ## ▶️ Comment lancer
 ns preview --no-hmr
+
 ns build android
 
 ## ✅ Résultat
