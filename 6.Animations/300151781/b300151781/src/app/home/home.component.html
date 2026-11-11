@@ -1,0 +1,38 @@
+﻿<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page-anim">
+    <Label class="kicker" text="ANIMATION DÉCLARATIVE"></Label>
+    <Label class="title" text="CSS @keyframes" textWrap="true"></Label>
+    <Label
+      class="subtitle"
+      textWrap="true"
+      text="Le bouton passe du rouge au vert en 2 secondes. L'animation est décrite uniquement en SCSS, sans code TypeScript."
+    ></Label>
+
+    <StackLayout class="card">
+      <Button #nButton text="{N}" class="background"></Button>
+      <Label class="hint" text="animation-duration : 2s  •  fill-mode : forwards"></Label>
+    </StackLayout>
+
+    <Button text="Rejouer l'animation" class="btn-replay" (tap)="replay(nButton)"></Button>
+
+    <StackLayout class="card legend">
+      <GridLayout columns="auto, *" class="legend-row">
+        <Label col="0" class="dot dot-red"></Label>
+        <Label col="1" text="from : background-color red"></Label>
+      </GridLayout>
+      <GridLayout columns="auto, *" class="legend-row">
+        <Label col="0" class="dot dot-green"></Label>
+        <Label col="1" text="to : background-color green"></Label>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

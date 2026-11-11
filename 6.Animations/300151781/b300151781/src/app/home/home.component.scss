@@ -1,0 +1,91 @@
+﻿// Animation demandée par l'énoncé : rouge -> vert en 2 secondes
+@keyframes bgAnimation {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}
+
+.background {
+  animation-name: bgAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  width: 160;
+  height: 160;
+  border-radius: 80;
+  color: white;
+  font-size: 40;
+  font-weight: bold;
+  horizontal-align: center;
+}
+
+// Mise en page
+.page-anim {
+  padding: 24;
+  background-color: #f4f6fb;
+}
+
+.kicker {
+  color: #6b4eff;
+  font-size: 12;
+  font-weight: bold;
+  letter-spacing: 0.15;
+}
+
+.title {
+  font-size: 28;
+  font-weight: bold;
+  color: #1c1f2e;
+  margin-top: 4;
+}
+
+.subtitle {
+  font-size: 15;
+  color: #5b6175;
+  margin-top: 8;
+  margin-bottom: 16;
+}
+
+.card {
+  background-color: white;
+  border-radius: 16;
+  padding: 24;
+  margin-bottom: 16;
+}
+
+.hint {
+  text-align: center;
+  color: #8a90a2;
+  font-size: 12;
+  margin-top: 16;
+}
+
+.btn-replay {
+  background-color: #6b4eff;
+  color: white;
+  border-radius: 12;
+  font-weight: bold;
+  height: 52;
+  margin-bottom: 16;
+}
+
+.legend-row {
+  margin: 4 0;
+}
+
+.dot {
+  width: 16;
+  height: 16;
+  border-radius: 8;
+  margin-right: 12;
+}
+
+.dot-red {
+  background-color: red;
+}
+
+.dot-green {
+  background-color: green;
+}
