@@ -12,7 +12,7 @@
 
 <p align="center">
 <img
-src="Images/images.jpeg"
+src="images/images.jpeg"
 alt="Montgolfière survolant un canyon au coucher du soleil"
 width="700"
 />
@@ -35,5 +35,5 @@ Ce dépôt contient les fichiers et les travaux associés au cours INF1083-200-2
 ```text
 300151732/
 ├── README.md
-└── Image/
+└── image/
 └── beautiful-and-inspiring-picture-detailing-a-bright-hot-air-balloon-over-river-pure-cozy-perfect-for-creatives-moods-stock-image-free-photo.jpeg
