@@ -35,5 +35,5 @@ Ce dépôt contient les fichiers et les travaux associés au cours INF1083-200-2
 ```text
 300151732/
 ├── README.md
-└── image/
+└── images/
 └── beautiful-and-inspiring-picture-detailing-a-bright-hot-air-balloon-over-river-pure-cozy-perfect-for-creatives-moods-stock-image-free-photo.jpeg
