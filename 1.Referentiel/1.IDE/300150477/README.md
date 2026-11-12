@@ -54,7 +54,7 @@ Host github.com
 
 Ma clé publique `ma_cle.pub` a été ajoutée à mon compte GitHub (Settings → SSH and GPG keys) :
 
-![Clé SSH sur GitHub](images/cle-github.png)
+![Clé SSH sur GitHub](images/ssh-key.png)
 
 ## 3. Dépôt du cours en SSH
 
