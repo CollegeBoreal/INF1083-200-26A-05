@@ -1,0 +1,34 @@
+<ActionBar [title]="languageService.text('detailTitle')">
+  <NavigationButton
+    [text]="languageService.text('back')"
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()">
+  </NavigationButton>
+  <ActionItem
+    [text]="languageService.switchLabel()"
+    ios.position="right"
+    android.position="actionBar"
+    (tap)="languageService.toggle()">
+  </ActionItem>
+</ActionBar>
+
+<FlexboxLayout flexDirection="column" class="p-4">
+  @if (person(); as selectedPerson) {
+    <Label class="text-3xl font-bold mb-4" [text]="displayName(selectedPerson)" textWrap="true"></Label>
+
+    <StackLayout class="mb-4">
+      <Label class="text-base font-bold text-gray-600" [text]="languageService.text('period')"></Label>
+      <Label class="text-lg" [text]="selectedPerson.period" textWrap="true"></Label>
+    </StackLayout>
+
+    <StackLayout class="mb-4">
+      <Label class="text-base font-bold text-gray-600" [text]="languageService.text('territory')"></Label>
+      <Label class="text-lg" [text]="displayTerritory(selectedPerson)" textWrap="true"></Label>
+    </StackLayout>
+
+    <StackLayout>
+      <Label class="text-base font-bold text-gray-600" [text]="languageService.text('history')"></Label>
+      <Label class="text-lg mt-2" [text]="formatHistory(selectedPerson)" textWrap="true"></Label>
+    </StackLayout>
+  }
+</FlexboxLayout>

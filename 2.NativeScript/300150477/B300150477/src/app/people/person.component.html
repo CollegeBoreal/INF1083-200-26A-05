@@ -1,0 +1,20 @@
+<ActionBar [title]="languageService.text('listTitle')" iosLargeTitle="true">
+  <ActionItem
+    [text]="languageService.switchLabel()"
+    ios.position="right"
+    android.position="actionBar"
+    (tap)="languageService.toggle()">
+  </ActionItem>
+</ActionBar>
+
+<GridLayout rows="auto,*">
+  <Label row="0" class="text-sm text-gray-500 m-4" [text]="languageService.text('listIntro')" textWrap="true"></Label>
+  <ListView row="1" [items]="personService.items()">
+    <ng-template let-item="item">
+      <StackLayout [nsRouterLink]="['/item', item.id]" class="border-b border-gray-200 px-4 py-3">
+        <Label [text]="displayName(item.name, item.nameTifinagh)" class="text-xl text-gray-800 font-bold"></Label>
+        <Label [text]="displayTerritory(item.territoryFr, item.territoryTifinagh)" class="text-sm text-gray-500 mt-1" textWrap="true"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
