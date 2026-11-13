@@ -52,4 +52,4 @@
 | 31 | [300157374](../300157374/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image>](https://github.com/yanisna) | :x: | :x: | :x: | :x: À corriger |
 | 32 | [300157416](../300157416/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image>](https://github.com/lounisyounes) | :x: | :x: | :x: | :x: À corriger |
 | 33 | [300157424](../300157424/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image>](https://github.com/MA-JID-06) | :x: | :x: | :x: | :x: À corriger |
-| :abacus: | \$\frac{6}{33}\$ = 18.18% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 6 |
+| :abacus: | \$\frac{6}{33}\$ = 18.18% - \$\displaystyle\sum_{i=1}^{33} s_i\$ = 6 |
