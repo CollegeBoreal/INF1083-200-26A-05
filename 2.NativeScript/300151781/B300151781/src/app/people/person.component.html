@@ -1,0 +1,12 @@
+﻿<ActionBar title="Villes du monde" iosLargeTitle="true"> </ActionBar>
+
+<GridLayout>
+  <ListView [items]="personService.items()">
+    <ng-template let-item="item">
+      <StackLayout [nsRouterLink]="['/item', item.id]" class="p-4">
+        <Label [text]="item.name" class="text-lg font-bold"></Label>
+        <Label [text]="item.nationality" class="text-sm text-gray-500"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
