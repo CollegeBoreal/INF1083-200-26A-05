@@ -7,12 +7,19 @@
 
 ## Légende
 
-| Signe              | Signification                       |
+| Colonne            | Signification                       |
+|--------------------|-------------------------------------|
+| 📑                 | Fichier README.md                 |
+| 🖼️                 | Répertoire images                 |
+| 💯                 | Appréciation                        |
+| 💬                 | Commentaires                        |
+
+| Appréciation       | Signification                       |
 |--------------------|-------------------------------------|
 | ❌                 | Rien dans README.md               |
-| 🥉                 | Composants matériels détaillés      |
-| 🥈                 | Écran POST ou BIOS affiché          |
-| 🥇                 | Configuration/formatage des disques |
+| 🥉                 | s'exécute avec succès               |
+| 🥈                 | Affiche la fonctionnalité originale |
+| 🥇                 | Rajoute un composant                |
 | 🏆                 | README.md impeccable              |
 
 ## :a: Présence
