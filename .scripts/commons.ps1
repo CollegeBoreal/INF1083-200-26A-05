@@ -80,7 +80,7 @@ function Write-Summary {
 
     $SUM = "\$\displaystyle\sum_{i=1}^{$TotalCount} s_i\$"
 
-    Write-Output "| :abacus: | $COUNT = $STATS% | $SUM = $SuccessCount |"
+    Write-Output "| :abacus: | $COUNT = $STATS% - $SUM = $SuccessCount |"
 }
 
 
