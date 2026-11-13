@@ -7,7 +7,14 @@
 
 ## Légende
 
-| Signe              | Signification                       |
+| Colonne            | Signification                       |
+|--------------------|-------------------------------------|
+| 📑                 | Fichier README.md                 |
+| 🖼️                 | Répertoire images                 |
+| 💯                 | Appréciation                        |
+| 💬                 | Commentaires                        |
+
+| Appréciation       | Signification                       |
 |--------------------|-------------------------------------|
 | ❌                 | Rien dans README.md               |
 | 🥉                 | Composants matériels détaillés      |

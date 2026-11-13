@@ -10,7 +10,14 @@ function Write-LabParticipationHeader {
     Write-Output ""
     Write-Output "## Légende"
     Write-Output ""
-    Write-Output "| Signe              | Signification                       |"
+    Write-Output "| Colonne            | Signification                       |"
+    Write-Output "|--------------------|-------------------------------------|"
+    Write-Output "| 📑                 | Fichier `README.md`                 |"
+    Write-Output "| 🖼️                 | Répertoire `images`                 |"
+    Write-Output "| 💯                 | Appréciation                        |"
+    Write-Output "| 💬                 | Commentaires                        |"
+    Write-Output ""
+    Write-Output "| Appréciation       | Signification                       |"
     Write-Output "|--------------------|-------------------------------------|"
     Write-Output "| ❌                 | Rien dans `README.md`               |"
     Write-Output "| 🥉                 | Composants matériels détaillés      |"
@@ -47,12 +54,12 @@ function Write-LabHeader {
     Write-Output ""
 
     if ($FeedbackLookup.Count -gt 0) {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | Appréciation | Commentaires | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|--------------|--------------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | 📑 | 🖼️ | 💯 | 💬 | :link: IP |"
+        Write-Output "|------|-------------|----|---|----|----|-----------|"
     }
     else {
-        Write-Output "|:hash:| Boréal :id: | README.md | images | :link: IP |"
-        Write-Output "|------|-------------|-----------|--------|-----------|"
+        Write-Output "|:hash:| Boréal :id: | 📑 | 🖼️ | :link: IP |"
+        Write-Output "|------|-------------|----|---|-----------|"
     }
 }
 
