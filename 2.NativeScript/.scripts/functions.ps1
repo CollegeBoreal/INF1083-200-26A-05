@@ -20,9 +20,9 @@ function Write-LabParticipationHeader {
     Write-Output "| Appréciation       | Signification                       |"
     Write-Output "|--------------------|-------------------------------------|"
     Write-Output "| ❌                 | Rien dans `README.md`               |"
-    Write-Output "| 🥉                 | Composants matériels détaillés      |"
-    Write-Output "| 🥈                 | Écran POST ou BIOS affiché          |"
-    Write-Output "| 🥇                 | Configuration/formatage des disques |"
+    Write-Output "| 🥉                 | s'exécute avec succès               |"
+    Write-Output "| 🥈                 | Affiche la liste originale - `Computer Scientists` |"
+    Write-Output "| 🥇                 | Affiche une nouvelle liste          |"
     Write-Output "| 🏆                 | `README.md` impeccable              |"
 
 }
