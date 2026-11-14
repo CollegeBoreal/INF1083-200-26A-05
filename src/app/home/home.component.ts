@@ -7,6 +7,7 @@ import {
 @Component({
   selector: 'Home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
   imports: [NativeScriptCommonModule, NativeScriptRouterModule],
   schemas: [NO_ERRORS_SCHEMA],
 })

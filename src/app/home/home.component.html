@@ -1,12 +1,13 @@
-<StackLayout>
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
 
-<TextField #email hint="Email"></TextField>
+    <Label class="fas" text="&#xf0c9;" ></Label>
+  </GridLayout>
+</ActionBar>
 
-<TextField #username hint="Username"></TextField>
-
-<Button
-text="sign up"
-(tap)="onButtonTap(email.text, username.text)">
-</Button>
-
-</StackLayout>
+<GridLayout class="page__content">
+  <Button text="{300156497}" class="background"></Button>
+  <Button text="Browse" [nsRouterLink]="['/browse']"></Button>
+</GridLayout>
