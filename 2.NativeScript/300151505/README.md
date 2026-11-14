@@ -1,4 +1,12 @@
+# INF1083 – NativeScript
 
+Nom : Aidene
+Prénom : Arezki
+Numéro étudiant : 300151505
+
+## Code source de l'application
+
+[Cliquer ici pour accéder au code NativeScript](https://github.com/CollegeBoreal/INF1083-200-26A-05/tree/main/2.NativeScript/300151505/code)
 INF1083 – NativeScript
 
 Numéro étudiant : 300151505
