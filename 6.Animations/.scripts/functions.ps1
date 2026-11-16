@@ -14,7 +14,7 @@ function Write-LabParticipationHeader {
     Write-Output "|--------------------|-------------------------------------|"
     Write-Output "| ❌                 | Rien dans `README.md`               |"
     Write-Output "| 🥉                 | s'exécute avec succès               |"
-    Write-Output "| 🥈                 | Complète la fonctionnalité originale `animation` |"
+    Write-Output "| 🥈                 | Complète la fonctionnalité originale `Animation` |"
     Write-Output "| 🥇                 | Améliore l'animation impérative     |"
     Write-Output "| 🏆                 | `README.md` impeccable              |"
 

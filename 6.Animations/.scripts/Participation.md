@@ -11,7 +11,7 @@
 |--------------------|-------------------------------------|
 | ❌                 | Rien dans README.md               |
 | 🥉                 | s'exécute avec succès               |
-| 🥈                 | Complète la fonctionnalité originale nimation |
+| 🥈                 | Complète la fonctionnalité originale Animation |
 | 🥇                 | Améliore l'animation impérative     |
 | 🏆                 | README.md impeccable              |
 
