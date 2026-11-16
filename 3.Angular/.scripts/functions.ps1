@@ -22,7 +22,7 @@ function Write-LabParticipationHeader {
     Write-Output "| ❌                 | Rien dans `README.md`               |"
     Write-Output "| 🥉                 | s'exécute avec succès               |"
     Write-Output "| 🥈                 | Affiche la fonctionnalité originale |"
-    Write-Output "| 🥇                 | Rajoute un composant                |"
+    Write-Output "| 🥇                 | Rajouter un composant                |"
     Write-Output "| 🏆                 | `README.md` impeccable              |"
 
 }
