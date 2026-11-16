@@ -10,9 +10,9 @@
 | Signe              | Signification                       |
 |--------------------|-------------------------------------|
 | ❌                 | Rien dans README.md               |
-| 🥉                 | Composants matériels détaillés      |
-| 🥈                 | Écran POST ou BIOS affiché          |
-| 🥇                 | Configuration/formatage des disques |
+| 🥉                 | s'exécute avec succès               |
+| 🥈                 | Complète la fonctionnalité originale nimation |
+| 🥇                 | Améliore l'animation impérative     |
 | 🏆                 | README.md impeccable              |
 
 ## :a: Présence
