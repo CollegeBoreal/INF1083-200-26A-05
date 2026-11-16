@@ -19,7 +19,7 @@
 | ❌                 | Rien dans README.md               |
 | 🥉                 | s'exécute avec succès               |
 | 🥈                 | Affiche la fonctionnalité originale |
-| 🥇                 | Rajoute un composant                |
+| 🥇                 | Rajouter un composant                |
 | 🏆                 | README.md impeccable              |
 
 ## :a: Présence
