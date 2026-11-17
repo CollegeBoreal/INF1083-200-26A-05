@@ -1,13 +1,24 @@
+
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
     <Label class="action-bar-title" text="Home" colSpan="2"></Label>
-
-    <Label class="fas" text="&#xf0c9;" ></Label>
+    <Label class="fas" text="&#xf0c9;"></Label>
   </GridLayout>
 </ActionBar>
 
 <GridLayout class="page__content">
-  <Button text="{300156497}" class="background"></Button>
-  <Button text="Browse" [nsRouterLink]="['/browse']"></Button>
+  <StackLayout>
+    <Button text="300156497" class="background"></Button>
+
+    <Button
+      text="Browse"
+      [nsRouterLink]="['/browse']">
+    </Button>
+
+    <Button
+      text="Search"
+      [nsRouterLink]="['/search']">
+    </Button>
+  </StackLayout>
 </GridLayout>

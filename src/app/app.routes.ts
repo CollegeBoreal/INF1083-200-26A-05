@@ -13,5 +13,11 @@ export const routes: Routes = [
     path: 'browse',
     loadComponent: () =>
       import('./browse/browse.component').then(m => m.BrowseComponent)
+  },
+
+  {
+    path: 'search',
+    loadComponent: () =>
+      import('./search/search.component').then(m => m.SearchComponent)
   }
 ];

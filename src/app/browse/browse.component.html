@@ -1,10 +1,12 @@
+
 <StackLayout>
 
     <Label #cible text="300156497" fontSize="40"></Label>
 
     <Button
         text="Animate"
-        (tap)="animate(cible)">
+        (tap)="animate($any(cible))">
     </Button>
 
 </StackLayout>
+
