@@ -1,0 +1,36 @@
+<ActionBar title="Mon profil"></ActionBar>
+
+<StackLayout [formGroup]="signUpForm" padding="24">
+  <Label
+    text="Créer mon profil"
+    fontSize="24"
+    fontWeight="bold"
+    color="#25635A"
+    marginBottom="16"
+  ></Label>
+
+  <Label text="Courriel"></Label>
+  <TextField
+    formControlName="email"
+    hint="exemple@courriel.com"
+    keyboardType="email"
+    autocapitalizationType="none"
+    marginBottom="12"
+  ></TextField>
+
+  <Label text="Nom d’utilisateur"></Label>
+  <TextField
+    formControlName="username"
+    hint="Ex. Anis"
+    marginBottom="16"
+  ></TextField>
+
+  <Button
+    text="Créer mon profil"
+    (tap)="onButtonTap()"
+    backgroundColor="#25635A"
+    color="#FFFFFF"
+  ></Button>
+
+  <Label [text]="message" textWrap="true" marginTop="12"></Label>
+</StackLayout>
