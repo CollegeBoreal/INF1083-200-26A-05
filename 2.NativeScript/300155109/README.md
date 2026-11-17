@@ -8,6 +8,8 @@
 
 ---
 
+![liste modifiée](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/2.NativeScript/300155109/images/Screenshot%202026-11-10%20164125.png?raw=true)
+
 ## 🎯 Objectif
 
 L'objectif de ce laboratoire est de créer un projet d'application mobile avec **NativeScript et Angular**, de configurer l'environnement de développement Android, puis de compiler et exécuter l'application sur un émulateur Android.

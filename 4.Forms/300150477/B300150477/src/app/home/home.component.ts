@@ -25,16 +25,16 @@ export class HomeComponent {
     username: ['', Validators.required],
   });
 
-  message = '';
+    message = '';
 
   onButtonTap(): void {
     if (this.signUpForm.invalid) {
-      this.message = 'Saisis un courriel valide et un nom d’utilisateur.';
+      this.message = 'Saisis un courriel valide et ton pseudo de joueur.';
       return;
     }
 
     const profil = this.signUpForm.getRawValue();
     console.log(JSON.stringify(profil));
-    this.message = `Bienvenue, ${profil.username} !`;
+    this.message = `🎮 ${profil.username}, ta place dans le tournoi est réservée !`;
   }
 }
