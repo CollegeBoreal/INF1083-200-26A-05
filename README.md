@@ -13,3 +13,4 @@ INF 1083-200 Développement d'applications
 | :four:  | 20-oct | [4.Forms](4.Forms)                               | [🎉](4.Forms/.scripts/Participation.md)                        |
 | :five:  | 03-nov | [5.RxJS](5.RxJS)                                 | [🎉](5.RxJS/.scripts/Participation.md)                         |
 | :six:   | 10-nov | [6.Animations](6.Animations)                     | [🎉](6.Animations/.scripts/Participation.md)                   |
+| :six:   | 30-nov | [7.Projects](7.Projects)                         | [🎉](7.Projects/.scripts/Participation.md)                     |
