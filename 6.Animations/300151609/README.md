@@ -158,8 +158,9 @@ npm install
 
 ---
 
+<image src=images/Animi.png
+ width=50% height=50% > </image>
 ## 👤 Auteur
 
-- **Étudiant** : [Votre Nom / Prénom] (ID : `b300098957`)
-- **Formation** : Développement Mobile Cross-Platform
-- **GitHub** : [@votre-pseudo](https://github.com/votre-pseudo)
+- **Étudiant** : [Saadi Ramz Eddine] (ID : `300098957`)
+
