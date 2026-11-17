@@ -5,10 +5,10 @@
 ![Angular](https://img.shields.io/badge/Angular-17%2B-red)
 ![RxJS](https://img.shields.io/badge/RxJS-7.x-purple)
 
-**Étudiant :** Prénom Nom
-**Matricule :** <TonMatricule>
+**Étudiant :** Saadi Ramz Eddine
+**Matricule :** <300151609>
 **Cours :** INF1083
-**Date :** <JJ/MM/AAAA>
+
 
 ---
 
