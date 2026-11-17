@@ -24,22 +24,19 @@ technologie pour ce labo.
   `@nativescript/angular`)
 
 ## 📁 Structure du projet
-B300156187/
-├── src/
-│ └── app/
-│ ├── home/
-│ │ ├── home.component.html -> le formulaire (StackLayout, TextField, Button)
-│ │ └── home.component.ts -> la logique du formulaire
-│ ├── app.component.html
-│ ├── app.component.ts
-│ ├── app.routes.ts
-│ └── app.css -> le style de l'app
-├── package.json
-├── nativescript.config.ts
-└── README.md
-
-
-
+  B300156187/
+  ├── src/
+  │ └── app/
+  │ ├── home/
+  │ │ ├── home.component.html -> le formulaire (StackLayout, TextField, Button)
+  │ │ └── home.component.ts -> la logique du formulaire
+  │ ├── app.component.html
+  │ ├── app.component.ts
+  │ ├── app.routes.ts
+  │ └── app.css -> le style de l'app
+  ├── package.json
+  ├── nativescript.config.ts
+  └── README.md
 
 ## 📋 Le formulaire
 
