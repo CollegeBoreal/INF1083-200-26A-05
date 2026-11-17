@@ -1,60 +1,61 @@
 # 3001555927
 
-# Projet NativeScript — Recherche de pays — B300155927
+# 📱 Projet NativeScript — B300155927 📝
 
-Documentation des étapes de création d'une application mobile avec **NativeScript** et Angular : une recherche de pays par capitale, avec une API, testée sur un émulateur Android.
+Documentation des étapes de création d'une application mobile avec **NativeScript** et Angular : un formulaire d'inscription (*Sign Up*) testé sur un émulateur Android. ✨
 
-## Environnement
+## 🛠️ Environnement
 
 | Élément | Détail |
 |---|---|
 | Framework | NativeScript (avec Angular) |
 | Nom du projet | `B300155927` |
 | Éditeur | Visual Studio Code |
-| Fonction | Recherche de pays par capitale (service API) |
+| Formulaire | Inscription : courriel + nom d'utilisateur |
 | Test | Émulateur Android |
 
-## Étapes
+## 📋 Étapes
 
-### 1. Création du projet
+### 1️⃣ 🚀 Création du projet
 
-Le projet est créé avec la ligne de commande NativeScript (`ns`). PowerShell affiche le message **« Project B300155927 was successfully created »** et propose les commandes suivantes : entrer dans le dossier (`cd B300155927`), lancer l'application (`ns run android` ou `ns run ios`) et déboguer (`ns debug android`).
+Le projet est créé avec la ligne de commande NativeScript (`ns`). PowerShell affiche le message **« Project B300155927 was successfully created »** 🎉 et propose les commandes suivantes : entrer dans le dossier (`cd B300155927`), lancer l'application (`ns run android` ou `ns run ios`) et déboguer (`ns debug android`).
 
 ![Création du projet](images/etape-01-creation-projet.png)
 
-### 2. Le module principal — `app.module.ts`
+### 2️⃣ 📝 La vue du formulaire — `home.component.html`
 
-Le fichier `app.module.ts` est le point de départ de l'application. Il rassemble les morceaux du projet :
+Dans VS Code, on voit la structure du projet : le dossier `src/app/home/` contient le composant principal. Le fichier `home.component.html` décrit l'écran avec des balises NativeScript :
 
-- il importe `NativeScriptModule` (le module de base de NativeScript) et `NativeScriptHttpClientModule` (pour appeler une API sur Internet) ;
-- il importe `AppRoutingModule`, qui gère la navigation entre les pages (`home`, `browse`, `search`) ;
-- `bootstrap: [AppComponent]` veut dire que l'application démarre sur le composant `AppComponent` ;
-- `schemas: [NO_ERRORS_SCHEMA]` permet d'utiliser les balises NativeScript dans les écrans.
+- un `StackLayout` qui contient le formulaire `signUpForm` ;
+- un champ `TextField` pour le **courriel** 📧 (`email`, avec le clavier de type courriel) ;
+- un champ `TextField` pour le **nom d'utilisateur** 👤 (`username`) ;
+- un bouton `Button` **« Sign Up »** 🔘 qui appelle la fonction `onButtonTap()` quand on appuie dessus.
 
-Dans l'explorateur de VS Code, on voit la structure du projet : le dossier `src/app/` contient les dossiers `browse`, `home`, `search` et `shared`, ainsi que les fichiers `app-routing.module.ts`, `app.component.html`, `app.component.ts` et `app.module.ts`.
+![Vue du formulaire](images/etape-02-vue-formulaire.png)
 
-![Module principal](images/etape-02-module-principal.png)
+### 3️⃣ 💻 La logique du formulaire — `home.component.ts`
 
-### 3. Le composant de recherche — `search.component.ts`
+Le fichier `home.component.ts` contient le code du composant `HomeComponent` :
 
-Le fichier `search.component.ts` contient le code de l'écran de recherche (`selector: 'Search'`) :
+- le formulaire est construit avec `FormBuilder` (formulaire réactif d'Angular) ;
+- les deux champs, `email` et `username`, sont **obligatoires** ✅ (`Validators.required`) ;
+- la fonction `onButtonTap()` affiche les valeurs du formulaire dans la console avec `console.log` 🖥️.
 
-- il importe `ApicallService` (le service qui appelle l'API) et `Country` (le modèle d'un pays), tous les deux dans le dossier `shared` ;
-- la variable `name` contient le texte tapé par l'utilisateur ;
-- la variable `countries` contient la liste des pays trouvés ;
-- la fonction `searchCapital()` appelle `this.apiService.searchCountryByName(this.name)`, puis avec `.subscribe()` elle reçoit les données, les affiche dans la console (`console.log(data)`) et les met dans `this.countries` pour les montrer à l'écran.
+![Code du composant](images/etape-03-code-composant.png)
 
-![Code de la recherche](images/etape-03-composant-recherche.png)
+### 4️⃣ 📲 Installation sur l'émulateur Android
 
-### 4. La recherche en marche
+Après le lancement avec `ns run android`, l'application est installée sur l'émulateur : son icône **B300155927** (avec le logo NativeScript) apparaît dans la liste des applications du téléphone.
 
-Sur l'émulateur, l'écran **Search** montre un champ **Capital** et un bouton **Search**. En bas de l'écran, on voit les onglets **Home**, **Browse** et **Search**.
+![Émulateur Android](images/etape-04-emulateur-android.png)
 
-Après la recherche, l'application affiche le résultat : le pays **Haïti** et sa capitale **Port-Au-Prince**. La recherche avec l'API fonctionne.
+### 5️⃣ ✅ L'application en marche
 
-![Recherche de capitale](images/etape-04-recherche-capitale.png)
+L'application s'ouvre sur l'écran d'inscription : le titre **B300155927**, le champ courriel, le champ nom d'utilisateur et le bouton **Sign Up**. Sur la capture, les deux champs sont remplis, prêts à être envoyés avec le bouton.
 
-## Commandes utilisées
+![Application lancée](images/etape-05-application-lancee.png)
+
+## 💻 Commandes utilisées
 
 ```powershell
 ns create B300155927   # créer le projet
