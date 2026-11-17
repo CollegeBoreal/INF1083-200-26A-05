@@ -102,46 +102,9 @@ Sortie console :
 | `ngModel` sans effet | Ajouter `NativeScriptFormsModule` dans `search.module.ts` |
 | Liste vide malgré une réponse | Vérifier la structure JSON renvoyée par l'API dans l'opérateur `map` |
 
-import { Component, OnInit } from '@angular/core';
-import { ApicallService } from '../shared/apicall.service';
-import { Country } from '../shared/country';
 
-@Component({
-  selector: 'Search',
-  templateUrl: './search.component.html',
-})
-export class SearchComponent implements OnInit {
-
-  name: string = '';
-  countries: Array<Country> = [];
-  errorMessage: string = '';
-
-  constructor(private apiService: ApicallService) {}
-
-  ngOnInit(): void {}
-
-  searchCapital(): void {
-    if (!this.name || this.name.trim() === '') {
-      this.errorMessage = 'Veuillez saisir une capitale.';
-      return;
-    }
-
-    this.errorMessage = '';
-
-    this.apiService.searchCountryByName(this.name.trim()).subscribe({
-      next: (data: Country[]) => {
-        console.log(JSON.stringify(data));
-        this.countries = data;
-      },
-      error: (err) => {
-        this.countries = [];
-        this.errorMessage = err;
-        console.error(err);
-      },
-    });
-  }
-}
-
+<image src=images/698662868-6273eed7-7587-4fa4-b5c4-47869ac3f728.png
+ width=50% height=50% > </image>
 ## Références
 
 - RxJS : https://rxjs.dev/guide/overview
