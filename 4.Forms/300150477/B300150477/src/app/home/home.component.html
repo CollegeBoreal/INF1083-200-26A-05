@@ -1,36 +1,51 @@
-<ActionBar title="Mon profil"></ActionBar>
+<ActionBar title="🎮 Pixel Arena" backgroundColor="#17142B" color="#FFFFFF"></ActionBar>
 
-<StackLayout [formGroup]="signUpForm" padding="24">
+<StackLayout [formGroup]="signUpForm" padding="24" backgroundColor="#211C37">
   <Label
-    text="Créer mon profil"
-    fontSize="24"
+    text="Inscription au tournoi"
+    fontSize="26"
     fontWeight="bold"
-    color="#25635A"
-    marginBottom="16"
+    color="#FFFFFF"
+    textWrap="true"
+  ></Label>
+  <Label
+    text="Entre ton pseudo pour rejoindre la partie."
+    color="#D9D0F0"
+    textWrap="true"
+    marginBottom="24"
   ></Label>
 
-  <Label text="Courriel"></Label>
+  <Label text="Courriel" color="#FFFFFF"></Label>
   <TextField
     formControlName="email"
-    hint="exemple@courriel.com"
+    hint="joueur@exemple.com"
     keyboardType="email"
     autocapitalizationType="none"
-    marginBottom="12"
+    backgroundColor="#31294A"
+    color="#FFFFFF"
+    placeholderColor="#D9D0F0"
+    padding="12"
+    marginBottom="16"
   ></TextField>
 
-  <Label text="Nom d’utilisateur"></Label>
+  <Label text="Pseudo de joueur" color="#FFFFFF"></Label>
   <TextField
     formControlName="username"
-    hint="Ex. Anis"
-    marginBottom="16"
+    hint="Ex. AnisPixel"
+    backgroundColor="#31294A"
+    color="#FFFFFF"
+    placeholderColor="#D9D0F0"
+    padding="12"
+    marginBottom="20"
   ></TextField>
 
   <Button
-    text="Créer mon profil"
+    text="Rejoindre le tournoi"
     (tap)="onButtonTap()"
-    backgroundColor="#25635A"
+    backgroundColor="#7046CC"
     color="#FFFFFF"
+    borderRadius="8"
   ></Button>
 
-  <Label [text]="message" textWrap="true" marginTop="12"></Label>
+  <Label [text]="message" color="#E4D7FF" textWrap="true" marginTop="16"></Label>
 </StackLayout>
