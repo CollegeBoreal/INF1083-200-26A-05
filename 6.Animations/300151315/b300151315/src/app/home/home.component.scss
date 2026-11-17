@@ -1,0 +1,26 @@
+@keyframes bgAnimation {
+    from { background-color: red; }
+    to { background-color: green; }
+}
+.background {
+    animation-name: bgAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    color: #ffffff;
+    font-size: 40;
+    font-weight: bold;
+    height: 140;
+    border-radius: 24;
+    margin: 0;
+}
+
+.bar { background-color: #5b3df5; color: #ffffff; }
+.bar-icon { color: #ffffff; font-size: 20; }
+.bar-title { color: #ffffff; font-size: 20; font-weight: bold; }
+.page { background-color: #f3f1fb; padding: 24 20; }
+.tag { color: #5b3df5; font-size: 13; font-weight: bold; letter-spacing: 0.1; }
+.title { color: #1c1838; font-size: 30; font-weight: bold; margin-top: 4; }
+.subtitle { color: #6b6785; font-size: 15; margin-top: 6; margin-bottom: 24; }
+.card { background-color: #ffffff; border-radius: 24; padding: 20; }
+.hint { color: #6b6785; font-size: 14; text-align: center; margin-top: 14; }
+.footer { color: #9a96b3; font-size: 13; text-align: center; margin-top: 32; }

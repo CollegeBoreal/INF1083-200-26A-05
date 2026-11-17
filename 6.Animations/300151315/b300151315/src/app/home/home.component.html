@@ -1,0 +1,20 @@
+<ActionBar class="bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="fas bar-icon" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    <Label class="bar-title" text="Animations" col="1"></Label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout class="page">
+  <Label class="tag" text="DÉCLARATIVE · CSS"></Label>
+  <Label class="title" text="Animation CSS" textWrap="true"></Label>
+  <Label class="subtitle" text="@keyframes bgAnimation : rouge → vert en 2 secondes" textWrap="true"></Label>
+
+  <StackLayout class="card">
+    <Button text="{N}" class="background"></Button>
+    <Label class="hint" text="La couleur change au chargement de la page" textWrap="true"></Label>
+  </StackLayout>
+
+  <Label class="footer" text="Toumi Ayoub · 300151315"></Label>
+</StackLayout>
