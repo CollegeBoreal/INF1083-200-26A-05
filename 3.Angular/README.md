@@ -155,9 +155,9 @@ http://localhost:4200
 src/
 │
 ├── app/
-│   ├── app.component.ts
-│   ├── app.component.html
-│   ├── app.component.css
+│   ├── app.ts
+│   ├── app.html
+│   ├── app.css
 │
 ├── assets/
 ├── index.html
@@ -202,10 +202,10 @@ Résultat :
 ```text
 src/app/accueil
 │
-├── accueil.component.ts
-├── accueil.component.html
-├── accueil.component.css
-└── accueil.component.spec.ts
+├── accueil.ts
+├── accueil.html
+├── accueil.css
+└── accueil.spec.ts
 ```
 
 ---
@@ -219,7 +219,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-accueil',
-  templateUrl: './accueil.component.html'
+  templateUrl: './accueil.html'
 })
 export class AccueilComponent {
   titre = 'Bienvenue INF1083';
@@ -360,7 +360,7 @@ Exemple :
 const routes = [
   {
     path: '',
-    component: AccueilComponent
+    component: Accueil
   }
 ];
 ```
@@ -369,7 +369,7 @@ const routes = [
 
 # 🎨 Style CSS
 
-## accueil.component.css
+## accueil.css
 
 ```css
 h1 {

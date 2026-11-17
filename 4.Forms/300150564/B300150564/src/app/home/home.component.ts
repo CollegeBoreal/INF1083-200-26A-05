@@ -32,6 +32,7 @@ export class HomeComponent {
     this.bookingForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', Validators.required],
+      username: ['', Validators.required],
       phone: ['', Validators.required],
       carType: ['', Validators.required],
       pickupLocation: ['', Validators.required],
@@ -43,6 +44,17 @@ export class HomeComponent {
 
   onBookNow() {
     console.log('CAR RENTAL BOOKING');
-    console.log(JSON.stringify(this.bookingForm.value));
+    console.log('Full Name: ' + this.bookingForm.value.fullName);
+    console.log('Email: ' + this.bookingForm.value.email);
+    console.log('Username: ' + this.bookingForm.value.username);
+    console.log('Phone: ' + this.bookingForm.value.phone);
+    console.log('Car Type: ' + this.bookingForm.value.carType);
+    console.log('Pick-up Location: ' + this.bookingForm.value.pickupLocation);
+    console.log('Pick-up Date: ' + this.bookingForm.value.pickupDate);
+    console.log('Return Date: ' + this.bookingForm.value.returnDate);
+    console.log(
+      'Additional Insurance: ' +
+        (this.bookingForm.value.insurance ? 'Yes' : 'No')
+    );
   }
 }

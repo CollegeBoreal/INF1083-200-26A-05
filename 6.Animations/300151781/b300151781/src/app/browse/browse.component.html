@@ -1,0 +1,35 @@
+﻿<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page-anim">
+    <Label class="kicker" text="ANIMATION IMPÉRATIVE"></Label>
+    <Label class="title" text="view.animate()" textWrap="true"></Label>
+    <Label
+      class="subtitle"
+      textWrap="true"
+      text="L'animation est pilotée en TypeScript : chaque étape est une promesse enchaînée avec then()."
+    ></Label>
+
+    <AbsoluteLayout width="300" height="300" class="bg-primary m-15 stage" borderRadius="20">
+      <Image #cible src="res://logo" left="75" top="100" width="150" height="100" stretch="aspectFit"></Image>
+    </AbsoluteLayout>
+
+    <Label class="status" [text]="status"></Label>
+
+    <Button text="Animate" (tap)="animate(cible)" [isEnabled]="!isAnimating" class="btn-main"></Button>
+
+    <GridLayout columns="*, *" rows="auto, auto" class="actions">
+      <Button row="0" col="0" text="Fondu" class="btn-step" [isEnabled]="!isAnimating" (tap)="fade(cible)"></Button>
+      <Button row="0" col="1" text="Déplacer" class="btn-step" [isEnabled]="!isAnimating" (tap)="move(cible)"></Button>
+      <Button row="1" col="0" text="Agrandir" class="btn-step" [isEnabled]="!isAnimating" (tap)="zoom(cible)"></Button>
+      <Button row="1" col="1" text="Pivoter" class="btn-step" [isEnabled]="!isAnimating" (tap)="spin(cible)"></Button>
+    </GridLayout>
+  </StackLayout>
+</ScrollView>

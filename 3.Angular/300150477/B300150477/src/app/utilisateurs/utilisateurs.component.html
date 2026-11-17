@@ -1,0 +1,28 @@
+<section class="page">
+  <header>
+    <span class="badge">API REST · JSONPLACEHOLDER</span>
+    <h1>Les utilisateurs</h1>
+    <p>Un annuaire chargé directement depuis une API.</p>
+  </header>
+
+  @if (chargement()) {
+    <p role="status">Chargement des utilisateurs…</p>
+  }
+
+  @if (erreur()) {
+    <p class="erreur" role="alert">{{ erreur() }}</p>
+  }
+
+  <div class="grille">
+    @for (utilisateur of utilisateurs(); track utilisateur.id) {
+      <article class="carte">
+        <div class="avatar">{{ utilisateur.name.charAt(0) }}</div>
+        <span class="identifiant">PROFIL #{{ utilisateur.id }}</span>
+        <h2>{{ utilisateur.name }}</h2>
+        <a [href]="'mailto:' + utilisateur.email">
+          {{ utilisateur.email }}
+        </a>
+      </article>
+    }
+  </div>
+</section>

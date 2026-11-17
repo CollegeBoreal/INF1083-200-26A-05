@@ -1,0 +1,118 @@
+<ActionBar title="Recherche de capitale"></ActionBar>
+
+<ScrollView>
+    <StackLayout class="search-page">
+
+        <StackLayout class="hero">
+            <Label
+                text="🌍 Recherche de capitale"
+                class="hero-title">
+            </Label>
+
+            <Label
+                text="Observable RxJS + HttpClient"
+                class="hero-subtitle">
+            </Label>
+
+            <Label
+                text="Recherchez une capitale pour découvrir les pays correspondants."
+                textWrap="true"
+                class="hero-description">
+            </Label>
+        </StackLayout>
+
+        <StackLayout class="search-card">
+
+            <Label
+                text="CAPITALE"
+                class="field-label">
+            </Label>
+
+            <TextField
+                hint="Ex. Paris, Ottawa, San..."
+                [(ngModel)]="name"
+                class="search-input">
+            </TextField>
+
+            <Button
+                text="RECHERCHER"
+                (tap)="searchCapital()"
+                class="search-button">
+            </Button>
+
+        </StackLayout>
+
+        <StackLayout
+            *ngIf="countries.length > 0"
+            class="results-section">
+
+            <Label
+                [text]="'Résultats trouvés : ' + countries.length"
+                class="results-title">
+            </Label>
+
+            <ListView
+                [items]="countries"
+                height="600"
+                class="results-list">
+
+                <ng-template let-item="item">
+
+                    <GridLayout
+                        rows="auto, auto"
+                        columns="auto, *"
+                        class="country-card">
+
+                        <Label
+                            rowSpan="2"
+                            col="0"
+                            text="🌐"
+                            class="country-icon">
+                        </Label>
+
+                        <Label
+                            row="0"
+                            col="1"
+                            [text]="item.name"
+                            class="country-name">
+                        </Label>
+
+                        <Label
+                            row="1"
+                            col="1"
+                            [text]="'Capitale : ' + item.capital"
+                            class="capital-name">
+                        </Label>
+
+                    </GridLayout>
+
+                </ng-template>
+
+            </ListView>
+
+        </StackLayout>
+
+        <StackLayout
+            *ngIf="countries.length === 0"
+            class="empty-state">
+
+            <Label
+                text="🔎"
+                class="empty-icon">
+            </Label>
+
+            <Label
+                text="Prêt à rechercher"
+                class="empty-title">
+            </Label>
+
+            <Label
+                text="Entrez le nom d'une capitale puis appuyez sur RECHERCHER."
+                textWrap="true"
+                class="empty-text">
+            </Label>
+
+        </StackLayout>
+
+    </StackLayout>
+</ScrollView>

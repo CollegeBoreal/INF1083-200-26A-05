@@ -1,37 +1,32 @@
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import {
-  NativeScriptCommonModule,
-  NativeScriptRouterModule,
+    NativeScriptCommonModule,
+    NativeScriptFormsModule
 } from '@nativescript/angular';
 
-
 @Component({
-  selector: 'Home',
-  templateUrl: './home.component.html',
-  imports: [
-    NativeScriptCommonModule,
-    NativeScriptRouterModule
-  ],
-  schemas: [NO_ERRORS_SCHEMA],
+    selector: 'Home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    imports: [
+        NativeScriptCommonModule,
+        NativeScriptFormsModule
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class HomeComponent {
 
-  signUpForm: FormGroup;
+    email: string = '';
+    username: string = '';
 
-  constructor(private formBuilder: FormBuilder) {
-  }
+    onButtonTap(): void {
+        console.log('=== BOUTON CLIQUÉ ===');
+        console.log('Email =', this.email);
+        console.log('Username =', this.username);
 
-  ngOnInit(): void {
-
-    this.signUpForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      username: ['', Validators.required],
-    });
-
-  }
-
-  onButtonTap() {
-    console.log(JSON.stringify(this.signUpForm.value));
-  }
+        console.log({
+            email: this.email,
+            username: this.username
+        });
+    }
 }

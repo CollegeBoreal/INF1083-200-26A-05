@@ -3,25 +3,66 @@ import { Person } from './person';
 
 @Injectable({providedIn: 'root'})
 export class PersonService {
-  items = signal<Person[]>([
-    { id: 1, name: 'Alan Turing', nationality: 'British', notableAchievements: ['WW2 code breaking', 'Father of theoretical computer science and AI' ] },
-    { id: 2, name: 'Grace Hopper', nationality: 'American', notableAchievements: ['COBOL development', 'Navy commander', 'Implementation of computer systems and components testing'] },
-    { id: 3, name: 'Donal Knuth', nationality: 'American', notableAchievements: [ 'Author of The Art of Computer Programming', 'Created TeX typesetting system' ] },
-    { id: 4, name: 'Ada Lovelace', nationality: 'British', notableAchievements: [ 'First computer programmer', 'Worked on Analytical Engine' ]},
-    { id: 5, name: 'John von Neumann', nationality: 'Hungarian/American', notableAchievements: [ 'Von Neumann architecture', 'Game theory', 'Contributed to EDVAC' ] },
-    { id: 6, name: 'Tim Berners-Lee', nationality: 'British', notableAchievements: [ 'Inventor of the World Wide Web' ] },
-    { id: 7, name: 'Edsger Dijkstra', nationality: 'Dutch', notableAchievements: [ 'Shortest path algorithm', 'Structured programming advocate' ] },
-    { id: 8, name: 'Linus Torvalds', nationality: 'Finnish-American', notableAchievements: ['Creator of Linux kernel', 'Creator of Git'] },
-    { id: 9, name: 'John McCarthy', nationality: 'American', notableAchievements: ['Coined term "Artificial Intelligence"', 'Created LISP programming language'] },
-    { id: 10, name: 'Dennis Ritchie', nationality: 'American', notableAchievements: ['Creator of C programming language', 'Co-creator of Unix'] },
-    { id: 11, name: 'Bjarne Stroustrup', nationality: 'Danish', notableAchievements: [ 'Creator of C++ programming language' ] },
-    { id: 12, name: 'Steve Wozniak', nationality: 'American', notableAchievements: ['Co-founder of Apple', 'Designer of Apple I & II', 'Pioneer of personal computing'] },
-    { id: 13, name: 'Tommy Flowers', nationality: 'British', notableAchievements: ['Designer of Colossus', 'Pioneer in electronic computing'] },
-    { id: 14, name: 'John Backus', nationality: 'American', notableAchievements: ['Created FORTRAN', 'Developed Backus-Naur form(BNF) notation'] },
-    { id: 15, name: 'Niklaus Wirth', nationality: 'Swiss', notableAchievements: ['Creator of Pascal, Modula, Oberon languages', 'Software engineering pioneer'] },
+  readonly items = signal<Person[]>([
+    {
+      id: 1,
+      name: 'Syphax',
+      nameTifinagh: 'ⵙⵉⴼⴰⴽⵙ',
+      period: '213–203 av. J.-C.',
+      territoryFr: 'Massæsylie occidentale · Siga (près d’Aïn Témouchent)',
+      territoryTifinagh: 'ⵎⴰⵙⴰⵙⵉⵍⵉ · ⵙⵉⴳⴰ · ⵄⵉⵏ ⵜⵉⵎⵓⵛⵉⵏⵜ',
+      historyFr: [
+        'Roi des Massæsyles, peuple de l’ouest de la Numidie.',
+        'Son royaume avait pour centre Siga, dans l’actuelle région d’Aïn Témouchent.',
+      ],
+      historyTifinagh: ['ⴰⴳⴻⵍⵍⵉⴷ ⵏ ⵎⴰⵙⴰⵙⵉⵍⵉ.', 'ⵙⵉⴳⴰ · ⵄⵉⵏ ⵜⵉⵎⵓⵛⵉⵏⵜ.'],
+    },
+    {
+      id: 2,
+      name: 'Massinissa',
+      nameTifinagh: 'ⵎⴰⵙⵙⵉⵏⵉⵙⵙⴰ',
+      period: 'vers 202–148 av. J.-C.',
+      territoryFr: 'Numidie unifiée · Cirta (actuelle Constantine)',
+      territoryTifinagh: 'ⵏⵓⵎⵉⴷⵢⴰ · ⵙⵉⵔⵜⴰ · ⵇⵙⵏⵟⵉⵏⴰ',
+      historyFr: [
+        'Unifie les royaumes numides après la défaite de Syphax.',
+        'Cirta, l’actuelle Constantine, devient la capitale de son royaume.',
+      ],
+      historyTifinagh: ['ⴰⴳⴻⵍⵍⵉⴷ ⵏ ⵎⴰⵙⵙⵉⵍⵉⵢⵏ.', 'ⵏⵓⵎⵉⴷⵢⴰ · ⵙⵉⵔⵜⴰ.'],
+    },
+    {
+      id: 3,
+      name: 'Micipsa',
+      nameTifinagh: 'ⵎⵉⴽⵉⴱⵙⴰ',
+      period: '148–118 av. J.-C.',
+      territoryFr: 'Numidie · Cirta (actuelle Constantine)',
+      territoryTifinagh: 'ⵏⵓⵎⵉⴷⵢⴰ · ⵙⵉⵔⵜⴰ · ⵇⵙⵏⵟⵉⵏⴰ',
+      historyFr: ['Fils et successeur de Massinissa.', 'Son règne est associé au développement de Cirta.'],
+      historyTifinagh: ['ⴰⴳⴻⵍⵍⵉⴷ ⵏ ⵏⵓⵎⵉⴷⵢⴰ.', 'ⵙⵉⵔⵜⴰ.'],
+    },
+    {
+      id: 4,
+      name: 'Jugurtha',
+      nameTifinagh: 'ⵢⵓⴳⵓⵔⵜⴰ',
+      period: '118–105 av. J.-C.',
+      territoryFr: 'Numidie · notamment Cirta et l’ouest du royaume',
+      territoryTifinagh: 'ⵏⵓⵎⵉⴷⵢⴰ · ⵙⵉⵔⵜⴰ',
+      historyFr: ['Petit-fils de Massinissa et roi de Numidie.', 'Sa résistance à Rome a marqué la guerre de Jugurtha.'],
+      historyTifinagh: ['ⴰⴳⴻⵍⵍⵉⴷ ⵏ ⵏⵓⵎⵉⴷⵢⴰ.', 'ⵏⵓⵎⵉⴷⵢⴰ · ⵔⵓⵎⴰ.'],
+    },
+    {
+      id: 5,
+      name: 'Juba Ier',
+      nameTifinagh: 'ⵢⵓⴱⴰ ⵉ',
+      period: '60–46 av. J.-C.',
+      territoryFr: 'Numidie · région de Cirta',
+      territoryTifinagh: 'ⵏⵓⵎⵉⴷⵢⴰ · ⵙⵉⵔⵜⴰ',
+      historyFr: ['Roi de Numidie pendant les guerres civiles romaines.', 'Après sa défaite en 46 av. J.-C., son royaume passe sous domination romaine.'],
+      historyTifinagh: ['ⴰⴳⴻⵍⵍⵉⴷ ⵏ ⵏⵓⵎⵉⴷⵢⴰ.', 'ⵏⵓⵎⵉⴷⵢⴰ · ⵔⵓⵎⴰ.'],
+    },
   ]);
 
-  getPerson(id: number): Person {
+  getPerson(id: number): Person | undefined {
     return this.items().find((person) => person.id === id);
   }
 }

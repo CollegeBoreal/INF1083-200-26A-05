@@ -1,0 +1,64 @@
+﻿.page-anim {
+  padding: 24;
+  background-color: #f4f6fb;
+}
+
+.kicker {
+  color: #6b4eff;
+  font-size: 12;
+  font-weight: bold;
+  letter-spacing: 0.15;
+}
+
+.title {
+  font-size: 28;
+  font-weight: bold;
+  color: #1c1f2e;
+  margin-top: 4;
+}
+
+.subtitle {
+  font-size: 15;
+  color: #5b6175;
+  margin-top: 8;
+}
+
+.status {
+  text-align: center;
+  color: #1c1f2e;
+  font-size: 16;
+  font-weight: bold;
+  margin: 8 0;
+}
+
+.btn-main {
+  background-color: #6b4eff;
+  color: white;
+  height: 52;
+  border-radius: 12;
+  font-weight: bold;
+  margin: 4;
+}
+
+.btn-main:disabled {
+  background-color: #b9adff;
+}
+
+.actions {
+  margin-top: 8;
+}
+
+.btn-step {
+  background-color: white;
+  color: #6b4eff;
+  border-color: #6b4eff;
+  border-width: 1;
+  border-radius: 12;
+  height: 48;
+  margin: 4;
+}
+
+.btn-step:disabled {
+  color: #b9adff;
+  border-color: #b9adff;
+}

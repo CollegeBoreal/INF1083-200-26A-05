@@ -1,0 +1,51 @@
+<ActionBar title="🎮 Pixel Arena" backgroundColor="#17142B" color="#FFFFFF"></ActionBar>
+
+<StackLayout [formGroup]="signUpForm" padding="24" backgroundColor="#211C37">
+  <Label
+    text="Inscription au tournoi"
+    fontSize="26"
+    fontWeight="bold"
+    color="#FFFFFF"
+    textWrap="true"
+  ></Label>
+  <Label
+    text="Entre ton pseudo pour rejoindre la partie."
+    color="#D9D0F0"
+    textWrap="true"
+    marginBottom="24"
+  ></Label>
+
+  <Label text="Courriel" color="#FFFFFF"></Label>
+  <TextField
+    formControlName="email"
+    hint="joueur@exemple.com"
+    keyboardType="email"
+    autocapitalizationType="none"
+    backgroundColor="#31294A"
+    color="#FFFFFF"
+    placeholderColor="#D9D0F0"
+    padding="12"
+    marginBottom="16"
+  ></TextField>
+
+  <Label text="Pseudo de joueur" color="#FFFFFF"></Label>
+  <TextField
+    formControlName="username"
+    hint="Ex. AnisPixel"
+    backgroundColor="#31294A"
+    color="#FFFFFF"
+    placeholderColor="#D9D0F0"
+    padding="12"
+    marginBottom="20"
+  ></TextField>
+
+  <Button
+    text="Rejoindre le tournoi"
+    (tap)="onButtonTap()"
+    backgroundColor="#7046CC"
+    color="#FFFFFF"
+    borderRadius="8"
+  ></Button>
+
+  <Label [text]="message" color="#E4D7FF" textWrap="true" marginTop="16"></Label>
+</StackLayout>

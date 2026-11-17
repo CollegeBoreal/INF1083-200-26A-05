@@ -13,9 +13,9 @@ function Write-LabParticipationHeader {
     Write-Output "| Signe              | Signification                       |"
     Write-Output "|--------------------|-------------------------------------|"
     Write-Output "| ❌                 | Rien dans `README.md`               |"
-    Write-Output "| 🥉                 | Composants matériels détaillés      |"
-    Write-Output "| 🥈                 | Écran POST ou BIOS affiché          |"
-    Write-Output "| 🥇                 | Configuration/formatage des disques |"
+    Write-Output "| 🥉                 | s'exécute avec succès               |"
+    Write-Output "| 🥈                 | Complète la fonctionnalité originale `Animation` |"
+    Write-Output "| 🥇                 | Améliore l'animation impérative     |"
     Write-Output "| 🏆                 | `README.md` impeccable              |"
 
 }
