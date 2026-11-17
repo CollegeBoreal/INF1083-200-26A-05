@@ -4,8 +4,8 @@
 ![NativeScript](https://img.shields.io/badge/NativeScript-8.x-blue)
 ![Angular](https://img.shields.io/badge/Angular-17%2B-red)
 
-**Étudiant :** Prénom Nom
-**Matricule :** B<TonID>
+**Étudiant :Saadi Ramz Eddine
+**Matricule :300151609
 **Cours :** <Nom du cours>
 **Enseignant :** <Nom de l'enseignant>
 **Date :** <JJ/MM/AAAA>
