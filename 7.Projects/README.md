@@ -18,6 +18,7 @@ Dans votre documentation :
 Au niveau technique:
 * donner les `templates` (patrons) que vous utilisez
 * donner les `plugins` également
+* un minimum de 3 pages (onglets/menu) est requis
 
 https://market.nativescript.org
 
