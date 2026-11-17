@@ -369,3 +369,8 @@ J'ai appris à installer les outils nécessaires, à créer un projet Angular, �
 J'ai également découvert comment personnaliser une interface avec CSS et exécuter une application localement.
 
 Cette première expérience m'a permis de mieux comprendre l'organisation d'un projet Angular et les différentes technologies utilisées dans le développement d'applications Web.
+
+<image src=images/999.jpg width=50% height=50% > </image>
+<image src=images/888.jpg width=50% height=50% > </image>
+<image src=images/7777.jpg width=50% height=50% > </image>
+<image src=images/1234444.jpg width=50% height=50% > </image>
