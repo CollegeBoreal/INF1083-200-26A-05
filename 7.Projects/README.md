@@ -13,4 +13,11 @@
 Dans votre documentation :
 * présenter votre projet en un bref résumé
 * donner le nom a votre application
+* faire un design manuel (si souhaité)
+
+Au niveau technique:
+* donner les `templates` (patrons) que vous utilisez
+* donner les `plugins` également
+
+https://market.nativescript.org
 
