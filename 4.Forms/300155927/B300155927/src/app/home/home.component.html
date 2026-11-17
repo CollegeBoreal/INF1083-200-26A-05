@@ -1,17 +1,19 @@
-<StackLayout [formGroup]="signUpForm">
+<StackLayout>
+
     <TextField
-        formControlName="email"
         hint="Email"
-        keyboardType="email">
+        keyboardType="email"
+        [(ngModel)]="email">
     </TextField>
 
     <TextField
-        formControlName="username"
-        hint="Username">
+        hint="Username"
+        [(ngModel)]="username">
     </TextField>
 
     <Button
         text="Sign Up"
         (tap)="onButtonTap()">
     </Button>
+
 </StackLayout>

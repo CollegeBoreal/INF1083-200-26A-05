@@ -1,0 +1,135 @@
+.search-page {
+    background-color: #f4f7fb;
+    padding: 24;
+}
+
+.hero {
+    margin-top: 10;
+    margin-bottom: 22;
+}
+
+.hero-title {
+    font-size: 27;
+    font-weight: bold;
+    color: #172033;
+    margin-bottom: 6;
+}
+
+.hero-subtitle {
+    font-size: 17;
+    color: #356ae6;
+    font-weight: 600;
+    margin-bottom: 10;
+}
+
+.hero-description {
+    font-size: 14;
+    color: #68758a;
+    line-height: 5;
+}
+
+.search-card {
+    background-color: #ffffff;
+    border-radius: 18;
+    padding: 20;
+    margin-bottom: 22;
+}
+
+.field-label {
+    font-size: 12;
+    font-weight: bold;
+    color: #65728a;
+    margin-bottom: 8;
+}
+
+.search-input {
+    background-color: #f7f9fc;
+    color: #172033;
+    placeholder-color: #9aa5b5;
+    border-width: 1;
+    border-color: #dce3ed;
+    border-radius: 12;
+    padding: 14;
+    font-size: 16;
+    margin-bottom: 16;
+}
+
+.search-button {
+    background-color: #2867e8;
+    color: #ffffff;
+    border-radius: 12;
+    height: 54;
+    font-size: 15;
+    font-weight: bold;
+}
+
+.results-section {
+    margin-top: 4;
+}
+
+.results-title {
+    color: #172033;
+    font-size: 18;
+    font-weight: bold;
+    margin-bottom: 14;
+}
+
+.results-list {
+    background-color: transparent;
+    separator-color: transparent;
+}
+
+.country-card {
+    background-color: #ffffff;
+    border-radius: 16;
+    padding: 18;
+    margin-bottom: 12;
+}
+
+.country-icon {
+    font-size: 28;
+    vertical-align: middle;
+    margin-right: 16;
+}
+
+.country-name {
+    color: #172033;
+    font-size: 19;
+    font-weight: bold;
+    margin-bottom: 5;
+}
+
+.capital-name {
+    color: #2867e8;
+    font-size: 15;
+}
+
+.empty-state {
+    background-color: #ffffff;
+    border-radius: 18;
+    padding: 28;
+    horizontal-align: center;
+    text-align: center;
+    margin-top: 8;
+}
+
+.empty-icon {
+    font-size: 34;
+    horizontal-align: center;
+    margin-bottom: 10;
+}
+
+.empty-title {
+    color: #172033;
+    font-size: 18;
+    font-weight: bold;
+    horizontal-align: center;
+    margin-bottom: 7;
+}
+
+.empty-text {
+    color: #7a8699;
+    font-size: 14;
+    text-align: center;
+    horizontal-align: center;
+}
