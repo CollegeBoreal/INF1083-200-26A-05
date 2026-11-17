@@ -9,4 +9,4 @@ NativeScript est un framework qui permet de créer des applications mobiles nati
 <img src="images/derniere.png" width="50%" height="50%" alt="Émulateur Android avec la fenêtre de compilation">
 
 
-<img src="images/compilation.png" width="50%" height="50%" alt="Console de compilation et émulateur Android">
+<img src="images/Screenshot%202026-10-13%20142959.png" width="50%" height="50%" alt="Console de compilation et émulateur Android">
