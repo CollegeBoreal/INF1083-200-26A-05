@@ -1,0 +1,58 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="*, auto">
+    <ScrollView row="0">
+      <StackLayout>
+        <!-- Grande photo + boutons ronds -->
+        <GridLayout class="photo-produit" backgroundColor="{{ produit.couleur }}">
+          <Label text="{{ produit.emoji }}" class="photo-emoji" />
+          <GridLayout columns="auto, *, auto, auto" verticalAlignment="top" margin="14">
+            <Button col="0" text="‹" tap="{{ onRetour }}" class="rond-blanc" />
+            <Button col="2" text="⤴" tap="{{ onPartager }}" class="rond-blanc" marginRight="8" />
+            <Button col="3" text="{{ favori ? '♥' : '♡' }}" tap="{{ onFavori }}" class="rond-blanc" color="#B23A2B" />
+          </GridLayout>
+        </GridLayout>
+
+        <!-- Fiche -->
+        <StackLayout class="fiche">
+          <Label text="{{ 'Origine : ' + produit.pays }}" class="badge" />
+          <Label text="{{ produit.nom }}" class="fiche-nom" textWrap="true" />
+          <Label>
+            <FormattedString>
+              <Span text="{{ etoiles }}" class="etoiles" />
+              <Span text="{{ '  (' + produit.avis + ' avis)' }}" class="avis" />
+            </FormattedString>
+          </Label>
+          <Label text="{{ produit.description }}" class="description" textWrap="true" />
+          <c:kente />
+
+          <Label text="Format" class="menu-titre" marginTop="14" />
+          <Repeater items="{{ formats }}" marginTop="8">
+            <Repeater.itemsLayout>
+              <WrapLayout orientation="horizontal" />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+              <Button text="{{ label }}" tap="onFormatTap" class="{{ actif ? 'chip chip-actif' : 'chip' }}" />
+            </Repeater.itemTemplate>
+          </Repeater>
+
+          <Label text="Quantité" class="menu-titre" marginTop="14" />
+          <StackLayout orientation="horizontal" marginTop="8">
+            <Button text="−" tap="{{ onMoins }}" class="qte-btn" />
+            <Label text="{{ quantite }}" width="44" fontSize="18" textAlignment="center" verticalAlignment="center" />
+            <Button text="+" tap="{{ onPlus }}" class="qte-btn" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Barre du bas : prix + bouton -->
+    <GridLayout row="1" columns="auto, *" class="barre-bas">
+      <StackLayout col="0" verticalAlignment="center">
+        <Label text="Prix" class="prix-label" />
+        <Label text="{{ prixTexte }}" class="prix-grand" />
+      </StackLayout>
+      <Button col="1" text="Ajouter au panier" tap="{{ onAjouter }}" class="btn-or" marginLeft="16" />
+    </GridLayout>
+    <Label row="0" text="{{ message }}" class="toast" verticalAlignment="bottom" visibility="{{ message ? 'visible' : 'collapsed' }}" />
+  </GridLayout>
+</Page>

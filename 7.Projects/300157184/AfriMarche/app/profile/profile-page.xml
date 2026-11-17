@@ -1,0 +1,60 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <!-- En-tête : photo, nom, courriel -->
+    <StackLayout row="0" class="entete" paddingTop="24" tap="{{ onModifierProfil }}">
+      <Label text="{{ initiales }}" class="avatar" />
+      <Label text="{{ nom || 'Touche ici pour ajouter ton nom' }}" class="profil-nom" />
+      <Label text="{{ courriel || 'courriel non renseigné' }}" class="profil-courriel" />
+    </StackLayout>
+    <c:kente row="1" />
+
+    <ScrollView row="2">
+      <StackLayout paddingTop="8">
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onCommandes }}">
+          <Label col="0" text="📦" class="menu-rond k-rouge" />
+          <StackLayout col="1" marginLeft="12">
+            <Label text="Mes commandes" class="menu-titre" />
+            <Label text="{{ nbCommandes + ' commande(s)' }}" class="menu-sous" />
+          </StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onAdresse }}">
+          <Label col="0" text="🏠" class="menu-rond k-or" />
+          <StackLayout col="1" marginLeft="12">
+            <Label text="Adresse de livraison" class="menu-titre" />
+            <Label text="{{ adresse || 'À ajouter' }}" class="menu-sous" textWrap="true" />
+          </StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onPosition }}">
+          <Label col="0" text="📍" class="menu-rond k-vert" />
+          <StackLayout col="1" marginLeft="12">
+            <Label text="Utiliser ma position" class="menu-titre" />
+            <Label text="{{ position || 'GPS' }}" class="menu-sous" textWrap="true" />
+          </StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onArtisans }}">
+          <Label col="0" text="🤝" class="menu-rond k-noir" />
+          <StackLayout col="1" marginLeft="12">
+            <Label text="Nos artisans" class="menu-titre" />
+            <Label text="{{ nbArtisans + ' coopératives' }}" class="menu-sous" />
+          </StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onFavoris }}">
+          <Label col="0" text="♥" class="menu-rond k-rouge" color="#FFFFFF" />
+          <StackLayout col="1" marginLeft="12">
+            <Label text="Mes favoris" class="menu-titre" />
+            <Label text="{{ nbFavoris + ' produit(s)' }}" class="menu-sous" />
+          </StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

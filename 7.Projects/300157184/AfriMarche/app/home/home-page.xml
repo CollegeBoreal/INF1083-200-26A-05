@@ -1,0 +1,69 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <!-- En-tête vert : logo, slogan, recherche -->
+    <StackLayout row="0" class="entete">
+      <Label class="logo">
+        <FormattedString>
+          <Span text="Afri" />
+          <Span text="Marché" class="logo-or" />
+        </FormattedString>
+      </Label>
+      <Label text="Le meilleur de l'Afrique, livré chez vous" class="slogan" />
+      <TextField text="{{ recherche }}" hint="🔍  Rechercher un produit, un pays…" class="recherche" returnKeyType="search" />
+    </StackLayout>
+    <c:kente row="1" />
+
+    <ScrollView row="2">
+      <StackLayout>
+        <!-- Bannière -->
+        <StackLayout class="banniere">
+          <Label text="Nouveautés du Ghana" class="banniere-titre" />
+          <Label text="Paniers Bolga et kente tissé main" class="banniere-texte" />
+          <Button text="Découvrir" tap="{{ onDecouvrir }}" class="btn-decouvrir" />
+        </StackLayout>
+
+        <!-- Catégories -->
+        <GridLayout columns="*, auto">
+          <Label col="0" text="Catégories" class="section" />
+          <Label col="1" text="Tout voir" tap="{{ onToutVoir }}" class="section" fontSize="12" visibility="{{ categorie ? 'visible' : 'collapsed' }}" />
+        </GridLayout>
+        <Repeater items="{{ categories }}">
+          <Repeater.itemsLayout>
+            <WrapLayout orientation="horizontal" />
+          </Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <StackLayout width="25%" tap="onCategorieTap">
+              <Label text="{{ emoji }}" class="{{ actif ? 'cat-rond cat-actif' : 'cat-rond' }}" backgroundColor="{{ couleur }}" />
+              <Label text="{{ nom }}" class="cat-nom" />
+            </StackLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <!-- Produits -->
+        <Label text="{{ titreListe }}" class="section" />
+        <Repeater items="{{ produits }}" margin="0 8 16 8">
+          <Repeater.itemsLayout>
+            <WrapLayout orientation="horizontal" />
+          </Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <StackLayout width="50%">
+              <StackLayout class="carte" tap="onProduitTap">
+                <GridLayout class="vignette" backgroundColor="{{ couleur }}">
+                  <Label text="{{ emoji }}" class="vignette-emoji" />
+                </GridLayout>
+                <Label text="{{ nom }}" class="nom" textWrap="true" />
+                <Label text="{{ pays }}" class="pays" />
+                <GridLayout columns="*, auto" marginTop="4">
+                  <Label col="0" text="{{ prixTexte }}" class="prix" verticalAlignment="center" />
+                  <Button col="1" text="+" tap="onAjoutRapide" class="btn-plus" />
+                </GridLayout>
+              </StackLayout>
+            </StackLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+        <Label text="Aucun produit trouvé." class="vide" visibility="{{ produits.length ? 'collapsed' : 'visible' }}" />
+      </StackLayout>
+    </ScrollView>
+    <Label row="2" text="{{ message }}" class="toast" verticalAlignment="bottom" visibility="{{ message ? 'visible' : 'collapsed' }}" />
+  </GridLayout>
+</Page>

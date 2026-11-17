@@ -1,0 +1,54 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <StackLayout row="0" class="entete">
+      <Label text="Mon panier" class="entete-titre" />
+    </StackLayout>
+    <c:kente row="1" />
+
+    <ScrollView row="2">
+      <StackLayout paddingTop="6">
+        <Label text="Ton panier est vide. Va faire un tour à l'Accueil 🌍" class="vide" textWrap="true"
+               visibility="{{ nbArticles ? 'collapsed' : 'visible' }}" />
+
+        <Repeater items="{{ panier }}">
+          <Repeater.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="ligne">
+              <Label col="0" text="{{ produit.emoji }}" class="mini-vignette" backgroundColor="{{ produit.couleur }}" />
+              <StackLayout col="1" marginLeft="10" verticalAlignment="center">
+                <Label text="{{ produit.nom }}" class="menu-titre" textWrap="true" />
+                <Label text="{{ produit.pays + ' · ' + format.label }}" class="menu-sous" />
+                <Label text="{{ sousTotal }}" class="prix" />
+              </StackLayout>
+              <StackLayout col="2" orientation="horizontal" verticalAlignment="bottom">
+                <Button text="−" tap="onMoins" class="qte-btn" />
+                <Label text="{{ quantite }}" width="28" textAlignment="center" verticalAlignment="center" />
+                <Button text="+" tap="onPlus" class="qte-btn" />
+              </StackLayout>
+            </GridLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <!-- Récapitulatif -->
+        <StackLayout class="recap" visibility="{{ nbArticles ? 'visible' : 'collapsed' }}">
+          <GridLayout columns="*, auto">
+            <Label col="0" text="{{ 'Sous-total (' + nbArticles + ' article(s))' }}" class="recap-label" />
+            <Label col="1" text="{{ sousTotal }}" class="recap-label" />
+          </GridLayout>
+          <GridLayout columns="*, auto" marginTop="6">
+            <Label col="0" text="Livraison" class="recap-label" />
+            <Label col="1" text="{{ livraison }}" class="recap-label vert" />
+          </GridLayout>
+          <Label text="Livraison gratuite dès 50 $" class="menu-sous" marginTop="2" />
+          <StackLayout height="1" backgroundColor="#EEEEEE" margin="10 0" />
+          <GridLayout columns="*, auto">
+            <Label col="0" text="Total" class="recap-total" />
+            <Label col="1" text="{{ total }}" class="recap-total-prix" />
+          </GridLayout>
+        </StackLayout>
+
+        <Button text="Commander" tap="onCommander" class="btn-or" margin="8 12 20 12"
+                visibility="{{ nbArticles ? 'visible' : 'collapsed' }}" />
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

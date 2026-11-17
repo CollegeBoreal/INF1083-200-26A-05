@@ -1,0 +1,12 @@
+<!-- Navigation par onglets (patron : @nativescript/template-tab-navigation-ts) -->
+<TabView androidTabsPosition="bottom" selectedTabTextColor="#1F4D3A" tabTextColor="#999999" tabBackgroundColor="#FFFFFF">
+  <TabViewItem title="Accueil">
+    <Frame defaultPage="home/home-page" />
+  </TabViewItem>
+  <TabViewItem title="Panier">
+    <Frame defaultPage="cart/cart-page" />
+  </TabViewItem>
+  <TabViewItem title="Profil">
+    <Frame defaultPage="profile/profile-page" />
+  </TabViewItem>
+</TabView>
