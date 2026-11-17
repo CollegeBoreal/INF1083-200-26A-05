@@ -1,83 +1,109 @@
 #300151609
-# Lab RxJS — Accès aux données avec HttpClient et Template Driven Forms
+# Lab : RxJS et Template Driven Forms avec NativeScript Angular
 
-![NativeScript](https://img.shields.io/badge/NativeScript-Angular-blue)
-![RxJS](https://img.shields.io/badge/RxJS-Observables-d81b60)
+![NativeScript](https://img.shields.io/badge/NativeScript-8.x-blue)
+![Angular](https://img.shields.io/badge/Angular-17%2B-red)
+![RxJS](https://img.shields.io/badge/RxJS-7.x-purple)
 
-**Étudiant :** Prénom Nom  
-**Numéro étudiant :** `300151609`  
-**Cours :** INF1083  
-**Collège :** Collège Boréal  
-
----
-
-## 🎯 Objectifs
-
-- Comprendre l'utilisation de **RxJS** et des `Observable` pour gérer les flux de données asynchrones.
-- Consommer une API REST avec **`HttpClient`** (`NativeScriptHttpClientModule`).
-- Utiliser les **Template Driven Forms** avec le binding bidirectionnel `[(ngModel)]` (`NativeScriptFormsModule`).
-- Afficher dynamiquement les résultats dans un composant **`ListView`**.
+**Étudiant :** Prénom Nom
+**Matricule :** <TonMatricule>
+**Cours :** INF1083
+**Date :** <JJ/MM/AAAA>
 
 ---
 
-## 📁 Architecture du projet
+## Objectifs
+
+- Comprendre les observables RxJS et les flux asynchrones.
+- Consommer une API REST avec `HttpClient`.
+- Transformer les données avec les opérateurs `map` et `catchError`.
+- Utiliser un formulaire *Template Driven* avec `[(ngModel)]`.
+- Afficher une collection dans un `ListView`.
+
+## Pourquoi RxJS ?
+
+RxJS permet de manipuler des flux de données asynchrones à l'aide d'observables.
+Contrairement à une `Promise`, un `Observable` peut émettre plusieurs valeurs,
+être annulé et être transformé par une chaîne d'opérateurs (`pipe`).
+
+| Approche | Caractéristique |
+|----------|-----------------|
+| Callback / Promise | Une seule valeur, non annulable |
+| Observable RxJS | Flux de valeurs, annulable, composable |
+
+## Architecture
 
 | Fichier | Rôle |
 |---------|------|
-| `src/app/shared/country.ts` | Modèle de données `Country` (`id`, `name`, `capital`) |
-| `src/app/shared/apicall.service.ts` | Service Angular appelant l'API avec `HttpClient`, `map` et `catchError` |
-| `src/app/search/search.component.ts` | Logique de recherche et souscription à l'`Observable<Country[]>` |
-| `src/app/search/search.component.html` | Interface utilisateur (`TextField`, `Button`, `ListView`) |
-| `src/app/app.module.ts` | Importation de `NativeScriptHttpClientModule` |
-| `src/app/search/search.module.ts` | Importation de `NativeScriptFormsModule` |
+| `shared/country.ts` | Modèle de données |
+| `shared/apicall.service.ts` | Service HTTP, retourne un `Observable<Country[]>` |
+| `search/search.component.ts` | Logique : saisie, appel au service, souscription |
+| `search/search.component.html` | Interface : champ, bouton, liste |
+| `search/search.module.ts` | Import de `NativeScriptFormsModule` |
+| `app.module.ts` | Import de `NativeScriptHttpClientModule` |
 
----
+## Flux de données
 
-## ⚙️ Installation et exécution
+```
+Utilisateur saisit une capitale
+        ↓  [(ngModel)]="name"
+(tap)="searchCapital()"
+        ↓
+ApicallService.searchCountryByName()
+        ↓  HttpClient.get()
+API REST
+        ↓  Observable<any[]>
+pipe( map → Country[] , catchError )
+        ↓  subscribe()
+this.countries
+        ↓  [items]="countries"
+ListView
+```
+
+## Installation
 
 ```bash
-# 1. Créer le projet basé sur le template Tab Navigation
-ns create b300151609 --template @nativescript/template-tab-navigation-ng
-cd b300151609
-
-# 2. Lancer l'application
-ns run android   # ou : ns run ios
+ns create b<TonMatricule> --template @nativescript/template-tab-navigation-ng
+cd b<TonMatricule>
+ns run android     # ou : ns run ios
 ```
 
----
+## Utilisation
 
-## 🔄 Fonctionnement
+1. Ouvrir l'onglet **Search**.
+2. Saisir le nom d'une capitale, par exemple `Ottawa` ou `Paris`.
+3. Appuyer sur **Search**.
+4. Le ou les pays correspondants s'affichent dans la liste.
 
-1. L'utilisateur saisit le nom d'une capitale (ex. `Ottawa`) dans le champ `TextField` lié par `[(ngModel)]="name"`.
-2. L'appui sur le bouton **Search** déclenche `(tap)="searchCapital()"`.
-3. `ApicallService.searchCountryByName()` envoie une requête HTTP `GET` vers l'API, transforme les données avec l'opérateur RxJS `map` et gère les erreurs avec `catchError`.
-4. `SearchComponent` s'abonne à l'`Observable<Country[]>` et met à jour le tableau `countries` lié au `ListView` (`[items]="countries"`).
+## Résultat
 
----
+![Résultat de la recherche](images/app1.png)
 
-## 🖼️ Résultats
-
-<p align="center">
-  <img src="images/app.png" alt="Recherche de capitale dans l'application" width="300" />
-  <img src="images/console.png" alt="Sortie console RxJS" width="450" />
-</p>
-
-Exemple de sortie dans la console pour la recherche **`Ottawa`** :
+Sortie console :
 
 ```json
-[
-  {
-    "id": 0,
-    "name": "Canada",
-    "capital": "Ottawa"
-  }
-]
+[{"id":0,"name":"Canada","capital":"Ottawa"}]
 ```
 
----
+## Notes techniques
 
-## 📚 Références
+- `NativeScriptHttpClientModule` est obligatoire pour injecter `HttpClient`.
+- `NativeScriptFormsModule` est obligatoire pour utiliser `[(ngModel)]`.
+- `catchError` renvoie un nouvel observable d'erreur ; l'erreur est traitée
+  dans le bloc `error` de `subscribe`.
+- `NO_ERRORS_SCHEMA` permet à Angular d'accepter les balises NativeScript
+  (`<TextField>`, `<ListView>`, etc.).
 
-- [Documentation RxJS](https://rxjs.dev/guide/overview)
-- [Documentation NativeScript Angular](https://docs.nativescript.org/guide/angular)
-- [Using HTTP with RxJS Observables](https://www.pluralsight.com/guides/using-http-with-rxjs-observables)
+## Difficultés rencontrées
+
+| Problème | Solution |
+|----------|----------|
+| `No provider for HttpClient` | Ajouter `NativeScriptHttpClientModule` dans `app.module.ts` |
+| `ngModel` sans effet | Ajouter `NativeScriptFormsModule` dans `search.module.ts` |
+| Liste vide malgré une réponse | Vérifier la structure JSON renvoyée par l'API dans l'opérateur `map` |
+
+## Références
+
+- RxJS : https://rxjs.dev/guide/overview
+- HTTP avec RxJS : https://www.pluralsight.com/guides/using-http-with-rxjs-observables
+- NativeScript Angular : https://docs.nativescript.org/guide/angular
