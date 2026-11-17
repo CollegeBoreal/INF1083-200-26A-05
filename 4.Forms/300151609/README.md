@@ -6,9 +6,6 @@
 
 **Étudiant :Saadi Ramz Eddine
 **Matricule :300151609
-**Cours :** <Nom du cours>
-**Enseignant :** <Nom de l'enseignant>
-**Date :** <JJ/MM/AAAA>
 
 ---
 
