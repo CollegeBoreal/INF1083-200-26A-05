@@ -1,0 +1,75 @@
+@import '@nativescript/theme/css/core.css';
+
+/* Palette kente */
+.k-vert { background-color: #1F4D3A; }
+.k-or { background-color: #E0A526; }
+.k-rouge { background-color: #B23A2B; }
+.k-noir { background-color: #2B2B2B; }
+
+Page { background-color: #FFF8EC; }
+
+/* En-têtes */
+.entete { background-color: #1F4D3A; padding: 16 16 12 16; }
+.logo { font-size: 24; font-weight: bold; color: #FFFFFF; }
+.logo-or { color: #E0A526; }
+.slogan { font-size: 12; color: #CFE3D8; margin-bottom: 10; }
+.entete-titre { font-size: 20; font-weight: bold; color: #FFFFFF; text-align: center; }
+.recherche { background-color: #FFFFFF; border-radius: 20; padding: 8 16; font-size: 14; color: #2B2B2B; placeholder-color: #999999; }
+
+/* Accueil */
+.banniere { background-color: #E0A526; border-radius: 14; margin: 14 14 4 14; padding: 14; }
+.banniere-titre { font-size: 18; font-weight: bold; color: #2B2B2B; }
+.banniere-texte { font-size: 13; color: #2B2B2B; }
+.btn-decouvrir { background-color: #1F4D3A; color: #FFFFFF; font-size: 12; border-radius: 12; height: 30; width: 110; horizontal-align: left; margin-top: 8; }
+.section { font-size: 16; font-weight: bold; color: #1F4D3A; margin: 14 14 6 14; }
+.cat-rond { width: 50; height: 50; border-radius: 25; font-size: 22; text-align: center; color: #FFFFFF; }
+.cat-actif { border-width: 3; border-color: #E0A526; }
+.cat-nom { font-size: 11; color: #2B2B2B; text-align: center; margin-top: 4; }
+
+/* Cartes produit (grille) */
+.carte { background-color: #FFFFFF; border-radius: 14; margin: 6; padding: 6; border-width: 1; border-color: #EEEEEE; }
+.vignette { height: 90; border-radius: 10; }
+.vignette-emoji { font-size: 40; text-align: center; vertical-align: center; }
+.nom { font-size: 14; font-weight: bold; color: #2B2B2B; margin-top: 6; }
+.pays { font-size: 11; color: #777777; }
+.prix { font-size: 15; font-weight: bold; color: #1F4D3A; }
+.btn-plus { width: 32; height: 32; border-radius: 16; background-color: #E0A526; color: #FFFFFF; font-size: 18; padding: 0; }
+.vide { color: #8A8A8A; text-align: center; margin: 40 20; }
+
+/* Fiche produit */
+.photo-produit { height: 260; }
+.photo-emoji { font-size: 110; text-align: center; vertical-align: center; }
+.rond-blanc { width: 40; height: 40; border-radius: 20; background-color: #FFFFFF; color: #2B2B2B; font-size: 18; padding: 0; }
+.fiche { background-color: #FFF8EC; border-radius: 22 22 0 0; margin-top: -24; padding: 18; }
+.badge { background-color: #1F4D3A; color: #FFFFFF; font-size: 12; border-radius: 12; padding: 4 12; horizontal-align: left; }
+.fiche-nom { font-size: 24; font-weight: bold; color: #2B2B2B; margin-top: 10; }
+.etoiles { font-size: 14; color: #E0A526; }
+.avis { font-size: 13; color: #777777; }
+.description { font-size: 14; color: #555555; margin: 10 0; }
+.chip { border-radius: 16; border-width: 1; border-color: #1F4D3A; color: #1F4D3A; background-color: #FFFFFF; font-size: 13; height: 34; margin-right: 8; padding: 0 16; }
+.chip-actif { background-color: #1F4D3A; color: #FFFFFF; }
+.barre-bas { background-color: #FFFFFF; border-top-width: 1; border-color: #DDDDDD; padding: 10 16; }
+.prix-label { font-size: 12; color: #777777; }
+.prix-grand { font-size: 24; font-weight: bold; color: #1F4D3A; }
+.btn-or { background-color: #E0A526; color: #2B2B2B; font-weight: bold; font-size: 15; border-radius: 24; height: 48; }
+.qte-btn { width: 36; height: 36; border-radius: 18; background-color: #FFF8EC; border-width: 1; border-color: #DDDDDD; font-size: 16; padding: 0; color: #2B2B2B; }
+
+/* Panier */
+.ligne { background-color: #FFFFFF; border-radius: 12; margin: 6 12; padding: 8; border-width: 1; border-color: #EEEEEE; }
+.mini-vignette { width: 60; height: 60; border-radius: 10; font-size: 28; text-align: center; vertical-align: center; }
+.recap { background-color: #FFFFFF; border-radius: 12; margin: 8 12; padding: 12; border-width: 1; border-color: #EEEEEE; }
+.recap-label { font-size: 13; color: #555555; }
+.recap-total { font-size: 18; font-weight: bold; color: #2B2B2B; }
+.recap-total-prix { font-size: 18; font-weight: bold; color: #1F4D3A; }
+.vert { color: #1F4D3A; }
+
+/* Profil */
+.avatar { width: 84; height: 84; border-radius: 42; background-color: #FFF8EC; border-width: 3; border-color: #E0A526; font-size: 30; font-weight: bold; color: #1F4D3A; text-align: center; vertical-align: center; horizontal-align: center; }
+.profil-nom { font-size: 18; font-weight: bold; color: #FFFFFF; text-align: center; margin-top: 8; }
+.profil-courriel { font-size: 12; color: #CFE3D8; text-align: center; }
+.menu { background-color: #FFFFFF; border-radius: 12; margin: 6 12; padding: 12; border-width: 1; border-color: #EEEEEE; }
+.menu-rond { width: 36; height: 36; border-radius: 18; font-size: 16; text-align: center; vertical-align: center; }
+.menu-titre { font-size: 15; font-weight: bold; color: #2B2B2B; }
+.menu-sous { font-size: 12; color: #777777; }
+.chevron { font-size: 22; color: #AAAAAA; vertical-align: center; }
+.toast { background-color: #2B2B2B; color: #FFFFFF; border-radius: 20; padding: 10 18; margin: 16; horizontal-align: center; font-size: 14; }

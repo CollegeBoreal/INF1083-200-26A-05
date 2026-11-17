@@ -1,0 +1,27 @@
+<!-- Bande décorative inspirée du tissu kente -->
+<GridLayout columns="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" height="6">
+  <ContentView col="0" class="k-rouge" />
+  <ContentView col="1" class="k-or" />
+  <ContentView col="2" class="k-vert" />
+  <ContentView col="3" class="k-noir" />
+  <ContentView col="4" class="k-rouge" />
+  <ContentView col="5" class="k-or" />
+  <ContentView col="6" class="k-vert" />
+  <ContentView col="7" class="k-noir" />
+  <ContentView col="8" class="k-rouge" />
+  <ContentView col="9" class="k-or" />
+  <ContentView col="10" class="k-vert" />
+  <ContentView col="11" class="k-noir" />
+  <ContentView col="12" class="k-rouge" />
+  <ContentView col="13" class="k-or" />
+  <ContentView col="14" class="k-vert" />
+  <ContentView col="15" class="k-noir" />
+  <ContentView col="16" class="k-rouge" />
+  <ContentView col="17" class="k-or" />
+  <ContentView col="18" class="k-vert" />
+  <ContentView col="19" class="k-noir" />
+  <ContentView col="20" class="k-rouge" />
+  <ContentView col="21" class="k-or" />
+  <ContentView col="22" class="k-vert" />
+  <ContentView col="23" class="k-noir" />
+</GridLayout>

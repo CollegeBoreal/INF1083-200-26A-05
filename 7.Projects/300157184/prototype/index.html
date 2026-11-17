@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfriMarché — prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene">
+    <section class="intro">
+      <h1>Afri<span>Marché</span></h1>
+      <p class="sous">Prototype cliquable · INF1083 · Collège Boréal · 300157184</p>
+      <p>Boutique mobile de produits <strong>100 % africains</strong>. Ce prototype en HTML, CSS et JavaScript
+        simule l'application NativeScript : touche les onglets, ouvre un produit, ajoute-le au panier et passe une commande.</p>
+      <ol>
+        <li><b>Accueil</b> : recherche, bannière, catégories, grille de produits</li>
+        <li><b>Fiche produit</b> : format, quantité, favori ♥, partage</li>
+        <li><b>Panier</b> : quantités, livraison gratuite dès 50 $, commande</li>
+        <li><b>Profil</b> : nom, adresse, commandes, artisans, favoris</li>
+      </ol>
+      <button class="lien-reinit" id="reinit">Réinitialiser le prototype</button>
+    </section>
+
+    <!-- Cadre du téléphone -->
+    <div class="telephone">
+      <div class="encoche"></div>
+      <div class="ecran">
+
+        <!-- ===== Écran 1 : Accueil ===== -->
+        <section class="vue active" id="vue-accueil">
+          <header class="entete">
+            <div class="logo">Afri<span>Marché</span></div>
+            <div class="slogan">Le meilleur de l'Afrique, livré chez vous</div>
+            <input id="recherche" class="recherche" type="search" placeholder="🔍  Rechercher un produit, un pays…">
+          </header>
+          <div class="kente"></div>
+          <div class="defile">
+            <div class="banniere">
+              <h2>Nouveautés du Ghana</h2>
+              <p>Paniers Bolga et kente tissé main</p>
+              <button id="btn-decouvrir" class="btn-vert">Découvrir</button>
+            </div>
+            <div class="titre-section"><h3>Catégories</h3><button id="tout-voir" class="lien" hidden>Tout voir</button></div>
+            <div id="categories" class="categories"></div>
+            <h3 id="titre-liste" class="titre-liste">Populaires</h3>
+            <div id="grille" class="grille"></div>
+            <p id="aucun" class="vide" hidden>Aucun produit trouvé.</p>
+          </div>
+        </section>
+
+        <!-- ===== Fiche produit ===== -->
+        <section class="vue" id="vue-fiche">
+          <div class="defile sans-nav">
+            <div class="photo" id="fiche-photo">
+              <span id="fiche-emoji"></span>
+              <button class="rond retour" id="btn-retour" aria-label="Retour">‹</button>
+              <button class="rond partage" id="btn-partager" aria-label="Partager">⤴</button>
+              <button class="rond coeur" id="btn-favori" aria-label="Favori">♡</button>
+            </div>
+            <div class="fiche">
+              <span class="badge" id="fiche-origine"></span>
+              <h2 id="fiche-nom"></h2>
+              <div><span class="etoiles" id="fiche-etoiles"></span> <span class="gris" id="fiche-avis"></span></div>
+              <p class="description" id="fiche-description"></p>
+              <div class="kente fin"></div>
+              <h4>Format</h4>
+              <div id="formats" class="formats"></div>
+              <h4>Quantité</h4>
+              <div class="quantite">
+                <button class="qte" id="moins">−</button><span id="fiche-qte">1</span><button class="qte" id="plus">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="barre-bas">
+            <div><small>Prix</small><strong id="fiche-prix"></strong></div>
+            <button class="btn-or" id="btn-ajouter">Ajouter au panier</button>
+          </div>
+        </section>
+
+        <!-- ===== Écran 2 : Panier ===== -->
+        <section class="vue" id="vue-panier">
+          <header class="entete centre"><h2>Mon panier</h2></header>
+          <div class="kente"></div>
+          <div class="defile">
+            <p id="panier-vide" class="vide">Ton panier est vide. Va faire un tour à l'Accueil 🌍</p>
+            <div id="lignes"></div>
+            <div id="recap" class="recap" hidden>
+              <div class="ligne-recap"><span id="recap-label">Sous-total</span><span id="recap-st"></span></div>
+              <div class="ligne-recap"><span>Livraison</span><span id="recap-livraison" class="vert"></span></div>
+              <small class="gris">Livraison gratuite dès 50 $</small>
+              <hr>
+              <div class="ligne-recap total"><span>Total</span><span id="recap-total" class="vert"></span></div>
+            </div>
+            <button id="btn-commander" class="btn-or large" hidden>Commander</button>
+          </div>
+        </section>
+
+        <!-- ===== Écran 3 : Profil ===== -->
+        <section class="vue" id="vue-profil">
+          <header class="entete centre profil-entete" id="profil-entete">
+            <div class="avatar" id="avatar">👤</div>
+            <div class="profil-nom" id="profil-nom">Touche ici pour ajouter ton nom</div>
+            <div class="profil-courriel" id="profil-courriel">courriel non renseigné</div>
+          </header>
+          <div class="kente"></div>
+          <div class="defile">
+            <button class="menu" data-action="commandes"><span class="pastille rouge">📦</span><span><b>Mes commandes</b><small id="sous-commandes">0 commande</small></span><i>›</i></button>
+            <button class="menu" data-action="adresse"><span class="pastille or">🏠</span><span><b>Adresse de livraison</b><small id="sous-adresse">À ajouter</small></span><i>›</i></button>
+            <button class="menu" data-action="position"><span class="pastille vert-fond">📍</span><span><b>Utiliser ma position</b><small id="sous-position">GPS</small></span><i>›</i></button>
+            <button class="menu" data-action="artisans"><span class="pastille noir">🤝</span><span><b>Nos artisans</b><small>6 coopératives</small></span><i>›</i></button>
+            <button class="menu" data-action="favoris"><span class="pastille rouge">♥</span><span><b>Mes favoris</b><small id="sous-favoris">0 produit</small></span><i>›</i></button>
+          </div>
+        </section>
+
+        <!-- Barre d'onglets -->
+        <nav class="onglets" id="onglets">
+          <button class="onglet actif" data-vue="accueil"><span class="point"></span>Accueil</button>
+          <button class="onglet" data-vue="panier"><span class="point"></span>Panier<em id="pastille-panier" hidden>0</em></button>
+          <button class="onglet" data-vue="profil"><span class="point"></span>Profil</button>
+        </nav>
+
+        <!-- Message temporaire + fenêtre -->
+        <div class="toast" id="toast" hidden></div>
+        <div class="voile" id="voile" hidden>
+          <div class="fenetre">
+            <h3 id="fenetre-titre"></h3>
+            <div id="fenetre-contenu"></div>
+            <div class="fenetre-boutons" id="fenetre-boutons"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
