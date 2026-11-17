@@ -165,6 +165,6 @@ GET https://jsonplaceholder.typicode.com/users?_limit=6
 
 <div align="center">
 
-Réalisé dans le cadre du laboratoire **Introduction à Angular** · Étudiant(e) 300151609
+
 
 </div>

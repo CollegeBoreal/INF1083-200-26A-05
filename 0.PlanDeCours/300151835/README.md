@@ -1,32 +1,29 @@
-Plan de cours — INF1083-200-26A-05
-Dépôt du travail réalisé dans le cadre du cours INF1083, session 26A, au Collège Boréal.
+# INF1083 — Développement d'applications
 
-Informations
-Cours	INF1083-200-26A-05
-Étudiant	benhammouche liza
-Numéro d'étudiant	300151835
-Objectif
-Ce dépôt regroupe les fichiers et les travaux associés au cours INF1083-200-26A-05, ainsi que la documentation qui les accompagne.
+## Informations sur l'étudiant
+**Nom :** benhammouche liza
+**Matricule :** 300151835
+**Programme :** Techniques de soutien en informatique
+**Établissement :** Collège Boréal
+**Session :** Automne 2026
 
+## Présentation
+Ce dépôt contient mes travaux pratiques du cours INF1083.
 
-Structure du dépôt
-300151835/
-├── README.md
-└── images/
-    ├── .gitkeep
-    └── images.jpeg
-Élément	Description
-README.md	Présentation du projet
-images/	Ressources visuelles utilisées dans la documentation
-Utilisation
-Cloner le dépôt, puis consulter le dossier 0.PlanDeCours/300151835:
-
-git clone https://github.com/CollegeBoreal/INF1083-200-26A-05.git
-cd INF1083-200-26A-05/0.PlanDeCours/300151835
-
+Mon objectif est de développer mes compétences en programmation, en organisation de projets et en documentation avec GitHub.
 ## 🖼️ Image du projet
 
 
 
 ![Mon image INF1083](images/photo.jpg)
+## 🖼️ Image du projet
 
+Dans le cadre de cette activité, j'ai ajouté une image dans un dossier séparé afin de mieux organiser les ressources de mon projet.
+
+![Mon image INF1083](images/photo.jpg)
+
+## Conclusion
+
+Ce premier exercice m'a permis de découvrir le fonctionnement de GitHub, de créer mon répertoire personnel et de pratiquer la rédaction en Markdown.
+
+J'ai également appris à organiser les fichiers et à intégrer une image dans la documentation de mon projet.
