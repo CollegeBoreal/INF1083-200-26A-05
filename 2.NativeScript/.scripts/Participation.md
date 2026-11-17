@@ -35,7 +35,7 @@
 | 7 | [300151449](../300151449/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231569522?s=460&v=4' width=20 height=20></image>](https://github.com/abderrahimalaoui) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
 | 8 | [300151496](../300151496/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/236670164?s=460&v=4' width=20 height=20></image>](https://github.com/anisouhocine) | :1st_place_medal: | :heavy_check_mark: | 🏆 | 1️⃣ Bien - Documentation détaillée |
 | 9 | [300151505](../300151505/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232939190?s=460&v=4' width=20 height=20></image>](https://github.com/300151505) | :1st_place_medal: | :heavy_check_mark: | 🥉 | 1️⃣ Où est le code à exécuter? |
-| 10 | [300151609](../300151609/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image>](https://github.com/ramzi34000) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
+| 10 | [300151609](../300151609/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image>](https://github.com/ramzi34000) | :2nd_place_medal: | :heavy_check_mark: | :x: | 1️⃣ Rien À corriger |
 | 11 | [300151732](../300151732/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/231499758?s=460&v=4' width=20 height=20></image>](https://github.com/nabil17581) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
 | 12 | [300151781](../300151781/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/257377074?s=460&v=4' width=20 height=20></image>](https://github.com/lounesallouti) | :1st_place_medal: | :heavy_check_mark: | 🥉 | 1️⃣ Où est la liste modifiée? - `ns create B🆔300151781` enlève 🆔 |
 | 13 | [300151835](../300151835/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/255944310?s=460&v=4' width=20 height=20></image>](https://github.com/benhammoucheliza928-eng) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
@@ -59,4 +59,4 @@
 | 31 | [300157374](../300157374/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image>](https://github.com/yanisna) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
 | 32 | [300157416](../300157416/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image>](https://github.com/lounisyounes) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
 | 33 | [300157424](../300157424/README.md) :point_right: [<image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image>](https://github.com/MA-JID-06) | :x: | :x: | :x: | 1️⃣ Rien À corriger |
-| :abacus: | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 17 📈 51.52% |
+| :abacus: | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 18 📈 54.55% |

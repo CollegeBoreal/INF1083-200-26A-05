@@ -1,0 +1,64 @@
+<main class="page">
+  <section class="carte">
+    <header>
+      <span class="badge">LABORATOIRE ANGULAR</span>
+      <h1>{{ titre }}</h1>
+      <p class="description">
+        Ma première application interactive avec Angular.
+      </p>
+    </header>
+
+    <div class="profil">
+      <div class="avatar">ÉT</div>
+      <div>
+        <span class="etiquette">Numéro étudiant</span>
+        <strong>{{ numero }}</strong>
+      </div>
+
+      <span class="statut" [class.hors-ligne]="!connecte()">
+        <span class="point"></span>
+        {{ connecte() ? 'Connecté' : 'Déconnecté' }}
+      </span>
+    </div>
+
+    <section class="section">
+      <h2>Un premier échange</h2>
+      <p>Clique sur le bouton pour afficher un message.</p>
+
+      <div class="actions">
+        <button class="principal" (click)="saluer()">
+          Me saluer →
+        </button>
+        <button class="secondaire" (click)="connecte.set(!connecte())">
+          {{ connecte() ? 'Se déconnecter' : 'Se connecter' }}
+        </button>
+      </div>
+
+      @if (message()) {
+        <div class="message" role="status">
+          <span>✦</span>
+          {{ message() }}
+        </div>
+      }
+    </section>
+
+    <section class="section">
+      <div class="titre-liste">
+        <h2>Notre équipe</h2>
+        <span class="compteur">{{ noms.length }} membres</span>
+      </div>
+
+      <ul class="membres">
+        @for (nom of noms; track nom) {
+          <li>
+            <span class="initiale">{{ nom.charAt(0) }}</span>
+            <span class="nom">{{ nom }}</span>
+            <span class="role">Membre</span>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <footer>INF1083 · Développement d’applications</footer>
+  </section>
+</main>
