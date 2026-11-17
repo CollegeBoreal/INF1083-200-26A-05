@@ -1,9 +1,9 @@
-# 🌍 AfriMarché
+#  AfriMarché
 
 > Projet mobile — INF1083 · Collège Boréal
-> 🆔 `300157184`
+>  `300157184`
 
-## 📝 Résumé
+##  Résumé
 
 **AfriMarché** est une application mobile (Android / iOS) de commerce en ligne qui vend uniquement des **produits 100 % africains** :
 épicerie (café d'Éthiopie, bissap du Sénégal, rooibos d'Afrique du Sud…), beauté (karité du Burkina Faso, huile d'argan du Maroc…),
@@ -14,7 +14,7 @@ le pays d'origine, les avis et les formats offerts. Il peut ajouter un produit �
 ensuite des articles au panier, modifie les quantités et passe sa commande ; une notification la confirme. L'objectif est de soutenir
 les artisans et les coopératives du continent africain en rendant leurs produits accessibles aux clients d'ici.
 
-## 🎨 Design (maquette manuelle)
+##  Design (maquette manuelle)
 
 ![Maquette AfriMarché](images/maquette.svg)
 
@@ -34,7 +34,7 @@ les artisans et les coopératives du continent africain en rendant leurs produit
 | Rouge | `#B23A2B` | Catégorie Épicerie, favoris |
 | Crème | `#FFF8EC` | Fond des pages |
 
-## 🖱️ Prototype cliquable (HTML · CSS · JavaScript)
+##  Prototype cliquable (HTML · CSS · JavaScript)
 
 Le dossier [`prototype/`](prototype/) contient un **prototype interactif** de l'application, qu'on ouvre dans un navigateur.
 Il simule l'application dans un cadre de téléphone : on peut chercher un produit, filtrer par catégorie, ouvrir une fiche,
@@ -46,9 +46,9 @@ choisir un format, ajouter au panier, passer une commande et remplir son profil.
 | `prototype/style.css` | Style kente (vert, or, rouge, crème), cadre du téléphone |
 | `prototype/script.js` | Catalogue, navigation entre écrans, panier, favoris, commandes, profil |
 
-▶️ **Pour l'ouvrir :** double-clic sur `prototype/index.html`, ou dans VS Code, clic droit → *Reveal in File Explorer*, puis ouvrir avec le navigateur.
+ **Pour l'ouvrir :** double-clic sur `prototype/index.html`, ou dans VS Code, clic droit → *Reveal in File Explorer*, puis ouvrir avec le navigateur.
 
-## 🧩 Patron (template)
+##  Patron (template)
 
 | Template | Description |
 |---|---|
@@ -60,7 +60,7 @@ Création du projet :
 ns create AfriMarche --template @nativescript/template-tab-navigation
 ```
 
-## 💻 Langages
+##  Langages
 
 | Partie | Langage | Fichiers |
 |---|---|---|
@@ -68,7 +68,7 @@ ns create AfriMarche --template @nativescript/template-tab-navigation
 | Logique | **JavaScript** (ES2020, modules `import` / `export`) | `*.js` |
 | Style | CSS | `app.css` |
 
-## 🔌 Plugins
+##  Plugins
 
 | Plugin | Utilisation dans l'app |
 |---|---|
@@ -89,7 +89,7 @@ Modules du cœur utilisés : `ApplicationSettings` (sauvegarde du panier et du p
 `Repeater` + `WrapLayout` (grille de produits), `FormattedString`, `Dialogs`, la navigation avec `Frame`,
 et un composant XML réutilisable (`components/kente.xml`) pour la bande kente.
 
-## 🗂️ Structure
+##  Structure
 
 ```
 AfriMarche/
@@ -106,7 +106,7 @@ AfriMarche/
 └── jsconfig.json
 ```
 
-## ▶️ Exécution
+##  Exécution
 
 ```bash
 cd AfriMarche
@@ -116,7 +116,7 @@ ns run android     # ou : ns run ios
 
 > Si le dossier `App_Resources` est absent, créer un projet avec `ns create` (template ci-dessus), puis y copier le dossier `app/` et le fichier `package.json`.
 
-## 🖼️ Captures d'écran
+##  Captures d'écran
 
 *(Ajouter ici les captures de l'application en exécution, dans le dossier `images/`.)*
 
