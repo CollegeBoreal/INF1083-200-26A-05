@@ -128,4 +128,4 @@ ns run android     # ou : ns run ios
 
 ## 🖼️ Captures d'écran
 
-*(Ajouter ici les captures de l'application en exécution, dans le dossier `images/`.)*
+![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/48701313dd75fed7ab12df5371252ddc358e4366/7.Projects/300155109/images/Screenshot%202026-11-17%20170556.png)
