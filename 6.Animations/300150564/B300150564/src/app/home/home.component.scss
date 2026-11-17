@@ -1,0 +1,99 @@
+@keyframes bgAnimation {
+    from {
+        background-color: red;
+        transform: scale(0.85);
+    }
+
+    to {
+        background-color: green;
+        transform: scale(1);
+    }
+}
+
+.animation-page {
+    background-color: #f4f7fb;
+    padding: 24;
+}
+
+.menu-icon {
+    font-size: 22;
+    vertical-align: center;
+}
+
+.page-title {
+    font-size: 28;
+    font-weight: bold;
+    color: #172033;
+    text-align: center;
+    margin-top: 25;
+}
+
+.page-subtitle {
+    font-size: 17;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+    margin-top: 6;
+}
+
+.description {
+    font-size: 14;
+    color: #64748b;
+    text-align: center;
+    margin: 12 20 25 20;
+}
+
+.demo-card {
+    background-color: white;
+    padding: 24;
+    margin: 10 15;
+    border-radius: 20;
+}
+
+.demo-label {
+    font-size: 13;
+    font-weight: bold;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 18;
+}
+
+.background {
+    width: 150;
+    height: 150;
+    border-radius: 75;
+
+    color: white;
+    font-size: 38;
+    font-weight: bold;
+
+    animation-name: bgAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.duration-label {
+    font-size: 13;
+    color: #64748b;
+    text-align: center;
+    margin-top: 18;
+}
+
+.info-card {
+    background-color: #e8f0ff;
+    padding: 20;
+    margin: 20 15;
+    border-radius: 16;
+}
+
+.info-title {
+    color: #1d4ed8;
+    font-size: 16;
+    font-weight: bold;
+}
+
+.info-text {
+    color: #475569;
+    font-size: 14;
+    margin-top: 8;
+}
