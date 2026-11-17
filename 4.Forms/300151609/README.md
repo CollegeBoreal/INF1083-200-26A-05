@@ -72,7 +72,7 @@ Après avoir saisi un courriel et un nom d'utilisateur puis appuyé sur **sign u
 {"email":"etudiant@cegep.ca","username":"jdoe"}
 ```
 
-![Résultat du formulaire](images/resultat.png)
+<image src=images/app3.png width=50% height=50% > </image>
 
 ## Difficultés rencontrées et solutions
 
