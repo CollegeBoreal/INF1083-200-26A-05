@@ -87,4 +87,57 @@ Après avoir saisi un courriel et un nom d'utilisateur puis appuyé sur **sign u
 
 ---
 
-*Travail réalisé dans le cadre du cours <Nom du cours>, <Nom du collège>.*
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <defs>
+    <style>
+      .sans { font-family: Arial, Helvetica, sans-serif; }
+      .mono { font-family: Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="900" height="560" fill="#f0f2f5"/>
+
+  <!-- Titres -->
+  <text x="40" y="36" class="sans" font-size="18" font-weight="bold" fill="#333">Lab 8 : ReactiveForms</text>
+
+  <!-- ===== Téléphone ===== -->
+  <rect x="60" y="60" width="320" height="470" rx="36" fill="#1c1c1e"/>
+  <rect x="76" y="92" width="288" height="406" rx="6" fill="#ffffff"/>
+  <rect x="76" y="92" width="288" height="44" fill="#007aff"/>
+  <text x="220" y="120" class="sans" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Home</text>
+
+  <!-- Titre du formulaire -->
+  <text x="220" y="175" class="sans" font-size="20" font-weight="bold" text-anchor="middle" fill="#222">Inscription</text>
+
+  <!-- Champ courriel -->
+  <text x="100" y="206" class="sans" font-size="12" fill="#666">Courriel</text>
+  <rect x="100" y="214" width="240" height="40" rx="6" fill="#ffffff" stroke="#999"/>
+  <text x="112" y="239" class="sans" font-size="14" fill="#222">etudiant@cegep.ca</text>
+
+  <!-- Champ nom d'utilisateur -->
+  <text x="100" y="278" class="sans" font-size="12" fill="#666">Nom d'utilisateur</text>
+  <rect x="100" y="286" width="240" height="40" rx="6" fill="#ffffff" stroke="#999"/>
+  <text x="112" y="311" class="sans" font-size="14" fill="#222">jdoe</text>
+
+  <!-- Bouton -->
+  <rect x="100" y="356" width="240" height="44" rx="8" fill="#007aff"/>
+  <text x="220" y="384" class="sans" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">Sign up</text>
+
+  <!-- ===== Terminal ===== -->
+  <rect x="420" y="60" width="440" height="470" rx="10" fill="#1e1e1e"/>
+  <rect x="420" y="60" width="440" height="34" rx="10" fill="#2d2d2d"/>
+  <rect x="420" y="80" width="440" height="14" fill="#2d2d2d"/>
+  <circle cx="440" cy="77" r="6" fill="#ff5f56"/>
+  <circle cx="460" cy="77" r="6" fill="#ffbd2e"/>
+  <circle cx="480" cy="77" r="6" fill="#27c93f"/>
+  <text x="600" y="82" class="mono" font-size="12" fill="#aaaaaa">ns run ios</text>
+
+  <text x="440" y="130" class="mono" font-size="13" fill="#aaaaaa">$ ns run ios</text>
+  <text x="440" y="158" class="mono" font-size="13" fill="#9cdcfe">JS: {"email":"etudiant@cegep.ca","username":"jdoe"}</text>
+  <text x="440" y="186" class="mono" font-size="13" fill="#6a9955">✔ Formulaire valide, données affichées</text>
+  <text x="440" y="214" class="mono" font-size="13" fill="#aaaaaa">_</text>
+
+  <!-- Légende -->
+  <text x="450" y="560" class="sans" font-size="12" fill="#666">Maquette générée : remplacer par une capture réelle pour la remise</text>
+</svg>
