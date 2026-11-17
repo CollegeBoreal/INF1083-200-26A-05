@@ -45,7 +45,7 @@ technologie pour ce labo.
 Le formulaire est dans un `StackLayout` avec `[formGroup]="signUpForm"`.
 Il contient deux `TextField` et un `Button` :
 
-```html
+html
 <StackLayout [formGroup]="signUpForm" class="page">
     <Label text="Inscription" class="title"></Label>
     <Label text="Crée ton compte" class="subtitle"></Label>
@@ -134,6 +134,5 @@ Nom : Idir Islam Chili
 ID : 300156187
 Cours : INF1083 - Développement d'applications mobiles
 Collège Boréal
----
 
 © 2026 Idir Islam Chili — Tous droits réservés
