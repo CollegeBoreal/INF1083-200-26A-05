@@ -1,0 +1,69 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <!-- En-tête : logo, slogan, recherche -->
+    <StackLayout row="0" class="entete">
+      <Label class="logo">
+        <FormattedString>
+          <Span text="Bel'" />
+          <Span text="Hair" class="logo-dore" />
+        </FormattedString>
+      </Label>
+      <Label text="Tous les styles, toutes les textures" class="slogan" />
+      <TextField text="{{ recherche }}" hint="🔍  Tresses, coupe, coloration…" class="recherche" returnKeyType="search" />
+    </StackLayout>
+    <c:ruban row="1" />
+
+    <ScrollView row="2">
+      <StackLayout>
+        <GridLayout class="banniere" tap="{{ onBanniere }}">
+          <Image src="~/photos/banniere.jpg" stretch="aspectFill" class="banniere-photo" />
+          <StackLayout verticalAlignment="bottom">
+            <Label text="Nouveau : knotless braids ✨" class="banniere-titre" textWrap="true" />
+            <Label text="Tresses légères et sans tension, avec Aïcha et Nadia" class="banniere-texte" textWrap="true" />
+          </StackLayout>
+        </GridLayout>
+
+        <!-- Catégories (défilement horizontal) -->
+        <GridLayout columns="*, auto">
+          <Label col="0" text="Catégories" class="section" />
+          <Label col="1" text="Tout voir" tap="{{ onToutVoir }}" class="section" fontSize="12" visibility="{{ categorie || recherche ? 'visible' : 'collapsed' }}" />
+        </GridLayout>
+        <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+          <Repeater items="{{ categories }}" margin="0 10">
+            <Repeater.itemsLayout>
+              <StackLayout orientation="horizontal" />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+              <StackLayout class="cat" tap="onCategorieTap">
+                <Label text="{{ emoji }}" class="{{ actif ? 'cat-rond cat-actif' : 'cat-rond' }}" />
+                <Label text="{{ nom }}" class="cat-nom" />
+              </StackLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+        </ScrollView>
+
+        <!-- Prestations -->
+        <Label text="{{ titreListe }}" class="section" />
+        <Repeater items="{{ services }}">
+          <Repeater.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="carte" tap="onServiceTap">
+              <!-- Photo (dossier app/photos) par-dessus l'emoji : si la photo manque, l'emoji reste visible -->
+              <GridLayout col="0" class="vignette">
+                <Label text="{{ emoji }}" class="vignette-emoji" />
+                <Image src="{{ '~/photos/' + image }}" stretch="aspectFill" class="vignette-photo" />
+              </GridLayout>
+              <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+                <Label text="{{ nom }}" class="nom" textWrap="true" />
+                <Label text="{{ categorie + ' · ' + dureeTexte }}" class="detail" />
+                <Label text="{{ prixTexte }}" class="prix" />
+              </StackLayout>
+              <Button col="2" text="Réserver" tap="onServiceTap" class="btn-reserver" verticalAlignment="center" />
+            </GridLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+        <Label text="Aucune prestation trouvée." class="vide" visibility="{{ services.length ? 'collapsed' : 'visible' }}" />
+        <StackLayout height="16" />
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

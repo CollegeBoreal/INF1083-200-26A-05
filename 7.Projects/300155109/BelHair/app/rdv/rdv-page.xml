@@ -1,0 +1,51 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <StackLayout row="0" class="entete">
+      <Label text="Mes rendez-vous" class="entete-titre" />
+    </StackLayout>
+    <c:ruban row="1" />
+
+    <ScrollView row="2">
+      <StackLayout paddingTop="6">
+        <Label text="{{ 'À venir (' + aVenir.length + ')' }}" class="section" />
+        <Label text="Aucun rendez-vous à venir. Choisis une prestation dans l'onglet Accueil 💇‍♀️" class="vide" textWrap="true"
+               visibility="{{ aVenir.length ? 'collapsed' : 'visible' }}" />
+        <Repeater items="{{ aVenir }}">
+          <Repeater.itemTemplate>
+            <GridLayout columns="auto, *, auto" rows="auto, auto" class="rdv">
+              <GridLayout col="0" rowSpan="2" class="vignette" verticalAlignment="top">
+                <Label text="{{ emoji }}" class="vignette-emoji" />
+                <Image src="{{ '~/photos/' + image }}" stretch="aspectFill" class="vignette-photo" />
+              </GridLayout>
+              <StackLayout col="1" marginLeft="12">
+                <Label text="{{ dateTexte }}" class="rdv-date" />
+                <Label text="{{ service }}" class="nom" textWrap="true" />
+                <Label text="{{ 'Avec ' + coiffeur + ' · ' + prixTexte }}" class="detail" />
+                <Label text="{{ note ? '📝 ' + note : '' }}" class="detail" textWrap="true" visibility="{{ note ? 'visible' : 'collapsed' }}" />
+              </StackLayout>
+              <Image col="2" src="{{ photo }}" class="mini-photo" stretch="aspectFill" visibility="{{ photo ? 'visible' : 'collapsed' }}" />
+              <Button row="1" col="1" colSpan="2" text="Annuler le rendez-vous" tap="onAnnuler" class="btn-annuler" horizontalAlignment="right" marginTop="8" />
+            </GridLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <Label text="Historique" class="section" visibility="{{ passes.length ? 'visible' : 'collapsed' }}" />
+        <Repeater items="{{ passes }}">
+          <Repeater.itemTemplate>
+            <GridLayout columns="auto, *" class="rdv" opacity="0.7">
+              <GridLayout col="0" class="vignette">
+                <Label text="{{ emoji }}" class="vignette-emoji" />
+                <Image src="{{ '~/photos/' + image }}" stretch="aspectFill" class="vignette-photo" />
+              </GridLayout>
+              <StackLayout col="1" marginLeft="12">
+                <Label text="{{ dateTexte }}" class="detail" />
+                <Label text="{{ service }}" class="nom" />
+                <Label text="{{ 'Avec ' + coiffeur }}" class="detail" />
+              </StackLayout>
+            </GridLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

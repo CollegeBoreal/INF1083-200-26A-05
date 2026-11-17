@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bel'Hair — prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene">
+    <section class="intro">
+      <h1>Bel'<span>Hair</span></h1>
+      <p class="sous">Prototype cliquable · INF1083 · Collège Boréal · <span id="id-etudiant">300XXXXXX</span></p>
+      <p>Application de réservation pour un <strong>salon de coiffure tous styles</strong> : coupes femme et homme,
+        tresses, locks, coloration, soins, enfants et barbe. Ce prototype en HTML, CSS et JavaScript simule l'application NativeScript.</p>
+      <ol>
+        <li><b>Accueil</b> : recherche, catégories, liste des prestations</li>
+        <li><b>Réservation</b> : coiffeur·se, jour, heure, photo d'inspiration, note</li>
+        <li><b>Rendez-vous</b> : à venir (annulation) et historique</li>
+        <li><b>Profil</b> : infos, type de cheveux, appeler / itinéraire / partager</li>
+      </ol>
+      <button class="lien-reinit" id="reinit">Réinitialiser le prototype</button>
+    </section>
+
+    <div class="telephone">
+      <div class="encoche"></div>
+      <div class="ecran">
+
+        <!-- ===== Écran 1 : Accueil ===== -->
+        <section class="vue active" id="vue-accueil">
+          <header class="entete">
+            <div class="logo">Bel'<span>Hair</span></div>
+            <div class="slogan">Tous les styles, toutes les textures</div>
+            <input id="recherche" class="recherche" type="search" placeholder="🔍  Tresses, coupe, coloration…">
+          </header>
+          <div class="ruban"></div>
+          <div class="defile">
+            <button class="banniere" id="banniere">
+              <img src="photos/banniere.jpg" alt="" onload="this.parentElement.classList.add('avec-photo')" onerror="this.remove()">
+              <b>Nouveau : knotless braids ✨</b>
+              <span>Tresses légères et sans tension, avec Aïcha et Nadia</span>
+            </button>
+            <div class="titre-section"><h3>Catégories</h3><button id="tout-voir" class="lien" hidden>Tout voir</button></div>
+            <div id="categories" class="categories"></div>
+            <h3 id="titre-liste" class="titre-liste">Toutes les prestations</h3>
+            <div id="services"></div>
+            <p id="aucun" class="vide" hidden>Aucune prestation trouvée.</p>
+          </div>
+        </section>
+
+        <!-- ===== Réservation ===== -->
+        <section class="vue" id="vue-reservation">
+          <header class="resume">
+            <button class="retour" id="btn-retour" aria-label="Retour">‹</button>
+            <div class="resume-ligne">
+              <span class="resume-emoji" id="r-emoji"></span>
+              <div>
+                <h2 id="r-nom"></h2>
+                <small id="r-detail"></small>
+                <p id="r-description"></p>
+              </div>
+            </div>
+          </header>
+          <div class="ruban"></div>
+          <div class="defile sans-nav">
+            <h4>1. Coiffeur ou coiffeuse</h4>
+            <div id="coiffeurs" class="chips"></div>
+            <h4>2. Jour</h4>
+            <div id="jours" class="jours"></div>
+            <h4>3. Heure</h4>
+            <div id="creneaux" class="chips"></div>
+            <h4>4. Photo d'inspiration (facultatif)</h4>
+            <div id="photo-zone" class="photo-zone">
+              <div id="photo-apercu" class="photo-apercu" hidden>💇‍♀️</div>
+              <button class="btn-contour" id="btn-photo">📷  Prendre une photo du style voulu</button>
+            </div>
+            <h4 class="petit-titre">Note pour le salon (facultatif)</h4>
+            <textarea id="note" class="note" placeholder="Longueur, couleur des mèches, allergie…"></textarea>
+          </div>
+          <div class="barre-bas">
+            <div><small id="r-choix">Choisis une heure</small><strong id="r-prix"></strong></div>
+            <button class="btn-dore" id="btn-confirmer" disabled>Confirmer</button>
+          </div>
+        </section>
+
+        <!-- ===== Écran 2 : Rendez-vous ===== -->
+        <section class="vue" id="vue-rdv">
+          <header class="entete centre"><h2>Mes rendez-vous</h2></header>
+          <div class="ruban"></div>
+          <div class="defile">
+            <h3 class="titre-liste" id="titre-avenir">À venir (0)</h3>
+            <p id="rdv-vide" class="vide">Aucun rendez-vous à venir. Choisis une prestation dans l'onglet Accueil 💇‍♀️</p>
+            <div id="rdv-liste"></div>
+            <h3 class="titre-liste" id="titre-historique" hidden>Historique</h3>
+            <div id="rdv-historique"></div>
+          </div>
+        </section>
+
+        <!-- ===== Écran 3 : Profil ===== -->
+        <section class="vue" id="vue-profil">
+          <header class="entete centre profil-entete" id="profil-entete">
+            <div class="avatar" id="avatar">👤</div>
+            <div class="profil-nom" id="profil-nom">Touche ici pour ajouter ton nom</div>
+            <div class="profil-sous" id="profil-tel">téléphone non renseigné</div>
+          </header>
+          <div class="ruban"></div>
+          <div class="defile">
+            <h3 class="titre-liste">Mon compte</h3>
+            <button class="menu" data-action="infos"><span class="pastille">👤</span><span><b>Mes informations</b><small>Nom et téléphone</small></span><i>›</i></button>
+            <button class="menu" data-action="texture"><span class="pastille">🌀</span><span><b>Mon type de cheveux</b><small id="sous-texture">À préciser</small></span><i>›</i></button>
+            <h3 class="titre-liste">Le salon</h3>
+            <button class="menu" data-action="appeler"><span class="pastille">📞</span><span><b>Appeler le salon</b><small>705 555-0123</small></span><i>›</i></button>
+            <button class="menu" data-action="itineraire"><span class="pastille">📍</span><span><b>Adresse et itinéraire</b><small>120, rue Elm, Sudbury (ON)</small></span><i>›</i></button>
+            <div class="menu"><span class="pastille">🕘</span><span><b>Horaires</b><small>Mardi au samedi · 9 h – 19 h</small></span></div>
+            <button class="menu" data-action="partager"><span class="pastille">💌</span><span><b>Recommander le salon</b><small>Partager avec un ami</small></span><i>›</i></button>
+          </div>
+        </section>
+
+        <nav class="onglets" id="onglets">
+          <button class="onglet actif" data-vue="accueil"><span class="point"></span>Accueil</button>
+          <button class="onglet" data-vue="rdv"><span class="point"></span>Rendez-vous<em id="pastille-rdv" hidden>0</em></button>
+          <button class="onglet" data-vue="profil"><span class="point"></span>Profil</button>
+        </nav>
+
+        <div class="toast" id="toast" hidden></div>
+        <div class="voile" id="voile" hidden>
+          <div class="fenetre">
+            <h3 id="fenetre-titre"></h3>
+            <div id="fenetre-contenu"></div>
+            <div class="fenetre-boutons" id="fenetre-boutons"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

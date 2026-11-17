@@ -1,0 +1,2 @@
+<!-- Ruban décoratif doré sous les en-têtes -->
+<GridLayout height="5" class="ruban" />
