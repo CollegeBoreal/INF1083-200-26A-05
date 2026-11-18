@@ -1,0 +1,47 @@
+<ActionBar class="bar" flat="true" backgroundColor="#5b3df5" color="#ffffff">
+  <Label text="PlanBoréal" class="bar-title"></Label>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout class="content">
+    <Label [text]="todayLabel" class="tag"></Label>
+    <Label [text]="'Bonjour ' + firstName() + ' 👋'" class="title"></Label>
+
+    <!-- Progression -->
+    <StackLayout class="hero">
+      <GridLayout columns="*, auto">
+        <StackLayout>
+          <Label text="Progression des tâches" class="hero-label"></Label>
+          <Label [text]="p.doneCount() + ' / ' + p.tasks().length + ' terminées'" class="hero-value"></Label>
+        </StackLayout>
+        <Label col="1" [text]="percent() + '%'" class="hero-percent"></Label>
+      </GridLayout>
+      <Progress [value]="percent()" maxValue="100" class="hero-bar"></Progress>
+      <Label *ngIf="p.lateCount() > 0" [text]="'⚠ ' + p.lateCount() + ' tâche(s) en retard'" class="hero-late"></Label>
+    </StackLayout>
+
+    <!-- Prochain cours -->
+    <Label text="Prochain cours" class="section"></Label>
+    <GridLayout *ngIf="nextCourse() as n" columns="6, *" class="card">
+      <StackLayout [backgroundColor]="n.course.color" class="stripe"></StackLayout>
+      <StackLayout col="1" class="card-body">
+        <Label [text]="n.when + ' · ' + n.course.start + ' – ' + n.course.end" class="card-meta"></Label>
+        <Label [text]="n.course.code + ' · ' + n.course.name" class="card-title" textWrap="true"></Label>
+        <Label [text]="'Local ' + n.course.room" class="card-meta"></Label>
+      </StackLayout>
+    </GridLayout>
+    <Label *ngIf="!nextCourse()" text="Aucun cours cette semaine." class="empty"></Label>
+
+    <!-- À faire bientôt -->
+    <Label text="À faire bientôt" class="section"></Label>
+    <GridLayout *ngFor="let t of upcoming()" columns="auto, *, auto" class="task" (tap)="toggle(t.id)">
+      <Label text="&#xf111;" class="far check"></Label>
+      <StackLayout col="1">
+        <Label [text]="t.title" class="task-title" textWrap="true"></Label>
+        <Label [text]="p.course(t.courseId)?.code" class="task-course" [color]="p.course(t.courseId)?.color"></Label>
+      </StackLayout>
+      <Label col="2" [text]="dueLabel(t.due)" class="due" [class.late]="daysLeft(t.due) < 0" [class.soon]="daysLeft(t.due) >= 0 && daysLeft(t.due) <= 1"></Label>
+    </GridLayout>
+    <Label *ngIf="upcoming().length === 0" text="Tout est fait, bravo ! 🎉" class="empty"></Label>
+  </StackLayout>
+</ScrollView>

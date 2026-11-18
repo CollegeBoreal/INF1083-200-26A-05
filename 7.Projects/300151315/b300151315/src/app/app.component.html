@@ -1,0 +1,18 @@
+<TabView (loaded)="onTabsLoaded($any($event))" androidTabsPosition="bottom" class="tabs" androidOverflowEdge="top"
+  tabTextColor="#9a96b3" selectedTabTextColor="#5b3df5" tabBackgroundColor="#ffffff" androidSelectedTabHighlightColor="#5b3df5">
+  <GridLayout *tabItem="{ title: 'Accueil', iconSource: 'font://&#xf015;' }">
+    <page-router-outlet name="homeTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: 'Cours', iconSource: 'font://&#xf02d;' }">
+    <page-router-outlet name="coursesTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: 'Tâches', iconSource: 'font://&#xf0ae;' }">
+    <page-router-outlet name="tasksTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: 'Profil', iconSource: 'font://&#xf007;' }">
+    <page-router-outlet name="profileTab"></page-router-outlet>
+  </GridLayout>
+</TabView>
