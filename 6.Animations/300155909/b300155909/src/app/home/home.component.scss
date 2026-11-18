@@ -1,0 +1,16 @@
+
+.home-animation {
+  animation-name: backgroundAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-color: red;
+  }
+
+  100% {
+    background-color: green;
+  }
+}
