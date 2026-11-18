@@ -1,0 +1,65 @@
+<section class="banniere">
+  <!-- 🔄 Data binding : interpolation -->
+  <h1>{{ titre }}</h1>
+  <p>Application Angular de <strong>{{ nom }}</strong> — matricule {{ matricule }}</p>
+</section>
+
+<div class="grille">
+  <!-- 🖱️ Évènements -->
+  <article class="carte">
+    <h2>🖱️ Évènement (click)</h2>
+    <button (click)="saluer()">Cliquez-moi</button>
+    <p class="resultat">{{ message() || 'Personne n\'a encore cliqué…' }}</p>
+    <p>Compteur : <span class="badge">{{ compteur() }}</span></p>
+  </article>
+
+  <!-- 📋 Directive : condition -->
+  <article class="carte">
+    <h2>📋 Condition (&#64;if)</h2>
+    <button class="secondaire" (click)="basculerConnexion()">
+      {{ connecte() ? 'Se déconnecter' : 'Se connecter' }}
+    </button>
+    @if (connecte()) {
+      <p class="statut ok">✅ Connecté</p>
+    } @else {
+      <p class="statut ko">⛔ Déconnecté</p>
+    }
+  </article>
+
+  <!-- 📋 Directive : liste simple du cours -->
+  <article class="carte">
+    <h2>📋 Liste (&#64;for)</h2>
+    <ul>
+      @for (nom of noms; track nom) {
+        <li>{{ nom }}</li>
+      }
+    </ul>
+  </article>
+</div>
+
+<!-- 📋 Liste + recherche (property binding + event binding) -->
+<article class="carte large">
+  <h2>💡 Inventeurs célèbres</h2>
+  <input
+    type="text"
+    placeholder="Rechercher un inventeur…"
+    [value]="recherche()"
+    (input)="filtrer($event)"
+  />
+  <table>
+    <thead>
+      <tr><th>#</th><th>Inventeur</th><th>Invention</th></tr>
+    </thead>
+    <tbody>
+      @for (inventeur of inventeursFiltres(); track inventeur.nom; let i = $index) {
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ inventeur.nom }}</td>
+          <td>{{ inventeur.invention }}</td>
+        </tr>
+      } @empty {
+        <tr><td colspan="3">Aucun inventeur trouvé 🔍</td></tr>
+      }
+    </tbody>
+  </table>
+</article>
