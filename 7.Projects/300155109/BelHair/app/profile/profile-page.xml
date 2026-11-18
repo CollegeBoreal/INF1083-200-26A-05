@@ -1,0 +1,48 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *">
+    <StackLayout row="0" class="entete" paddingTop="24" tap="{{ onModifier }}">
+      <Label text="{{ initiales }}" class="avatar" />
+      <Label text="{{ nom || 'Touche ici pour ajouter ton nom' }}" class="profil-nom" />
+      <Label text="{{ telephone || 'téléphone non renseigné' }}" class="profil-sous" />
+    </StackLayout>
+    <c:ruban row="1" />
+
+    <ScrollView row="2">
+      <StackLayout paddingTop="8">
+        <Label text="Mon compte" class="section" />
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onModifier }}">
+          <Label col="0" text="👤" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Mes informations" class="menu-titre" /><Label text="Nom et téléphone" class="menu-sous" /></StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onTexture }}">
+          <Label col="0" text="🌀" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Mon type de cheveux" class="menu-titre" /><Label text="{{ texture || 'À préciser' }}" class="menu-sous" /></StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+
+        <Label text="Le salon" class="section" />
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onAppeler }}">
+          <Label col="0" text="📞" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Appeler le salon" class="menu-titre" /><Label text="{{ salon.telephoneTexte }}" class="menu-sous" /></StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onItineraire }}">
+          <Label col="0" text="📍" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Adresse et itinéraire" class="menu-titre" /><Label text="{{ salon.adresse }}" class="menu-sous" /></StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+        <GridLayout columns="auto, *" class="menu">
+          <Label col="0" text="🕘" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Horaires" class="menu-titre" /><Label text="{{ salon.horaires }}" class="menu-sous" /></StackLayout>
+        </GridLayout>
+        <GridLayout columns="auto, *, auto" class="menu" tap="{{ onPartager }}">
+          <Label col="0" text="💌" class="menu-rond" />
+          <StackLayout col="1" marginLeft="12"><Label text="Recommander le salon" class="menu-titre" /><Label text="Partager avec un ami" class="menu-sous" /></StackLayout>
+          <Label col="2" text="›" class="chevron" />
+        </GridLayout>
+        <StackLayout height="16" />
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

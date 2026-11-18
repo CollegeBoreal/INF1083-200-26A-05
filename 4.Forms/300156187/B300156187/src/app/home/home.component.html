@@ -1,0 +1,7 @@
+<StackLayout [formGroup]="signUpForm" class="page">
+    <Label text="Inscription" class="title"></Label>
+    <Label text="Crée ton compte" class="subtitle"></Label>
+    <TextField formControlName="email" hint="Email" keyboardType="email" class="field"></TextField>
+    <TextField formControlName="username" hint="Username" class="field"></TextField>
+    <Button text="sign up" (tap)="onButtonTap()" class="btn"></Button>
+</StackLayout>

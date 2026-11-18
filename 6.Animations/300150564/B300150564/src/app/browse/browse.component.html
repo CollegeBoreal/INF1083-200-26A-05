@@ -1,0 +1,92 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+
+  <GridLayout columns="50, *">
+    <Label
+      class="fas menu-icon"
+      text="&#xf0c9;"
+      (tap)="onDrawerButtonTap()">
+    </Label>
+
+    <Label
+      col="1"
+      class="action-bar-title"
+      text="Animation impérative">
+    </Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="animation-page">
+
+    <Label
+      text="🚀 Animation Impérative"
+      class="page-title">
+    </Label>
+
+    <Label
+      text="Animation TypeScript"
+      class="page-subtitle">
+    </Label>
+
+    <Label
+      text="L'animation est exécutée directement dans le code du composant avec la méthode animate()."
+      textWrap="true"
+      class="description">
+    </Label>
+
+    <StackLayout class="demo-card">
+
+      <Label
+        text="CIBLE À ANIMER"
+        class="demo-label">
+      </Label>
+
+      <AbsoluteLayout
+        width="300"
+        height="300"
+        class="animation-zone">
+
+        <Image
+          #cible
+          src="res://logo"
+          width="60"
+          height="60"
+          left="20"
+          top="20"
+          class="target-image">
+        </Image>
+
+      </AbsoluteLayout>
+
+      <Button
+        text="▶ LANCER L'ANIMATION"
+        (tap)="animate(cible)"
+        class="animate-button">
+      </Button>
+
+    </StackLayout>
+
+    <StackLayout class="info-card">
+
+      <Label
+        text="⚡ Séquence d'animation"
+        class="info-title">
+      </Label>
+
+      <Label
+        text="1. Opacité  •  2. Translation  •  3. Scale  •  4. Rotation"
+        textWrap="true"
+        class="info-text">
+      </Label>
+
+      <Label
+        text="Chaque étape est exécutée successivement avec des Promises."
+        textWrap="true"
+        class="info-text">
+      </Label>
+
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

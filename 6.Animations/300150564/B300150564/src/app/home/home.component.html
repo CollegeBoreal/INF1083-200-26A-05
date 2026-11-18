@@ -1,0 +1,71 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+
+  <GridLayout columns="50, *">
+    <Label
+      class="fas menu-icon"
+      text="&#xf0c9;"
+      (tap)="onDrawerButtonTap()">
+    </Label>
+
+    <Label
+      col="1"
+      class="action-bar-title"
+      text="Animation déclarative">
+    </Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="animation-page">
+
+    <Label
+      text="🎨 Animation CSS"
+      class="page-title">
+    </Label>
+
+    <Label
+      text="Animation déclarative"
+      class="page-subtitle">
+    </Label>
+
+    <Label
+      text="Cette animation utilise @keyframes et les propriétés CSS de NativeScript."
+      textWrap="true"
+      class="description">
+    </Label>
+
+    <StackLayout class="demo-card">
+
+      <Label
+        text="ROUGE → VERT"
+        class="demo-label">
+      </Label>
+
+      <Button
+        text="{N}"
+        class="background">
+      </Button>
+
+      <Label
+        text="Durée : 2 secondes"
+        class="duration-label">
+      </Label>
+
+    </StackLayout>
+
+    <StackLayout class="info-card">
+      <Label
+        text="⚡ Type : Declarative Animation"
+        class="info-title">
+      </Label>
+
+      <Label
+        text="L'animation est définie directement dans le fichier SCSS du composant."
+        textWrap="true"
+        class="info-text">
+      </Label>
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+{
+  "name": "afrimarche",
+  "main": "app/app.js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AfriMarché - boutique de produits 100 % africains",
+  "dependencies": {
+    "@nativescript/core": "~8.8.0",
+    "@nativescript/theme": "~3.1.0",
+    "@nativescript/social-share": "~2.2.0",
+    "@nativescript/local-notifications": "~6.2.0",
+    "@nativescript/geolocation": "~9.0.0"
+  },
+  "devDependencies": {
+    "@nativescript/android": "~8.8.0",
+    "@nativescript/ios": "~8.8.0",
+    "@nativescript/types": "~8.8.0",
+    "@nativescript/webpack": "~5.0.0"
+  }
+}
