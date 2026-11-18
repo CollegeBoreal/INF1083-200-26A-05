@@ -30,6 +30,7 @@ jobs:
             "4.Forms"
             "5.RxJS"
             "6.Animations"
+            "7.Projects"
           )
 
           foreach ($chapter in $chapters) {
@@ -56,6 +57,7 @@ jobs:
             "4.Forms"
             "5.RxJS"
             "6.Animations"
+            "7.Projects"
           )
 
           foreach ($chapter in $chapters) {
