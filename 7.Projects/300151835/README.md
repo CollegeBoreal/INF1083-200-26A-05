@@ -70,9 +70,9 @@ class TicketsStore {
   template: `
     <ActionBar title="Ticket Assist · Accueil" />
     <StackLayout class="p-4">
-      <Label [text]="'Tickets ouverts : ' + store.ouverts()" />
-      <Button text="Créer un ticket" [nsRouterLink]="['/nouveau']" />
-      <Button text="Voir les tickets" [nsRouterLink]="['/tickets']" />
+      <Label [text]="'Tickets ouverts : ' + store.ouverts()"></Label>
+      <Button text="Créer un ticket" [nsRouterLink]="['/nouveau']"></Button>
+      <Button text="Voir les tickets" [nsRouterLink]="['/tickets']"></Button>
     </StackLayout>`,
 })
 export class Accueil {
@@ -85,13 +85,13 @@ export class Accueil {
   template: `
     <ActionBar title="Nouveau ticket" />
     <StackLayout class="p-4">
-      <Label text="Titre" />
+      <Label text="Titre"></Label>
       <TextField [(ngModel)]="titre" hint="Ex. Imprimante hors ligne" maxLength="80" />
-      <Label text="Description" />
+      <Label text="Description"></Label>
       <TextView [(ngModel)]="description" hint="Décris le problème" maxLength="500" height="120" />
-      <Button text="Enregistrer" (tap)="enregistrer()" />
-      <Label [text]="message()" textWrap="true" />
-      <Button text="Voir les tickets" [nsRouterLink]="['/tickets']" />
+      <Button text="Enregistrer" (tap)="enregistrer()"></Button>
+      <Label [text]="message()" textWrap="true"></Label>
+      <Button text="Voir les tickets" [nsRouterLink]="['/tickets']"></Button>
     </StackLayout>`,
 })
 export class NouveauTicket {
@@ -124,15 +124,15 @@ export class NouveauTicket {
   template: `
     <ActionBar title="Liste des tickets" />
     <GridLayout rows="auto, auto, *" class="p-4">
-      <Button row="0" text="Nouveau ticket" [nsRouterLink]="['/nouveau']" />
-      <Label row="1" [text]="message() || (store.tickets().length ? '' : 'Aucun ticket.')" />
+      <Button row="0" text="Nouveau ticket" [nsRouterLink]="['/nouveau']"></Button>
+      <Label row="1" [text]="message() || (store.tickets().length ? '' : 'Aucun ticket.')"></Label>
       <ListView row="2" [items]="store.tickets()">
         <ng-template let-ticket="item">
           <StackLayout class="p-2">
-            <Label [text]="'#' + ticket.id + ' · ' + ticket.titre" textWrap="true" />
-            <Label [text]="ticket.description" textWrap="true" />
-            <Label [text]="ticket.ferme ? 'Fermé' : 'Ouvert'" />
-            <Button text="Fermer le ticket" [isEnabled]="!ticket.ferme" (tap)="fermer(ticket.id)" />
+            <Label [text]="'#' + ticket.id + ' · ' + ticket.titre" textWrap="true"></Label>
+            <Label [text]="ticket.description" textWrap="true"></Label>
+            <Label [text]="ticket.ferme ? 'Fermé' : 'Ouvert'"></Label>
+            <Button text="Fermer le ticket" [isEnabled]="!ticket.ferme" (tap)="fermer(ticket.id)"></Button>
           </StackLayout>
         </ng-template>
       </ListView>
