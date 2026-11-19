@@ -10,7 +10,7 @@ Requires Node.js 18 or newer.
 npm install
 npm run dev
 ```
-<image src=images/Screenshot%202026-11-19%20155014.png width=50% height=50% > </image>
+<image src=images/Screenshot%202026-11-19%20155014.png width=100% height=50% > </image>
 Open the URL printed by Vite. Run `npm run build` to create a production build and `npm test` to run the calculation tests.
 
 ## Features and limitations
