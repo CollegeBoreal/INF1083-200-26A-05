@@ -32,6 +32,23 @@ CarCare propose notamment :
 
 ---
 
+## 🎨 Maquette de l'application
+
+Une maquette a été préparée afin de présenter l'organisation générale de CarCare, ses principales pages et son système de navigation.
+
+La maquette présente :
+
+- Dashboard ;
+- Maintenance ;
+- Expenses ;
+- My Vehicles ;
+- Settings ;
+- navigation avec SideDrawer.
+
+![Maquette CarCare](images/07-maquette-carcare.png)
+
+---
+
 ## 🧰 Technologies utilisées
 
 | Technologie | Version / utilisation |
@@ -299,7 +316,8 @@ L'application est ensuite compilée et lancée sur l'émulateur Android.
 │   ├── 03-expenses-history.png
 │   ├── 04-my-vehicles.png
 │   ├── 05-navigation-menu.png
-│   └── 06-settings.png
+│   ├── 06-settings.png
+│   └── 07-maquette-carcare.png
 │
 └── README.md
 ```
@@ -333,6 +351,8 @@ Certains textes étaient trop longs pour l'espace disponible sur l'écran.
 CarCare est une application mobile fonctionnelle comportant plusieurs pages et une navigation par menu latéral.
 
 Le projet dépasse le minimum de **3 pages** demandé et intègre plusieurs fonctionnalités interactives : gestion des véhicules, suivi des dépenses, préférences et sauvegarde locale.
+
+La maquette permet également de présenter clairement la conception générale et l'organisation des différentes pages de l'application.
 
 L'application offre une interface cohérente et adaptée à la gestion quotidienne d'un véhicule.
 
