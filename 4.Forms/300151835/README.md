@@ -51,12 +51,12 @@ Remplacer `src/app/home/home.component.html` par ce gabarit.
 ```html
 <ActionBar title="Inscription" />
 <StackLayout [formGroup]="signUpForm" class="p-4">
-  <Label text="Courriel" />
+  <Label text="Courriel"></Label>
   <TextField formControlName="email" hint="test@example.com" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-  <Label text="Nom d’utilisateur" />
+  <Label text="Nom d’utilisateur"></Label>
   <TextField formControlName="username" hint="demo" />
-  <Button text="S’inscrire" (tap)="onButtonTap()" />
-  <Label [text]="message" textWrap="true" />
+  <Button text="S’inscrire" (tap)="onButtonTap()"></Button>
+  <Label [text]="message" textWrap="true"></Label>
 </StackLayout>
 ```
 
