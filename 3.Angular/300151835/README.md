@@ -118,6 +118,11 @@ Ouvrir [localhost:4200](http://localhost:4200). Le premier bouton doit afficher 
 
 ## Vérification
 
-Les étapes ci-dessus décrivent le résultat attendu. L’exécution dans le navigateur et les captures restent à vérifier. Le dossier [images](images/) est prévu pour les captures.
+La compilation avec `ng build` a réussi. Dans le navigateur, **Dire bonjour** a affiché « Bonjour ! » et **Charger les utilisateurs** a affiché les dix utilisateurs de l’API.
 
 [Consignes du cours](../README.md)
+
+
+### Capture du test Angular
+
+<img width="335" height="320" alt="Application Angular affichant les utilisateurs chargés depuis l’API" src="https://github.com/user-attachments/assets/8ab5e5a8-71b9-433c-ad8c-f93bd20c1f66" />
