@@ -1,0 +1,23 @@
+<ActionBar class="tg-bar">
+  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <Label [text]="lieu.nom" class="tg-bar-titre"></Label>
+</ActionBar>
+
+<ScrollView class="tg-page">
+  <StackLayout class="tg-detail">
+    <Label [text]="lieu.emoji" class="tg-detail-emoji"></Label>
+    <Label [text]="lieu.nom" class="tg-detail-nom" textWrap="true"></Label>
+    <Label [text]="lieu.categorie + ' · ' + lieu.quartier" class="tg-badge"></Label>
+
+    <Label [text]="lieu.description" class="tg-texte" textWrap="true"></Label>
+
+    <StackLayout class="tg-info">
+      <Label [text]="'📍 ' + lieu.adresse" textWrap="true"></Label>
+      <Label [text]="'💡 ' + lieu.conseil" textWrap="true" class="m-t-10"></Label>
+    </StackLayout>
+
+    <Button [text]="favoris.estFavori(lieu.id) ? '⭐ Retirer des favoris' : '☆ Ajouter aux favoris'"
+            (tap)="basculerFavori()" class="tg-bouton"></Button>
+    <Button text="📤 Partager" (tap)="partager()" class="tg-bouton tg-bouton-clair"></Button>
+  </StackLayout>
+</ScrollView>

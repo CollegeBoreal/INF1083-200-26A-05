@@ -1,0 +1,14 @@
+<!-- 🍁 TorontoGo : 3 onglets -->
+<TabView androidTabsPosition="bottom" selectedTabTextColor="#C8102E" tabTextFontSize="13">
+  <GridLayout *tabItem="{ title: '📍 Lieux' }">
+    <page-router-outlet name="homeTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '🌤️ Météo' }">
+    <page-router-outlet name="browseTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '⭐ Favoris' }">
+    <page-router-outlet name="searchTab"></page-router-outlet>
+  </GridLayout>
+</TabView>

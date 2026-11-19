@@ -1,0 +1,33 @@
+<ActionBar class="tg-bar">
+  <Label text="🍁 TorontoGo — Lieux" class="tg-bar-titre"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, auto, auto, *" class="tg-page">
+  <!-- Recherche -->
+  <SearchBar row="0" hint="Rechercher un lieu…" (textChange)="rechercher($event)" class="tg-recherche"></SearchBar>
+
+  <!-- Filtres par catégorie -->
+  <ScrollView row="1" orientation="horizontal" scrollBarIndicatorVisible="false">
+    <StackLayout orientation="horizontal" class="tg-filtres">
+      @for (c of categories; track c) {
+        <Button [text]="c" (tap)="choisir(c)" [class]="c === categorie() ? 'tg-filtre tg-filtre-actif' : 'tg-filtre'"></Button>
+      }
+    </StackLayout>
+  </ScrollView>
+
+  <Label row="2" [text]="lieux().length + ' lieu(x) à découvrir'" class="tg-compte"></Label>
+
+  <!-- Liste des lieux -->
+  <ListView row="3" [items]="lieux()" separatorColor="transparent">
+    <ng-template let-lieu="item">
+      <GridLayout columns="60, *, 30" class="tg-carte" [nsRouterLink]="['../item', lieu.id]">
+        <Label col="0" [text]="lieu.emoji" class="tg-emoji"></Label>
+        <StackLayout col="1" verticalAlignment="center">
+          <Label [text]="lieu.nom" class="tg-nom" textWrap="true"></Label>
+          <Label [text]="lieu.categorie + ' · ' + lieu.quartier" class="tg-sous-titre"></Label>
+        </StackLayout>
+        <Label col="2" [text]="favoris.estFavori(lieu.id) ? '⭐' : '›'" class="tg-fleche"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

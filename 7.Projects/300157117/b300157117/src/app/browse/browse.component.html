@@ -1,0 +1,33 @@
+<ActionBar class="tg-bar">
+  <Label text="🍁 TorontoGo — Météo" class="tg-bar-titre"></Label>
+</ActionBar>
+
+<ScrollView class="tg-page">
+  <StackLayout class="p-15">
+    @if (meteo(); as m) {
+      <!-- Météo actuelle -->
+      <StackLayout class="tg-meteo">
+        <Label text="Toronto, Ontario" class="tg-meteo-ville"></Label>
+        <Label [text]="m.emoji" class="tg-meteo-emoji"></Label>
+        <Label [text]="m.temperature + '°C'" class="tg-meteo-temp"></Label>
+        <Label [text]="m.texte" class="tg-meteo-texte"></Label>
+        <Label [text]="'Ressentie ' + m.ressentie + '°C · 💧 ' + m.humidite + '% · 💨 ' + m.vent + ' km/h'"
+               class="tg-meteo-details" textWrap="true"></Label>
+      </StackLayout>
+
+      <!-- Prévisions sur 5 jours -->
+      <Label text="Prévisions sur 5 jours" class="tg-section"></Label>
+      @for (j of m.jours; track j.date) {
+        <GridLayout columns="*, 50, auto" class="tg-jour">
+          <Label col="0" [text]="j.date" class="tg-nom"></Label>
+          <Label col="1" [text]="j.emoji" class="tg-jour-emoji"></Label>
+          <Label col="2" [text]="j.min + '° / ' + j.max + '°'" class="tg-sous-titre"></Label>
+        </GridLayout>
+      }
+    }
+
+    <Label [text]="message()" class="tg-compte" textWrap="true"></Label>
+    <Button text="🔄 Actualiser" (tap)="actualiser()" class="tg-bouton"></Button>
+    <Label text="Données : Open-Meteo.com" class="tg-source"></Label>
+  </StackLayout>
+</ScrollView>
