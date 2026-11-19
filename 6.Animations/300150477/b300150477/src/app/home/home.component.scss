@@ -1,0 +1,55 @@
+.accueil {
+  background-color: #123b56;
+}
+
+.intro {
+  padding: 24;
+}
+
+.montagne,
+.titre,
+.trajet {
+  text-align: center;
+}
+
+.montagne {
+  font-size: 64;
+  margin-bottom: 12;
+}
+
+.titre {
+  color: #ffffff;
+  font-size: 28;
+  font-weight: bold;
+}
+
+.trajet {
+  color: #dcebf3;
+  font-size: 17;
+  margin-top: 8;
+  margin-bottom: 24;
+}
+
+@keyframes leverDuSoleil {
+  from {
+    background-color: #245677;
+    color: #ffffff;
+  }
+
+  to {
+    background-color: #f4b942;
+    color: #123b56;
+  }
+}
+
+.background {
+  background-color: #245677;
+  color: #ffffff;
+  border-radius: 24;
+  padding: 14 20;
+  font-size: 17;
+  font-weight: bold;
+  animation-name: leverDuSoleil;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}

@@ -1,0 +1,2 @@
+﻿ :host { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #e0f2fe, #dbeafe); font-family: Arial, sans-serif; text-align: center; } h1 { color: #1d4ed8; font-size: 42px; } p { color: #475569; font-size: 20px; } button { background: #2563eb; color: white; border: none; padding: 14px 30px; border-radius: 10px; font-size: 18px; cursor: pointer; } button:hover { background: #1d4ed8; transform: translateY(-2px); } 
+:host { flex-direction: column; gap: 20px; } h1, p { margin: 0; }

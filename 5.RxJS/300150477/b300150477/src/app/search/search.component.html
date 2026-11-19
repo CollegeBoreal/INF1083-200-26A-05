@@ -1,0 +1,87 @@
+<ActionBar
+    title="🌍 Atlas des capitales"
+    backgroundColor="#0B1628"
+    color="#F1F5F9">
+</ActionBar>
+
+<GridLayout rows="auto, auto, auto, *" padding="20" backgroundColor="#0B1628">
+    <StackLayout row="0" marginBottom="18">
+        <Label
+            text="🧭 Explore le monde"
+            color="#F1F5F9"
+            fontSize="26"
+            fontWeight="bold"
+            textWrap="true">
+        </Label>
+        <Label
+            text="Saisis une capitale pour découvrir son pays."
+            color="#B8C8DD"
+            fontSize="15"
+            textWrap="true"
+            marginTop="6">
+        </Label>
+    </StackLayout>
+
+    <StackLayout row="1">
+        <TextField
+            hint="Ex. : Ottawa"
+            [(ngModel)]="name"
+            (textChange)="name = $any($event).value"
+            backgroundColor="#172A43"
+            color="#F1F5F9"
+            placeholderColor="#B8C8DD"
+            borderRadius="12"
+            padding="14"
+            fontSize="17">
+        </TextField>
+        <Button
+            text="🔎 Rechercher"
+            (tap)="searchCapital()"
+            [isEnabled]="!loading"
+            backgroundColor="#47DCC9"
+            color="#0B1628"
+            borderRadius="12"
+            fontWeight="bold"
+            marginTop="10">
+        </Button>
+    </StackLayout>
+
+    <Label
+        row="2"
+        *ngIf="message"
+        [text]="message"
+        color="#F5CF77"
+        textWrap="true"
+        marginTop="14">
+    </Label>
+
+    <ListView
+        row="3"
+        [items]="countries"
+        backgroundColor="#0B1628"
+        separatorColor="transparent"
+        marginTop="14">
+        <ng-template let-item="item">
+            <StackLayout
+                backgroundColor="#172A43"
+                borderRadius="14"
+                padding="16"
+                marginBottom="10">
+                <Label
+                    [text]="item.flag ? item.flag + ' ' + item.name : item.name"
+                    color="#F1F5F9"
+                    fontSize="21"
+                    fontWeight="bold"
+                    textWrap="true">
+                </Label>
+                <Label
+                    [text]="'📍 Capitale • ' + item.capital"
+                    color="#F5CF77"
+                    fontSize="16"
+                    textWrap="true"
+                    marginTop="5">
+                </Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

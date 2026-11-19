@@ -1,0 +1,75 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:c="components">
+  <GridLayout rows="auto, auto, *, auto">
+    <!-- Résumé de la prestation -->
+    <StackLayout row="0" class="resume">
+      <Button text="‹" tap="{{ onRetour }}" class="retour" />
+      <GridLayout columns="auto, *">
+        <GridLayout col="0" class="vignette vignette-grande" verticalAlignment="top">
+          <Label text="{{ service.emoji }}" class="vignette-emoji" fontSize="40" />
+          <Image src="{{ '~/photos/' + service.image }}" stretch="aspectFill" class="vignette-photo" />
+        </GridLayout>
+        <StackLayout col="1" marginLeft="8">
+          <Label text="{{ service.nom }}" class="resume-nom" textWrap="true" />
+          <Label text="{{ service.dureeTexte + ' · ' + service.prixTexte }}" class="resume-detail" />
+          <Label text="{{ service.description }}" class="resume-detail" textWrap="true" />
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+    <c:ruban row="1" />
+
+    <ScrollView row="2">
+      <StackLayout>
+        <!-- 1. Coiffeur / coiffeuse -->
+        <Label text="1. Coiffeur ou coiffeuse" class="etape" />
+        <Repeater items="{{ coiffeurs }}" margin="0 16">
+          <Repeater.itemsLayout><WrapLayout /></Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <Button text="{{ nom }}" tap="onCoiffeurTap" class="{{ actif ? 'chip chip-actif' : 'chip' }}" />
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <!-- 2. Jour -->
+        <Label text="2. Jour" class="etape" />
+        <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+          <Repeater items="{{ jours }}" margin="0 16">
+            <Repeater.itemsLayout><StackLayout orientation="horizontal" /></Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+              <StackLayout tap="onJourTap" class="{{ actif ? 'jour jour-actif' : 'jour' }}" verticalAlignment="center">
+                <Label text="{{ jour }}" class="jour-nom" marginTop="10" />
+                <Label text="{{ numero }}" class="jour-num" />
+                <Label text="{{ mois }}" class="jour-nom" />
+              </StackLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+        </ScrollView>
+
+        <!-- 3. Heure -->
+        <Label text="3. Heure" class="etape" />
+        <Repeater items="{{ creneaux }}" margin="0 16">
+          <Repeater.itemsLayout><WrapLayout /></Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <Button text="{{ heure }}" tap="onHeureTap" isEnabled="{{ libre }}"
+                    class="{{ actif ? 'chip chip-actif' : (libre ? 'chip' : 'chip chip-pris') }}" />
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <!-- 4. Photo d'inspiration + note -->
+        <Label text="4. Photo d'inspiration (facultatif)" class="etape" />
+        <Image src="{{ photo }}" class="photo-ref" stretch="aspectFill" horizontalAlignment="left" visibility="{{ photo ? 'visible' : 'collapsed' }}" marginBottom="8" />
+        <Button text="{{ photo ? '📷  Reprendre la photo' : '📷  Prendre une photo du style voulu' }}" tap="{{ onPhoto }}" class="btn-photo" />
+        <Label text="Note pour le salon (facultatif)" class="etape" fontSize="13" />
+        <TextView text="{{ note }}" hint="Longueur, couleur des mèches, allergie…" class="note" />
+        <StackLayout height="20" />
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Barre du bas -->
+    <GridLayout row="3" columns="auto, *" class="barre-bas">
+      <StackLayout col="0" verticalAlignment="center">
+        <Label text="{{ resumeChoix }}" class="petit" />
+        <Label text="{{ service.prixTexte }}" class="grand-prix" />
+      </StackLayout>
+      <Button col="1" text="Confirmer" tap="{{ onConfirmer }}" class="btn-dore" marginLeft="16" isEnabled="{{ heure ? true : false }}" opacity="{{ heure ? 1 : 0.5 }}" />
+    </GridLayout>
+  </GridLayout>
+</Page>

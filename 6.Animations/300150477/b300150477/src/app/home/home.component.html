@@ -1,13 +1,16 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
-
+    <Label class="action-bar-title" text="Accueil" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf015;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+<GridLayout class="accueil">
+  <StackLayout class="intro" verticalAlignment="center">
+    <Label class="montagne" text="🏔️"></Label>
+    <Label class="titre" text="Du Djurdjura aux Rocheuses" textWrap="true"></Label>
+    <Label class="trajet" text="🇩🇿 Algérie → Canada 🇨🇦" textWrap="true"></Label>
+    <Button class="background" text="🌅 Lever du soleil"></Button>
+  </StackLayout>
 </GridLayout>

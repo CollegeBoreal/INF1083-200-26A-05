@@ -1,0 +1,73 @@
+
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="fas menu-icon" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    <Label col="1" class="action-bar-title" text="CarCare"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="dashboard-page">
+
+    <Label text="🚗 CARCARE" class="brand-title"></Label>
+    <Label text="Your vehicle, always in good hands." class="subtitle"></Label>
+
+    <StackLayout class="vehicle-card">
+      <Label text="MY VEHICLE" class="section-label"></Label>
+      <Label [text]="vehicleName" class="vehicle-name"></Label>
+      <Label [text]="'' + vehicleYear + ' MODEL'" class="vehicle-year"></Label>
+
+      <GridLayout columns="*, *" class="vehicle-stats">
+        <StackLayout col="0">
+          <Label text="MILEAGE" class="stat-label"></Label>
+          <Label [text]="mileage.toLocaleString() + ' km'" class="stat-value"></Label>
+        </StackLayout>
+
+        <StackLayout col="1">
+          <Label text="NEXT SERVICE" class="stat-label"></Label>
+          <Label [text]="remainingKm.toLocaleString() + ' km'" class="stat-value"></Label>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <Label text="Overview" class="section-title"></Label>
+
+    <GridLayout columns="*, *" rows="auto, auto" class="overview-grid">
+
+      <StackLayout row="0" col="0" class="info-card">
+        <Label text="🔧" class="card-icon"></Label>
+        <Label text="MAINTENANCE" class="stat-label"></Label>
+        <Label [text]="nextService" class="card-value"></Label>
+        <Label [text]="'Due at ' + serviceDueKm.toLocaleString() + ' km'" class="card-description"></Label>
+      </StackLayout>
+
+      <StackLayout row="0" col="1" class="info-card">
+        <Label text="💰" class="card-icon"></Label>
+        <Label text="MONTHLY COST" class="stat-label"></Label>
+        <Label [text]="'$' + monthlyExpenses.toFixed(2)" class="card-value"></Label>
+        <Label text="Total this month" class="card-description"></Label>
+      </StackLayout>
+
+    </GridLayout>
+
+    <Label text="Recent Activity" class="section-title"></Label>
+
+    <StackLayout class="activity-card">
+      <Label text="⛽ Recent expense" class="activity-title"></Label>
+      <Label [text]="lastExpense" class="activity-description"></Label>
+    </StackLayout>
+
+    <StackLayout class="reminder-card">
+      <Label text="💡 Maintenance reminder" class="activity-title"></Label>
+      <Label
+        [text]="'Your next oil change is in ' + remainingKm.toLocaleString() + ' km.'"
+        textWrap="true"
+        class="activity-description">
+      </Label>
+    </StackLayout>
+
+    <Label text="CARCARE • DRIVE WITH CONFIDENCE" class="footer-text"></Label>
+
+  </StackLayout>
+</ScrollView>

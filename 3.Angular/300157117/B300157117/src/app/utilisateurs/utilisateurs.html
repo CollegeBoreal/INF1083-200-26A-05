@@ -1,0 +1,28 @@
+<section class="entete-page">
+  <h1>👥 Utilisateurs</h1>
+  <p>
+    Données chargées depuis l'API REST
+    <code>https://jsonplaceholder.typicode.com/users</code> avec <code>HttpClient</code>.
+  </p>
+</section>
+
+@if (chargement()) {
+  <p class="info">⏳ Chargement…</p>
+} @else if (erreur()) {
+  <p class="info erreur">{{ erreur() }}</p>
+} @else {
+  <p class="info">{{ utilisateurs().length }} utilisateurs reçus ✅</p>
+  <div class="grille">
+    @for (u of utilisateurs(); track u.id) {
+      <article class="carte">
+        <div class="avatar">{{ u.name.charAt(0) }}</div>
+        <div>
+          <h2>{{ u.name }}</h2>
+          <p>&#64;{{ u.username }}</p>
+          <p>📧 {{ u.email }}</p>
+          <p>🏙️ {{ u.address.city }} · 🏢 {{ u.company.name }}</p>
+        </div>
+      </article>
+    }
+  </div>
+}

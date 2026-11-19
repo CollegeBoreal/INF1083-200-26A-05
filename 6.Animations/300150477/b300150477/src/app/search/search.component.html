@@ -1,13 +1,52 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Search" colSpan="2"></Label>
-
+    <Label class="action-bar-title" text="Explorer" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf002;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView backgroundColor="#123b56">
+  <StackLayout padding="24">
+    <Label
+      text="Trouver une destination"
+      color="#ffffff"
+      fontSize="26"
+      fontWeight="bold"
+      textWrap="true"
+      marginBottom="16"
+    ></Label>
+
+    <TextField
+      #champ
+      hint="Pays ou montagne"
+      accessibilityLabel="Rechercher une destination"
+      (textChange)="onRechercheChange(champ)"
+      backgroundColor="#ffffff"
+      color="#123b56"
+      borderRadius="16"
+      padding="12"
+      marginBottom="20"
+    ></TextField>
+
+    @for (destination of resultats; track destination.nom) {
+      <StackLayout backgroundColor="#2c6e49" borderRadius="20" padding="16" marginBottom="12">
+        <Label
+          [text]="destination.nom"
+          color="#f4b942"
+          fontSize="20"
+          fontWeight="bold"
+          textWrap="true"
+        ></Label>
+        <Label [text]="destination.region" color="#ffffff" textWrap="true"></Label>
+      </StackLayout>
+    } @empty {
+      <Label
+        text="Aucune destination trouvée."
+        color="#ffffff"
+        fontSize="16"
+        textWrap="true"
+      ></Label>
+    }
+  </StackLayout>
+</ScrollView>

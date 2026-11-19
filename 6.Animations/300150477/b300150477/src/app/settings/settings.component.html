@@ -1,13 +1,52 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Settings" colSpan="2"></Label>
-
+    <Label class="action-bar-title" text="À propos" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf013;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView backgroundColor="#123b56">
+  <StackLayout padding="24">
+    <Label
+      text="🏔️ Du Djurdjura aux Rocheuses"
+      color="#ffffff"
+      fontSize="26"
+      fontWeight="bold"
+      textWrap="true"
+      marginBottom="16"
+    ></Label>
+
+    <Label
+      text="De la Kabylie aux Rocheuses canadiennes, ce projet relie deux paysages de montagne à travers un lever de soleil et une boussole animée."
+      color="#dcebf3"
+      fontSize="17"
+      textWrap="true"
+      marginBottom="24"
+    ></Label>
+
+    <StackLayout backgroundColor="#2c6e49" borderRadius="24" padding="20">
+      <Label
+        text="Benabbas Anis"
+        color="#f4b942"
+        fontSize="22"
+        fontWeight="bold"
+        textWrap="true"
+      ></Label>
+      <Label
+        text="Collège Boréal · INF1083"
+        color="#ffffff"
+        fontSize="16"
+        textWrap="true"
+        marginTop="8"
+      ></Label>
+      <Label
+        text="Atelier 6 · Animations"
+        color="#ffffff"
+        fontSize="16"
+        textWrap="true"
+        marginTop="4"
+      ></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

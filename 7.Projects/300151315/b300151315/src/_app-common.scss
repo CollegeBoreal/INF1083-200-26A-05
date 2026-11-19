@@ -1,0 +1,120 @@
+@import '@nativescript/theme/core';
+@import '@nativescript/theme/default';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
+  font-weight: 400;
+}
+
+.fas {
+  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+  font-weight: 900;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+  font-weight: 400;
+}
+
+// Custom tabstrip item class
+.navigation__item {
+  &:active,
+  &:active Label {
+    @include colorize($contrasted-color: complementary background 20% 0%);
+  }
+}
+
+// Common page class
+.page__content {
+  &-icon,
+  &-placeholder {
+    color: const(grey);
+    font-size: 20;
+    vertical-align: center;
+    horizontal-align: center;
+  }
+
+  &-icon {
+    font-size: 72;
+    vertical-align: top;
+    margin-top: 20%;
+  }
+}
+
+// ---------- PlanBoréal ----------
+$primary: #5b3df5;
+$ink: #1c1838;
+$muted: #6b6785;
+$soft: #f3f1fb;
+
+Page { background-color: $soft; }
+.page { background-color: $soft; }
+.content { padding: 16 16 32 16; }
+
+.bar { background-color: $primary; color: #ffffff; }
+.bar-title { color: #ffffff; font-size: 20; font-weight: bold; }
+.bar-action { color: #ffffff; font-size: 20; padding: 0 16; }
+
+.tag { color: $primary; font-size: 13; font-weight: bold; text-transform: uppercase; margin-top: 4; }
+.title { color: $ink; font-size: 28; font-weight: bold; margin-bottom: 14; }
+.section { color: $ink; font-size: 18; font-weight: bold; margin: 18 0 8 0; }
+.empty { color: $muted; font-size: 15; text-align: center; margin: 16; }
+
+.hero { background-color: $primary; border-radius: 22; padding: 18; }
+.hero-label { color: #d9d2ff; font-size: 14; }
+.hero-value { color: #ffffff; font-size: 20; font-weight: bold; margin-top: 2; }
+.hero-percent { color: #ffffff; font-size: 34; font-weight: bold; vertical-align: center; }
+.hero-bar { color: #ffffff; background-color: #7d64f7; margin-top: 14; height: 8; border-radius: 4; }
+.hero-late { color: #ffd8cf; font-size: 14; margin-top: 10; }
+.hero-id { margin-left: 14; vertical-align: center; }
+
+.card { background-color: #ffffff; border-radius: 18; margin-bottom: 10; }
+.stripe { border-radius: 18 0 0 18; }
+.card-body { padding: 14 14 14 12; }
+.card-meta { color: $muted; font-size: 13; }
+.card-code { font-size: 13; font-weight: bold; margin-top: 4; }
+.card-title { color: $ink; font-size: 17; font-weight: bold; margin: 2 0 4 0; }
+
+.task { background-color: #ffffff; border-radius: 16; padding: 12 12; margin-bottom: 8; }
+.task-done { opacity: 0.6; }
+.task-title { color: $ink; font-size: 16; font-weight: bold; }
+.task-course { font-size: 13; font-weight: bold; margin-top: 2; }
+.check { color: #c5c0dc; font-size: 24; margin-right: 12; vertical-align: center; }
+.check-on { color: #12b886; }
+.due { color: $muted; font-size: 13; vertical-align: center; margin-left: 8; }
+.due.soon { color: #f08c00; font-weight: bold; }
+.due.late { color: #e03131; font-weight: bold; }
+.badge { color: #ffffff; background-color: #e03131; font-size: 11; font-weight: bold; border-radius: 8; padding: 3 7; vertical-align: center; margin-left: 6; }
+.trash { color: #b4afcc; font-size: 18; padding: 0 4 0 12; vertical-align: center; }
+
+.form { background-color: #ffffff; border-radius: 20; padding: 16; margin-bottom: 14; }
+.form-title { color: $ink; font-size: 17; font-weight: bold; }
+.form-label { color: $muted; font-size: 13; margin: 10 0 4 0; }
+.input { background-color: $soft; color: $ink; placeholder-color: #a29fba; border-radius: 12; padding: 10 12; margin-top: 8; font-size: 15; border-bottom-width: 0; }
+.chip { color: $primary; background-color: #ece8ff; font-size: 14; font-weight: bold; text-align: center; border-radius: 16; padding: 8 12; margin: 0 6 0 0; }
+.chip-on { color: #ffffff; background-color: $primary; }
+.error { color: #e03131; font-size: 14; margin-top: 10; }
+.info { color: #0b7a55; background-color: #dcf7ec; font-size: 14; border-radius: 12; padding: 10 12; margin-bottom: 12; }
+
+.btn-main { background-color: $primary; color: #ffffff; font-size: 16; font-weight: bold; height: 50; border-radius: 25; margin-top: 16; text-transform: none; }
+.btn-light { background-color: #ece8ff; color: $primary; font-size: 15; font-weight: bold; height: 46; border-radius: 23; margin-top: 12; text-transform: none; }
+.btn-danger { background-color: #ffffff; color: #e03131; font-size: 15; font-weight: bold; height: 46; border-radius: 23; text-transform: none; border-width: 1; border-color: #ffc9c9; }
+
+.segments { background-color: #e6e2f7; border-radius: 14; padding: 4; margin-bottom: 12; }
+.segment { color: $muted; font-size: 14; font-weight: bold; text-align: center; padding: 8; border-radius: 11; }
+.segment-on { color: $primary; background-color: #ffffff; }
+
+.avatar { width: 64; height: 64; border-radius: 32; background-color: #ffffff; color: $primary; font-size: 24; font-weight: bold; text-align: center; vertical-align: center; }
+.stats { margin: 14 0; }
+.stat { background-color: #ffffff; border-radius: 16; padding: 12 0; }
+.stat-value { color: $ink; font-size: 26; font-weight: bold; text-align: center; }
+.stat-late { color: #e03131; }
+.stat-label { color: $muted; font-size: 13; text-align: center; }
+.switch { color: $primary; background-color: $primary; vertical-align: center; }
+.footer { color: #9a96b3; font-size: 13; text-align: center; margin-top: 20; }
+Label, Button, TextField { text-transform: none; }
+.ns-dark Page, .ns-dark .page { background-color: #f3f1fb; }

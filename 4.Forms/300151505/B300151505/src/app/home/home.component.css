@@ -1,0 +1,103 @@
+/* PAGE */
+.page {
+    background-color: #eef4f8;
+    padding-bottom: 30;
+}
+
+/* HEADER */
+.header {
+    background-color: #1f4f78;
+    padding: 28 20 30 20;
+}
+
+.header-title {
+    color: white;
+    font-size: 27;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-subtitle {
+    color: #dceaf5;
+    font-size: 16;
+    text-align: center;
+    margin-top: 6;
+}
+
+/* CARDS */
+.card {
+    background-color: white;
+    margin: 15 16 5 16;
+    padding: 20;
+    border-radius: 14;
+}
+
+/* SECTION TITLES */
+.section-title {
+    color: #1f4f78;
+    font-size: 20;
+    font-weight: bold;
+    margin-bottom: 3;
+}
+
+.section-subtitle {
+    color: #7b8794;
+    font-size: 13;
+    margin-bottom: 18;
+}
+
+/* FIELD LABELS */
+.field-label {
+    color: #334155;
+    font-size: 14;
+    font-weight: bold;
+    margin-top: 10;
+    margin-bottom: 4;
+}
+
+/* INPUTS */
+.input {
+    background-color: #f7f9fb;
+    color: #17212b;
+    font-size: 16;
+    padding: 12;
+    margin-bottom: 8;
+
+    border-width: 1;
+    border-color: #d5dee7;
+    border-radius: 8;
+}
+
+/* INSURANCE */
+.insurance {
+    background-color: #eef4f8;
+    padding: 14;
+    margin-top: 15;
+    border-radius: 10;
+}
+
+.insurance-title {
+    color: #263746;
+    font-size: 15;
+    font-weight: bold;
+}
+
+.insurance-text {
+    color: #7b8794;
+    font-size: 12;
+    margin-top: 3;
+}
+
+/* BOOK BUTTON */
+.book-button {
+    background-color: #1f4f78;
+    color: white;
+
+    font-size: 17;
+    font-weight: bold;
+
+    height: 55;
+    margin: 20 16 30 16;
+
+    border-radius: 10;
+}

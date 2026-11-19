@@ -1,0 +1,45 @@
+<ActionBar class="bar" flat="true" backgroundColor="#5b3df5" color="#ffffff">
+  <GridLayout columns="*, auto">
+    <Label text="Mes tâches" class="bar-title"></Label>
+    <Label col="1" [text]="showForm ? '&#xf00d;' : '&#xf067;'" class="fas bar-action" (tap)="openForm()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout class="content">
+    <!-- Formulaire d'ajout -->
+    <StackLayout *ngIf="showForm" class="form">
+      <Label text="Nouvelle tâche" class="form-title"></Label>
+      <TextField [(ngModel)]="title" hint="Ex. : Laboratoire 7.Projects" class="input" returnKeyType="done"></TextField>
+      <Label text="Cours" class="form-label"></Label>
+      <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+        <StackLayout orientation="horizontal">
+          <Label *ngFor="let c of p.courses()" [text]="c.code" class="chip" [class.chip-on]="courseId === c.id" (tap)="courseId = c.id"></Label>
+        </StackLayout>
+      </ScrollView>
+      <Label text="À remettre" class="form-label"></Label>
+      <GridLayout columns="*, *, *, *">
+        <Label *ngFor="let d of dueChoices; let i = index" [col]="i" [text]="d.label" class="chip" [class.chip-on]="dueDays === d.days" (tap)="dueDays = d.days"></Label>
+      </GridLayout>
+      <Button text="Ajouter la tâche" class="btn-main" (tap)="add()"></Button>
+    </StackLayout>
+    <Label *ngIf="message" [text]="message" class="info" textWrap="true"></Label>
+
+    <!-- Filtres -->
+    <GridLayout columns="*, *, *" class="segments">
+      <Label *ngFor="let f of filters; let i = index" [col]="i" [text]="f.label" class="segment" [class.segment-on]="filter() === f.key" (tap)="filter.set(f.key)"></Label>
+    </GridLayout>
+
+    <!-- Liste -->
+    <GridLayout *ngFor="let t of list()" columns="auto, *, auto, auto" class="task" [class.task-done]="t.done">
+      <Label [text]="t.done ? '&#xf058;' : '&#xf111;'" class="check" [class.fas]="t.done" [class.far]="!t.done" [class.check-on]="t.done" (tap)="toggle(t)"></Label>
+      <StackLayout col="1" (tap)="toggle(t)">
+        <Label [text]="t.title" class="task-title" textWrap="true"></Label>
+        <Label [text]="(p.course(t.courseId)?.code || '') + ' · ' + dueLabel(t.due)" class="task-course" [color]="p.course(t.courseId)?.color"></Label>
+      </StackLayout>
+      <Label col="2" *ngIf="!t.done && daysLeft(t.due) < 0" text="RETARD" class="badge"></Label>
+      <Label col="3" text="&#xf2ed;" class="far trash" (tap)="remove(t)"></Label>
+    </GridLayout>
+    <Label *ngIf="list().length === 0" text="Aucune tâche ici." class="empty"></Label>
+  </StackLayout>
+</ScrollView>

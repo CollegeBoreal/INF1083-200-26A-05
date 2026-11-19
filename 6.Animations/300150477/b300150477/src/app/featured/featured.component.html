@@ -1,13 +1,54 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Featured" colSpan="2"></Label>
-
+    <Label class="action-bar-title" text="Sommets" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf005;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView backgroundColor="#123b56">
+  <StackLayout padding="24">
+    <Label
+      text="Deux chaînes de montagnes"
+      color="#ffffff"
+      fontSize="26"
+      fontWeight="bold"
+      textWrap="true"
+      marginBottom="20"
+    ></Label>
+
+    <StackLayout backgroundColor="#2c6e49" borderRadius="24" padding="20" marginBottom="16">
+      <Label
+        text="🇩🇿 Le Djurdjura"
+        color="#f4b942"
+        fontSize="22"
+        fontWeight="bold"
+        textWrap="true"
+      ></Label>
+      <Label
+        text="En Kabylie, le Djurdjura fait partie de l’Atlas tellien. Ses crêtes rocheuses dominent les vallées environnantes."
+        color="#ffffff"
+        fontSize="16"
+        textWrap="true"
+        marginTop="8"
+      ></Label>
+    </StackLayout>
+
+    <StackLayout backgroundColor="#245677" borderRadius="24" padding="20">
+      <Label
+        text="🇨🇦 Les Rocheuses canadiennes"
+        color="#f4b942"
+        fontSize="22"
+        fontWeight="bold"
+        textWrap="true"
+      ></Label>
+      <Label
+        text="Entre l’Alberta et la Colombie-Britannique, les Rocheuses offrent des paysages de sommets, de glaciers et de lacs turquoise."
+        color="#ffffff"
+        fontSize="16"
+        textWrap="true"
+        marginTop="8"
+      ></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

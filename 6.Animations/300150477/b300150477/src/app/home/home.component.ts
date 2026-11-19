@@ -3,9 +3,10 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application } from '@nativescript/core'
 
 @Component({
+  selector: "Home",
   standalone: false,
-  selector: 'Home',
-  templateUrl: './home.component.html',
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
   constructor() {

@@ -24,22 +24,19 @@ technologie pour ce labo.
   `@nativescript/angular`)
 
 ## 📁 Structure du projet
-B300156187/
-├── src/
-│ └── app/
-│ ├── home/
-│ │ ├── home.component.html -> le formulaire (StackLayout, TextField, Button)
-│ │ └── home.component.ts -> la logique du formulaire
-│ ├── app.component.html
-│ ├── app.component.ts
-│ ├── app.routes.ts
-│ └── app.css -> le style de l'app
-├── package.json
-├── nativescript.config.ts
-└── README.md
-
-
-
+  B300156187/
+  ├── src/
+  │ └── app/
+  │ ├── home/
+  │ │ ├── home.component.html -> le formulaire (StackLayout, TextField, Button)
+  │ │ └── home.component.ts -> la logique du formulaire
+  │ ├── app.component.html
+  │ ├── app.component.ts
+  │ ├── app.routes.ts
+  │ └── app.css -> le style de l'app
+  ├── package.json
+  ├── nativescript.config.ts
+  └── README.md
 
 ## 📋 Le formulaire
 
@@ -48,7 +45,7 @@ B300156187/
 Le formulaire est dans un `StackLayout` avec `[formGroup]="signUpForm"`.
 Il contient deux `TextField` et un `Button` :
 
-```html
+html
 <StackLayout [formGroup]="signUpForm" class="page">
     <Label text="Inscription" class="title"></Label>
     <Label text="Crée ton compte" class="subtitle"></Label>
@@ -137,6 +134,5 @@ Nom : Idir Islam Chili
 ID : 300156187
 Cours : INF1083 - Développement d'applications mobiles
 Collège Boréal
----
 
 © 2026 Idir Islam Chili — Tous droits réservés

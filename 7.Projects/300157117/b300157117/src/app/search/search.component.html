@@ -1,0 +1,23 @@
+<ActionBar class="tg-bar">
+  <Label text="🍁 TorontoGo — Favoris" class="tg-bar-titre"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, *" class="tg-page">
+  <Label row="0" [text]="mesFavoris().length === 0
+          ? 'Aucun favori pour l’instant. Ouvrez un lieu dans l’onglet 📍 Lieux et touchez « Ajouter aux favoris ».'
+          : mesFavoris().length + ' lieu(x) favori(s) — sauvegardés sur le téléphone'"
+         class="tg-compte" textWrap="true"></Label>
+
+  <ListView row="1" [items]="mesFavoris()" separatorColor="transparent">
+    <ng-template let-lieu="item">
+      <GridLayout columns="60, *, auto" class="tg-carte">
+        <Label col="0" [text]="lieu.emoji" class="tg-emoji"></Label>
+        <StackLayout col="1" verticalAlignment="center">
+          <Label [text]="lieu.nom" class="tg-nom" textWrap="true"></Label>
+          <Label [text]="'📍 ' + lieu.adresse" class="tg-sous-titre" textWrap="true"></Label>
+        </StackLayout>
+        <Button col="2" text="✕" (tap)="retirer(lieu.id)" class="tg-retirer"></Button>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

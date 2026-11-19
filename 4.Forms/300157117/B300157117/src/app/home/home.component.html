@@ -1,0 +1,14 @@
+<ActionBar>
+  <Label text="Inscription — B300157117"></Label>
+</ActionBar>
+
+<StackLayout [formGroup]="signUpForm" class="p-6">
+  <Label text="Formulaire réactif (ReactiveForms)" class="text-xl font-bold mb-4"></Label>
+
+  <TextField formControlName="email" hint="Email" keyboardType="email" class="text-lg mb-2"></TextField>
+  <TextField formControlName="username" hint="Username" class="text-lg mb-4"></TextField>
+
+  <Button text="sign up" (tap)="onButtonTap()" class="bg-red-600 text-white text-lg rounded-lg"></Button>
+
+  <Label [text]="resultat" textWrap="true" class="text-base mt-6 text-purple-700"></Label>
+</StackLayout>
