@@ -114,7 +114,7 @@ npm install
 ns run android     # ou : ns run ios
 ```
 
-> Si le dossier `App_Resources` est absent, créer un projet avec `ns create` (template ci-dessus), puis y copier le dossier `app/` et le fichier `package.json`.
+
 
 ##  Captures d'écran
 
