@@ -1,0 +1,198 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+
+  <GridLayout columns="50, *">
+    <Label
+      class="fas menu-icon"
+      text="&#xf0c9;"
+      (tap)="onDrawerButtonTap()">
+    </Label>
+
+    <Label
+      col="1"
+      class="action-bar-title"
+      text="Expenses">
+    </Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="expenses-page">
+
+    <Label text="💰 Expenses" class="brand-title"></Label>
+
+    <Label
+      text="Track every dollar spent on your vehicle."
+      textWrap="true"
+      class="subtitle">
+    </Label>
+
+    <!-- TOTAL -->
+    <StackLayout class="total-card">
+      <Label text="TOTAL EXPENSES" class="section-label"></Label>
+
+      <Label
+        [text]="'$' + totalExpenses.toFixed(2)"
+        class="total-value">
+      </Label>
+
+      <Label
+        text="All recorded expenses • CAD"
+        class="card-description">
+      </Label>
+    </StackLayout>
+
+    <!-- ADD EXPENSE -->
+    <Label text="Add New Expense" class="section-title"></Label>
+
+    <StackLayout class="form-card">
+
+      <Label text="DESCRIPTION" class="field-label"></Label>
+
+      <TextField
+        hint="Example: Shell gasoline"
+        [(ngModel)]="title"
+        class="expense-input">
+      </TextField>
+
+      <Label text="CATEGORY" class="field-label"></Label>
+
+      <WrapLayout class="category-list">
+
+        <Button
+          text="Fuel"
+          class="category-button"
+          (tap)="category = 'Fuel'">
+        </Button>
+
+        <Button
+          text="Maintenance"
+          class="category-button"
+          (tap)="category = 'Maintenance'">
+        </Button>
+
+        <Button
+          text="Insurance"
+          class="category-button"
+          (tap)="category = 'Insurance'">
+        </Button>
+
+        <Button
+          text="Repairs"
+          class="category-button"
+          (tap)="category = 'Repairs'">
+        </Button>
+
+        <Button
+          text="Other"
+          class="category-button"
+          (tap)="category = 'Other'">
+        </Button>
+
+      </WrapLayout>
+
+      <Label
+        [text]="'Selected: ' + category"
+        class="selected-category">
+      </Label>
+
+      <Label text="AMOUNT (CAD)" class="field-label"></Label>
+
+      <TextField
+        hint="Enter amount"
+        keyboardType="decimal"
+        [(ngModel)]="amount"
+        class="expense-input">
+      </TextField>
+
+      <Button
+        text="+ ADD EXPENSE"
+        (tap)="addExpense()"
+        class="add-button">
+      </Button>
+
+    </StackLayout>
+
+    <!-- HISTORY -->
+    <GridLayout columns="*, auto" class="history-heading">
+
+      <Label
+        text="Expense History"
+        class="section-title">
+      </Label>
+
+      <Label
+        col="1"
+        [text]="expenses.length + ' items'"
+        class="history-count">
+      </Label>
+
+    </GridLayout>
+
+    <!-- EMPTY -->
+    <StackLayout
+      *ngIf="expenses.length === 0"
+      class="empty-card">
+
+      <Label text="📭" class="empty-icon"></Label>
+
+      <Label
+        text="No expenses yet"
+        class="empty-title">
+      </Label>
+
+      <Label
+        text="Your vehicle expenses will appear here."
+        textWrap="true"
+        class="card-description">
+      </Label>
+
+    </StackLayout>
+
+    <!-- EXPENSE LIST -->
+    <StackLayout
+      *ngFor="let expense of expenses"
+      class="expense-card">
+
+      <GridLayout columns="*, auto" rows="auto, auto">
+
+        <Label
+          row="0"
+          col="0"
+          [text]="expense.title"
+          class="expense-name">
+        </Label>
+
+        <Label
+          row="0"
+          col="1"
+          [text]="'$' + expense.amount.toFixed(2)"
+          class="expense-price">
+        </Label>
+
+        <Label
+          row="1"
+          col="0"
+          [text]="expense.category + ' • ' + expense.date"
+          class="expense-details">
+        </Label>
+
+        <Button
+          row="1"
+          col="1"
+          text="DELETE"
+          (tap)="deleteExpense(expense.id)"
+          class="delete-button">
+        </Button>
+
+      </GridLayout>
+
+    </StackLayout>
+
+    <Label
+      text="CARCARE • DRIVE WITH CONFIDENCE"
+      class="footer-text">
+    </Label>
+
+  </StackLayout>
+</ScrollView>

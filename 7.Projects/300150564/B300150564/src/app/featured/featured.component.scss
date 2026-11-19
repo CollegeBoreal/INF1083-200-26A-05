@@ -1,0 +1,173 @@
+.vehicles-page {
+  background-color: #101820;
+  padding: 20;
+}
+
+.brand-title {
+  color: #ff8c42;
+  font-size: 26;
+  font-weight: bold;
+  margin-top: 15;
+}
+
+.subtitle {
+  color: #aab7c4;
+  font-size: 13;
+  margin-bottom: 25;
+}
+
+.garage-summary {
+  background-color: #1d2a36;
+  border-radius: 18;
+  padding: 20;
+  margin-bottom: 25;
+  border-left-width: 4;
+  border-left-color: #ff8c42;
+}
+
+.section-label,
+.field-label {
+  color: #9aabba;
+  font-size: 10;
+  font-weight: bold;
+  letter-spacing: 1;
+}
+
+.garage-count {
+  color: #ffffff;
+  font-size: 27;
+  font-weight: bold;
+  margin-top: 8;
+}
+
+.card-description {
+  color: #aab7c4;
+  font-size: 12;
+  margin-top: 5;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 21;
+  font-weight: bold;
+  margin-bottom: 15;
+}
+
+.vehicle-card {
+  background-color: #1d2a36;
+  border-radius: 16;
+  padding: 16;
+  margin-bottom: 12;
+}
+
+.vehicle-icon {
+  font-size: 30;
+  vertical-align: center;
+}
+
+.vehicle-name {
+  color: #ffffff;
+  font-size: 18;
+  font-weight: bold;
+}
+
+.vehicle-details {
+  color: #aab7c4;
+  font-size: 12;
+  margin-top: 6;
+}
+
+.vehicle-actions {
+  margin-top: 14;
+}
+
+.edit-button {
+  background-color: #ff8c42;
+  color: #ffffff;
+  border-radius: 9;
+  font-size: 10;
+  font-weight: bold;
+  margin-right: 5;
+}
+
+.delete-button {
+  background-color: #3b2428;
+  color: #ff7b7b;
+  border-radius: 9;
+  font-size: 10;
+  font-weight: bold;
+  margin-left: 5;
+}
+
+.form-title {
+  margin-top: 18;
+}
+
+.form-card {
+  background-color: #1d2a36;
+  border-radius: 16;
+  padding: 18;
+  margin-bottom: 20;
+}
+
+.field-label {
+  margin-top: 10;
+  margin-bottom: 5;
+}
+
+.vehicle-input {
+  color: #ffffff;
+  placeholder-color: #71808d;
+  background-color: #101820;
+  border-radius: 10;
+  padding: 12;
+  margin-bottom: 8;
+}
+
+.add-button {
+  background-color: #ff8c42;
+  color: #ffffff;
+  border-radius: 12;
+  font-size: 13;
+  font-weight: bold;
+  margin-top: 16;
+  padding: 12;
+}
+
+.cancel-button {
+  background-color: #2b3a47;
+  color: #ffffff;
+  border-radius: 12;
+  font-size: 11;
+  font-weight: bold;
+  margin-top: 8;
+}
+
+.empty-card {
+  background-color: #1d2a36;
+  border-radius: 15;
+  padding: 25;
+  text-align: center;
+  margin-bottom: 20;
+}
+
+.empty-icon {
+  font-size: 30;
+  text-align: center;
+}
+
+.empty-title {
+  color: #ffffff;
+  font-size: 16;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8;
+}
+
+.footer-text {
+  color: #657583;
+  font-size: 10;
+  text-align: center;
+  margin-top: 15;
+  margin-bottom: 20;
+}
