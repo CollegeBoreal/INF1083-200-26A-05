@@ -1,0 +1,96 @@
+﻿import { City } from '../models/city'
+
+// Afrique et Amérique (25 à 37)
+export const CITIES_3: City[] = [
+  {
+    id: 25, name: 'Tunis', country: 'Tunisie', flag: '🇹🇳', region: 'Afrique', color: '#E70013', lang: 'ar',
+    tagline: 'Entre médina et Carthage',
+    description: 'Capitale méditerranéenne, Tunis réunit une médina classée à l\'UNESCO et les vestiges de l\'antique Carthage tout proche.',
+    highlights: ['Médina de Tunis', 'Musée du Bardo', 'Site de Carthage', 'Sidi Bou Saïd'],
+    bestSeason: 'Avril à juin, septembre à octobre', currency: 'Dinar tunisien (TND)', language: 'Arabe, français', timezone: 'UTC+1', tzOffset: 1,
+  },
+  {
+    id: 26, name: 'Oran', country: 'Algérie', flag: '🇩🇿', region: 'Afrique', color: '#006233', lang: 'ar',
+    tagline: 'La radieuse',
+    description: 'Grande ville portuaire de l\'ouest algérien, Oran est connue pour son front de mer, son fort de Santa Cruz et la musique raï.',
+    highlights: ['Fort de Santa Cruz', 'Front de mer', 'Place du 1er-Novembre', 'Cathédrale du Sacré-Cœur'],
+    bestSeason: 'Avril à juin, septembre à octobre', currency: 'Dinar algérien (DZD)', language: 'Arabe, tamazight, français', timezone: 'UTC+1', tzOffset: 1,
+  },
+  {
+    id: 27, name: 'Constantine', country: 'Algérie', flag: '🇩🇿', region: 'Afrique', color: '#006233', lang: 'ar', wiki: 'Constantine (Algérie)',
+    tagline: 'La ville des ponts suspendus',
+    description: 'Perchée sur un rocher au-dessus des gorges du Rhumel, Constantine impressionne par ses ponts vertigineux et son histoire millénaire.',
+    highlights: ['Pont de Sidi M\'Cid', 'Pont Salah Bey', 'Palais du Bey Ahmed', 'Monument aux morts'],
+    bestSeason: 'Avril à juin, septembre à octobre', currency: 'Dinar algérien (DZD)', language: 'Arabe, tamazight, français', timezone: 'UTC+1', tzOffset: 1,
+  },
+  {
+    id: 28, name: 'Casablanca', country: 'Maroc', flag: '🇲🇦', region: 'Afrique', color: '#C1272D', lang: 'ar',
+    tagline: 'La métropole économique',
+    description: 'Plus grande ville du Maroc, Casablanca est un centre moderne et dynamique, fier de son architecture Art déco.',
+    highlights: ['Mosquée Hassan-II', 'Corniche d\'Aïn Diab', 'Quartier des Habous', 'Architecture Art déco'],
+    bestSeason: 'Mars à juin, septembre à novembre', currency: 'Dirham marocain (MAD)', language: 'Arabe, tamazight, français', timezone: 'UTC+1', tzOffset: 1,
+  },
+  {
+    id: 29, name: 'Dakar', country: 'Sénégal', flag: '🇸🇳', region: 'Afrique', color: '#00853F', lang: 'fr',
+    tagline: 'La porte de l\'Afrique de l\'Ouest',
+    description: 'À la pointe occidentale de l\'Afrique, Dakar vibre au rythme de ses marchés, de sa musique et de l\'île de Gorée.',
+    highlights: ['Île de Gorée', 'Monument de la Renaissance africaine', 'Lac Rose', 'Marché Sandaga'],
+    bestSeason: 'Novembre à mai', currency: 'Franc CFA (XOF)', language: 'Français, wolof', timezone: 'UTC+0', tzOffset: 0,
+  },
+  {
+    id: 30, name: 'Le Cap', country: 'Afrique du Sud', flag: '🇿🇦', region: 'Afrique', color: '#007749', lang: 'en',
+    tagline: 'Entre deux océans',
+    description: 'Au pied de la montagne de la Table, Le Cap offre des paysages spectaculaires, des vignobles et une histoire forte.',
+    highlights: ['Montagne de la Table', 'Cap de Bonne-Espérance', 'Robben Island', 'Plage de Boulders (manchots)'],
+    bestSeason: 'Novembre à mars', currency: 'Rand (ZAR)', language: 'Anglais, afrikaans, xhosa', timezone: 'UTC+2', tzOffset: 2,
+  },
+  {
+    id: 31, name: 'Nairobi', country: 'Kenya', flag: '🇰🇪', region: 'Afrique', color: '#006600', lang: 'sw',
+    tagline: 'La capitale du safari',
+    description: 'Seule capitale au monde avec un parc national à ses portes, Nairobi est le point de départ des grands safaris.',
+    highlights: ['Parc national de Nairobi', 'Centre des girafes', 'Orphelinat des éléphants', 'Musée Karen Blixen'],
+    bestSeason: 'Juin à octobre, janvier à février', currency: 'Shilling kényan (KES)', language: 'Swahili, anglais', timezone: 'UTC+3', tzOffset: 3,
+  },
+  {
+    id: 32, name: 'Abidjan', country: 'Côte d\'Ivoire', flag: '🇨🇮', region: 'Afrique', color: '#F77F00', lang: 'fr',
+    tagline: 'La perle des lagunes',
+    description: 'Métropole moderne au bord de la lagune Ébrié, Abidjan est le cœur économique et culturel de la Côte d\'Ivoire.',
+    highlights: ['Quartier du Plateau', 'Cathédrale Saint-Paul', 'Parc national du Banco', 'Plages de Grand-Bassam'],
+    bestSeason: 'Décembre à mars', currency: 'Franc CFA (XOF)', language: 'Français', timezone: 'UTC+0', tzOffset: 0,
+  },
+  {
+    id: 33, name: 'Québec', country: 'Canada', flag: '🇨🇦', region: 'Amérique', color: '#003DA5', lang: 'qc', wiki: 'Québec (ville)',
+    tagline: 'Le berceau de l\'Amérique française',
+    description: 'Seule ville fortifiée au nord du Mexique, Québec charme par son Vieux-Québec, ses ruelles et le Château Frontenac.',
+    highlights: ['Château Frontenac', 'Vieux-Québec (UNESCO)', 'Chute Montmorency', 'Plaines d\'Abraham'],
+    bestSeason: 'Juin à septembre, février (Carnaval)', currency: 'Dollar canadien (CAD)', language: 'Français', timezone: 'UTC−5', tzOffset: -5,
+  },
+  {
+    id: 34, name: 'Toronto', country: 'Canada', flag: '🇨🇦', region: 'Amérique', color: '#C8102E', lang: 'en',
+    tagline: 'La métropole multiculturelle',
+    description: 'Plus grande ville du Canada, Toronto impressionne par sa diversité, sa vie culturelle et sa tour CN.',
+    highlights: ['Tour CN', 'Îles de Toronto', 'Musée royal de l\'Ontario', 'Distillery District'],
+    bestSeason: 'Mai à octobre', currency: 'Dollar canadien (CAD)', language: 'Anglais', timezone: 'UTC−5', tzOffset: -5,
+  },
+  {
+    id: 35, name: 'Vancouver', country: 'Canada', flag: '🇨🇦', region: 'Amérique', color: '#C8102E', lang: 'en',
+    tagline: 'Entre mer et montagnes',
+    description: 'Entourée de montagnes et d\'océan, Vancouver est une ville verte où l\'on peut skier et naviguer le même jour.',
+    highlights: ['Parc Stanley', 'Île Granville', 'Pont suspendu de Capilano', 'Gastown'],
+    bestSeason: 'Juin à septembre', currency: 'Dollar canadien (CAD)', language: 'Anglais', timezone: 'UTC−8', tzOffset: -8,
+  },
+  {
+    id: 36, name: 'Mexico', country: 'Mexique', flag: '🇲🇽', region: 'Amérique', color: '#006847', lang: 'es',
+    tagline: 'La capitale aztèque',
+    description: 'Construite sur l\'ancienne Tenochtitlan, Mexico est une mégapole vibrante, riche en musées, en saveurs et en couleurs.',
+    highlights: ['Zócalo et cathédrale', 'Musée national d\'anthropologie', 'Pyramides de Teotihuacán', 'Jardins flottants de Xochimilco'],
+    bestSeason: 'Mars à mai, octobre à novembre', currency: 'Peso mexicain (MXN)', language: 'Espagnol', timezone: 'UTC−6', tzOffset: -6,
+  },
+  {
+    id: 37, name: 'Buenos Aires', country: 'Argentine', flag: '🇦🇷', region: 'Amérique', color: '#74ACDF', lang: 'es',
+    tagline: 'La capitale du tango',
+    description: 'Élégante et passionnée, Buenos Aires mêle avenues européennes, quartiers colorés et soirées de tango.',
+    highlights: ['Quartier de La Boca', 'Cimetière de la Recoleta', 'Plaza de Mayo', 'Teatro Colón'],
+    bestSeason: 'Mars à mai, septembre à novembre', currency: 'Peso argentin (ARS)', language: 'Espagnol', timezone: 'UTC−3', tzOffset: -3,
+  },
+]

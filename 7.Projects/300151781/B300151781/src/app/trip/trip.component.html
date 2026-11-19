@@ -1,0 +1,99 @@
+﻿<ActionBar title="Lounivers" class="action-bar"></ActionBar>
+
+<ScrollView class="page" *ngIf="items$ | async as items">
+  <StackLayout>
+    <StackLayout class="header">
+      <Label text="Mon voyage" class="header__title"></Label>
+      <Label text="Préparez votre départ sereinement" class="header__subtitle"></Label>
+    </StackLayout>
+
+    <!-- Carte de progression -->
+    <GridLayout columns="*, auto" rows="auto, auto" class="progress-card">
+      <StackLayout row="0" col="0">
+        <Label text="PRÉPARATION" class="progress-card__label"></Label>
+        <Label [text]="doneCount(items) + ' sur ' + items.length + ' éléments prêts'" class="progress-card__text"></Label>
+      </StackLayout>
+      <Label row="0" col="1" [text]="tripService.progress + ' %'" class="progress-card__value"></Label>
+      <Progress row="1" colSpan="2" [value]="tripService.progress" maxValue="100" class="progress"></Progress>
+    </GridLayout>
+
+    <!-- Compte à rebours du départ -->
+    <StackLayout class="card">
+      <Label text="✈️  DÉPART" class="card__label"></Label>
+      <GridLayout columns="auto, *" class="countdown">
+        <StackLayout col="0" class="countdown__badge">
+          <Label [text]="tripService.daysLeft === null ? '?' : (tripService.daysLeft < 0 ? '✓' : tripService.daysLeft)" class="countdown__days"></Label>
+          <Label text="jours" class="countdown__unit"></Label>
+        </StackLayout>
+        <StackLayout col="1" class="countdown__body">
+          <Label [text]="countdown" class="countdown__title" textWrap="true"></Label>
+          <Label [text]="departureLabel" class="countdown__date" textWrap="true"></Label>
+        </StackLayout>
+      </GridLayout>
+      <Button [text]="editingDate ? 'Valider la date' : '📅 Choisir la date'" class="btn-action" (tap)="editingDate = !editingDate"></Button>
+      <DatePicker *ngIf="editingDate" [date]="tripService.departure || minDate" [minDate]="minDate" (dateChange)="onDate($event)"></DatePicker>
+    </StackLayout>
+
+    <!-- Budget de voyage -->
+    <StackLayout class="card" *ngIf="budget$ | async as budget">
+      <Label text="💰  BUDGET" class="card__label"></Label>
+      <GridLayout columns="*, *, *" class="budget">
+        <StackLayout col="0" class="budget__stat">
+          <Label [text]="money(budget.total)" class="budget__value"></Label>
+          <Label text="budget" class="budget__label"></Label>
+        </StackLayout>
+        <StackLayout col="1" class="budget__stat">
+          <Label [text]="money(budgetService.spent(budget))" class="budget__value"></Label>
+          <Label text="dépensé" class="budget__label"></Label>
+        </StackLayout>
+        <StackLayout col="2" class="budget__stat">
+          <Label [text]="money(budgetService.remaining(budget))" class="budget__value" [class.budget__value--over]="budgetService.remaining(budget) < 0"></Label>
+          <Label text="reste" class="budget__label"></Label>
+        </StackLayout>
+      </GridLayout>
+      <Progress [value]="budgetService.percent(budget)" maxValue="100" class="budget__progress"></Progress>
+      <Label *ngIf="budgetService.remaining(budget) < 0" text="⚠️ Budget dépassé !" class="budget__alert"></Label>
+
+      <GridLayout columns="*, auto" class="add-row">
+        <TextField #totalField col="0" hint="Budget total ($)" keyboardType="number" class="add-row__input" returnKeyType="done" (returnPress)="setTotal(totalField)"></TextField>
+        <Button col="1" text="Définir" class="add-row__button" (tap)="setTotal(totalField)"></Button>
+      </GridLayout>
+
+      <GridLayout *ngFor="let e of budget.expenses" columns="*, auto, auto" class="check-row">
+        <Label col="0" [text]="e.label" class="check-row__label"></Label>
+        <Label col="1" [text]="money(e.amount)" class="budget__amount"></Label>
+        <Label col="2" text="✕" class="check-row__delete" (tap)="removeExpense(e)"></Label>
+      </GridLayout>
+
+      <GridLayout columns="*, 90, auto" class="add-row">
+        <TextField #labelField col="0" hint="Dépense (ex. : hôtel)" class="add-row__input" (textChange)="onExpenseLabel($event)"></TextField>
+        <TextField #amountField col="1" hint="Montant" keyboardType="number" class="add-row__input" (textChange)="onExpenseAmount($event)"></TextField>
+        <Button col="2" text="+" class="add-row__button" (tap)="addExpense(labelField, amountField)"></Button>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="🏙️  VILLES À VISITER" class="card__label"></Label>
+      <Label *ngIf="!byCategory(items, 'ville').length" text="Ajoutez une ville depuis sa fiche avec « + Voyage »." class="card__hint" textWrap="true"></Label>
+      <GridLayout *ngFor="let item of byCategory(items, 'ville')" columns="auto, *, auto" class="check-row">
+        <Label col="0" [text]="item.done ? '☑' : '☐'" class="check-row__box" (tap)="toggle(item)"></Label>
+        <Label col="1" [text]="item.label" class="check-row__label" [class.check-row__label--done]="item.done" (tap)="toggle(item)"></Label>
+        <Label col="2" text="✕" class="check-row__delete" (tap)="remove(item)"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="🧳  MA VALISE" class="card__label"></Label>
+      <GridLayout *ngFor="let item of byCategory(items, 'valise')" columns="auto, *, auto" class="check-row">
+        <Label col="0" [text]="item.done ? '☑' : '☐'" class="check-row__box" (tap)="toggle(item)"></Label>
+        <Label col="1" [text]="item.label" class="check-row__label" [class.check-row__label--done]="item.done" (tap)="toggle(item)"></Label>
+        <Label col="2" text="✕" class="check-row__delete" (tap)="remove(item)"></Label>
+      </GridLayout>
+
+      <GridLayout columns="*, auto" class="add-row">
+        <TextField #field col="0" hint="Ajouter un objet (ex. : crème solaire)" class="add-row__input" returnKeyType="done" (textChange)="onInput($event)" (returnPress)="addItem(field)"></TextField>
+        <Button col="1" text="Ajouter" class="add-row__button" (tap)="addItem(field)"></Button>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

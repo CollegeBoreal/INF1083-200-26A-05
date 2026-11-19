@@ -1,0 +1,1116 @@
+﻿@import '@nativescript/theme/core';
+@import '@nativescript/theme/default';
+
+// ============ Palette Lounivers ============
+$primary: #4f46e5; // indigo
+$primary-dark: #3730a3;
+$accent: #f59e0b; // or
+$ink: #0f172a;
+$text: #334155;
+$muted: #64748b;
+$soft: #94a3b8;
+$surface: #ffffff;
+$background: #f1f5f9;
+$border: #e2e8f0;
+
+.action-bar {
+  background-color: $surface;
+  color: $ink;
+  font-weight: bold;
+}
+
+.page {
+  background-color: $background;
+}
+
+.header {
+  padding: 20 20 8 20;
+
+  &__title {
+    font-size: 30;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__subtitle {
+    font-size: 15;
+    color: $muted;
+    margin-top: 2;
+  }
+}
+
+.section-title {
+  font-size: 12;
+  font-weight: bold;
+  color: $muted;
+  margin: 12 20 0 20;
+}
+
+// ============ Accueil (Explorer) ============
+.hero-home {
+  background-color: $primary;
+  padding: 20 20 16 20;
+
+  &__hello {
+    font-size: 15;
+    color: #c7d2fe;
+  }
+
+  &__title {
+    font-size: 26;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 2;
+  }
+}
+
+.stats {
+  margin-top: 14;
+}
+
+.stat {
+  background-color: $primary-dark;
+  border-radius: 14;
+  margin: 0 4;
+  padding: 10;
+
+  &__value {
+    font-size: 22;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__label {
+    font-size: 12;
+    color: #c7d2fe;
+    text-align: center;
+  }
+}
+
+.daily {
+  background-color: $surface;
+  border-radius: 16;
+  margin-top: 14;
+  padding: 12 14;
+
+  &__flag {
+    font-size: 30;
+    margin-right: 12;
+    vertical-align: center;
+  }
+
+  &__label {
+    font-size: 11;
+    font-weight: bold;
+    color: $accent;
+  }
+
+  &__name {
+    font-size: 17;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__chevron {
+    font-size: 26;
+    color: $soft;
+    vertical-align: center;
+  }
+}
+
+.search {
+  margin: 8 12 0 12;
+}
+
+.chips {
+  padding: 8 12;
+}
+
+.chip {
+  background-color: $surface;
+  color: $text;
+  border-color: $border;
+  border-width: 1;
+  border-radius: 18;
+  font-size: 14;
+  padding: 7 16;
+  margin-right: 8;
+
+  &--active {
+    background-color: $ink;
+    color: #ffffff;
+    border-color: $ink;
+  }
+}
+
+// ============ Cartes de ville ============
+.list {
+  background-color: $background;
+}
+
+.city-card {
+  background-color: $surface;
+  border-radius: 16;
+  margin: 6 16;
+
+  &__accent {
+    border-radius: 16 0 0 16;
+  }
+
+  &__flag {
+    font-size: 34;
+    margin: 0 14 0 12;
+    vertical-align: center;
+  }
+
+  &__body {
+    vertical-align: center;
+    padding: 14 0;
+  }
+
+  &__name {
+    font-size: 18;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__meta {
+    font-size: 14;
+    color: $text;
+    margin-top: 2;
+  }
+
+  &__tag {
+    font-size: 12;
+    color: $muted;
+    margin-top: 4;
+  }
+
+  &__chevron {
+    font-size: 26;
+    color: $soft;
+    margin-right: 14;
+    vertical-align: center;
+  }
+
+  &__heart {
+    font-size: 22;
+    color: #e11d48;
+    margin-right: 14;
+    vertical-align: center;
+  }
+}
+
+.empty-state {
+  vertical-align: center;
+  horizontal-align: center;
+  padding: 32;
+
+  &__icon {
+    font-size: 56;
+    color: #cbd5e1;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 20;
+    font-weight: bold;
+    color: $ink;
+    text-align: center;
+    margin-top: 8;
+  }
+
+  &__text {
+    font-size: 15;
+    color: $muted;
+    text-align: center;
+    margin-top: 6;
+  }
+}
+
+// ============ Fiche ville ============
+.hero {
+  padding: 28 24 22 24;
+
+  &__flag {
+    font-size: 56;
+  }
+
+  &__title {
+    font-size: 36;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 4;
+  }
+
+  &__subtitle {
+    font-size: 16;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__tagline {
+    font-size: 17;
+    color: #ffffff;
+    font-style: italic;
+    margin-top: 10;
+  }
+
+  &__chips {
+    margin-top: 14;
+  }
+
+  &__chip {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border-radius: 14;
+    font-size: 13;
+    padding: 5 12;
+    margin-right: 8;
+  }
+}
+
+.actions {
+  margin: 12 12 4 12;
+}
+
+.btn-action {
+  background-color: $surface;
+  color: $primary;
+  border-color: $border;
+  border-width: 1;
+  border-radius: 12;
+  font-size: 14;
+  font-weight: bold;
+  height: 46;
+  margin: 4;
+
+  &--on {
+    background-color: $primary;
+    color: #ffffff;
+    border-color: $primary;
+  }
+}
+
+.card {
+  background-color: $surface;
+  border-radius: 16;
+  margin: 8 16;
+  padding: 16;
+
+  &__label {
+    font-size: 12;
+    font-weight: bold;
+    color: $primary;
+    margin-bottom: 10;
+  }
+
+  &__text {
+    font-size: 16;
+    color: $text;
+    line-height: 4;
+  }
+
+  &__hint {
+    font-size: 14;
+    color: $muted;
+  }
+}
+
+.place {
+  margin: 5 0;
+
+  &__number {
+    width: 28;
+    height: 28;
+    border-radius: 14;
+    color: #ffffff;
+    font-size: 13;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 12;
+    padding-top: 5;
+  }
+
+  &__name {
+    font-size: 16;
+    color: $text;
+    vertical-align: center;
+  }
+}
+
+.facts {
+  margin: 6 12 24 12;
+}
+
+.fact {
+  background-color: $surface;
+  border-radius: 14;
+  margin: 4;
+  padding: 12;
+
+  &__icon {
+    font-size: 22;
+  }
+
+  &__label {
+    font-size: 11;
+    font-weight: bold;
+    color: $muted;
+    margin-top: 4;
+  }
+
+  &__value {
+    font-size: 15;
+    font-weight: bold;
+    color: $ink;
+    margin-top: 2;
+  }
+}
+
+// ============ Mon voyage ============
+.progress-card {
+  background-color: $primary;
+  border-radius: 18;
+  margin: 8 16;
+  padding: 16;
+
+  &__label {
+    font-size: 12;
+    font-weight: bold;
+    color: #c7d2fe;
+  }
+
+  &__text {
+    font-size: 15;
+    color: #ffffff;
+    margin-top: 2;
+  }
+
+  &__value {
+    font-size: 32;
+    font-weight: bold;
+    color: #ffffff;
+    vertical-align: center;
+  }
+}
+
+.progress {
+  margin-top: 12;
+  color: $accent;
+  background-color: $primary-dark;
+}
+
+.check-row {
+  padding: 10 0;
+  border-bottom-width: 1;
+  border-bottom-color: $border;
+
+  &__box {
+    font-size: 22;
+    color: $primary;
+    margin-right: 12;
+    vertical-align: center;
+  }
+
+  &__label {
+    font-size: 16;
+    color: $ink;
+    vertical-align: center;
+
+    &--done {
+      color: $soft;
+      text-decoration: line-through;
+    }
+  }
+
+  &__delete {
+    font-size: 16;
+    color: $soft;
+    padding: 0 6;
+    vertical-align: center;
+  }
+}
+
+.add-row {
+  margin-top: 12;
+
+  &__input {
+    font-size: 15;
+    border-bottom-width: 1;
+    border-bottom-color: $border;
+  }
+
+  &__button {
+    background-color: $primary;
+    color: #ffffff;
+    border-radius: 10;
+    font-weight: bold;
+    margin-left: 8;
+  }
+}
+
+// ============ Infos (À propos) ============
+.brand {
+  background-color: $primary;
+  padding: 28 20;
+
+  &__logo {
+    font-size: 60;
+    text-align: center;
+  }
+
+  &__name {
+    font-size: 32;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__tagline {
+    font-size: 15;
+    color: #c7d2fe;
+    text-align: center;
+    margin-top: 2;
+  }
+
+  &__version {
+    font-size: 12;
+    color: $accent;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8;
+  }
+}
+
+.feature {
+  margin: 6 0;
+
+  &__icon {
+    font-size: 22;
+    vertical-align: center;
+  }
+
+  &__title {
+    font-size: 16;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__text {
+    font-size: 14;
+    color: $muted;
+  }
+}
+
+.tech {
+  background-color: #eef2ff;
+  color: $primary;
+  border-radius: 14;
+  font-size: 13;
+  font-weight: bold;
+  padding: 6 12;
+  margin: 0 8 8 0;
+}
+
+.dev {
+  &__name {
+    font-size: 18;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__meta {
+    font-size: 14;
+    color: $muted;
+    margin-top: 2;
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: #ffffff;
+  border-radius: 14;
+  font-size: 16;
+  font-weight: bold;
+  height: 52;
+  margin: 12 16 4 16;
+}
+
+.footer {
+  font-size: 13;
+  color: $soft;
+  text-align: center;
+  margin: 8 0 24 0;
+}
+
+// ============ v1.1 : Quiz, convertisseur, compte à rebours ============
+.daily--quiz {
+  margin-top: 8;
+}
+
+.quiz {
+  &__bar {
+    margin: 16 20 6 20;
+  }
+
+  &__step {
+    font-size: 15;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__score {
+    font-size: 15;
+    font-weight: bold;
+    color: $accent;
+  }
+
+  &__progress {
+    margin: 0 20;
+    color: $primary;
+    background-color: $border;
+  }
+
+  &__card {
+    background-color: $primary;
+    border-radius: 20;
+    margin: 16;
+    padding: 24;
+  }
+
+  &__flag {
+    font-size: 90;
+    text-align: center;
+  }
+
+  &__question {
+    font-size: 18;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 6;
+  }
+
+  &__choice {
+    background-color: $surface;
+    color: $ink;
+    border-color: $border;
+    border-width: 1;
+    border-radius: 14;
+    font-size: 17;
+    font-weight: bold;
+    height: 54;
+    margin: 5 16;
+
+    &--good {
+      background-color: #16a34a;
+      color: #ffffff;
+      border-color: #16a34a;
+    }
+
+    &--bad {
+      background-color: #e11d48;
+      color: #ffffff;
+      border-color: #e11d48;
+    }
+
+    &--dim {
+      color: $soft;
+    }
+  }
+
+  &__feedback {
+    font-size: 16;
+    font-weight: bold;
+    color: $ink;
+    text-align: center;
+    margin: 10 20 0 20;
+  }
+
+  &__result {
+    padding: 40 20;
+  }
+
+  &__medal {
+    font-size: 90;
+    text-align: center;
+  }
+
+  &__final {
+    font-size: 44;
+    font-weight: bold;
+    color: $primary;
+    text-align: center;
+  }
+
+  &__verdict {
+    font-size: 17;
+    color: $text;
+    text-align: center;
+    margin-top: 8;
+  }
+
+  &__best {
+    font-size: 14;
+    font-weight: bold;
+    color: $accent;
+    text-align: center;
+    margin: 12 0;
+  }
+}
+
+.convert {
+  &__input {
+    font-size: 22;
+    font-weight: bold;
+    color: $ink;
+    border-bottom-width: 1;
+    border-bottom-color: $border;
+  }
+
+  &__code {
+    font-size: 18;
+    font-weight: bold;
+    color: $muted;
+    vertical-align: center;
+    margin-left: 8;
+  }
+
+  &__quick {
+    margin: 10 0;
+  }
+
+  &__result {
+    font-size: 28;
+    font-weight: bold;
+    margin-bottom: 4;
+  }
+}
+
+.countdown {
+  margin-bottom: 8;
+
+  &__badge {
+    background-color: $primary;
+    border-radius: 16;
+    width: 76;
+    padding: 10 0;
+    margin-right: 14;
+  }
+
+  &__days {
+    font-size: 28;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__unit {
+    font-size: 12;
+    color: #c7d2fe;
+    text-align: center;
+  }
+
+  &__body {
+    vertical-align: center;
+  }
+
+  &__title {
+    font-size: 17;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__date {
+    font-size: 14;
+    color: $muted;
+    margin-top: 2;
+  }
+}
+
+// ============ v2.0 : Carnet, budget, mode sombre ============
+.note {
+  &__input {
+    font-size: 15;
+    color: $ink;
+    min-height: 90;
+    border-width: 1;
+    border-color: $border;
+    border-radius: 12;
+    padding: 10;
+    background-color: #f8fafc;
+  }
+
+  &__footer {
+    margin-top: 10;
+  }
+
+  &__save {
+    color: #ffffff;
+    border-radius: 10;
+    font-size: 14;
+    font-weight: bold;
+    height: 40;
+    margin-left: 8;
+  }
+}
+
+.budget {
+  margin-bottom: 10;
+
+  &__stat {
+    background-color: #eef2ff;
+    border-radius: 12;
+    padding: 10 4;
+    margin: 0 3;
+  }
+
+  &__value {
+    font-size: 16;
+    font-weight: bold;
+    color: $primary;
+    text-align: center;
+
+    &--over {
+      color: #e11d48;
+    }
+  }
+
+  &__label {
+    font-size: 12;
+    color: $muted;
+    text-align: center;
+  }
+
+  &__progress {
+    color: $accent;
+    background-color: $border;
+  }
+
+  &__alert {
+    font-size: 14;
+    font-weight: bold;
+    color: #e11d48;
+    margin-top: 6;
+  }
+
+  &__amount {
+    font-size: 15;
+    font-weight: bold;
+    color: $primary;
+    vertical-align: center;
+    margin-right: 8;
+  }
+}
+
+// ---------- Mode sombre (classe .ns-dark ajoutée sur la racine) ----------
+$dark-bg: #0b1120;
+$dark-surface: #1e293b;
+$dark-border: #334155;
+$dark-ink: #f1f5f9;
+$dark-text: #cbd5e1;
+
+.ns-dark {
+  .action-bar {
+    background-color: $dark-bg;
+    color: $dark-ink;
+  }
+
+  .page,
+  .list {
+    background-color: $dark-bg;
+  }
+
+  .hero-home,
+  .brand,
+  .progress-card,
+  .quiz__card {
+    background-color: #312e81;
+  }
+
+  .stat {
+    background-color: #1e1b4b;
+  }
+
+  .card,
+  .city-card,
+  .fact,
+  .daily,
+  .search {
+    background-color: $dark-surface;
+  }
+
+  .search {
+    color: $dark-ink;
+  }
+
+  .chip,
+  .btn-action,
+  .quiz__choice {
+    background-color: $dark-surface;
+    border-color: $dark-border;
+    color: $dark-ink;
+  }
+
+  .header__title,
+  .city-card__name,
+  .daily__name,
+  .fact__value,
+  .check-row__label,
+  .feature__title,
+  .dev__name,
+  .quiz__step,
+  .quiz__feedback,
+  .countdown__title,
+  .convert__input,
+  .empty-state__title,
+  .add-row__input {
+    color: $dark-ink;
+  }
+
+  .card__text,
+  .place__name,
+  .city-card__meta,
+  .quiz__verdict {
+    color: $dark-text;
+  }
+
+  .check-row {
+    border-bottom-color: $dark-border;
+  }
+
+  .note__input {
+    background-color: $dark-bg;
+    border-color: $dark-border;
+    color: $dark-ink;
+  }
+
+  .budget__stat,
+  .tech {
+    background-color: #312e81;
+  }
+
+  .budget__value,
+  .budget__amount,
+  .tech {
+    color: #c7d2fe;
+  }
+
+  // Les états actifs doivent rester visibles en mode sombre
+  .chip--active,
+  .btn-action--on {
+    background-color: $primary;
+    border-color: $primary;
+    color: #ffffff;
+  }
+
+  .quiz__choice--good {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+  }
+
+  .quiz__choice--bad {
+    background-color: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+  }
+
+  .quiz__choice--dim,
+  .check-row__label--done {
+    color: #64748b;
+  }
+
+  .budget__value--over {
+    color: #fb7185;
+  }
+}
+
+// ============ v2.1 : texte tel qu'écrit (pas de majuscule à chaque mot) ============
+Label,
+Button,
+TextField,
+TextView {
+  text-transform: none;
+}
+
+// ============ v3.0 : photos, histoire, phrases, badges, tri, hasard ============
+.tiles {
+  margin-top: 8;
+}
+
+.tile {
+  background-color: $surface;
+  border-radius: 16;
+  padding: 10 12;
+  margin: 0 4;
+
+  &__icon {
+    font-size: 26;
+  }
+
+  &__title {
+    font-size: 15;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__text {
+    font-size: 12;
+    color: $muted;
+  }
+}
+
+.search-row {
+  margin: 8 12 0 12;
+
+  .search {
+    margin: 0;
+  }
+}
+
+.sort {
+  background-color: $ink;
+  color: #ffffff;
+  border-radius: 16;
+  font-size: 13;
+  font-weight: bold;
+  padding: 8 12;
+  margin-left: 6;
+  vertical-align: center;
+}
+
+.photo {
+  height: 230;
+  background-color: $border;
+
+  &__credit {
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 11;
+    padding: 4 8;
+    margin: 8;
+    border-radius: 8;
+  }
+}
+
+.loader {
+  width: 32;
+  height: 32;
+  margin: 8;
+}
+
+.history__source {
+  margin-top: 8;
+  font-size: 12;
+}
+
+.phrase {
+  padding: 8 0;
+  border-bottom-width: 1;
+  border-bottom-color: $border;
+
+  &__fr {
+    font-size: 14;
+    color: $muted;
+    vertical-align: center;
+  }
+
+  &__local {
+    font-size: 16;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  &__native {
+    font-size: 15;
+    color: $text;
+    text-align: right;
+  }
+}
+
+.level {
+  &__name {
+    font-size: 20;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  &__count {
+    font-size: 15;
+    font-weight: bold;
+    color: $accent;
+    vertical-align: center;
+  }
+
+  &__progress {
+    margin: 8 0 12 0;
+    color: $accent;
+    background-color: $border;
+  }
+}
+
+.badge {
+  width: 31%;
+  background-color: #eef2ff;
+  border-radius: 14;
+  padding: 10 6;
+  margin: 0 1% 8 1%;
+
+  &__icon {
+    font-size: 26;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 12;
+    font-weight: bold;
+    color: $ink;
+    text-align: center;
+    margin-top: 2;
+  }
+
+  &__text {
+    font-size: 10;
+    color: $muted;
+    text-align: center;
+  }
+
+  &--locked {
+    background-color: #f1f5f9;
+    opacity: 0.6;
+  }
+}
+
+.ns-dark {
+  .tile {
+    background-color: $dark-surface;
+  }
+
+  .tile__title,
+  .level__name,
+  .badge__title {
+    color: $dark-ink;
+  }
+
+  .sort {
+    background-color: $primary;
+  }
+
+  .phrase {
+    border-bottom-color: $dark-border;
+  }
+
+  .phrase__native {
+    color: $dark-text;
+  }
+
+  .badge {
+    background-color: #312e81;
+  }
+
+  .badge--locked {
+    background-color: $dark-surface;
+  }
+}

@@ -1,0 +1,81 @@
+﻿<ActionBar title="Lounivers" class="action-bar"></ActionBar>
+
+<GridLayout rows="auto, auto, auto, *" class="page">
+  <!-- Bandeau d'accueil -->
+  <StackLayout row="0" class="hero-home">
+    <Label [text]="greeting + ', voyageur 👋'" class="hero-home__hello"></Label>
+    <Label text="Où partons-nous aujourd'hui ?" class="hero-home__title" textWrap="true"></Label>
+
+    <GridLayout columns="*, *, *" class="stats">
+      <StackLayout col="0" class="stat">
+        <Label [text]="totalCities" class="stat__value"></Label>
+        <Label text="destinations" class="stat__label"></Label>
+      </StackLayout>
+      <StackLayout col="1" class="stat">
+        <Label [text]="regions.length - 1" class="stat__value"></Label>
+        <Label text="continents" class="stat__label"></Label>
+      </StackLayout>
+      <StackLayout col="2" class="stat">
+        <Label [text]="(favorites$ | async)?.length || 0" class="stat__value"></Label>
+        <Label text="favoris" class="stat__label"></Label>
+      </StackLayout>
+    </GridLayout>
+
+    <GridLayout columns="auto, *, auto" class="daily" [nsRouterLink]="['../city', cityOfTheDay.id]">
+      <Label col="0" [text]="cityOfTheDay.flag" class="daily__flag"></Label>
+      <StackLayout col="1">
+        <Label text="✨ DESTINATION DU JOUR" class="daily__label"></Label>
+        <Label [text]="cityOfTheDay.name + ' · ' + cityOfTheDay.country" class="daily__name"></Label>
+      </StackLayout>
+      <Label col="2" text="›" class="daily__chevron"></Label>
+    </GridLayout>
+
+    <GridLayout columns="*, *" class="tiles">
+      <StackLayout col="0" class="tile" [nsRouterLink]="['../quiz']">
+        <Label text="🎯" class="tile__icon"></Label>
+        <Label text="Quiz des drapeaux" class="tile__title"></Label>
+        <Label text="5 questions" class="tile__text"></Label>
+      </StackLayout>
+      <StackLayout col="1" class="tile" (tap)="surprise($event)">
+        <Label text="🎲" class="tile__icon"></Label>
+        <Label text="Surprends-moi" class="tile__title"></Label>
+        <Label text="Une ville au hasard" class="tile__text"></Label>
+      </StackLayout>
+    </GridLayout>
+  </StackLayout>
+
+  <!-- Recherche -->
+  <GridLayout row="1" columns="*, auto" class="search-row">
+    <SearchBar col="0" hint="Rechercher une ville ou un pays" class="search" (textChange)="onSearch($event)" (clear)="onClear()"></SearchBar>
+    <Label col="1" [text]="sorts[sortIndex].label" class="sort" (tap)="cycleSort($event)"></Label>
+  </GridLayout>
+
+  <!-- Filtres par continent -->
+  <ScrollView row="2" orientation="horizontal" scrollBarIndicatorVisible="false" class="chips">
+    <StackLayout orientation="horizontal">
+      <Label *ngFor="let r of regions" [text]="r" class="chip" [class.chip--active]="r === region" (tap)="selectRegion(r)"></Label>
+    </StackLayout>
+  </ScrollView>
+
+  <!-- Liste des villes -->
+  <ListView row="3" [items]="cities" class="list" separatorColor="transparent">
+    <ng-template let-city="item">
+      <GridLayout columns="6, auto, *, auto" class="city-card" (loaded)="appear($event)" [nsRouterLink]="['../city', city.id]">
+        <StackLayout col="0" class="city-card__accent" [backgroundColor]="city.color"></StackLayout>
+        <Label col="1" [text]="city.flag" class="city-card__flag"></Label>
+        <StackLayout col="2" class="city-card__body">
+          <Label [text]="city.name" class="city-card__name"></Label>
+          <Label [text]="city.tagline" class="city-card__meta"></Label>
+          <Label [text]="city.country + ' · ' + city.region" class="city-card__tag"></Label>
+        </StackLayout>
+        <Label col="3" text="›" class="city-card__chevron"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+
+  <StackLayout row="3" *ngIf="!cities.length" class="empty-state">
+    <Label text="🧭" class="empty-state__icon"></Label>
+    <Label text="Aucune destination trouvée" class="empty-state__title"></Label>
+    <Label text="Essayez un autre nom ou un autre continent." class="empty-state__text" textWrap="true"></Label>
+  </StackLayout>
+</GridLayout>

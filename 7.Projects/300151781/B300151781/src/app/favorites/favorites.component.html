@@ -1,0 +1,28 @@
+﻿<ActionBar title="Lounivers" class="action-bar"></ActionBar>
+
+<GridLayout rows="auto, *" class="page" *ngIf="favorites$ | async as favorites">
+  <StackLayout row="0" class="header">
+    <Label text="Favoris" class="header__title"></Label>
+    <Label [text]="favorites.length + (favorites.length > 1 ? ' destinations enregistrées' : ' destination enregistrée')" class="header__subtitle"></Label>
+  </StackLayout>
+
+  <ListView row="1" [items]="favorites" class="list" separatorColor="transparent" *ngIf="favorites.length">
+    <ng-template let-city="item">
+      <GridLayout columns="6, auto, *, auto" class="city-card" (loaded)="appear($event)" [nsRouterLink]="['../city', city.id]">
+        <StackLayout col="0" class="city-card__accent" [backgroundColor]="city.color"></StackLayout>
+        <Label col="1" [text]="city.flag" class="city-card__flag"></Label>
+        <StackLayout col="2" class="city-card__body">
+          <Label [text]="city.name" class="city-card__name"></Label>
+          <Label [text]="city.tagline" class="city-card__meta" textWrap="true"></Label>
+        </StackLayout>
+        <Label col="3" text="♥" class="city-card__heart"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+
+  <StackLayout row="1" class="empty-state" *ngIf="!favorites.length">
+    <Label text="♡" class="empty-state__icon"></Label>
+    <Label text="Aucun favori pour l'instant" class="empty-state__title"></Label>
+    <Label text="Touchez « ♡ Favori » sur la fiche d'une ville pour la retrouver ici." class="empty-state__text" textWrap="true"></Label>
+  </StackLayout>
+</GridLayout>
