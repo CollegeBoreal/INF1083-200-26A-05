@@ -1,0 +1,28 @@
+<GridLayout rows="*, auto" class="tabs-shell">
+  <!-- Le Frame s'étend derrière la barre : la bulle flotte au-dessus du contenu -->
+  <Frame row="0" rowSpan="2">
+    <router-outlet></router-outlet>
+  </Frame>
+
+  <!-- Barre de navigation bulle flottante -->
+  <GridLayout row="1" class="bubble-bar">
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <GridLayout
+        *ngFor="let tab of tabs"
+        class="tab-item"
+        [class.active]="isActive(tab.route)"
+        (tap)="go(tab.route)">
+        <StackLayout>
+          <Label [text]="tab.icon" class="tab-icon" horizontalAlignment="center"></Label>
+          <Label [text]="tab.label" class="tab-label" horizontalAlignment="center"></Label>
+        </StackLayout>
+        <Label
+          *ngIf="showCartBadge(tab)"
+          [text]="cartCount"
+          class="badge"
+          horizontalAlignment="right"
+          verticalAlignment="top"></Label>
+      </GridLayout>
+    </StackLayout>
+  </GridLayout>
+</GridLayout>

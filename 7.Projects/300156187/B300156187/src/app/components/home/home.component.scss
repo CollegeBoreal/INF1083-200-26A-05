@@ -1,0 +1,70 @@
+.home-container {
+  padding: 20 16 120 16;
+}
+
+.header {
+  margin-bottom: 8;
+}
+.greeting {
+  font-size: 26;
+  font-weight: bold;
+  color: #33231A;
+}
+.dark .greeting {
+  color: #F7EEE3;
+}
+.subtitle {
+  font-size: 14;
+  color: #9A7B64;
+}
+.dark .subtitle {
+  color: #B99F88;
+}
+.theme-btn {
+  width: 48;
+  height: 48;
+  border-radius: 24;
+  background: #FFFFFF;
+  font-size: 20;
+  text-align: center;
+}
+.dark .theme-btn {
+  background: #251A14;
+}
+
+.search-input {
+  margin-top: 10;
+}
+.chips-row {
+  margin: 8 0 4 0;
+}
+
+.card.restaurant-card {
+  width: 230;
+  margin-right: 12;
+  padding: 0;
+  overflow: hidden;
+}
+.restaurant-img {
+  height: 130;
+}
+.restaurant-name {
+  margin: 10 12 2 12;
+}
+.restaurant-address {
+  margin: 0 12;
+}
+.restaurant-rating {
+  margin: 4 12 10 12;
+}
+
+.skel-card {
+  width: 230;
+  height: 190;
+  margin-right: 12;
+}
+
+.empty-text {
+  text-align: center;
+  margin-top: 20;
+}

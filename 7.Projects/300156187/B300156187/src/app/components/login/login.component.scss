@@ -1,0 +1,68 @@
+.login-container {
+  padding: 48 28 40 28;
+}
+
+.logo-circle {
+  width: 110;
+  height: 110;
+  border-radius: 55;
+  background: #E86A17;
+  margin-bottom: 16;
+}
+.logo-emoji {
+  font-size: 52;
+}
+
+.app-title {
+  font-size: 34;
+  font-weight: bold;
+  color: #33231A;
+}
+.dark .app-title {
+  color: #F7EEE3;
+}
+
+.app-subtitle {
+  font-size: 15;
+  color: #9A7B64;
+  margin-top: 4;
+}
+.dark .app-subtitle {
+  color: #B99F88;
+}
+
+.hint-text {
+  color: #B99F88;
+  font-size: 12;
+  margin-top: 18;
+}
+
+/* ============================================================
+   Animation d'entrée très fluide : fondu + glissement doux
+   ============================================================ */
+.anim-logo {
+  animation-name: fade-slide-down;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+.anim-field {
+  animation-name: fade-slide-up;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+.anim-delay-1 { animation-delay: 0.15s; }
+.anim-delay-2 { animation-delay: 0.3s; }
+.anim-delay-3 { animation-delay: 0.45s; }
+.anim-delay-4 { animation-delay: 0.6s; }
+.anim-delay-5 { animation-delay: 0.75s; }
+
+@keyframes fade-slide-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}

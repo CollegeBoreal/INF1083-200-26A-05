@@ -1,0 +1,64 @@
+.profile-container {
+  padding: 16 16 120 16;
+}
+
+.card.profile-card {
+  padding: 16;
+}
+
+.avatar {
+  width: 64;
+  height: 64;
+  border-radius: 32;
+  background: #E86A17;
+}
+.avatar-emoji {
+  font-size: 30;
+}
+
+.profile-info {
+  margin-left: 14;
+}
+.profile-name {
+  font-size: 19;
+  font-weight: bold;
+  color: #33231A;
+}
+.dark .profile-name {
+  color: #F7EEE3;
+}
+
+.card.setting-row {
+  padding: 14;
+}
+.setting-label {
+  font-size: 15;
+  font-weight: bold;
+  color: #33231A;
+}
+.dark .setting-label {
+  color: #F7EEE3;
+}
+.setting-value {
+  font-size: 14;
+  font-weight: bold;
+  color: #E86A17;
+}
+
+.card.order-card {
+  padding: 12;
+}
+.order-status {
+  font-size: 12;
+  font-weight: bold;
+  color: #2E7D32;
+  margin-top: 4;
+}
+
+.card.reservation-card {
+  padding: 12;
+}
+
+.logout-btn {
+  margin-top: 26;
+}

@@ -1,0 +1,16 @@
+<Page class="page" actionBarHidden="true">
+  <ScrollView>
+    <StackLayout class="login-container">
+      <StackLayout class="logo-circle anim-logo" horizontalAlignment="center" verticalAlignment="middle">
+        <Label class="logo-emoji" text="&#127860;" horizontalAlignment="center" verticalAlignment="middle"></Label>
+      </StackLayout>
+      <Label class="app-title anim-field anim-delay-1" text="Wonderfood" horizontalAlignment="center"></Label>
+      <Label class="app-subtitle anim-field anim-delay-2" text="Connectez-vous pour commander" horizontalAlignment="center" textWrap="true"></Label>
+      <TextField class="anim-field anim-delay-3" hint="Email" keyboardType="email" autocapitalizationType="none" autocorrect="false" [(ngModel)]="email"></TextField>
+      <TextField class="anim-field anim-delay-4" hint="Mot de passe" secure="true" [(ngModel)]="password"></TextField>
+      <Label *ngIf="error" [text]="error" textWrap="true" style="color: #C0392B; margin-top: 8;"></Label>
+      <Button class="anim-field anim-delay-5" [text]="loading ? 'Connexion...' : 'Se connecter'" (tap)="onLogin()" [isEnabled]="!loading"></Button>
+      <Label class="hint-text anim-field anim-delay-5" text="Compte démo : demo@restaurant.com / demo1234" horizontalAlignment="center" textWrap="true"></Label>
+    </StackLayout>
+  </ScrollView>
+</Page>

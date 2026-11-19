@@ -1,0 +1,51 @@
+<Page class="page" actionBarHidden="true">
+  <ScrollView>
+    <StackLayout class="profile-container">
+      <Label text="Profil" class="page-title"></Label>
+
+      <!-- Informations utilisateur -->
+      <GridLayout class="card profile-card" columns="auto, *">
+        <GridLayout col="0" class="avatar">
+          <Label text="👤" class="avatar-emoji" horizontalAlignment="center" verticalAlignment="center"></Label>
+        </GridLayout>
+        <StackLayout col="1" class="profile-info">
+          <Label [text]="auth.currentUser?.name" class="profile-name"></Label>
+          <Label [text]="auth.currentUser?.email" class="muted"></Label>
+          <Label [text]="auth.currentUser?.phone" class="muted"></Label>
+        </StackLayout>
+      </GridLayout>
+
+      <!-- Mode sombre -->
+      <GridLayout class="card setting-row" columns="*, auto" (tap)="toggleTheme()">
+        <Label text="Mode sombre" col="0" class="setting-label"></Label>
+        <Label [text]="(theme.dark$ | async) ? '🌙 Activé' : '☀️ Désactivé'" col="1" class="setting-value"></Label>
+      </GridLayout>
+
+      <!-- Mes commandes -->
+      <Label text="Mes commandes" class="section-title"></Label>
+      <Label *ngIf="cart.orders.length === 0" text="Aucune commande pour le moment." class="muted"></Label>
+      <GridLayout *ngFor="let order of cart.orders" class="card order-card" columns="*, auto">
+        <StackLayout col="0">
+          <Label [text]="order.id" class="card-title"></Label>
+          <Label [text]="order.items.length + ' article(s) · ' + order.date" class="muted"></Label>
+          <Label [text]="order.status" class="order-status"></Label>
+        </StackLayout>
+        <Label col="1" [text]="order.total + ' DA'" class="price"></Label>
+      </GridLayout>
+
+      <!-- Mes réservations -->
+      <Label text="Mes réservations" class="section-title"></Label>
+      <Label *ngIf="cart.reservations.length === 0" text="Aucune réservation pour le moment." class="muted"></Label>
+      <GridLayout *ngFor="let reservation of cart.reservations" class="card reservation-card" columns="auto, *">
+        <Label text="📅" col="0" class="res-icon"></Label>
+        <StackLayout col="1">
+          <Label [text]="reservation.date + ' à ' + reservation.time" class="card-title"></Label>
+          <Label [text]="reservation.persons + ' personne(s)'" class="muted"></Label>
+        </StackLayout>
+      </GridLayout>
+
+      <!-- Déconnexion -->
+      <Button text="Se déconnecter" class="btn-outline logout-btn" (tap)="logout()"></Button>
+    </StackLayout>
+  </ScrollView>
+</Page>
