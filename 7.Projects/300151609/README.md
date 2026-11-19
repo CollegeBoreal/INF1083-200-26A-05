@@ -24,7 +24,7 @@ Open the URL printed by Vite. Run `npm run build` to create a production build a
 **Student:** [Saadi Ramz Eddine]
 **Student ID:** 300151609
 **Course:** INF1083 – Section 200 – 26A
-<image src=images/Screenshot%202026-11-19%20155126.png width=50% height=50% > </image>
+<image src=images/Screenshot%202026-11-19%20155126.png width=100% height=50% > </image>
 ## Description
 
 [Sahha] is a web application built with Vite and developed with the help of AI.
@@ -45,6 +45,6 @@ The goal of the project is to [e.g. offer a simple, fast, and user-friendly expe
 - [Framework, e.g. React / Vue / none]
 - AI assistance for code generation
 
-<image src=images/Screenshot%202026-11-19%20155126.png width=50% height=50% > </image>
+<image src=images/Screenshot%202026-11-19%20155126.png width=100% height=50% > </image>
 
 
