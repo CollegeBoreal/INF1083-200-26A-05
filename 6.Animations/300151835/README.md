@@ -20,7 +20,7 @@ Remplacer `src/app/home/home.component.html`.
   <ActionItem text="Menu" (tap)="onDrawerButtonTap()" />
 </ActionBar>
 <StackLayout class="p-4">
-  <Button text="{N}" class="background" />
+  <Button text="{N}" class="background"></Button>
 </StackLayout>
 ```
 
@@ -53,8 +53,8 @@ Remplacer `src/app/browse/browse.component.html`.
   <AbsoluteLayout width="300" height="300">
     <Image #cible src="res://icon" left="110" top="110" width="80" height="80" />
   </AbsoluteLayout>
-  <Button text="Animer" [isEnabled]="!animationEnCours" (tap)="animate(cible)" />
-  <Label [text]="message" />
+  <Button text="Animer" [isEnabled]="!animationEnCours" (tap)="animate(cible)"></Button>
+  <Label [text]="message"></Label>
 </StackLayout>
 ```
 
