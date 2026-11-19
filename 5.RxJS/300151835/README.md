@@ -103,13 +103,13 @@ Remplacer `src/app/search/search.component.html`.
 ```html
 <GridLayout rows="auto, auto, auto, *" class="p-4">
   <TextField row="0" [(ngModel)]="capital" hint="Capitale, par exemple Ottawa" />
-  <Button row="1" text="Rechercher" [isEnabled]="!loading()" (tap)="searchCapital()" />
-  <Label row="2" [text]="message()" textWrap="true" />
+  <Button row="1" text="Rechercher" [isEnabled]="!loading()" (tap)="searchCapital()"></Button>
+  <Label row="2" [text]="message()" textWrap="true"></Label>
   <ListView row="3" [items]="countries()">
     <ng-template let-country="item">
       <StackLayout class="p-2">
-        <Label [text]="country.name" />
-        <Label [text]="country.capital" />
+        <Label [text]="country.name"></Label>
+        <Label [text]="country.capital"></Label>
       </StackLayout>
     </ng-template>
   </ListView>
