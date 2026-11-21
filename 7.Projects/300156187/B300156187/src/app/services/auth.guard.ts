@@ -10,6 +10,7 @@ export class AuthGuard implements CanActivate {
     if (this.auth.isLoggedIn) {
       return true;
     }
+    // Redirection simple : router.navigate, SANS clearHistory.
     this.router.navigate(['/connexion']);
     return false;
   }

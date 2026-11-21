@@ -1,52 +1,39 @@
-<Page class="page" actionBarHidden="true">
-  <ScrollView>
-    <StackLayout class="res-container">
-      <Label text="Réserver une table" class="page-title"></Label>
+<ScrollView>
+  <StackLayout class="reservations-container" [class.dark]="theme.dark$ | async">
+    <Label text="Réservations" class="page-title"></Label>
+    <Label text="Réservez votre table chez Wonder Food's" class="page-subtitle"></Label>
 
-      <!-- Formulaire -->
-      <StackLayout *ngIf="!confirmed">
-        <Label text="Nom" class="field-label"></Label>
-        <TextField [(ngModel)]="name" hint="Votre nom" class="input"></TextField>
-
-        <Label text="Téléphone" class="field-label"></Label>
-        <TextField [(ngModel)]="phone" hint="05 XX XX XX XX" keyboardType="phone" class="input"></TextField>
-
-        <Label text="Date" class="field-label"></Label>
-        <DatePicker [(ngModel)]="date" class="picker"></DatePicker>
-
-        <Label text="Heure" class="field-label"></Label>
-        <TimePicker [(ngModel)]="time" class="picker"></TimePicker>
-
-        <Label text="Nombre de personnes" class="field-label"></Label>
-        <StackLayout orientation="horizontal" class="persons-row">
-          <Button text="-" class="qty-btn" (tap)="decrease()"></Button>
-          <Label [text]="persons" class="qty-value"></Label>
-          <Button text="+" class="qty-btn" (tap)="increase()"></Button>
-        </StackLayout>
-
-        <Label *ngIf="error" [text]="error" class="error-text"></Label>
-
-        <Button text="Confirmer la réservation" class="btn-primary confirm-res-btn" (tap)="confirm()"></Button>
-      </StackLayout>
-
-      <!-- Confirmation -->
-      <StackLayout *ngIf="confirmed" class="confirm-box">
-        <Label text="🎉" class="confirm-emoji" horizontalAlignment="center"></Label>
-        <Label text="Réservation confirmée !" class="confirm-title" horizontalAlignment="center"></Label>
-        <Label text="Nous avons hâte de vous accueillir." class="muted" horizontalAlignment="center"></Label>
-        <Button text="Nouvelle réservation" class="btn-primary confirm-btn" (tap)="newReservation()"></Button>
-      </StackLayout>
-
-      <!-- Mes réservations -->
-      <Label text="Mes réservations" class="section-title"></Label>
-      <Label *ngIf="cart.reservations.length === 0" text="Aucune réservation pour le moment." class="muted"></Label>
-      <GridLayout *ngFor="let reservation of cart.reservations" class="card reservation-card" columns="auto, *">
-        <Label text="📅" col="0" class="res-icon"></Label>
-        <StackLayout col="1">
-          <Label [text]="reservation.date + ' à ' + reservation.time" class="card-title"></Label>
-          <Label [text]="reservation.persons + ' personne(s) · ' + reservation.name" class="muted"></Label>
-        </StackLayout>
+    <!-- Formulaire -->
+    <StackLayout class="form-card">
+      <Label text="Nom" class="field-label"></Label>
+      <TextField hint="Votre nom" [(ngModel)]="name" class="field"></TextField>
+      <Label text="Téléphone" class="field-label"></Label>
+      <TextField hint="Ex. 0550 12 34 56" keyboardType="phone" [(ngModel)]="phone" class="field"></TextField>
+      <Label text="Date" class="field-label"></Label>
+      <TextField hint="Ex. 25/12/2026" [(ngModel)]="date" class="field"></TextField>
+      <Label text="Heure" class="field-label"></Label>
+      <TextField hint="Ex. 19:30" [(ngModel)]="time" class="field"></TextField>
+      <Label text="Nombre de personnes" class="field-label"></Label>
+      <GridLayout columns="auto, *, auto" class="qty-row">
+        <Button col="0" text="−" class="qty-btn" (tap)="decreasePersons()"></Button>
+        <Label col="1" [text]="persons" class="qty-value"></Label>
+        <Button col="2" text="+" class="qty-btn" (tap)="increasePersons()"></Button>
       </GridLayout>
+      <Label *ngIf="error" [text]="error" textWrap="true" class="error-msg"></Label>
+      <Button text="Confirmer la réservation" class="confirm-btn" (tap)="confirm()"></Button>
+      <Label *ngIf="confirmMessage" [text]="confirmMessage" textWrap="true" class="confirm-msg"></Label>
     </StackLayout>
-  </ScrollView>
-</Page>
+
+    <!-- Mes réservations -->
+    <Label text="Mes réservations" class="section-title"></Label>
+    <StackLayout *ngIf="(reservations.reservations$ | async)?.length === 0">
+      <Label text="Aucune réservation pour le moment." class="empty-msg"></Label>
+    </StackLayout>
+    <StackLayout *ngFor="let r of (reservations.reservations$ | async)" class="res-card anim-card">
+      <Label [text]="r.name" class="res-name" textWrap="true"></Label>
+      <Label [text]="r.date + ' à ' + r.time + '  •  ' + r.persons + ' personne(s)'" class="res-meta" textWrap="true"></Label>
+      <Label [text]="'Tél : ' + r.phone" class="res-meta"></Label>
+      <Button text="Annuler" class="cancel-btn" (tap)="cancel(r)"></Button>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

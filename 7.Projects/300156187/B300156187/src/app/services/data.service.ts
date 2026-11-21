@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, delay, timeout } from 'rxjs/operators';
-import { Dish, Restaurant } from '../models/models';
-import { DISHES, RESTAURANTS } from '../data/demo-data';
+import { catchError, delay, map, timeout } from 'rxjs/operators';
 import { API_BASE_URL } from './api.config';
+import { DISHES, RESTAURANTS } from '../data/demo-data';
+import { Dish, Restaurant } from '../models/models';
 
-/**
- * Lit les données depuis l'API REST (SQL Server) quand elle est disponible.
- * Si l'API est hors ligne, retombe automatiquement sur les données de
- * démonstration (demo-data.ts) avec le même délai de chargement simulé.
- */
 @Injectable({ providedIn: 'root' })
 export class DataService {
   constructor(private http: HttpClient) {}

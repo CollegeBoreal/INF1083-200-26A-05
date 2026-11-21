@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ThemeService } from '../../services/theme.service';
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,11 @@ export class LoginComponent {
   error = '';
   loading = false;
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private routerExtensions: RouterExtensions,
+    public theme: ThemeService
+  ) {}
 
   onLogin(): void {
     this.error = '';
@@ -26,14 +31,18 @@ export class LoginComponent {
     this.auth.login(this.email, this.password).subscribe((res) => {
       this.loading = false;
       if (res.success) {
-        this.router.navigate(['/accueil']);
+        this.routerExtensions.navigate(['/accueil'], { clearHistory: true });
       } else {
-        this.error = res.message;
+        this.error = res.message ?? 'Échec de la connexion.';
       }
     });
   }
 
-  useDemoAccount(): void {
+  goRegister(): void {
+    this.routerExtensions.navigate(['/inscription']);
+  }
+
+  loginDemo(): void {
     this.email = 'demo@restaurant.com';
     this.password = 'demo1234';
     this.onLogin();

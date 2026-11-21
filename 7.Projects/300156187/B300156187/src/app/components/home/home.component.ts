@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { Application } from '@nativescript/core';
 import { DataService } from '../../services/data.service';
 import { CartService } from '../../services/cart.service';
 import { ThemeService } from '../../services/theme.service';
@@ -16,7 +18,7 @@ export class HomeComponent implements OnInit {
   restaurants: Restaurant[] = [];
   popularDishes: Dish[] = [];
   search = '';
-  categories = ['Toutes', 'Entrées', 'Plats', 'Desserts', 'Boissons'];
+  categories = ['Toutes', 'Pizzas', 'Burgers', 'Tacos', 'Sandwichs', 'Desserts', 'Boissons'];
   selectedCategory = 'Toutes';
 
   constructor(
@@ -63,5 +65,10 @@ export class HomeComponent implements OnInit {
 
   toggleTheme(): void {
     this.theme.toggle();
+  }
+
+  onDrawerButtonTap(): void {
+    const sideDrawer = <RadSideDrawer>Application.getRootView();
+    sideDrawer.showDrawer();
   }
 }

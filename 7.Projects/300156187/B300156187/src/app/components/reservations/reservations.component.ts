@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { ReservationService } from '../../services/reservation.service';
+import { ThemeService } from '../../services/theme.service';
 import { Reservation } from '../../models/models';
 
 @Component({
@@ -11,50 +12,43 @@ import { Reservation } from '../../models/models';
 export class ReservationsComponent {
   name = '';
   phone = '';
-  date = new Date();
-  time = new Date();
+  date = '';
+  time = '';
   persons = 2;
-  confirmed = false;
   error = '';
+  confirmMessage = '';
 
-  constructor(public cart: CartService) {}
+  constructor(public reservations: ReservationService, public theme: ThemeService) {}
 
-  decrease(): void {
+  decreasePersons(): void {
     if (this.persons > 1) {
-      this.persons--;
+      this.persons -= 1;
     }
   }
 
-  increase(): void {
-    this.persons++;
+  increasePersons(): void {
+    if (this.persons < 20) {
+      this.persons += 1;
+    }
   }
 
   confirm(): void {
     this.error = '';
-    if (!this.name.trim()) {
-      this.error = 'Veuillez saisir votre nom.';
+    this.confirmMessage = '';
+    if (!this.name.trim() || !this.phone.trim() || !this.date.trim() || !this.time.trim()) {
+      this.error = 'Veuillez remplir tous les champs.';
       return;
     }
-    if (!this.phone.trim()) {
-      this.error = 'Veuillez saisir votre téléphone.';
-      return;
-    }
-    const reservation: Reservation = {
-      id: 'RES-' + Date.now().toString().slice(-6),
-      date: this.date.toLocaleDateString('fr-FR'),
-      time: this.time.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
-      persons: this.persons,
-      name: this.name,
-      phone: this.phone,
-    };
-    this.cart.addReservation(reservation);
-    this.confirmed = true;
-  }
-
-  newReservation(): void {
-    this.confirmed = false;
+    this.reservations.addReservation(this.name, this.phone, this.date, this.time, this.persons);
+    this.confirmMessage = 'Réservation confirmée ! À bientôt chez Wonder Food\'s. 🎉';
     this.name = '';
     this.phone = '';
+    this.date = '';
+    this.time = '';
     this.persons = 2;
+  }
+
+  cancel(reservation: Reservation): void {
+    this.reservations.cancelReservation(reservation.id);
   }
 }

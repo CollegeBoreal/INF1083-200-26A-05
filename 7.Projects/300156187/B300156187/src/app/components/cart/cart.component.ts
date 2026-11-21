@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { ThemeService } from '../../services/theme.service';
 import { CartItem } from '../../models/models';
 
 @Component({
@@ -10,43 +10,30 @@ import { CartItem } from '../../models/models';
   styleUrls: ['cart.component.scss'],
 })
 export class CartComponent {
-  confirmed = false;
-  lastOrderId = '';
+  orderMessage = '';
 
-  constructor(public cart: CartService, private router: Router) {}
-
-  get showEmptyState(): boolean {
-    return !this.confirmed && this.cart.items.length === 0;
-  }
-
-  get showList(): boolean {
-    return !this.confirmed && this.cart.items.length > 0;
-  }
+  constructor(public cart: CartService, public theme: ThemeService) {}
 
   increase(item: CartItem): void {
-    this.cart.updateQuantity(item.dish.id, item.quantity + 1);
+    this.cart.setQuantity(item.dish.id, item.quantity + 1);
   }
 
   decrease(item: CartItem): void {
-    this.cart.updateQuantity(item.dish.id, item.quantity - 1);
+    this.cart.setQuantity(item.dish.id, item.quantity - 1);
   }
 
   remove(item: CartItem): void {
-    this.cart.remove(item.dish.id);
+    this.cart.removeFromCart(item.dish.id);
   }
 
-  openDish(item: CartItem): void {
-    this.router.navigate(['/plat', item.dish.id]);
+  clear(): void {
+    this.cart.clearCart();
+    this.orderMessage = '';
   }
 
-  checkout(): void {
-    const order = this.cart.checkout();
-    this.lastOrderId = order.id;
-    this.confirmed = true;
-  }
-
-  continueShopping(): void {
-    this.confirmed = false;
-    this.router.navigate(['/menu']);
+  order(): void {
+    // Commande démo : pas de paiement, on vide le panier et on confirme.
+    this.cart.clearCart();
+    this.orderMessage = 'Merci ! Votre commande démo a bien été enregistrée. 🎉';
   }
 }

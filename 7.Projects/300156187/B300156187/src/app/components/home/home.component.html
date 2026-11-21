@@ -1,84 +1,61 @@
-<Page class="page" actionBarHidden="true">
-  <ScrollView>
-    <StackLayout class="home-container">
-      <!-- En-tête -->
-      <GridLayout columns="*, auto" class="header">
-        <StackLayout col="0">
-          <Label text="Bonjour 👋" class="greeting"></Label>
-          <Label text="Qu'est-ce qui vous ferait plaisir ?" class="subtitle"></Label>
-        </StackLayout>
-        <Button
-          col="1"
-          [text]="(theme.dark$ | async) ? '☀️' : '🌙'"
-          class="theme-btn"
-          (tap)="toggleTheme()"></Button>
-      </GridLayout>
+<ScrollView>
+  <StackLayout class="home-container" [class.dark]="theme.dark$ | async">
+    <!-- En-tête : menu tiroir + logo + bonjour + mode sombre -->
+    <GridLayout columns="auto, auto, *, auto" class="header">
+      <Label col="0" text="☰" class="drawer-btn" (tap)="onDrawerButtonTap()"></Label>
+      <StackLayout col="1" class="logo-mini">
+        <Label text="W" class="logo-mini-w"></Label>
+      </StackLayout>
+      <StackLayout col="2" class="header-text">
+        <Label text="Bonjour 👋" class="greeting"></Label>
+        <Label text="Qu'est-ce qui vous ferait plaisir ?" textWrap="true" class="subtitle"></Label>
+      </StackLayout>
+      <Button col="3" class="theme-btn" [text]="(theme.dark$ | async) ? '☀️' : '🌙'" (tap)="toggleTheme()"></Button>
+    </GridLayout>
 
-      <!-- Recherche -->
-      <TextField [(ngModel)]="search" hint="Rechercher un plat…" class="input search-input"></TextField>
+    <!-- Recherche -->
+    <TextField hint="Rechercher un plat..." [(ngModel)]="search" class="search"></TextField>
 
-      <!-- Catégories -->
-      <ScrollView orientation="horizontal" showIndicator="false" class="chips-row">
+    <!-- Catégories -->
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="chips-scroll">
+      <StackLayout orientation="horizontal" class="chips">
+        <Label *ngFor="let cat of categories" [text]="cat" (tap)="selectCategory(cat)" [class.chip-active]="selectedCategory === cat" class="chip"></Label>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Squelette pendant le chargement -->
+    <StackLayout *ngIf="loading" class="skeleton-wrap">
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-row anim-shimmer"></StackLayout>
+      <StackLayout class="skel-row anim-shimmer"></StackLayout>
+    </StackLayout>
+
+    <!-- Contenu -->
+    <StackLayout *ngIf="!loading" class="content anim-fade">
+      <Label text="Nos restaurants" class="section-title"></Label>
+      <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="rest-scroll">
         <StackLayout orientation="horizontal">
-          <Label
-            *ngFor="let category of categories"
-            [text]="category"
-            class="chip"
-            [class.active]="selectedCategory === category"
-            (tap)="selectCategory(category)"></Label>
+          <StackLayout *ngFor="let resto of restaurants" class="rest-card anim-card">
+            <Image [src]="resto.image" class="rest-img" stretch="aspectFill"></Image>
+            <Label [text]="resto.name" class="rest-name" textWrap="true"></Label>
+            <Label [text]="resto.address" class="rest-address" textWrap="true"></Label>
+            <Label [text]="'⭐ ' + resto.rating" class="rest-rating"></Label>
+          </StackLayout>
         </StackLayout>
       </ScrollView>
 
-      <!-- Skeleton + shimmer pendant le chargement -->
-      <StackLayout *ngIf="loading">
-        <Label text="Nos restaurants" class="section-title"></Label>
-        <ScrollView orientation="horizontal" showIndicator="false">
-          <StackLayout orientation="horizontal">
-            <GridLayout *ngFor="let i of [1, 2, 3]" class="skel skel-card">
-              <StackLayout class="skel-shine"></StackLayout>
-            </GridLayout>
-          </StackLayout>
-        </ScrollView>
-
-        <Label text="Plats populaires" class="section-title"></Label>
-        <GridLayout *ngFor="let i of [1, 2, 3]" class="skel skel-row">
-          <StackLayout class="skel-shine"></StackLayout>
-        </GridLayout>
-      </StackLayout>
-
-      <!-- Contenu -->
-      <StackLayout *ngIf="!loading">
-        <Label text="Nos restaurants" class="section-title"></Label>
-        <ScrollView orientation="horizontal" showIndicator="false">
-          <StackLayout orientation="horizontal">
-            <GridLayout *ngFor="let restaurant of restaurants" class="card restaurant-card">
-              <StackLayout>
-                <Image [src]="restaurant.image" class="restaurant-img" stretch="aspectFill"></Image>
-                <Label [text]="restaurant.name" class="card-title restaurant-name"></Label>
-                <Label [text]="restaurant.address" class="muted restaurant-address"></Label>
-                <Label [text]="'⭐ ' + restaurant.rating" class="rating restaurant-rating"></Label>
-              </StackLayout>
-            </GridLayout>
-          </StackLayout>
-        </ScrollView>
-
-        <Label text="Plats populaires" class="section-title"></Label>
-        <GridLayout
-          *ngFor="let dish of filteredDishes"
-          class="card dish-card"
-          columns="auto, *, auto"
-          (tap)="openDish(dish)">
-          <Image col="0" [src]="dish.image" class="dish-thumb" stretch="aspectFill"></Image>
-          <StackLayout col="1" class="dish-info">
-            <Label [text]="dish.name" class="card-title"></Label>
-            <Label [text]="dish.category" class="muted"></Label>
-            <Label [text]="dish.price + ' DA'" class="price"></Label>
-          </StackLayout>
-          <Button col="2" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
-        </GridLayout>
-
-        <Label *ngIf="filteredDishes.length === 0" text="Aucun plat trouvé." class="muted empty-text"></Label>
-      </StackLayout>
+      <Label text="Plats populaires" class="section-title"></Label>
+      <GridLayout *ngFor="let dish of filteredDishes" columns="92, *, 40" class="dish-card anim-card" (tap)="openDish(dish)">
+        <Image col="0" [src]="dish.image" class="dish-img" stretch="aspectFill"></Image>
+        <StackLayout col="1" class="dish-info">
+          <Label [text]="dish.name" class="dish-name" textWrap="true"></Label>
+          <Label [text]="dish.category" class="dish-cat"></Label>
+          <Label [text]="dish.price + ' DA'" class="dish-price"></Label>
+        </StackLayout>
+        <Button col="2" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
+      </GridLayout>
+      <Label *ngIf="filteredDishes.length === 0" text="Aucun plat trouvé." class="empty-msg"></Label>
     </StackLayout>
-  </ScrollView>
-</Page>
+  </StackLayout>
+</ScrollView>

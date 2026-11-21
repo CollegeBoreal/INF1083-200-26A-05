@@ -1,15 +1,1 @@
-{
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "types": ["node"],
-    "noEmit": true
-  },
-  "include": ["src/**/*", "nativescript.config.ts"],
-  "exclude": ["node_modules", "platforms"]
-}
+{"compilerOptions":{"emitDecoratorMetadata":true,"experimentalDecorators":true,"lib":["ESNext","dom"],"module":"esnext","moduleResolution":"bundler","noEmitHelpers":true,"noEmitOnError":true,"paths":{"@/*":["./src/*"],"~/*":["./src/*"]},"skipLibCheck":true,"strict":false,"target":"ES2020"},"exclude":["node_modules","platforms"],"files":["./src/main.ts","./references.d.ts","./src/polyfills.ts"],"include":["./src/**/*.ios.ts","./src/**/*.android.ts"]}

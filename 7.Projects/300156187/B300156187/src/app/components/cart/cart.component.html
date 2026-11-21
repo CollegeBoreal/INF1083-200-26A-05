@@ -1,50 +1,40 @@
-<Page class="page" actionBarHidden="true">
-  <GridLayout rows="auto, *, auto">
-    <Label row="0" text="Mon Panier" class="page-title page-padding"></Label>
+<ScrollView>
+  <StackLayout class="cart-container" [class.dark]="theme.dark$ | async">
+    <Label text="Panier" class="page-title"></Label>
+    <Label text="Wonderfood's Morchid, Oran" class="page-subtitle"></Label>
 
-    <!-- Confirmation de commande -->
-    <StackLayout row="1" *ngIf="confirmed" class="confirm-box">
-      <Label text="✅" class="confirm-emoji" horizontalAlignment="center"></Label>
-      <Label text="Commande confirmée !" class="confirm-title" horizontalAlignment="center"></Label>
-      <Label [text]="'Numéro de commande : ' + lastOrderId" class="muted" horizontalAlignment="center"></Label>
-      <Label text="Votre commande est en préparation." class="muted" horizontalAlignment="center"></Label>
-      <Button text="Continuer mes achats" class="btn-primary confirm-btn" (tap)="continueShopping()"></Button>
+    <StackLayout *ngIf="(cart.items$ | async)?.length === 0" class="empty-wrap">
+      <Label text="🛒" class="empty-icon"></Label>
+      <Label text="Votre panier est vide." class="empty-msg"></Label>
+      <Label *ngIf="orderMessage" [text]="orderMessage" textWrap="true" class="order-msg"></Label>
     </StackLayout>
 
-    <!-- Panier vide -->
-    <StackLayout row="1" *ngIf="showEmptyState" class="empty-box">
-      <Label text="🛒" class="empty-emoji" horizontalAlignment="center"></Label>
-      <Label text="Votre panier est vide" class="empty-title" horizontalAlignment="center"></Label>
-      <Label text="Parcourez le menu et ajoutez vos plats préférés." class="muted" horizontalAlignment="center" textWrap="true"></Label>
-    </StackLayout>
-
-    <!-- Liste des articles -->
-    <ListView row="1" *ngIf="showList" [items]="cart.items$ | async">
-      <ng-template let-item="item">
-        <GridLayout class="card cart-item" columns="auto, *, auto" (tap)="openDish(item)">
-          <Image col="0" [src]="item.dish.image" class="cart-thumb" stretch="aspectFill"></Image>
-          <StackLayout col="1" class="cart-info">
-            <Label [text]="item.dish.name" class="card-title"></Label>
-            <Label [text]="item.dish.price + ' DA'" class="muted"></Label>
-            <StackLayout orientation="horizontal" class="cart-qty">
-              <Button text="-" class="mini-btn" (tap)="decrease(item)"></Button>
-              <Label [text]="item.quantity" class="mini-qty"></Label>
-              <Button text="+" class="mini-btn" (tap)="increase(item)"></Button>
-              <Label text="✕" class="remove-btn" (tap)="remove(item)"></Label>
-            </StackLayout>
-          </StackLayout>
-          <Label col="2" [text]="(item.dish.price * item.quantity) + ' DA'" class="price cart-line-total"></Label>
-        </GridLayout>
-      </ng-template>
-    </ListView>
-
-    <!-- Total + bouton commander -->
-    <StackLayout row="2" *ngIf="showList" class="cart-footer">
-      <GridLayout columns="*, auto" class="total-row">
-        <Label text="Total" col="0" class="total-label"></Label>
-        <Label [text]="cart.total + ' DA'" col="1" class="total-value"></Label>
+    <StackLayout *ngIf="((cart.items$ | async)?.length ?? 0) > 0">
+      <GridLayout *ngFor="let item of (cart.items$ | async)" columns="64, *, auto" class="cart-line anim-card">
+        <Image col="0" [src]="item.dish.image" class="line-img" stretch="aspectFill"></Image>
+        <StackLayout col="1" class="line-info">
+          <Label [text]="item.dish.name" class="line-name" textWrap="true"></Label>
+          <Label [text]="item.dish.price + ' DA'" class="line-price"></Label>
+          <GridLayout columns="auto, auto, auto" class="qty-row">
+            <Button col="0" text="−" class="qty-btn" (tap)="decrease(item)"></Button>
+            <Label col="1" [text]="item.quantity" class="qty-value"></Label>
+            <Button col="2" text="+" class="qty-btn" (tap)="increase(item)"></Button>
+          </GridLayout>
+        </StackLayout>
+        <StackLayout col="2" class="line-right">
+          <Label [text]="(item.dish.price * item.quantity) + ' DA'" class="line-total"></Label>
+          <Label text="✕" class="remove-link" (tap)="remove(item)"></Label>
+        </StackLayout>
       </GridLayout>
-      <Button text="Commander" class="btn-primary" (tap)="checkout()"></Button>
+
+      <GridLayout columns="*, auto" class="subtotal-row">
+        <Label col="0" text="Sous-total" class="subtotal-label"></Label>
+        <Label col="1" [text]="(cart.total$ | async) + ' DA'" class="subtotal-value"></Label>
+      </GridLayout>
+
+      <Button text="Commander" class="order-btn" (tap)="order()"></Button>
+      <Button text="Vider le panier" class="clear-btn" (tap)="clear()"></Button>
+      <Label *ngIf="orderMessage" [text]="orderMessage" textWrap="true" class="order-msg"></Label>
     </StackLayout>
-  </GridLayout>
-</Page>
+  </StackLayout>
+</ScrollView>

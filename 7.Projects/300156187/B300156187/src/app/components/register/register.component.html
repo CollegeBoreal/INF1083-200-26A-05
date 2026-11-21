@@ -1,0 +1,14 @@
+<ScrollView>
+  <StackLayout class="register-container" [class.dark]="theme.dark$ | async">
+    <Image src="~/app/images/logo-wonderfood.png" width="120" height="120" stretch="aspectFit" class="anim-logo" horizontalAlignment="center" style="margin-top: 32; margin-bottom: 12;"></Image>
+    <Label text="Créer un compte" class="app-title anim-field anim-delay-1" horizontalAlignment="center"></Label>
+    <Label text="Rejoignez Wonder Food's" class="app-subtitle anim-field anim-delay-2" horizontalAlignment="center" textWrap="true"></Label>
+    <TextField class="anim-field anim-delay-3" hint="Nom complet" [(ngModel)]="name"></TextField>
+    <TextField class="anim-field anim-delay-3" hint="Email" keyboardType="email" autocapitalizationType="none" autocorrect="false" [(ngModel)]="email"></TextField>
+    <TextField class="anim-field anim-delay-4" hint="Téléphone" keyboardType="phone" [(ngModel)]="phone"></TextField>
+    <TextField class="anim-field anim-delay-4" hint="Mot de passe (6 caractères min.)" secure="true" [(ngModel)]="password"></TextField>
+    <Label *ngIf="error" [text]="error" textWrap="true" style="color: #C0392B; margin-top: 8;"></Label>
+    <Button class="btn-primary anim-field anim-delay-5" [text]="loading ? 'Création...' : 'Créer mon compte'" (tap)="onRegister()" [isEnabled]="!loading"></Button>
+    <Label text="Déjà un compte ? Se connecter" class="login-link anim-field anim-delay-5" horizontalAlignment="center" (tap)="goLogin()"></Label>
+  </StackLayout>
+</ScrollView>

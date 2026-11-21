@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { CartService } from '../../services/cart.service';
+import { ThemeService } from '../../services/theme.service';
 import { Dish } from '../../models/models';
 
 @Component({
@@ -13,13 +14,25 @@ import { Dish } from '../../models/models';
 export class MenuComponent implements OnInit {
   loading = true;
   dishes: Dish[] = [];
-  categories = ['Toutes', 'Entrées', 'Plats', 'Desserts', 'Boissons'];
-  selectedCategory = 'Toutes';
   search = '';
+  categories = ['Toutes', 'Pizzas', 'Burgers', 'Tacos', 'Sandwichs', 'Desserts', 'Boissons'];
+  selectedCategory = 'Toutes';
+
+  // Emojis d'affichage des chips (la valeur filtrée reste le nom simple).
+  categoryEmoji: Record<string, string> = {
+    Toutes: '🍽️',
+    Pizzas: '🍕',
+    Burgers: '🍔',
+    Tacos: '🌮',
+    Sandwichs: '🥪',
+    Desserts: '🍰',
+    Boissons: '🥤',
+  };
 
   constructor(
     private data: DataService,
     private cartService: CartService,
+    public theme: ThemeService,
     private router: Router
   ) {}
 
@@ -30,7 +43,7 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  get filtered(): Dish[] {
+  get filteredDishes(): Dish[] {
     let list = this.dishes;
     if (this.selectedCategory !== 'Toutes') {
       list = list.filter((dish) => dish.category === this.selectedCategory);
@@ -52,6 +65,6 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(dish: Dish): void {
-    this.cartService.add(dish);
+    this.cartService.addToCart(dish);
   }
 }

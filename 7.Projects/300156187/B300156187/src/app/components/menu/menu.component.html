@@ -1,41 +1,38 @@
-<Page class="page" actionBarHidden="true">
-  <GridLayout rows="auto, *">
-    <!-- En-tête -->
-    <StackLayout row="0" class="menu-header">
-      <Label text="Notre Menu" class="page-title"></Label>
-      <TextField [(ngModel)]="search" hint="Rechercher un plat…" class="input"></TextField>
-      <ScrollView orientation="horizontal" showIndicator="false">
-        <StackLayout orientation="horizontal">
-          <Label
-            *ngFor="let category of categories"
-            [text]="category"
-            class="chip"
-            [class.active]="selectedCategory === category"
-            (tap)="selectCategory(category)"></Label>
-        </StackLayout>
-      </ScrollView>
-    </StackLayout>
+<ScrollView>
+  <StackLayout class="menu-container" [class.dark]="theme.dark$ | async">
+    <Label text="Menu" class="page-title"></Label>
+    <Label text="Wonderfood's Morchid, Oran" class="page-subtitle"></Label>
 
-    <!-- Skeleton + shimmer pendant le chargement -->
-    <StackLayout row="1" *ngIf="loading" class="menu-list">
-      <GridLayout *ngFor="let i of [1, 2, 3, 4]" class="skel skel-row">
-        <StackLayout class="skel-shine"></StackLayout>
-      </GridLayout>
-    </StackLayout>
+    <!-- Recherche -->
+    <TextField hint="Rechercher un plat..." [(ngModel)]="search" class="search"></TextField>
 
-    <!-- Liste des plats -->
-    <ListView row="1" *ngIf="!loading" [items]="filtered" class="menu-list">
-      <ng-template let-dish="item">
-        <GridLayout class="card dish-card" columns="auto, *, auto" (tap)="openDish(dish)">
-          <Image col="0" [src]="dish.image" class="dish-thumb" stretch="aspectFill"></Image>
-          <StackLayout col="1" class="dish-info">
-            <Label [text]="dish.name" class="card-title"></Label>
-            <Label [text]="dish.description" class="muted" textWrap="true"></Label>
-            <Label [text]="dish.price + ' DA'" class="price"></Label>
-          </StackLayout>
-          <Button col="2" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
+    <!-- Catégories -->
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="chips-scroll">
+      <StackLayout orientation="horizontal" class="chips">
+        <Label *ngFor="let cat of categories" [text]="categoryEmoji[cat] + ' ' + cat" (tap)="selectCategory(cat)" [class.chip-active]="selectedCategory === cat" class="chip"></Label>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Squelette pendant le chargement -->
+    <WrapLayout *ngIf="loading" class="grid">
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+    </WrapLayout>
+
+    <!-- Grille 2 colonnes -->
+    <WrapLayout *ngIf="!loading" class="grid">
+      <StackLayout *ngFor="let dish of filteredDishes" class="dish-card anim-card" (tap)="openDish(dish)">
+        <Image [src]="dish.image" class="dish-img" stretch="aspectFill"></Image>
+        <Label [text]="dish.name" class="dish-name" textWrap="true"></Label>
+        <Label [text]="dish.category + '  •  ⭐ ' + dish.rating" class="dish-meta"></Label>
+        <GridLayout columns="*, auto" class="dish-bottom">
+          <Label col="0" [text]="dish.price + ' DA'" class="dish-price"></Label>
+          <Button col="1" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
         </GridLayout>
-      </ng-template>
-    </ListView>
-  </GridLayout>
-</Page>
+      </StackLayout>
+    </WrapLayout>
+    <Label *ngIf="!loading && filteredDishes.length === 0" text="Aucun plat trouvé." class="empty-msg"></Label>
+  </StackLayout>
+</ScrollView>

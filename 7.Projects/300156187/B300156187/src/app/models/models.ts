@@ -1,4 +1,4 @@
-export type Category = 'Entrées' | 'Plats' | 'Desserts' | 'Boissons';
+export type Category = 'Pizzas' | 'Burgers' | 'Tacos' | 'Sandwichs' | 'Desserts' | 'Boissons';
 
 export interface Restaurant {
   id: number;

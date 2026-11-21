@@ -1,44 +1,31 @@
-<Page class="page" actionBarHidden="true">
-  <ScrollView>
-    <StackLayout>
-      <!-- Skeleton + shimmer pendant le chargement -->
-      <StackLayout *ngIf="loading">
-        <GridLayout class="skel detail-skel">
-          <StackLayout class="skel-shine"></StackLayout>
-        </GridLayout>
-        <GridLayout class="skel skel-line">
-          <StackLayout class="skel-shine"></StackLayout>
-        </GridLayout>
-        <GridLayout class="skel skel-line short">
-          <StackLayout class="skel-shine"></StackLayout>
-        </GridLayout>
-      </StackLayout>
+<ScrollView>
+  <StackLayout class="dish-detail-container" [class.dark]="theme.dark$ | async">
+    <Label text="← Retour" class="back-link" (tap)="goBack()"></Label>
 
-      <!-- Détail du plat -->
-      <StackLayout *ngIf="dish">
-        <GridLayout>
-          <Image [src]="dish.image" class="detail-img" stretch="aspectFill"></Image>
-          <Button text="←" class="back-btn" horizontalAlignment="left" verticalAlignment="top" (tap)="goBack()"></Button>
-        </GridLayout>
-
-        <StackLayout class="detail-body">
-          <Label [text]="dish.name" class="detail-title"></Label>
-          <Label [text]="'⭐ ' + dish.rating + ' · ' + dish.category" class="rating detail-rating"></Label>
-          <Label [text]="dish.description" class="description" textWrap="true"></Label>
-
-          <GridLayout columns="auto, *, auto" class="qty-row">
-            <Label text="Quantité" col="0" class="qty-label"></Label>
-            <StackLayout col="1" orientation="horizontal" horizontalAlignment="center">
-              <Button text="-" class="qty-btn" (tap)="decrease()"></Button>
-              <Label [text]="quantity" class="qty-value"></Label>
-              <Button text="+" class="qty-btn" (tap)="increase()"></Button>
-            </StackLayout>
-            <Label col="2" [text]="totalPrice + ' DA'" class="price detail-price"></Label>
-          </GridLayout>
-
-          <Button text="Ajouter au panier" class="btn-primary add-cart-btn" (tap)="addToCart()"></Button>
-        </StackLayout>
-      </StackLayout>
+    <StackLayout *ngIf="loading" class="skeleton-wrap">
+      <StackLayout class="skel-photo anim-shimmer"></StackLayout>
+      <StackLayout class="skel-line anim-shimmer"></StackLayout>
+      <StackLayout class="skel-line anim-shimmer"></StackLayout>
     </StackLayout>
-  </ScrollView>
-</Page>
+
+    <StackLayout *ngIf="!loading && dish" class="content anim-fade">
+      <Image [src]="dish.image" class="dish-photo" stretch="aspectFill"></Image>
+      <Label [text]="dish.name" class="dish-name" textWrap="true"></Label>
+      <Label [text]="dish.category + '  •  ⭐ ' + dish.rating" class="dish-meta"></Label>
+      <Label [text]="dish.price + ' DA'" class="dish-price"></Label>
+      <Label [text]="dish.description" class="dish-desc" textWrap="true"></Label>
+
+      <Label text="Quantité" class="section-label"></Label>
+      <GridLayout columns="auto, *, auto" class="qty-row">
+        <Button col="0" text="−" class="qty-btn" (tap)="decrease()"></Button>
+        <Label col="1" [text]="quantity" class="qty-value"></Label>
+        <Button col="2" text="+" class="qty-btn" (tap)="increase()"></Button>
+      </GridLayout>
+
+      <Button [text]="'Ajouter au panier • ' + (dish.price * quantity) + ' DA'" class="add-cart-btn" (tap)="addToCart()"></Button>
+      <Label *ngIf="addedMessage" [text]="addedMessage" class="added-msg"></Label>
+    </StackLayout>
+
+    <Label *ngIf="!loading && !dish" text="Plat introuvable." class="empty-msg"></Label>
+  </StackLayout>
+</ScrollView>

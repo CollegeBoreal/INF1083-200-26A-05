@@ -1,14 +1,13 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-  NativeScriptModule,
-  NativeScriptRouterModule,
-  NativeScriptFormsModule,
-} from '@nativescript/angular';
-import { HttpClientModule } from '@angular/common/http';
+import { NativeScriptModule } from '@nativescript/angular';
+import { NativeScriptFormsModule } from '@nativescript/angular';
+import { NativeScriptHttpClientModule } from '@nativescript/angular';
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
 import { LoginComponent } from './components/login/login.component';
-import { TabsComponent } from './components/tabs/tabs.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DishDetailComponent } from './components/dish-detail/dish-detail.component';
@@ -20,21 +19,21 @@ import { ProfileComponent } from './components/profile/profile.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    TabsComponent,
+    RegisterComponent,
     HomeComponent,
     MenuComponent,
     DishDetailComponent,
     CartComponent,
     ReservationsComponent,
     ProfileComponent,
-],
-imports: [
+  ],
+  imports: [
+    AppRoutingModule,
     NativeScriptModule,
-    NativeScriptRouterModule,
-    NativeScriptRouterModule.forRoot(routes),
     NativeScriptFormsModule,
-    HttpClientModule,
-],
+    NativeScriptHttpClientModule,
+    NativeScriptUISideDrawerModule,
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
