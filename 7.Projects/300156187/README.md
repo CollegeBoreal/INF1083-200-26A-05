@@ -30,7 +30,7 @@ l'application est `com.restaurant.app`.
 
 **Wonder Food's** est une application mobile de commande pour le restaurant
 **Wonderfood's Morchid, à Oran** (Algérie). Le client commande aujourd'hui par
-WhatsApp ou par téléphone (0549 88 13 63) : l'application lui donne un menu
+WhatsApp ou par téléphone : l'application lui donne un menu
 clair avec photos et prix, un panier, et la possibilité de réserver une table,
 le tout depuis son téléphone.
 
@@ -44,8 +44,7 @@ la base de données, sans toucher au code de l'application.
 
 ## 🎨 Design
 
-Le design est **inspiré de l'application « Foodie » du créateur
-@dailyflutterui** (TikTok / Instagram) : cartes blanches arrondies et aérées,
+Cartes blanches arrondies et aérées,
 grille de plats en deux colonnes, chips de catégories espacées, beaucoup d'air
 entre les sections. Ce n'est pas une copie : les couleurs et l'identité sont
 celles de Wonder Food's. La navigation se fait par **tiroir latéral** (menu
@@ -221,9 +220,6 @@ Les captures sont dans le dossier `images/` :
 - `Wonderpic_2.jpg` — ⭐ vues de l'interface sur fond marbre : 3 iPhones
   (menu boissons, panier, réservations), titre « VUES DE L'INTERFACE DE
   L'APPLICATION ». Vraies captures de l'application sur iPhone.
-- `login.png`, `dish-detail.png`, `profile.png` — aperçus de l'interface
-  générés pour la remise ; ils seront remplacés par de vraies captures de
-  l'application sur téléphone.
 
 ## ⚠️ État et limites connues
 
