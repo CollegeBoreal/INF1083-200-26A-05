@@ -214,13 +214,18 @@ Voir `backend/README.md` pour le détail.
 
 Les captures sont dans le dossier `images/` :
 
+![Présentation de l'application](images/Wonderpic_1.jpg)
+
 - `Wonderpic_1.jpg` — ⭐ présentation de l'application sur fond marbre :
   3 iPhones (tiroir latéral, accueil, menu), titre « WONDERFOOD'S MORCHID -
   APPLICATION MOBILE ». Vraies captures de l'application sur iPhone.
+
+![Vues de l'interface](images/Wonderpic_2.jpg)
+
 - `Wonderpic_2.jpg` — ⭐ vues de l'interface sur fond marbre : 3 iPhones
   (menu boissons, panier, réservations), titre « VUES DE L'INTERFACE DE
   L'APPLICATION ». Vraies captures de l'application sur iPhone.
-
+  
 ## ⚠️ État et limites connues
 
 - ✅ L'application est construite sur la base exacte du laboratoire 6
