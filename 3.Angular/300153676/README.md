@@ -30,3 +30,9 @@ npm test -- --watch=false
 ```
 
 La compilation a réussi et les deux tests sont passés. Le premier vérifie la création du composant `Accueil`. Le second vérifie que la route `/` affiche « Bienvenue INF1083 ».
+
+## Capture de l’application
+
+Après un clic sur **Charger les utilisateurs**, la page affiche les dix noms reçus de JSONPlaceholder.
+
+![Page d’accueil Angular affichant les dix utilisateurs chargés](./images/accueil-utilisateurs.png)
