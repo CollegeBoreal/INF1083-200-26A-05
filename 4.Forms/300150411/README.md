@@ -238,6 +238,7 @@ Le résultat obtenu est une première version d'une application de réservation 
 
 Ce projet m'a permis de développer mes compétences en programmation et de mieux comprendre le fonctionnement d'une application Angular.
 
----
+<image src=images/4444.png width=50% height=50% > </image>
+<image src=images/5555.png width=50% height=50% > </image>
 
-**Fin du rapport**
+
