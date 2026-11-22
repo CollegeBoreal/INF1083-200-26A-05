@@ -1114,3 +1114,81 @@ TextView {
     background-color: $dark-surface;
   }
 }
+
+// ============ v4.0 : carte du monde ============
+.map-tools {
+  margin: 4 12 8 12;
+}
+
+.zoom {
+  background-color: $primary;
+  color: #ffffff;
+  width: 36;
+  height: 36;
+  border-radius: 18;
+  font-size: 20;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 6;
+  vertical-align: center;
+
+  &__level {
+    font-size: 13;
+    font-weight: bold;
+    color: $muted;
+    margin-left: 6;
+    vertical-align: center;
+  }
+}
+
+.map {
+  background-color: #eef2ff;
+}
+
+.map-hint {
+  font-size: 12;
+  color: $muted;
+  text-align: center;
+  margin: 6 16 0 16;
+}
+
+.pin {
+  border-radius: 8;
+  border-width: 2;
+  border-color: #ffffff;
+
+  &--visited {
+    border-color: $accent;
+    border-width: 3;
+  }
+
+  &--selected {
+    border-color: $ink;
+    border-width: 3;
+  }
+}
+
+.map-card {
+  margin-top: 12;
+
+  &__button {
+    color: #ffffff;
+    border-radius: 10;
+    font-size: 14;
+    font-weight: bold;
+    height: 40;
+    margin-top: 8;
+    horizontal-align: left;
+    padding: 0 16;
+  }
+}
+
+.ns-dark {
+  .map {
+    background-color: #111827;
+  }
+
+  .pin--selected {
+    border-color: #ffffff;
+  }
+}

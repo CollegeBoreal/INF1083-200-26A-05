@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { ApplicationSettings } from '@nativescript/core'
 import { BudgetService } from './budget.service'
 import { CityService } from './city.service'
@@ -30,6 +30,10 @@ export class BadgeService {
     private budgetService: BudgetService,
     private notesService: NotesService,
   ) {}
+
+  isVisited(cityId: number): boolean {
+    return this.visited.includes(cityId)
+  }
 
   // Appelé à chaque ouverture d'une fiche ville
   visit(cityId: number): void {

@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Http, ImageSource } from '@nativescript/core'
 import { City } from '../models/city'
 
@@ -9,8 +9,8 @@ export interface WikiInfo {
 
 // Wikipédia demande d'identifier l'application qui fait les requêtes
 const HEADERS = {
-  'Api-User-Agent': 'Lounivers/2.0 (projet etudiant INF1083)',
-  'User-Agent': 'Lounivers/2.0 (projet etudiant INF1083; Android)',
+  'Api-User-Agent': 'Lounivers/3.0 (https://github.com/CollegeBoreal/INF1083-200-26A-05; projet etudiant)',
+  'User-Agent': 'Lounivers/3.0 (https://github.com/CollegeBoreal/INF1083-200-26A-05; projet etudiant)',
 }
 
 @Injectable({ providedIn: 'root' })
@@ -42,7 +42,7 @@ export class WikiService {
 
   async photo(url: string): Promise<ImageSource | null> {
     try {
-      return await Http.getImage({ url, method: 'GET', headers: HEADERS, timeout: 20000 })
+      return (await Promise.race([Http.getImage({ url, method: 'GET', headers: HEADERS, timeout: 15000 }), new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 20000))])) as ImageSource
     } catch {
       return null
     }
@@ -50,8 +50,8 @@ export class WikiService {
 
   private async json(url: string): Promise<any> {
     try {
-      const response = await Http.request({ url, method: 'GET', headers: HEADERS, timeout: 15000 })
-      return response.statusCode === 200 ? response.content.toJSON() : null
+      const response: any = await Promise.race([Http.request({ url, method: 'GET', headers: HEADERS, timeout: 10000 }), new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 12000))])
+      console.log('[Lounivers] HTTP', response.statusCode, url.slice(8, 70)); return response.statusCode === 200 ? response.content.toJSON() : null
     } catch {
       return null
     }

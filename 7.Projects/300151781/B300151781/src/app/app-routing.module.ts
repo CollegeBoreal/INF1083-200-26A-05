@@ -5,7 +5,7 @@ import { NativeScriptRouterModule, NSEmptyOutletComponent } from '@nativescript/
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/(exploreTab:explore/default//favoritesTab:favorites/default//tripTab:trip/default//aboutTab:about/default)',
+    redirectTo: '/(exploreTab:explore/default//favoritesTab:favorites/default//mapTab:map/default//tripTab:trip/default//aboutTab:about/default)',
     pathMatch: 'full',
   },
   {
@@ -19,6 +19,12 @@ const routes: Routes = [
     component: NSEmptyOutletComponent,
     loadChildren: () => import('~/app/favorites/favorites.module').then((m) => m.FavoritesModule),
     outlet: 'favoritesTab',
+  },
+  {
+    path: 'map',
+    component: NSEmptyOutletComponent,
+    loadChildren: () => import('~/app/map/map.module').then((m) => m.MapModule),
+    outlet: 'mapTab',
   },
   {
     path: 'trip',

@@ -1,4 +1,4 @@
-﻿import { Component, NgZone, OnDestroy, OnInit } from '@angular/core'
+import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { RouterExtensions } from '@nativescript/angular'
 import { Dialogs, ImageSource, TextField, TextView } from '@nativescript/core'
@@ -37,7 +37,7 @@ export class CityDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private routerExtensions: RouterExtensions,
-    private zone: NgZone,
+    private zone: NgZone, private cd: ChangeDetectorRef,
     private cityService: CityService,
     private favoritesService: FavoritesService,
     private tripService: TripService,
@@ -63,8 +63,11 @@ export class CityDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.timer)
+    clearInterval(this.timer); this.timer = null
   }
+
+  // Force la mise à jour de l'écran quand la réponse Wikipédia arrive
+  private refresh(): void { if (!this.timer) return; try { this.cd.detectChanges() } catch {} }
 
   goBack(): void {
     this.routerExtensions.back({ relativeTo: this.route })
@@ -72,14 +75,14 @@ export class CityDetailComponent implements OnInit, OnDestroy {
 
   // Photo et histoire chargées depuis Wikipédia (nécessite Internet)
   private async loadWiki(): Promise<void> {
-    const info = await this.wikiService.get(this.city)
+    const info = await this.wikiService.get(this.city); console.log('[Lounivers] Wikipedia', this.city.name, info.image ? 'photo OK' : 'pas de photo', info.history ? 'histoire OK' : 'pas d histoire')
     this.zone.run(() => {
       this.wiki = info
-      this.loadingWiki = false
+      this.loadingWiki = false; this.refresh()
     })
     if (info.image) {
       const photo = await this.wikiService.photo(info.image)
-      this.zone.run(() => (this.photo = photo))
+      this.zone.run(() => (this.photo = photo)); this.refresh()
     }
   }
 
