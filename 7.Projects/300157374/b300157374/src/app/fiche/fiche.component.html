@@ -1,0 +1,12 @@
+<ActionBar title="Fiche recette"></ActionBar>
+<ScrollView><StackLayout padding="20">
+  @if (recette; as r) {
+    <Label [text]="r.nom" fontSize="24" textWrap="true"></Label>
+    <Label text="Ingrédients" fontWeight="bold"></Label>
+    @for (ingredient of r.ingredients; track $index) { <Label [text]="ingredient" textWrap="true"></Label> }
+    <Label text="Préparation" fontWeight="bold"></Label>
+    @for (etape of r.etapes; track $index) { <Label [text]="($index+1) + '. ' + etape" textWrap="true"></Label> }
+    <Button [text]="carnet.favoris().includes(r.id) ? 'Retirer des favoris' : 'Ajouter aux favoris'" (tap)="carnet.basculer(r.id)"></Button>
+  }
+  <Button text="Retour au carnet" (tap)="router.back()"></Button>
+</StackLayout></ScrollView>
