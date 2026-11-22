@@ -1,0 +1,7 @@
+<ActionBar title="Inscription"></ActionBar>
+<StackLayout padding="24" [formGroup]="signUpForm">
+  <TextField hint="Courriel" keyboardType="email" formControlName="email"></TextField>
+  <TextField hint="Nom utilisateur" formControlName="username"></TextField>
+  <Button text="Inscription" (tap)="onButtonTap()"></Button>
+  <Label [text]="message" textWrap="true"></Label>
+</StackLayout>
