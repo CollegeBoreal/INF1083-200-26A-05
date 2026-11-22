@@ -1,0 +1,9 @@
+<main>
+  <h1>{{ titre }}</h1><p>{{ nom }} · Collège Boréal</p>
+  <button (click)="salue.set(!salue())">Saluer</button>
+  @if (salue()) { <p>Bonjour {{ nom }} !</p> }
+  <h2>Modules du cours</h2><ul>@for (module of modules; track module) { <li>{{ module }}</li> }</ul>
+  <h2>Annuaire</h2><button (click)="charger()">Charger les utilisateurs</button>
+  <p aria-live="polite">{{ message() }}</p>
+  <ul>@for (u of utilisateurs(); track u.id) { <li>{{ u.name }}</li> }</ul>
+</main>
