@@ -1,0 +1,6 @@
+<ActionBar title="INF1083"></ActionBar>
+<StackLayout padding="24">
+  <Label text="Hello World, Yanis !" fontSize="26"></Label>
+  <Button text="Appuie ici" (tap)="compteur = compteur + 1"></Button>
+  <Label [text]="'Nombre de clics : ' + compteur"></Label>
+</StackLayout>
