@@ -15,3 +15,9 @@ ns run android
 ```
 
 Saisir un courriel et un nom d’utilisateur, puis appuyer sur **sign up**. Par exemple, la console doit afficher `{"email":"test@example.com","username":"etudiant"}`.
+
+## Test du formulaire sur Android
+
+Après un clic sur **sign up**, la console affiche le courriel et le nom saisis dans le formulaire.
+
+![Résultat du formulaire dans la console Android](./images/console-formulaire.png)
