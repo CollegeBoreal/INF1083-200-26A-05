@@ -8,5 +8,8 @@ import { NativeScriptCommonModule } from '@nativescript/angular'
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class HomeComponent {
+  readonly scientifiques = ['Ada Lovelace', 'Alan Turing', 'Grace Hopper']
+  readonly outils = ['Git', 'Visual Studio Code', 'NativeScript']
+  listePersonnelle = false
   compteur = 0
 }

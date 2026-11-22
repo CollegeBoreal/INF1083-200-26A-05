@@ -3,4 +3,9 @@
   <Label text="Hello World, Yanis !" fontSize="26"></Label>
   <Button text="Appuie ici" (tap)="compteur = compteur + 1"></Button>
   <Label [text]="'Nombre de clics : ' + compteur"></Label>
+  <Button [text]="listePersonnelle ? 'Voir les scientifiques' : 'Voir mes outils'" (tap)="listePersonnelle = !listePersonnelle"></Button>
+  <Label [text]="listePersonnelle ? 'Mes outils de développement' : 'Computer Scientists'" fontWeight="bold"></Label>
+  @for (element of (listePersonnelle ? outils : scientifiques); track element) {
+    <Label [text]="element"></Label>
+  }
 </StackLayout>

@@ -31,7 +31,9 @@ export class BrowseComponent implements OnInit {
       { opacity: 0 }, { opacity: 1 },
       { translate: { x: 200, y: 200 } }, { translate: { x: 0, y: 0 } },
       { scale: { x: 5, y: 5 } }, { scale: { x: 1, y: 1 } },
-      { rotate: 180 }, { rotate: 0 }
+      { rotate: 180 }, { rotate: 0 },
+      { translate: { x: 0, y: -24 }, scale: { x: 0.9, y: 1.1 } },
+      { translate: { x: 0, y: 0 }, scale: { x: 1, y: 1 } }
     ]
     try {
       for (const step of steps) await view.animate({ ...step, duration: 300 })

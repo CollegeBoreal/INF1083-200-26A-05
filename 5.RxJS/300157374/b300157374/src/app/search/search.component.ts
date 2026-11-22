@@ -16,7 +16,11 @@ export class SearchComponent implements OnDestroy {
     if (!this.name.trim()) { this.message = 'Entre une capitale.'; return }
     this.message = 'Recherche en cours…'
     this.request = this.api.searchCountryByName(this.name).subscribe({
-      next: rows => { this.countries = rows; this.message = rows.length + ' résultat(s)' },
+      next: rows => {
+        this.countries = rows
+        this.message = rows.length + ' résultat(s)'
+        for (const pays of rows) console.log(pays.name, pays.capital)
+      },
       error: err => { this.message = err.status === 404 ? 'Capitale introuvable.' : 'Service indisponible.' }
     })
   }

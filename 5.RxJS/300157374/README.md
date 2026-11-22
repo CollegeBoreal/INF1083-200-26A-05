@@ -4,6 +4,8 @@ Yanis Nait Idir · INF1083 · 300157374
 
 Le modèle à onglets propose une recherche dans Search. Entrer Ottawa et appuyer sur Rechercher pour obtenir Canada et Ottawa. Le service du cours accepte les appels sans clé.
 
+Dans la console, chaque résultat affiche également le pays et sa capitale.
+
 ## Lancement dans PowerShell
 
 Depuis ce dossier étudiant :
