@@ -1,277 +1,243 @@
 # 🚗 Formulaires — ReactiveForms avec NativeScript Angular
-
-**Étudiant :** Bourhane Kessouri  
-**Matricule :** 300150411  
-**Programme :** TSIQ — Techniques des systèmes informatiques  
-**Cours :** INF1083 — Développement d'applications
-
-## 🎯 Objectif
-
-L'objectif de ce laboratoire est de comprendre l'utilisation des formulaires avec Angular et NativeScript, particulièrement les ReactiveForms.
-
-Le laboratoire demande de créer un formulaire contenant au minimum :
-
-- Un champ Email ;
-- Un champ Username ;
-- Un bouton permettant de soumettre le formulaire ;
-- L'affichage du courriel et du nom d'utilisateur dans la console.
-
-Pour aller plus loin, j'ai personnalisé le projet en créant une application de réservation de voitures appelée **Car Rental** avec plusieurs informations supplémentaires.
-
-## 📱 Projet réalisé
-
-Le projet NativeScript utilisé est :
-
-`B300150411`
-
-Il se trouve dans :
-
-`4.Forms/300150411/B300150411`
-
-Le projet est basé sur NativeScript avec Angular et utilise les ReactiveForms.
-
-## 🏗️ Création du projet
-
-La commande utilisée pour créer le projet NativeScript Angular est :
-
-```bash
-ns create B300150411 --template @nativescript/template-blank-ng
-```
-
-Le projet peut ensuite être ouvert dans Visual Studio Code avec :
-
-```bash
-cd B300150411
-code .
-```
-
-## 🧮 Formulaires réactifs
-
-Pour gérer le formulaire, j'utilise les éléments suivants d'Angular :
-
-- FormBuilder
-- FormGroup
-- ReactiveFormsModule
-- Validators
-
-Ils sont importés depuis :
-
-`@angular/forms`
-
-FormGroup représente le formulaire complet tandis que FormBuilder permet de créer et d'organiser les différents champs.
-
-Validators.required permet d'indiquer qu'un champ est obligatoire.
-
-## 📝 Formulaire Car Rental
-
-Au lieu de créer uniquement les deux champs demandés, j'ai développé un formulaire plus complet pour une application de réservation de voitures (Car Rental).
-
-Le formulaire contient :
-
-- 👤 Nom complet (Full Name)
-- 📧 Courriel (Email)
-- 👤 Nom d'utilisateur (Username)
-- 📞 Numéro de téléphone (Phone)
-- 🚙 Type de voiture (Car Type)
-- 📍 Lieu de retrait (Pick-up Location)
-- 📅 Date de retrait (Pick-up Date)
-- 📅 Date de retour (Return Date)
-- 🛡️ Assurance complémentaire (Additional Insurance)
-
-Les champs sont reliés au FormGroup avec formControlName.
-
-Par exemple :
-
-```html
-<TextField
-  formControlName="email"
-  hint="Enter your email"
-  keyboardType="email">
-</TextField>
-
-<TextField
-  formControlName="username"
-  hint="Enter your username">
-</TextField>
-```
-
-## 👤 Informations personnelles
-
-La première partie de l'application permet à l'utilisateur d'entrer ses informations personnelles.
-
-Cette partie contient notamment les deux champs demandés dans le laboratoire :
-
-- Email
-- Username
-
-J'ai également ajouté le nom complet et le numéro de téléphone afin de rendre le formulaire plus complet et réaliste.
-
-**Figure 1 — Informations personnelles du formulaire Car Rental.**
-
-[Insérer la capture d'écran de ton application ici.]
-
-## 🚙 Informations de réservation
-
-La deuxième partie permet d'entrer les informations concernant la réservation du véhicule.
-
-L'utilisateur peut indiquer :
-
-- Car Type
-- Pick-up Location
-- Pick-up Date
-- Return Date
-- Additional Insurance
-
-Le bouton BOOK NOW déclenche l'événement Angular :
-
-```html
-(tap)="onBookNow()"
-```
-
-**Figure 2 — Informations de réservation et bouton BOOK NOW.**
-
-[Insérer la capture d'écran de ton application ici.]
-
-## ⚙️ Configuration du FormGroup
-
-Le formulaire est créé avec FormBuilder.
-
-```typescript
-this.bookingForm = this.formBuilder.group({
-  fullName: ['', Validators.required],
-  email: ['', Validators.required],
-  username: ['', Validators.required],
-  phone: ['', Validators.required],
-  carType: ['', Validators.required],
-  pickupLocation: ['', Validators.required],
-  pickupDate: ['', Validators.required],
-  returnDate: ['', Validators.required],
-  insurance: [false],
-});
-```
-
-Chaque champ de l'interface correspond à une valeur du formulaire Angular.
-
-Les champs principaux demandés dans le laboratoire sont :
-
-```typescript
-email: ['', Validators.required],
-username: ['', Validators.required],
-```
-
-## 🖱️ Soumission du formulaire
-
-Lorsque l'utilisateur appuie sur BOOK NOW, la méthode suivante est exécutée :
-
-```typescript
-onBookNow() {
-  console.log('CAR RENTAL BOOKING');
-  console.log('Full Name: ' + this.bookingForm.value.fullName);
-  console.log('Email: ' + this.bookingForm.value.email);
-  console.log('Username: ' + this.bookingForm.value.username);
-  console.log('Phone: ' + this.bookingForm.value.phone);
-  console.log('Car Type: ' + this.bookingForm.value.carType);
-  console.log('Pick-up Location: ' + this.bookingForm.value.pickupLocation);
-  console.log('Pick-up Date: ' + this.bookingForm.value.pickupDate);
-  console.log('Return Date: ' + this.bookingForm.value.returnDate);
-  console.log(
-    'Additional Insurance: ' +
-      (this.bookingForm.value.insurance ? 'Yes' : 'No')
-  );
-}
-```
-
-Cette méthode récupère les valeurs du bookingForm et les affiche dans la console.
-
-## 💻 Résultat dans la console
-
-Le laboratoire demande spécifiquement d'afficher le courriel et le nom d'utilisateur dans la console.
-
-Après avoir rempli le formulaire et appuyé sur BOOK NOW, la console doit afficher les informations saisies, par exemple :
-
-```text
-CAR RENTAL BOOKING
-Full Name: Bourhane Kessouri
-Email: bourhane@example.com
-Username: Bourhane411
-Phone: 1234567890
-Car Type: SUV
-Pick-up Location: Toronto
-Pick-up Date: 2026-12-01
-Return Date: 2026-12-10
-Additional Insurance: Yes
-```
-
-**Figure 3 — Valeurs du ReactiveForm affichées dans la console.**
-
-[Insérer la capture d'écran réelle de la console ici.]
-
-## 📲 Test sur Android
-
-L'application peut être testée sur un émulateur Android.
-
-Pour vérifier les appareils connectés, la commande suivante est utilisée :
-
-```bash
-adb devices
-```
-
-Pour exécuter l'application :
-
-```bash
-ns run android
-```
-
-Le test permet de vérifier que le formulaire s'affiche correctement et que les informations saisies apparaissent dans la console après avoir appuyé sur BOOK NOW.
-
-## 📂 Structure du travail
-
-```text
-300150411/
-├── README.md
-├── images/
-│   ├── .gitkeep
-│   ├── 01-formulaire-informations.png
-│   ├── 02-details-reservation.png
-│   └── 03-console-formulaire.png
-└── B300150411/
-    └── src/
-        └── app/
-            └── home/
-                ├── home.component.ts
-                ├── home.component.html
-                └── home.component.css
-```
-
-## ✅ Travail réalisé
-
-Dans ce laboratoire, j'ai travaillé sur les éléments suivants :
-
-- Utilisation de NativeScript avec Angular ;
-- Utilisation des ReactiveForms ;
-- Utilisation de FormBuilder et FormGroup ;
-- Utilisation de Validators.required ;
-- Création du champ Email ;
-- Création du champ Username ;
-- Liaison des champs avec formControlName ;
-- Utilisation de l'événement (tap) ;
-- Affichage du courriel dans la console ;
-- Affichage du nom d'utilisateur dans la console ;
-- Ajout de plusieurs champs supplémentaires ;
-- Personnalisation de l'interface Car Rental ;
-- Test du formulaire sur Android ;
-- Vérification des résultats dans la console avec ADB.
-
-## 📝 Conclusion
-
-Ce laboratoire m'a permis de comprendre le fonctionnement des ReactiveForms avec Angular et NativeScript.
-
-J'ai appris à créer un formulaire avec FormBuilder et FormGroup, à connecter les champs de l'interface avec formControlName et à récupérer les valeurs saisies par l'utilisateur lors d'un événement.
-
-J'ai également personnalisé l'exercice en développant un formulaire de réservation de voitures Car Rental, ce qui m'a permis de mettre en pratique les notions apprises dans un exemple concret.
-
-Le résultat attendu est que le courriel et le nom d'utilisateur soient correctement affichés dans la console, conformément aux consignes du laboratoire.
+# Projet : DRIVE NOW – Application de réservation de voitures
+
+**Nom de l'étudiant :** Bourhane Kessouri  
+**Numéro étudiant :** 300150411  
+**Cours :** Développement d'applications  
+**Projet :** Application Car Rental
 
 ---
 
-🚗 **INF1083 — Formulaires | 300150411**
+## 1. Introduction
+
+Dans le cadre de ce travail, j'ai réalisé une application de réservation de voitures appelée DRIVE NOW.
+
+L'objectif principal du projet est de créer une interface qui permet à un utilisateur de saisir ses informations personnelles et de choisir un véhicule pour effectuer une réservation.
+
+L'application contient un formulaire dans lequel l'utilisateur doit entrer plusieurs informations, comme son nom, son adresse courriel, son numéro de téléphone, le type de voiture souhaité, le lieu de prise en charge et les dates de réservation.
+
+Pour réaliser ce projet, j'ai utilisé Angular, TypeScript, HTML et CSS. J'ai également utilisé Angular Reactive Forms pour gérer les informations saisies dans le formulaire.
+
+## 2. Préparation de l'environnement de développement
+
+Pour commencer le travail, j'ai utilisé Visual Studio Code comme environnement de développement.
+
+J'ai ouvert le dossier du projet nommé B300150411 et j'ai examiné son organisation.
+
+Le projet contient plusieurs dossiers et fichiers. Le dossier `src` contient les fichiers principaux de l'application. Dans ce dossier, j'ai travaillé principalement dans `src/app`.
+
+J'ai ensuite créé et modifié les fichiers nécessaires pour construire la page de réservation.
+
+Les principaux fichiers utilisés sont :
+
+- `app.ts` : permet de définir le composant principal de l'application.
+- `app.css` : fichier destiné au style du composant principal.
+- `accueil.ts` : contient la logique et la gestion du formulaire.
+- `accueil.html` : contient la structure HTML de la page.
+- `accueil.css` : contient les règles CSS pour améliorer l'apparence de la page.
+
+Cette organisation permet de séparer la structure de la page, son apparence et son fonctionnement.
+
+## 3. Création du composant Accueil
+
+J'ai créé un composant appelé Accueil pour construire la page principale de l'application.
+
+Le composant est composé de trois fichiers principaux : `accueil.ts`, `accueil.html` et `accueil.css`.
+
+Le fichier `accueil.ts` contient le code TypeScript. Il permet de gérer les informations du formulaire et les actions effectuées par l'utilisateur.
+
+Le fichier `accueil.html` contient les éléments visibles dans le navigateur, comme les titres, les champs de saisie, les listes déroulantes et le bouton de réservation.
+
+Le fichier `accueil.css` permet de modifier l'apparence de ces éléments.
+
+Cette séparation rend le projet plus facile à comprendre et à modifier.
+
+## 4. Création du formulaire de réservation
+
+J'ai ensuite créé le formulaire de réservation dans le fichier `accueil.html`.
+
+Le formulaire contient plusieurs champs permettant de recueillir les informations nécessaires à une réservation.
+
+### 4.1 Informations personnelles
+
+J'ai ajouté les champs suivants :
+
+- Full Name : permet à l'utilisateur de saisir son nom complet.
+- Email : permet de saisir une adresse courriel.
+- Username : permet de saisir un nom d'utilisateur.
+- Phone : permet de saisir un numéro de téléphone.
+
+Ces informations permettent d'identifier le client et de recueillir ses coordonnées.
+
+### 4.2 Informations sur la réservation
+
+J'ai également ajouté les champs suivants :
+
+- Car Type : permet de choisir le type de véhicule.
+- Pick-up Location : permet d'indiquer le lieu de prise en charge.
+- Pick-up Date : permet de choisir la date de départ.
+- Return Date : permet de choisir la date de retour.
+- Additional Insurance : permet de sélectionner une assurance supplémentaire.
+
+Pour le type de véhicule, j'ai ajouté plusieurs choix : Sedan, SUV, Compact et Luxury.
+
+J'ai utilisé une liste déroulante afin que l'utilisateur puisse sélectionner facilement le véhicule souhaité.
+
+## 5. Utilisation d'Angular Reactive Forms
+
+Pour gérer les informations du formulaire, j'ai utilisé Angular Reactive Forms.
+
+Dans le fichier `accueil.ts`, j'ai importé les éléments suivants :
+
+- `FormBuilder` : permet de construire le formulaire.
+- `FormGroup` : permet de regrouper les différents champs.
+- `Validators` : permet de définir les règles de validation.
+- `ReactiveFormsModule` : permet d'utiliser les formulaires réactifs dans le composant.
+
+J'ai créé un formulaire appelé `bookingForm`.
+
+Ce formulaire contient tous les champs nécessaires à la réservation.
+
+J'ai utilisé `Validators.required` pour rendre obligatoires les champs principaux.
+
+Pour le champ Email, j'ai également utilisé `Validators.email` afin de vérifier le format de l'adresse courriel.
+
+Les champs HTML sont reliés au formulaire avec `formControlName`. Cela permet à Angular de récupérer les informations saisies par l'utilisateur.
+
+## 6. Fonctionnement du bouton BOOK NOW
+
+J'ai ajouté un bouton appelé BOOK NOW pour permettre à l'utilisateur de soumettre son formulaire.
+
+Lorsque l'utilisateur clique sur ce bouton, la méthode `onBookNow()` est exécutée.
+
+Cette méthode vérifie d'abord si le formulaire est valide.
+
+Si certains champs obligatoires ne sont pas remplis, un message demande à l'utilisateur de compléter les informations.
+
+Si les champs sont valides, l'application affiche un message de confirmation et les informations du formulaire sont affichées dans la console du navigateur avec `console.log()`.
+
+Cette étape permet de vérifier que les données saisies sont correctement récupérées.
+
+**Remarque :** cette version du projet ne sauvegarde pas encore les réservations dans une base de données et ne réalise pas de paiement.
+
+## 7. Conception et amélioration du design
+
+Après avoir créé le formulaire, j'ai travaillé sur son apparence dans le fichier `accueil.css`.
+
+J'ai utilisé CSS pour organiser les éléments et rendre l'interface plus agréable.
+
+Les principales améliorations sont :
+
+- Création d'un arrière-plan gris clair.
+- Ajout d'un en-tête bleu avec le nom DRIVE NOW.
+- Création d'une carte blanche pour contenir le formulaire.
+- Ajout d'espacements entre les champs.
+- Modification des bordures et des coins des champs.
+- Création d'un bouton bleu avec le texte BOOK NOW.
+- Ajout d'un pied de page avec le nom du service.
+
+J'ai choisi le bleu et le blanc pour donner à l'application une apparence simple et professionnelle.
+
+J'ai également utilisé des propriétés CSS comme `padding`, `margin`, `border-radius`, `background` et `box-shadow`.
+
+Ces propriétés permettent de gérer les espacements, les couleurs, les bordures et les ombres.
+
+## 8. Connexion du composant à l'application principale
+
+Pour afficher le formulaire dans l'application, j'ai modifié le fichier `app.ts`.
+
+J'ai importé le composant Accueil avec :
+
+`import { Accueil } from './accueil/accueil';`
+
+Ensuite, j'ai ajouté Accueil dans la propriété `imports` du composant principal.
+
+J'ai utilisé la balise suivante dans le template :
+
+`<app-accueil></app-accueil>`
+
+Cette balise permet d'afficher le composant Accueil dans la page principale de l'application.
+
+Cette étape était importante parce que le formulaire existait dans son propre composant, mais il devait être connecté à l'application principale pour être visible dans le navigateur.
+
+## 9. Lancement de l'application
+
+Pour tester le projet, j'ai utilisé le terminal intégré de Visual Studio Code.
+
+Je me suis placé dans le dossier du projet et j'ai exécuté la commande :
+
+`npm.cmd start`
+
+Cette commande permet de démarrer le serveur de développement Angular.
+
+Après le démarrage, j'ai ouvert le navigateur Google Chrome et j'ai accédé à l'adresse :
+
+`http://localhost:4200`
+
+J'ai ainsi pu voir le résultat de mon travail et vérifier les modifications apportées aux fichiers.
+
+Lorsque je modifie le code et que je sauvegarde les fichiers, Angular actualise automatiquement l'application pendant le développement.
+
+## 10. Tests effectués
+
+J'ai effectué des vérifications pour observer le fonctionnement de l'application.
+
+Les vérifications comprennent :
+
+1. L'affichage de la page DRIVE NOW.
+2. L'affichage des différents champs du formulaire.
+3. La sélection d'un type de véhicule.
+4. La saisie des informations personnelles.
+5. La sélection des dates de réservation.
+6. Le fonctionnement du bouton BOOK NOW.
+7. L'affichage des messages de validation.
+
+J'ai également préparé des captures d'écran pour présenter l'interface et les tests réalisés.
+
+## 11. Difficultés rencontrées
+
+Pendant la réalisation du projet, j'ai rencontré quelques difficultés techniques.
+
+Au début, j'avais de la difficulté à trouver les fichiers nécessaires dans Visual Studio Code.
+
+J'ai également rencontré des erreurs lorsque j'ai placé du code TypeScript dans un fichier CSS. Le problème venait du fait que chaque langage doit être placé dans le fichier correspondant.
+
+J'ai corrigé cette erreur en séparant le code dans les bons fichiers :
+
+- TypeScript dans les fichiers `.ts`.
+- HTML dans les fichiers `.html`.
+- CSS dans les fichiers `.css`.
+
+J'ai aussi rencontré une erreur d'importation du composant Accueil. J'ai corrigé le chemin d'importation et remis chaque code dans son fichier approprié.
+
+Ces difficultés m'ont permis de mieux comprendre l'organisation d'un projet Angular.
+
+## 12. Améliorations possibles
+
+Plusieurs améliorations pourraient être ajoutées dans une prochaine version :
+
+- Ajouter une base de données pour sauvegarder les réservations.
+- Ajouter une page pour consulter les réservations.
+- Ajouter des images des véhicules.
+- Ajouter les prix de location.
+- Ajouter une validation plus complète des numéros de téléphone.
+- Ajouter une authentification des utilisateurs.
+- Ajouter un système de paiement en ligne.
+
+Ces améliorations permettraient de transformer le formulaire actuel en une application de location de voitures plus complète.
+
+## 13. Conclusion
+
+La réalisation de ce projet m'a permis de mettre en pratique plusieurs notions de développement d'applications.
+
+J'ai appris à créer un composant Angular, à construire un formulaire avec Reactive Forms, à utiliser TypeScript pour gérer les données et à utiliser CSS pour améliorer l'apparence d'une interface.
+
+J'ai également appris à organiser les fichiers d'un projet et à corriger certaines erreurs de programmation.
+
+Le résultat obtenu est une première version d'une application de réservation de voitures appelée DRIVE NOW.
+
+Ce projet m'a permis de développer mes compétences en programmation et de mieux comprendre le fonctionnement d'une application Angular.
+
+---
+
+**Fin du rapport**
