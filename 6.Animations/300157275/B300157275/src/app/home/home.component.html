@@ -1,0 +1,13 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Home" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+
+<StackLayout class="page__content"><Label text="TP 6 - Animation CSS" fontSize="22" textAlignment="center"></Label><Label class="carre-anime" text=" "></Label><Label #carreTS text="Animation TS" backgroundColor="blue" color="white" width="150" height="100" textAlignment="center"></Label><Button text="Lancer animation TypeScript" (tap)="lancerAnimation()"></Button></StackLayout>
+
+
+
