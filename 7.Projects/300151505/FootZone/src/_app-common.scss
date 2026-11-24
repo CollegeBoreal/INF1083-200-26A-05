@@ -1,0 +1,103 @@
+@import '@nativescript/theme/core';
+@import '@nativescript/theme/default';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
+  font-weight: 400;
+}
+
+.fas {
+  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+  font-weight: 900;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+  font-weight: 400;
+}
+
+// Custom tabstrip item class
+.navigation__item {
+  &:active,
+  &:active Label {
+    @include colorize($contrasted-color: complementary background 20% 0%);
+  }
+}
+
+// Common page class
+.page__content {
+  &-icon,
+  &-placeholder {
+    color: const(grey);
+    font-size: 20;
+    vertical-align: center;
+    horizontal-align: center;
+  }
+
+  &-icon {
+    font-size: 72;
+    vertical-align: top;
+    margin-top: 20%;
+  }
+}
+
+// ===================== ⚽ FootZone — thème =====================
+// Vert #006233 · Rouge #D21034 · Fond #F2F5F3
+Label, Button, SearchBar, TextField { text-transform: none; }
+.fz-bar { background-color: #006233; color: white; }
+.fz-bar-titre { color: white; font-size: 18; font-weight: bold; }
+.fz-page { background-color: #F2F5F3; }
+.fz-recherche { margin: 8 10 0 10; }
+.fz-filtres { padding: 6 8; horizontal-align: center; }
+.fz-filtre, .fz-filtre-large {
+  background-color: white; color: #006233; border-radius: 18;
+  border-width: 1; border-color: #CFD8D3; margin: 0 4; padding: 0 16;
+  height: 38; font-size: 14;
+}
+.fz-filtre-large { margin: 10 12 4 12; }
+.fz-filtre-actif { background-color: #006233; color: white; border-color: #006233; }
+.fz-compte { color: #5B6B63; font-size: 13; margin: 6 16; }
+.fz-carte {
+  background-color: white; border-radius: 14; margin: 5 12; padding: 12 10;
+  border-width: 1; border-color: #E3EAE6;
+}
+.fz-drapeau { font-size: 30; text-align: center; vertical-align: center; }
+.fz-nom { font-size: 17; font-weight: bold; color: #10201A; }
+.fz-sous-titre { font-size: 13; color: #5B6B63; }
+.fz-fleche { font-size: 20; color: #98A69F; vertical-align: center; text-align: center; }
+.fz-retirer {
+  background-color: #FDE3E7; color: #D21034; border-radius: 16;
+  width: 40; height: 40; font-size: 14; vertical-align: center;
+}
+.fz-detail { padding: 20; }
+.fz-detail-drapeau { font-size: 72; text-align: center; }
+.fz-detail-nom { font-size: 26; font-weight: bold; color: #10201A; text-align: center; }
+.fz-badge {
+  background-color: #E1F2E8; color: #006233; border-radius: 12; padding: 4 12;
+  font-size: 13; horizontal-align: center; margin: 8 0 14 0;
+}
+.fz-info {
+  background-color: white; border-radius: 14; padding: 14; margin-bottom: 10;
+  border-width: 1; border-color: #E3EAE6; font-size: 15; color: #2F3E37;
+}
+.fz-section { font-size: 17; font-weight: bold; color: #006233; margin: 12 0 4 0; }
+.fz-ligne { font-size: 15; color: #2F3E37; margin: 2 0 2 6; }
+.fz-bouton {
+  background-color: #D21034; color: white; border-radius: 24; height: 48;
+  font-size: 16; font-weight: bold; margin: 20 0 6 0;
+}
+.fz-match {
+  background-color: white; border-radius: 14; margin: 6 12; padding: 12 14;
+  border-width: 1; border-color: #E3EAE6;
+}
+.fz-equipe { font-size: 15; font-weight: bold; color: #10201A; vertical-align: center; }
+.fz-droite { text-align: right; }
+.fz-score {
+  background-color: #006233; color: white; border-radius: 8; padding: 4 10;
+  font-size: 15; font-weight: bold; margin: 0 8; vertical-align: center;
+}
+.fz-resume { font-size: 13; color: #5B6B63; margin-top: 8; }

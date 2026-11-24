@@ -1,0 +1,29 @@
+<ActionBar class="fz-bar">
+  <Label text="⚽ FootZone — Équipes" class="fz-bar-titre"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, auto, auto, *" class="fz-page">
+  <SearchBar row="0" hint="Rechercher une équipe…" (textChange)="rechercher($event)" class="fz-recherche"></SearchBar>
+
+  <StackLayout row="1" orientation="horizontal" class="fz-filtres">
+    @for (f of filtres; track f) {
+      <Button [text]="f === 'Toutes' ? 'Toutes' : f + 's'" (tap)="choisir(f)"
+              [class]="f === filtre() ? 'fz-filtre fz-filtre-actif' : 'fz-filtre'"></Button>
+    }
+  </StackLayout>
+
+  <Label row="2" [text]="equipes().length + ' équipe(s)'" class="fz-compte"></Label>
+
+  <ListView row="3" [items]="equipes()" separatorColor="transparent">
+    <ng-template let-e="item">
+      <GridLayout columns="64, *, 30" class="fz-carte" [nsRouterLink]="['../item', e.id]">
+        <Label col="0" [text]="e.drapeau" class="fz-drapeau"></Label>
+        <StackLayout col="1" verticalAlignment="center">
+          <Label [text]="e.nom" class="fz-nom"></Label>
+          <Label [text]="e.surnom + ' · ' + e.type" class="fz-sous-titre"></Label>
+        </StackLayout>
+        <Label col="2" [text]="favoris.estFavori(e.id) ? '⭐' : '›'" class="fz-fleche"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

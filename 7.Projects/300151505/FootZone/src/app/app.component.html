@@ -1,0 +1,14 @@
+<!-- ⚽ FootZone : 3 onglets -->
+<TabView androidTabsPosition="bottom" selectedTabTextColor="#006233" tabTextFontSize="13">
+  <GridLayout *tabItem="{ title: '⚽ Équipes' }">
+    <page-router-outlet name="homeTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '🏟️ Matchs' }">
+    <page-router-outlet name="browseTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '⭐ Favoris' }">
+    <page-router-outlet name="searchTab"></page-router-outlet>
+  </GridLayout>
+</TabView>
