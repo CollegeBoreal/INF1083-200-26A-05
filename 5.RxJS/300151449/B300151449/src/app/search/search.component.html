@@ -1,0 +1,54 @@
+﻿<GridLayout rows="auto,auto,auto,auto,*" padding="20">
+
+    <Label row="0"
+        text="Search by Capital"
+        fontSize="25"
+        fontWeight="bold"
+        color="#004D98"
+        horizontalAlignment="center"
+        marginBottom="20">
+    </Label>
+
+    <TextField row="1"
+        hint="Capital"
+        [(ngModel)]="name"
+        fontSize="18"
+        marginBottom="15">
+    </TextField>
+
+    <Button row="2"
+        text="Search"
+        (tap)="searchCapital()"
+        backgroundColor="#A50044"
+        color="white"
+        borderRadius="8"
+        height="50">
+    </Button>
+
+    <Label row="3"
+        [text]="message"
+        margin="10"
+        horizontalAlignment="center">
+    </Label>
+
+    <ListView row="4" [items]="countries">
+        <ng-template let-item="item">
+            <StackLayout padding="20">
+
+                <Label
+                    [text]="item.name"
+                    fontSize="24"
+                    fontWeight="bold"
+                    color="#004D98">
+                </Label>
+
+                <Label
+                    [text]="'Capital: ' + item.capital"
+                    fontSize="18">
+                </Label>
+
+            </StackLayout>
+        </ng-template>
+    </ListView>
+
+</GridLayout>
