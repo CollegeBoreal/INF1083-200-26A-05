@@ -1,5 +1,9 @@
+Configuration SSH
 
-Ce projet est realise dans le cadre du cours Devloppement Applications.
+Etape1: Generer la cle SSH
+
+![Generation de la cle SSH](Images/cl‚ SSH.png)
+
 
 Nabil Hafsi
 =======
