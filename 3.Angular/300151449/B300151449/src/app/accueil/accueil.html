@@ -1,0 +1,16 @@
+﻿<h1>{{ titre }}</h1>
+<h2>{{ club }}</h2>
+
+<p>Bienvenue sur notre application Angular.</p>
+
+<button (click)="saluer()">Cliquez-moi</button>
+
+@if (connecte()) {
+  <p>Bonjour ! Bienvenue au FC Barcelona.</p>
+}
+
+<div class="stats">
+  <article><h2>10</h2>Joueurs</article>
+  <article><h2>5</h2>Nationalités</article>
+  <article><h2>1</h2>API REST</article>
+</div>
