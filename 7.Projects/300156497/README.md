@@ -35,6 +35,7 @@ La page Outfits constitue la page d'accueil de l'application.
 Elle permet aux utilisateurs de découvrir différentes tenues et de naviguer parmi plusieurs catégories vestimentaires.
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/7.Projects/300156497/images/Capture%20d'%C3%A9cran%202026-11-23%20212658.png?raw=true)
 
+
 Fonctionnalités :
 🖼️ Affichage des tenues avec leurs images.
 
@@ -55,6 +56,7 @@ Summer
 La page Favorites permet de retrouver rapidement toutes les tenues enregistrées.
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/7.Projects/300156497/images/Capture%20d'%C3%A9cran%202026-11-23%20212737.png?raw=true)
 
+
 Fonctionnalités :
 💗 Affichage des tenues favorites avec leurs photos.
 
@@ -72,6 +74,7 @@ Fonctionnalités :
 La page Profile présente les informations personnelles de l'utilisateur ainsi que des statistiques sur l'application.
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/7.Projects/300156497/images/Capture%20d'%C3%A9cran%202026-11-23%20212807.png?raw=true)
 ![images alt](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/7.Projects/300156497/images/Capture%20d'%C3%A9cran%202026-11-23%20212835.png?raw=true)
+
 Fonctionnalités :
 📸 Photo de profil.
 
