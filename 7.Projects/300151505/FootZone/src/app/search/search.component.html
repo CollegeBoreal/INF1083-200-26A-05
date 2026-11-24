@@ -1,0 +1,23 @@
+<ActionBar class="fz-bar">
+  <Label text="⚽ FootZone — Favoris" class="fz-bar-titre"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, *" class="fz-page">
+  <Label row="0" [text]="mesFavoris().length === 0
+          ? 'Aucune équipe favorite. Ouvrez une équipe dans ⚽ Équipes et touchez « Ajouter aux favoris ».'
+          : mesFavoris().length + ' équipe(s) favorite(s) — sauvegardées sur le téléphone'"
+         class="fz-compte" textWrap="true"></Label>
+
+  <ListView row="1" [items]="mesFavoris()" separatorColor="transparent">
+    <ng-template let-e="item">
+      <GridLayout columns="64, *, auto" class="fz-carte">
+        <Label col="0" [text]="e.drapeau" class="fz-drapeau"></Label>
+        <StackLayout col="1" verticalAlignment="center">
+          <Label [text]="e.nom" class="fz-nom"></Label>
+          <Label [text]="'🏆 ' + e.palmares[0]" class="fz-sous-titre" textWrap="true"></Label>
+        </StackLayout>
+        <Button col="2" text="✕" (tap)="retirer(e.id)" class="fz-retirer"></Button>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

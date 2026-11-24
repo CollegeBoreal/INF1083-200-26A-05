@@ -22,6 +22,7 @@
 - Formulaires Reactive Forms avec règles de validation.
 - Cocher et supprimer des tâches; supprimer un cours et ses tâches liées.
 - Conservation locale des données dans le navigateur (`localStorage`), sans compte ni serveur.
+- **Météo en direct (API externe)** : la météo actuelle de Toronto s'affiche sur le tableau de bord, récupérée en direct depuis l'API Open-Meteo (voir la section ci-dessous).
 - Mise en page responsive, adaptée aux écrans mobiles.
 - **Application installable sur téléphone (PWA)** : manifest, icônes et service worker — on peut l'ajouter à l'écran d'accueil et l'utiliser hors ligne.
 
@@ -30,6 +31,28 @@
 StudyBuddy est une **Progressive Web App** : elle s'installe sur téléphone comme une application, avec son icône sur l'écran d'accueil, et fonctionne hors ligne grâce au service worker (`ngsw-config.json`, `@angular/service-worker`).
 
 Pour l'installer sur ton téléphone : ouvre l'adresse de l'application déployée dans le navigateur du téléphone, puis « Ajouter à l'écran d'accueil » (Android / Chrome) ou « Sur l'écran d'accueil » (iPhone / Safari). L'application s'ouvre ensuite en plein écran, sans barre de navigateur.
+
+## 🌤️ Données en direct — API météo (Open-Meteo)
+
+Le tableau de bord affiche la **météo actuelle de Toronto**, récupérée en direct depuis une API externe — ce ne sont pas des données écrites en dur : elles viennent de vraies stations météo (capteurs), via l'API **Open-Meteo** (gratuite, sans clé).
+
+- **API :** `https://api.open-meteo.com/v1/forecast?latitude=43.65&longitude=-79.38&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto`
+- **Données récupérées :** température (°C), humidité (%), vitesse du vent (km/h) et code météo WMO, traduit en libellé français (« Ciel dégagé », « Pluie », « Neige »…) avec une icône.
+- **Comment ça marche :** le service `WeatherService` (`src/app/services/weather.service.ts`) appelle l'API avec `HttpClient` (module `HttpClientModule` importé dans `AppModule`) et retourne un `Observable` RxJS. Le tableau de bord s'abonne à cet Observable au chargement (`ngOnInit`) et affiche la météo dans une carte dédiée. En cas d'erreur réseau ou hors ligne, la carte affiche « Météo indisponible » au lieu de planter.
+
+## Test sur émulateur Android
+
+L'application a été testée sur un téléphone virtuel Android (**Medium Phone, Android 17**) lancé depuis Android Studio (Device Manager). StudyBuddy étant une application web, il n'y a pas besoin de la compiler pour Android : elle s'ouvre directement dans le navigateur Chrome de l'émulateur.
+
+Étapes suivies :
+
+1. Démarrer l'émulateur dans Android Studio (Device Manager → ▶ Play sur « Medium Phone »).
+2. Lancer l'application sur le PC : `npm start` (le serveur écoute sur `http://localhost:4200`, avec `--host 0.0.0.0` pour être accessible depuis l'émulateur).
+3. Dans Chrome sur l'émulateur, ouvrir `http://10.0.2.2:4200`. L'adresse `10.0.2.2` est l'adresse spéciale de l'émulateur qui pointe vers le `localhost` du PC — `localhost` dans l'émulateur désignerait l'émulateur lui-même, pas le PC.
+
+Résultat : le tableau de bord s'affiche correctement sur le téléphone virtuel, avec les statistiques (4 tâches à faire, 1 terminée, 2 à venir, progression de 20 %) et la liste des cours. L'application peut ensuite être ajoutée à l'écran d'accueil de l'émulateur (Chrome → ⋮ → « Ajouter à l'écran d'accueil »).
+
+![StudyBuddy sur émulateur Android — tableau de bord affiché dans Chrome à l'adresse 10.0.2.2:4200](images/emulateur.png)
 
 ## Aperçu des écrans
 
@@ -74,6 +97,7 @@ npm run build
 src/app/
 ├── models/study.models.ts       # Interfaces Course et StudyTask
 ├── services/study.service.ts    # État, opérations et persistance locale
+├── services/weather.service.ts  # Météo en direct (API Open-Meteo, HttpClient + RxJS)
 ├── pages/
 │   ├── dashboard.component.ts  # Vue d’ensemble
 │   ├── tasks.component.ts      # Recherche, filtres et formulaire validé
@@ -91,6 +115,7 @@ src/app/
 | Template Driven Forms | Recherche et filtres des tâches avec `ngModel` |
 | Reactive Forms | Ajout de tâches et de cours avec validations |
 | Service | `StudyService` centralise les opérations et l’état |
+| HttpClient / API externe | `WeatherService` récupère la météo de Toronto via `HttpClient` (API Open-Meteo) ; `catchError` gère l’erreur réseau |
 | RxJS | Flux `BehaviorSubject`, `Observable` et `map` pour le résumé |
 | Modèles TypeScript | Interfaces `Course` et `StudyTask` |
 | Persistance | Données conservées sur l’appareil avec `localStorage` |

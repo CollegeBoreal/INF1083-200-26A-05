@@ -1,24 +1,25 @@
 import { Injectable, signal } from '@angular/core';
 import { Person } from './person';
 
+// Liste modifiée par Aidene Arezki (300151505) : Footballeurs célèbres
 @Injectable({providedIn: 'root'})
 export class PersonService {
   items = signal<Person[]>([
-    { id: 1, name: 'Alan Turing', nationality: 'British', notableAchievements: ['WW2 code breaking', 'Father of theoretical computer science and AI' ] },
-    { id: 2, name: 'Grace Hopper', nationality: 'American', notableAchievements: ['COBOL development', 'Navy commander', 'Implementation of computer systems and components testing'] },
-    { id: 3, name: 'Donal Knuth', nationality: 'American', notableAchievements: [ 'Author of The Art of Computer Programming', 'Created TeX typesetting system' ] },
-    { id: 4, name: 'Ada Lovelace', nationality: 'British', notableAchievements: [ 'First computer programmer', 'Worked on Analytical Engine' ]},
-    { id: 5, name: 'John von Neumann', nationality: 'Hungarian/American', notableAchievements: [ 'Von Neumann architecture', 'Game theory', 'Contributed to EDVAC' ] },
-    { id: 6, name: 'Tim Berners-Lee', nationality: 'British', notableAchievements: [ 'Inventor of the World Wide Web' ] },
-    { id: 7, name: 'Edsger Dijkstra', nationality: 'Dutch', notableAchievements: [ 'Shortest path algorithm', 'Structured programming advocate' ] },
-    { id: 8, name: 'Linus Torvalds', nationality: 'Finnish-American', notableAchievements: ['Creator of Linux kernel', 'Creator of Git'] },
-    { id: 9, name: 'John McCarthy', nationality: 'American', notableAchievements: ['Coined term "Artificial Intelligence"', 'Created LISP programming language'] },
-    { id: 10, name: 'Dennis Ritchie', nationality: 'American', notableAchievements: ['Creator of C programming language', 'Co-creator of Unix'] },
-    { id: 11, name: 'Bjarne Stroustrup', nationality: 'Danish', notableAchievements: [ 'Creator of C++ programming language' ] },
-    { id: 12, name: 'Steve Wozniak', nationality: 'American', notableAchievements: ['Co-founder of Apple', 'Designer of Apple I & II', 'Pioneer of personal computing'] },
-    { id: 13, name: 'Tommy Flowers', nationality: 'British', notableAchievements: ['Designer of Colossus', 'Pioneer in electronic computing'] },
-    { id: 14, name: 'John Backus', nationality: 'American', notableAchievements: ['Created FORTRAN', 'Developed Backus-Naur form(BNF) notation'] },
-    { id: 15, name: 'Niklaus Wirth', nationality: 'Swiss', notableAchievements: ['Creator of Pascal, Modula, Oberon languages', 'Software engineering pioneer'] },
+    { id: 1, name: 'Zinédine Zidane', nationality: 'Française (origine kabyle, Algérie)', notableAchievements: ['Champion du monde 1998', 'Ballon d\'Or 1998', '3 Ligues des champions comme entraîneur du Real Madrid'] },
+    { id: 2, name: 'Riyad Mahrez', nationality: 'Algérienne', notableAchievements: ['Champion d\'Afrique 2019 avec l\'Algérie', 'Champion d\'Angleterre avec Leicester (2016)', 'Ligue des champions 2023 avec Manchester City'] },
+    { id: 3, name: 'Rabah Madjer', nationality: 'Algérienne', notableAchievements: ['Talonnade célèbre en finale de Coupe d\'Europe 1987 (FC Porto)', 'Champion d\'Afrique 1990'] },
+    { id: 4, name: 'Lakhdar Belloumi', nationality: 'Algérienne', notableAchievements: ['Ballon d\'Or africain 1981', 'But historique contre l\'Allemagne de l\'Ouest (Coupe du monde 1982)'] },
+    { id: 5, name: 'Lionel Messi', nationality: 'Argentine', notableAchievements: ['Champion du monde 2022', '8 Ballons d\'Or'] },
+    { id: 6, name: 'Cristiano Ronaldo', nationality: 'Portugaise', notableAchievements: ['5 Ballons d\'Or', 'Meilleur buteur de l\'histoire en sélection nationale'] },
+    { id: 7, name: 'Pelé', nationality: 'Brésilienne', notableAchievements: ['3 Coupes du monde (1958, 1962, 1970)'] },
+    { id: 8, name: 'Diego Maradona', nationality: 'Argentine', notableAchievements: ['Champion du monde 1986', 'Le « but du siècle » contre l\'Angleterre'] },
+    { id: 9, name: 'Kylian Mbappé', nationality: 'Française', notableAchievements: ['Champion du monde 2018', 'Triplé en finale de Coupe du monde 2022'] },
+    { id: 10, name: 'Mohamed Salah', nationality: 'Égyptienne', notableAchievements: ['Ligue des champions 2019 avec Liverpool', 'Plusieurs fois meilleur buteur de Premier League'] },
+    { id: 11, name: 'Didier Drogba', nationality: 'Ivoirienne', notableAchievements: ['Ligue des champions 2012 avec Chelsea', 'Ballon d\'Or africain 2006 et 2009'] },
+    { id: 12, name: 'Ronaldinho', nationality: 'Brésilienne', notableAchievements: ['Champion du monde 2002', 'Ballon d\'Or 2005'] },
+    { id: 13, name: 'Johan Cruyff', nationality: 'Néerlandaise', notableAchievements: ['3 Ballons d\'Or', 'Père du « football total »'] },
+    { id: 14, name: 'Alphonso Davies', nationality: 'Canadienne', notableAchievements: ['Ligue des champions 2020 avec le Bayern Munich', 'Star de l\'équipe du Canada'] },
+    { id: 15, name: 'Christine Sinclair', nationality: 'Canadienne', notableAchievements: ['Meilleure buteuse de l\'histoire en sélection (hommes et femmes)', 'Championne olympique 2021'] },
   ]);
 
   getPerson(id: number): Person {

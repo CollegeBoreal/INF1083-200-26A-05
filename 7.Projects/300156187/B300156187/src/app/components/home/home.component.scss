@@ -1,0 +1,292 @@
+.home-container {
+  background-color: #F5F5F7;
+  padding: 20 16 16 16;
+}
+
+.dark.home-container {
+  background-color: #171210;
+}
+
+.header {
+  margin-bottom: 16;
+}
+
+.drawer-btn {
+  font-size: 26;
+  color: #2b2118;
+  margin-right: 12;
+  vertical-align: middle;
+}
+
+.dark .drawer-btn {
+  color: #f5efe9;
+}
+
+.logo-mini {
+  width: 46;
+  height: 46;
+  background-color: #000000;
+  border-radius: 14;
+  margin-right: 12;
+}
+
+.logo-mini-w {
+  color: #FFD400;
+  font-size: 28;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-text {
+  vertical-align: middle;
+}
+
+.greeting {
+  font-size: 26;
+  font-weight: bold;
+  color: #2B2118;
+}
+
+.subtitle {
+  font-size: 14;
+  color: #9A7B64;
+  margin-top: 2;
+}
+
+.theme-btn {
+  width: 46;
+  height: 46;
+  border-radius: 23;
+  background-color: #FFFFFF;
+  color: #2B2118;
+  font-size: 20;
+  border-width: 0;
+  android-elevation: 2;
+}
+
+.search {
+  background-color: #FFFFFF;
+  border-radius: 16;
+  border-width: 0;
+  padding: 12 16;
+  font-size: 15;
+  color: #2B2118;
+  placeholder-color: #B9A08D;
+  margin-bottom: 14;
+  android-elevation: 2;
+}
+
+.chips-scroll {
+  margin-bottom: 18;
+}
+
+.chips {
+  padding: 2 0;
+}
+
+.chip {
+  background-color: #FFFFFF;
+  color: #7A5C44;
+  font-size: 14;
+  font-weight: bold;
+  padding: 10 16;
+  margin-right: 8;
+  border-radius: 20;
+  android-elevation: 1;
+}
+
+.chip-active {
+  background-color: #E86A17;
+  color: #FFFFFF;
+}
+
+.section-title {
+  font-size: 20;
+  font-weight: bold;
+  color: #2B2118;
+  margin: 6 0 12 0;
+}
+
+.rest-scroll {
+  margin-bottom: 10;
+}
+
+.rest-card {
+  width: 220;
+  background-color: #FFFFFF;
+  border-radius: 16;
+  margin-right: 12;
+  android-elevation: 3;
+}
+
+.rest-img {
+  width: 220;
+  height: 120;
+  border-radius: 16;
+}
+
+.rest-name {
+  font-size: 16;
+  font-weight: bold;
+  color: #2B2118;
+  margin: 10 12 0 12;
+}
+
+.rest-address {
+  font-size: 13;
+  color: #9A7B64;
+  margin: 2 12 0 12;
+}
+
+.rest-rating {
+  font-size: 14;
+  font-weight: bold;
+  color: #E86A17;
+  margin: 6 12 12 12;
+}
+
+.dish-card {
+  background-color: #FFFFFF;
+  border-radius: 16;
+  padding: 10;
+  margin-bottom: 12;
+  android-elevation: 2;
+}
+
+.dish-img {
+  width: 92;
+  height: 92;
+  border-radius: 12;
+}
+
+.dish-info {
+  margin-left: 12;
+  vertical-align: middle;
+}
+
+.dish-name {
+  font-size: 16;
+  font-weight: bold;
+  color: #2B2118;
+}
+
+.dish-cat {
+  font-size: 13;
+  color: #9A7B64;
+  margin-top: 2;
+}
+
+.dish-price {
+  font-size: 15;
+  font-weight: bold;
+  color: #E86A17;
+  margin-top: 6;
+}
+
+.add-btn {
+  width: 38;
+  height: 38;
+  border-radius: 19;
+  background-color: #E86A17;
+  color: #FFFFFF;
+  font-size: 22;
+  font-weight: bold;
+  border-width: 0;
+  vertical-align: middle;
+  android-elevation: 2;
+}
+
+.empty-msg {
+  font-size: 15;
+  color: #9A7B64;
+  text-align: center;
+  margin-top: 20;
+}
+
+.skeleton-wrap {
+  margin-top: 4;
+}
+
+.skel-card {
+  height: 150;
+  background-color: #E5E4E2;
+  border-radius: 16;
+  margin-bottom: 12;
+}
+
+.skel-row {
+  height: 92;
+  background-color: #E5E4E2;
+  border-radius: 16;
+  margin-bottom: 12;
+}
+
+.anim-shimmer {
+  animation-name: shimmer;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+}
+
+.anim-card {
+  animation-name: fadeUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.anim-fade {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(0, 14); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dark .greeting,
+.dark .section-title,
+.dark .rest-name,
+.dark .dish-name {
+  color: #F5EFE9;
+}
+
+.dark .subtitle,
+.dark .rest-address,
+.dark .dish-cat,
+.dark .empty-msg {
+  color: #B99F88;
+}
+
+.dark .theme-btn,
+.dark .search,
+.dark .chip,
+.dark .rest-card,
+.dark .dish-card {
+  background-color: #2A211B;
+}
+
+.dark .chip {
+  color: #D8C4B0;
+}
+
+.dark .chip-active {
+  background-color: #E86A17;
+  color: #FFFFFF;
+}
+
+.dark .skel-card,
+.dark .skel-row {
+  background-color: #3A2E26;
+}

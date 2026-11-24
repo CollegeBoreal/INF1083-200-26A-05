@@ -1,0 +1,34 @@
+<ScrollView>
+  <StackLayout class="profile-container" [class.dark]="theme.dark$ | async">
+    <Label text="Profil" class="page-title"></Label>
+
+    <!-- Avatar + identité -->
+    <StackLayout class="identity-card anim-card">
+      <StackLayout class="avatar">
+        <Label [text]="avatarInitial" class="avatar-letter"></Label>
+      </StackLayout>
+      <Label [text]="displayName" class="user-name" textWrap="true"></Label>
+      <Label [text]="displayEmail" class="user-info"></Label>
+      <Label [text]="displayPhone" class="user-info"></Label>
+    </StackLayout>
+
+    <!-- Mode sombre -->
+    <GridLayout columns="*, auto" class="row-card" (tap)="toggleTheme()">
+      <Label col="0" text="Mode sombre 🌙" class="row-label"></Label>
+      <Label col="1" [text]="(theme.dark$ | async) ? 'Activé' : 'Désactivé'" class="row-value"></Label>
+    </GridLayout>
+
+    <!-- Liens -->
+    <GridLayout columns="*, auto" class="row-card" (tap)="goOrders()">
+      <Label col="0" text="Mes commandes" class="row-label"></Label>
+      <Label col="1" text="›" class="row-chevron"></Label>
+    </GridLayout>
+    <GridLayout columns="*, auto" class="row-card" (tap)="goReservations()">
+      <Label col="0" text="Mes réservations" class="row-label"></Label>
+      <Label col="1" text="›" class="row-chevron"></Label>
+    </GridLayout>
+
+    <Button text="Se déconnecter" class="logout-btn" (tap)="logout()"></Button>
+    <Label text="Wonder Food's — Morchid, Oran" class="footer-note" horizontalAlignment="center"></Label>
+  </StackLayout>
+</ScrollView>

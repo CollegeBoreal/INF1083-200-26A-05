@@ -1,0 +1,60 @@
+<ActionBar class="bar" flat="true" backgroundColor="#5b3df5" color="#ffffff">
+  <Label text="Profil" class="bar-title"></Label>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout class="content">
+    <!-- Carte étudiant -->
+    <GridLayout columns="auto, *" class="hero">
+      <Label [text]="initials()" class="avatar"></Label>
+      <StackLayout col="1" class="hero-id">
+        <Label [text]="p.profile().name" class="hero-value"></Label>
+        <Label [text]="p.profile().studentId + ' · ' + p.profile().program" class="hero-label"></Label>
+      </StackLayout>
+    </GridLayout>
+
+    <!-- Statistiques -->
+    <GridLayout columns="*, 12, *, 12, *" class="stats">
+      <StackLayout class="stat">
+        <Label [text]="p.courses().length" class="stat-value"></Label>
+        <Label text="Cours" class="stat-label"></Label>
+      </StackLayout>
+      <StackLayout col="2" class="stat">
+        <Label [text]="p.doneCount()" class="stat-value"></Label>
+        <Label text="Faites" class="stat-label"></Label>
+      </StackLayout>
+      <StackLayout col="4" class="stat">
+        <Label [text]="p.lateCount()" class="stat-value stat-late"></Label>
+        <Label text="En retard" class="stat-label"></Label>
+      </StackLayout>
+    </GridLayout>
+
+    <!-- Informations -->
+    <StackLayout class="form">
+      <Label text="Mes informations" class="form-title"></Label>
+      <Label text="Nom" class="form-label"></Label>
+      <TextField [(ngModel)]="form.name" class="input"></TextField>
+      <Label text="Numéro étudiant" class="form-label"></Label>
+      <TextField [(ngModel)]="form.studentId" keyboardType="number" class="input"></TextField>
+      <Label text="Programme" class="form-label"></Label>
+      <TextField [(ngModel)]="form.program" class="input"></TextField>
+      <Button text="Enregistrer" class="btn-main" (tap)="save()"></Button>
+    </StackLayout>
+
+    <!-- Rappels -->
+    <StackLayout class="form">
+      <GridLayout columns="*, auto">
+        <StackLayout>
+          <Label text="Rappels des tâches" class="form-title"></Label>
+          <Label text="Notification à 8 h le jour de la remise" class="form-label" textWrap="true"></Label>
+        </StackLayout>
+        <Switch col="1" [checked]="form.reminders" (checkedChange)="onReminders($any($event).value)" class="switch"></Switch>
+      </GridLayout>
+      <Button text="Tester une notification" class="btn-light" (tap)="testNotification()"></Button>
+    </StackLayout>
+
+    <Label *ngIf="message" [text]="message" class="info" textWrap="true"></Label>
+    <Button text="Réinitialiser les données" class="btn-danger" (tap)="reset()"></Button>
+    <Label text="PlanBoréal · Toumi Ayoub · INF1083" class="footer"></Label>
+  </StackLayout>
+</ScrollView>

@@ -1,0 +1,116 @@
+
+<ScrollView backgroundColor="#fff4f8">
+  <StackLayout padding="15">
+
+    <Label
+      text="My Favorites ❤️"
+      fontSize="30"
+      fontWeight="bold"
+      color="#a83e69"
+      textAlignment="center"
+      marginTop="20"
+      marginBottom="8">
+    </Label>
+
+    <Label
+      text="Your favorite outfits, all in one place ✨"
+      fontSize="14"
+      color="#b66b8b"
+      textAlignment="center"
+      marginBottom="10">
+    </Label>
+
+    <Label
+      [text]="'Number of favorites: ' + favorites.length"
+      fontSize="16"
+      color="#a83e69"
+      textAlignment="center"
+      marginBottom="20">
+    </Label>
+
+    <StackLayout
+      *ngIf="favorites.length === 0"
+      backgroundColor="white"
+      borderRadius="20"
+      padding="25"
+      marginTop="30">
+
+      <Label
+        text="💗"
+        fontSize="55"
+        textAlignment="center">
+      </Label>
+
+      <Label
+        text="No favorites yet!"
+        fontSize="20"
+        fontWeight="bold"
+        color="#a83e69"
+        textAlignment="center">
+      </Label>
+
+      <Label
+        text="Go to Outfits and tap the heart on the looks you love 🎀"
+        fontSize="14"
+        color="#b66b8b"
+        textAlignment="center"
+        textWrap="true"
+        marginTop="10">
+      </Label>
+    </StackLayout>
+
+    <!-- Favorite outfits -->
+    <StackLayout
+      *ngFor="let outfit of favorites"
+      backgroundColor="white"
+      borderRadius="18"
+      padding="10"
+      marginBottom="18">
+
+      <GridLayout rows="260" columns="*">
+
+        <Image
+          [src]="outfit.image"
+          stretch="aspectFill"
+          borderRadius="14">
+        </Image>
+
+        <Label
+          text="❤️"
+          fontSize="30"
+          horizontalAlignment="right"
+          verticalAlignment="top"
+          margin="12"
+          (tap)="removeFavorite(outfit)">
+        </Label>
+
+      </GridLayout>
+
+      <Label
+        [text]="outfit.name"
+        fontSize="17"
+        fontWeight="bold"
+        color="#713b55"
+        marginTop="12">
+      </Label>
+
+      <Label
+        [text]="outfit.category"
+        fontSize="14"
+        color="#d35e8d"
+        marginTop="5">
+      </Label>
+
+    </StackLayout>
+
+    <Label
+      text="Your style, your favorites 💗"
+      fontSize="14"
+      color="#b66b8b"
+      textAlignment="center"
+      marginTop="20"
+      marginBottom="20">
+    </Label>
+
+  </StackLayout>
+</ScrollView>

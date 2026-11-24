@@ -1,0 +1,7 @@
+﻿<StackLayout [formGroup]="signUpForm" padding="30" spacing="20">
+    <Label text="INF1083 - ReactiveForms" fontSize="24" fontWeight="bold"></Label>
+    <Label text="Yahia Benkara - 300157275" fontSize="16"></Label>
+    <TextField formControlName="email" hint="Email" keyboardType="email"></TextField>
+    <TextField formControlName="username" hint="Username"></TextField>
+    <Button text="SIGN UP" (tap)="onButtonTap()"></Button>
+</StackLayout>

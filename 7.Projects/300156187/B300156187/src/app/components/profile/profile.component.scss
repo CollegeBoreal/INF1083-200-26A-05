@@ -1,0 +1,130 @@
+.profile-container {
+  background-color: #f5f5f7;
+  padding: 20 16 24 16;
+}
+
+.dark.profile-container {
+  background-color: #171210;
+}
+
+.page-title {
+  font-size: 26;
+  font-weight: bold;
+  color: #2b2118;
+  margin-bottom: 16;
+}
+
+.identity-card {
+  background-color: #ffffff;
+  border-radius: 18;
+  padding: 20 16;
+  margin-bottom: 14;
+  android-elevation: 2;
+}
+
+.avatar {
+  width: 80;
+  height: 80;
+  border-radius: 40;
+  background-color: #e86a17;
+  horizontal-align: center;
+  margin-bottom: 12;
+}
+
+.avatar-letter {
+  color: #ffffff;
+  font-size: 36;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-name {
+  font-size: 20;
+  font-weight: bold;
+  color: #2b2118;
+  text-align: center;
+}
+
+.user-info {
+  font-size: 14;
+  color: #9a7b64;
+  text-align: center;
+  margin-top: 2;
+}
+
+.row-card {
+  background-color: #ffffff;
+  border-radius: 16;
+  padding: 16;
+  margin-bottom: 12;
+  android-elevation: 2;
+}
+
+.row-label {
+  font-size: 16;
+  font-weight: bold;
+  color: #2b2118;
+  vertical-align: middle;
+}
+
+.row-value {
+  font-size: 15;
+  font-weight: bold;
+  color: #e86a17;
+  vertical-align: middle;
+}
+
+.row-chevron {
+  font-size: 20;
+  font-weight: bold;
+  color: #9a7b64;
+  vertical-align: middle;
+}
+
+.logout-btn {
+  background-color: #e86a17;
+  color: #ffffff;
+  font-size: 16;
+  font-weight: bold;
+  border-radius: 16;
+  padding: 14 0;
+  margin-top: 12;
+  border-width: 0;
+  android-elevation: 2;
+}
+
+.footer-note {
+  font-size: 13;
+  color: #9a7b64;
+  margin-top: 20;
+}
+
+.anim-card {
+  animation-name: fadeUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(0, 14); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+
+/* --- Mode sombre : tout reste lisible --- */
+.dark .page-title,
+.dark .user-name,
+.dark .row-label {
+  color: #f5efe9;
+}
+
+.dark .user-info,
+.dark .footer-note,
+.dark .row-chevron {
+  color: #b99f88;
+}
+
+.dark .identity-card,
+.dark .row-card {
+  background-color: #2a211b;
+}

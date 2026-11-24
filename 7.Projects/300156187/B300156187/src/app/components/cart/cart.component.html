@@ -1,0 +1,40 @@
+<ScrollView>
+  <StackLayout class="cart-container" [class.dark]="theme.dark$ | async">
+    <Label text="Panier" class="page-title"></Label>
+    <Label text="Wonderfood's Morchid, Oran" class="page-subtitle"></Label>
+
+    <StackLayout *ngIf="(cart.items$ | async)?.length === 0" class="empty-wrap">
+      <Label text="🛒" class="empty-icon"></Label>
+      <Label text="Votre panier est vide." class="empty-msg"></Label>
+      <Label *ngIf="orderMessage" [text]="orderMessage" textWrap="true" class="order-msg"></Label>
+    </StackLayout>
+
+    <StackLayout *ngIf="((cart.items$ | async)?.length ?? 0) > 0">
+      <GridLayout *ngFor="let item of (cart.items$ | async)" columns="64, *, auto" class="cart-line anim-card">
+        <Image col="0" [src]="item.dish.image" class="line-img" stretch="aspectFill"></Image>
+        <StackLayout col="1" class="line-info">
+          <Label [text]="item.dish.name" class="line-name" textWrap="true"></Label>
+          <Label [text]="item.dish.price + ' DA'" class="line-price"></Label>
+          <GridLayout columns="auto, auto, auto" class="qty-row">
+            <Button col="0" text="−" class="qty-btn" (tap)="decrease(item)"></Button>
+            <Label col="1" [text]="item.quantity" class="qty-value"></Label>
+            <Button col="2" text="+" class="qty-btn" (tap)="increase(item)"></Button>
+          </GridLayout>
+        </StackLayout>
+        <StackLayout col="2" class="line-right">
+          <Label [text]="(item.dish.price * item.quantity) + ' DA'" class="line-total"></Label>
+          <Label text="✕" class="remove-link" (tap)="remove(item)"></Label>
+        </StackLayout>
+      </GridLayout>
+
+      <GridLayout columns="*, auto" class="subtotal-row">
+        <Label col="0" text="Sous-total" class="subtotal-label"></Label>
+        <Label col="1" [text]="(cart.total$ | async) + ' DA'" class="subtotal-value"></Label>
+      </GridLayout>
+
+      <Button text="Commander" class="order-btn" (tap)="order()"></Button>
+      <Button text="Vider le panier" class="clear-btn" (tap)="clear()"></Button>
+      <Label *ngIf="orderMessage" [text]="orderMessage" textWrap="true" class="order-msg"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

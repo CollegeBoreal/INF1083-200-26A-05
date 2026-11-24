@@ -1,0 +1,90 @@
+
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="fas menu-icon" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    <Label col="1" class="action-bar-title" text="Maintenance"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="maintenance-page">
+
+    <Label text="🔧 Maintenance" class="brand-title"></Label>
+    <Label text="Keep your Porsche in perfect condition." class="subtitle"></Label>
+
+    <StackLayout class="maintenance-summary">
+      <Label text="NEXT SCHEDULED SERVICE" class="section-label"></Label>
+      <Label text="Oil Change" class="vehicle-name"></Label>
+      <Label text="30,000 km" class="service-km"></Label>
+      <Label text="1,550 km remaining" class="service-remaining"></Label>
+    </StackLayout>
+
+    <Label text="Maintenance Checklist" class="section-title"></Label>
+
+    <StackLayout class="service-card">
+      <GridLayout columns="55, *, auto">
+        <Label col="0" text="🛢️" class="service-icon"></Label>
+        <StackLayout col="1">
+          <Label text="Oil Change" class="service-name"></Label>
+          <Label text="Engine oil and filter replacement" textWrap="true" class="service-description"></Label>
+        </StackLayout>
+        <Label col="2" text="UPCOMING" class="status-upcoming"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="service-card">
+      <GridLayout columns="55, *, auto">
+        <Label col="0" text="🛞" class="service-icon"></Label>
+        <StackLayout col="1">
+          <Label text="Tire Rotation" class="service-name"></Label>
+          <Label text="Tire inspection and rotation" textWrap="true" class="service-description"></Label>
+        </StackLayout>
+        <Label col="2" text="PENDING" class="status-pending"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="service-card">
+      <GridLayout columns="55, *, auto">
+        <Label col="0" text="🛑" class="service-icon"></Label>
+        <StackLayout col="1">
+          <Label text="Brake Inspection" class="service-name"></Label>
+          <Label text="Brake pads and disc inspection" textWrap="true" class="service-description"></Label>
+        </StackLayout>
+        <Label col="2" text="PENDING" class="status-pending"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="service-card">
+      <GridLayout columns="55, *, auto">
+        <Label col="0" text="🔋" class="service-icon"></Label>
+        <StackLayout col="1">
+          <Label text="Battery Check" class="service-name"></Label>
+          <Label text="Battery health and voltage test" textWrap="true" class="service-description"></Label>
+        </StackLayout>
+        <Label col="2" text="PENDING" class="status-pending"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="service-card">
+      <GridLayout columns="55, *, auto">
+        <Label col="0" text="💨" class="service-icon"></Label>
+        <StackLayout col="1">
+          <Label text="Air Filter" class="service-name"></Label>
+          <Label text="Engine air filter replacement" textWrap="true" class="service-description"></Label>
+        </StackLayout>
+        <Label col="2" text="PENDING" class="status-pending"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="maintenance-tip">
+      <Label text="💡 Maintenance Tip" class="activity-title"></Label>
+      <Label
+        text="Regular maintenance helps improve vehicle performance, safety and reliability."
+        textWrap="true"
+        class="activity-description">
+      </Label>
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

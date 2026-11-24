@@ -1,13 +1,43 @@
 <ActionBar class="action-bar">
   <NavigationButton visibility="hidden"></NavigationButton>
   <GridLayout columns="50, *">
-    <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
-
+    <Label class="action-bar-title" text="Boussole" colSpan="2"></Label>
     <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
   </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+<GridLayout backgroundColor="#123b56">
+  <StackLayout verticalAlignment="center" padding="24">
+    <Label
+      text="Cap sur les Rocheuses"
+      color="#ffffff"
+      fontSize="26"
+      fontWeight="bold"
+      textAlignment="center"
+      textWrap="true"
+      marginBottom="20"
+    ></Label>
+
+    <GridLayout height="220" backgroundColor="#2c6e49" borderRadius="24">
+      <Label
+        #cible
+        text="🧭"
+        fontSize="72"
+        horizontalAlignment="center"
+        verticalAlignment="center"
+      ></Label>
+    </GridLayout>
+
+    <Button
+      text="🧭 Lancer la boussole"
+      (tap)="animate(cible)"
+      backgroundColor="#f4b942"
+      color="#123b56"
+      fontSize="17"
+      fontWeight="bold"
+      borderRadius="24"
+      marginTop="20"
+      padding="14 20"
+    ></Button>
+  </StackLayout>
 </GridLayout>

@@ -1,0 +1,110 @@
+.register-container {
+  background-color: #f5f5f7;
+  padding: 24 24 16 24;
+}
+
+.dark.register-container {
+  background-color: #171210;
+}
+
+.app-title {
+  font-size: 28;
+  font-weight: bold;
+  color: #2b2118;
+}
+
+.app-subtitle {
+  font-size: 15;
+  color: #9a7b64;
+  margin-top: 4;
+  margin-bottom: 24;
+}
+
+.register-container TextField {
+  background-color: #ffffff;
+  border-radius: 16;
+  border-width: 0;
+  padding: 14 16;
+  font-size: 15;
+  color: #2b2118;
+  placeholder-color: #b9a08d;
+  margin-bottom: 12;
+  android-elevation: 2;
+}
+
+.btn-primary {
+  background-color: #e86a17;
+  color: #ffffff;
+  font-size: 16;
+  font-weight: bold;
+  border-radius: 16;
+  padding: 14 0;
+  margin-top: 8;
+  border-width: 0;
+  android-elevation: 2;
+}
+
+.login-link {
+  font-size: 15;
+  font-weight: bold;
+  color: #e86a17;
+  margin-top: 20;
+  text-align: center;
+}
+
+.dark .app-title {
+  color: #f5efe9;
+}
+
+.dark .app-subtitle {
+  color: #b99f88;
+}
+
+.dark .register-container TextField {
+  background-color: #2a211b;
+  color: #f5efe9;
+  placeholder-color: #b99f88;
+}
+
+.anim-logo {
+  animation-name: fadeUp;
+  animation-duration: 0.6s;
+  animation-fill-mode: backwards;
+}
+
+.anim-field {
+  animation-name: fadeUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.anim-delay-1 {
+  animation-delay: 0.05s;
+}
+
+.anim-delay-2 {
+  animation-delay: 0.1s;
+}
+
+.anim-delay-3 {
+  animation-delay: 0.15s;
+}
+
+.anim-delay-4 {
+  animation-delay: 0.2s;
+}
+
+.anim-delay-5 {
+  animation-delay: 0.25s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(0, 14);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

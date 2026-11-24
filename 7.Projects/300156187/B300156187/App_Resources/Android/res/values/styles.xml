@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="LaunchScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Fond uni platine : aucun drawable requis (évite une erreur de build
+         si launch_screen.xml est absent). -->
+    <item name="android:windowBackground">#F5F5F7</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">false</item>
+  </style>
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">#E86A17</item>
+    <item name="colorPrimaryDark">#C85A12</item>
+    <item name="colorAccent">#E86A17</item>
+  </style>
+</resources>

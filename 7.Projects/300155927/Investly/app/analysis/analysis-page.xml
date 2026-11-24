@@ -1,0 +1,72 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ScrollView>
+    <StackLayout>
+      <StackLayout class="entete">
+        <Label text="Analyse" class="entete-titre" />
+        <Label text="Performance de ton portefeuille" class="entete-petit" />
+        <Repeater items="{{ periodes }}" class="periodes">
+          <Repeater.itemsLayout><StackLayout orientation="horizontal" /></Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <Button text="{{ cle }}" tap="onPeriodeTap" class="{{ actif ? 'periode periode-actif' : 'periode' }}" />
+          </Repeater.itemTemplate>
+        </Repeater>
+      </StackLayout>
+
+      <!-- Rendement + graphique -->
+      <StackLayout class="carte" marginTop="12">
+        <Label text="{{ 'Rendement sur ' + periode }}" class="etiquette" />
+        <Label text="{{ rendement }}" fontSize="30" class="gras" color="{{ couleur }}" />
+        <Label text="{{ variation }}" class="discret" color="{{ couleur }}" />
+        <WebView src="{{ graphique }}" height="160" marginTop="8" isUserInteractionEnabled="false" />
+        <GridLayout columns="*, auto" marginTop="10">
+          <Label text="S&amp;P 500 (même période)" class="discret" />
+          <Label col="1" text="{{ indice }}" class="discret gras" color="{{ indiceCouleur }}" />
+        </GridLayout>
+        <Label text="{{ comparaison }}" class="texte" textWrap="true" marginTop="4" />
+      </StackLayout>
+
+      <!-- Indicateurs -->
+      <Label text="Indicateurs de risque" class="section" />
+      <GridLayout columns="*, *" rows="auto, auto" margin="0 12">
+        <StackLayout row="0" col="0" class="mini-carte"><Label text="Volatilité (annuelle)" class="etiquette" /><Label text="{{ volatilite }}" class="valeur" /><Label text="{{ niveauRisque }}" class="discret" /></StackLayout>
+        <StackLayout row="0" col="1" class="mini-carte"><Label text="Baisse maximale" class="etiquette" /><Label text="{{ baisseMax }}" class="valeur" color="#DC2626" /><Label text="du sommet au creux" class="discret" /></StackLayout>
+        <StackLayout row="1" col="0" class="mini-carte"><Label text="Plus haut" class="etiquette" /><Label text="{{ haut }}" class="valeur" /></StackLayout>
+        <StackLayout row="1" col="1" class="mini-carte"><Label text="Plus bas" class="etiquette" /><Label text="{{ bas }}" class="valeur" /></StackLayout>
+      </GridLayout>
+
+      <!-- Meilleures et pires positions -->
+      <Label text="Meilleures et pires positions" class="section" />
+      <StackLayout class="carte" padding="0">
+        <Repeater items="{{ classement }}">
+          <Repeater.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="ligne" tap="onPositionTap">
+              <Label col="0" text="{{ rang }}" class="discret gras" width="24" verticalAlignment="center" />
+              <Label col="1" text="{{ ticker + ' · ' + nom }}" class="texte" verticalAlignment="center" />
+              <Label col="2" text="{{ gainTexte }}" class="pill" backgroundColor="{{ couleur }}" />
+            </GridLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+      </StackLayout>
+
+      <!-- Répartition par secteur -->
+      <Label text="Répartition par secteur" class="section" />
+      <StackLayout class="carte">
+        <Repeater items="{{ secteurs }}">
+          <Repeater.itemTemplate>
+            <StackLayout marginBottom="10">
+              <GridLayout columns="auto, *, auto">
+                <StackLayout col="0" class="point" backgroundColor="{{ couleur }}" />
+                <Label col="1" text="{{ nom }}" class="texte" />
+                <Label col="2" text="{{ pctTexte }}" class="texte gras" />
+              </GridLayout>
+              <Progress value="{{ pct100 }}" maxValue="100" color="{{ couleur }}" />
+            </StackLayout>
+          </Repeater.itemTemplate>
+        </Repeater>
+        <Label text="{{ conseilDiversification }}" class="discret" textWrap="true" />
+      </StackLayout>
+
+      <Label text="Analyse calculée sur des données simulées, avec les positions actuelles. Ceci n'est pas un conseil financier." class="avertissement" textWrap="true" />
+    </StackLayout>
+  </ScrollView>
+</Page>

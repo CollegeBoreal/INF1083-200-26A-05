@@ -1,0 +1,30 @@
+<ActionBar class="fz-bar">
+  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <Label [text]="equipe.nom" class="fz-bar-titre"></Label>
+</ActionBar>
+
+<ScrollView class="fz-page">
+  <StackLayout class="fz-detail">
+    <Label [text]="equipe.drapeau" class="fz-detail-drapeau"></Label>
+    <Label [text]="equipe.nom" class="fz-detail-nom"></Label>
+    <Label [text]="equipe.surnom + ' · ' + equipe.type" class="fz-badge"></Label>
+
+    <StackLayout class="fz-info">
+      <Label [text]="'🌍 ' + equipe.pays" textWrap="true"></Label>
+      <Label [text]="'🏟️ ' + equipe.stade" textWrap="true" class="m-t-5"></Label>
+    </StackLayout>
+
+    <Label text="🏆 Palmarès" class="fz-section"></Label>
+    @for (p of equipe.palmares; track p) {
+      <Label [text]="'• ' + p" textWrap="true" class="fz-ligne"></Label>
+    }
+
+    <Label text="🌟 Joueurs célèbres" class="fz-section"></Label>
+    @for (s of equipe.stars; track s) {
+      <Label [text]="'• ' + s" textWrap="true" class="fz-ligne"></Label>
+    }
+
+    <Button [text]="favoris.estFavori(equipe.id) ? '⭐ Retirer des favoris' : '☆ Ajouter aux favoris'"
+            (tap)="basculerFavori()" class="fz-bouton"></Button>
+  </StackLayout>
+</ScrollView>

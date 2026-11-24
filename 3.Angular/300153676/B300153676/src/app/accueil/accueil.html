@@ -1,0 +1,26 @@
+<main>
+  <h1>{{ titre }}</h1>
+  <p>{{ nom }}</p>
+  <button type="button" (click)="saluer()">Cliquez-moi</button>
+
+  @if (connecte) {
+    <p>Connecté</p>
+  }
+
+  <ul>
+    @for (nom of noms; track nom) {
+      <li>{{ nom }}</li>
+    }
+  </ul>
+
+  <h2>Utilisateurs</h2>
+  <button type="button" (click)="chargerUtilisateurs()" [disabled]="chargement()">
+    Charger les utilisateurs
+  </button>
+  <p role="status">{{ chargement() ? 'Chargement…' : erreur() }}</p>
+  <ul>
+    @for (utilisateur of utilisateurs(); track utilisateur.id) {
+      <li>{{ utilisateur.name }}</li>
+    }
+  </ul>
+</main>

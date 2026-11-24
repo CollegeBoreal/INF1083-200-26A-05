@@ -1,0 +1,69 @@
+﻿<ActionBar title="Lounivers" class="action-bar"></ActionBar>
+
+<ScrollView class="page">
+  <StackLayout>
+    <!-- Identité de l'application -->
+    <StackLayout class="brand" (loaded)="onBrand($event)">
+      <Label text="🌍" class="brand__logo"></Label>
+      <Label text="Lounivers" class="brand__name"></Label>
+      <Label text="L'univers du voyage, par Lounes" class="brand__tagline"></Label>
+      <Label [text]="'Version ' + version" class="brand__version"></Label>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="🏅 MES BADGES" class="card__label"></Label>
+      <GridLayout columns="*, auto" class="level">
+        <Label col="0" [text]="badgeService.level" class="level__name"></Label>
+        <Label col="1" [text]="badgeService.unlocked + ' / ' + badgeService.badges.length" class="level__count"></Label>
+      </GridLayout>
+      <Progress [value]="badgeService.unlocked" [maxValue]="badgeService.badges.length" class="level__progress"></Progress>
+      <WrapLayout class="badges">
+        <StackLayout *ngFor="let b of badgeService.badges" class="badge" [class.badge--locked]="!b.unlocked">
+          <Label [text]="b.unlocked ? b.icon : '🔒'" class="badge__icon"></Label>
+          <Label [text]="b.title" class="badge__title" textWrap="true"></Label>
+          <Label [text]="b.text" class="badge__text" textWrap="true"></Label>
+        </StackLayout>
+      </WrapLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="APPARENCE" class="card__label"></Label>
+      <GridLayout columns="44, *, auto" class="feature">
+        <Label col="0" text="🌙" class="feature__icon"></Label>
+        <StackLayout col="1">
+          <Label text="Mode sombre" class="feature__title"></Label>
+          <Label text="Reposez vos yeux pendant vos voyages de nuit" class="feature__text" textWrap="true"></Label>
+        </StackLayout>
+        <Switch col="2" [checked]="dark$ | async" (checkedChange)="onDark($event)" class="switch"></Switch>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="FONCTIONNALITÉS" class="card__label"></Label>
+      <GridLayout *ngFor="let f of features" columns="44, *" class="feature">
+        <Label col="0" [text]="f.icon" class="feature__icon"></Label>
+        <StackLayout col="1">
+          <Label [text]="f.title" class="feature__title"></Label>
+          <Label [text]="f.text" class="feature__text" textWrap="true"></Label>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="TECHNOLOGIES" class="card__label"></Label>
+      <WrapLayout>
+        <Label *ngFor="let tech of stack" [text]="tech" class="tech"></Label>
+      </WrapLayout>
+    </StackLayout>
+
+    <StackLayout class="card">
+      <Label text="DÉVELOPPEUR" class="card__label"></Label>
+      <Label text="Lounes Allouti" class="dev__name"></Label>
+      <Label text="300151781 · Collège Boréal" class="dev__meta"></Label>
+      <Label text="INF1083 — Développement d'applications" class="dev__meta"></Label>
+    </StackLayout>
+
+    <Button text="↗  Partager Lounivers" class="btn-primary" (tap)="shareApp()"></Button>
+    <Label text="Fait avec ♥ au Canada" class="footer"></Label>
+  </StackLayout>
+</ScrollView>

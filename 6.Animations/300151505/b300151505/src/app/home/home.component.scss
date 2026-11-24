@@ -1,0 +1,16 @@
+// 🅱️ Declarative Animation (CSS Animation)
+@keyframes bgAnimation {
+    from { background-color: blue; }
+    to { background-color: orange; }
+}
+
+.background {
+    animation-name: bgAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    width: 200;
+    height: 200;
+    border-radius: 100;
+    font-size: 48;
+    color: white;
+}

@@ -1,0 +1,179 @@
+.expenses-page {
+  background-color: #101820;
+  padding: 20;
+}
+
+.brand-title {
+  color: #ff8c42;
+  font-size: 26;
+  font-weight: bold;
+  margin-top: 15;
+}
+
+.subtitle {
+  color: #aab7c4;
+  font-size: 13;
+  margin-bottom: 25;
+}
+
+.total-card {
+  background-color: #1d2a36;
+  border-radius: 18;
+  padding: 20;
+  margin-bottom: 25;
+  border-left-width: 4;
+  border-left-color: #ff8c42;
+}
+
+.section-label,
+.field-label {
+  color: #9aabba;
+  font-size: 10;
+  font-weight: bold;
+  letter-spacing: 1;
+}
+
+.total-value {
+  color: #ffffff;
+  font-size: 32;
+  font-weight: bold;
+  margin-top: 8;
+}
+
+.card-description {
+  color: #aab7c4;
+  font-size: 12;
+  margin-top: 5;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 21;
+  font-weight: bold;
+  margin-bottom: 12;
+}
+
+.form-card {
+  background-color: #1d2a36;
+  border-radius: 16;
+  padding: 18;
+  margin-bottom: 25;
+}
+
+.field-label {
+  margin-top: 10;
+  margin-bottom: 5;
+}
+
+.expense-input {
+  color: #ffffff;
+  placeholder-color: #71808d;
+  background-color: #101820;
+  border-radius: 10;
+  padding: 12;
+  margin-bottom: 10;
+}
+
+.category-list {
+  margin-top: 5;
+  margin-bottom: 5;
+}
+
+.category-button {
+  background-color: #2b3a47;
+  color: #ffffff;
+  border-radius: 10;
+  font-size: 10;
+  margin: 3;
+  padding: 8 10;
+}
+
+.selected-category {
+  color: #ff9b54;
+  font-size: 11;
+  font-weight: bold;
+  margin: 5 0 10 3;
+}
+
+.add-button {
+  background-color: #ff8c42;
+  color: #ffffff;
+  border-radius: 12;
+  font-size: 13;
+  font-weight: bold;
+  margin-top: 15;
+  padding: 12;
+}
+
+.history-heading {
+  margin-top: 5;
+  margin-bottom: 5;
+}
+
+.history-count {
+  color: #aab7c4;
+  font-size: 11;
+  vertical-align: middle;
+}
+
+.empty-card {
+  background-color: #1d2a36;
+  border-radius: 15;
+  padding: 25;
+  text-align: center;
+  margin-bottom: 15;
+}
+
+.empty-icon {
+  font-size: 30;
+  text-align: center;
+}
+
+.empty-title {
+  color: #ffffff;
+  font-size: 16;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8;
+}
+
+.expense-card {
+  background-color: #1d2a36;
+  border-radius: 14;
+  padding: 15;
+  margin-bottom: 10;
+}
+
+.expense-name {
+  color: #ffffff;
+  font-size: 15;
+  font-weight: bold;
+}
+
+.expense-price {
+  color: #ff9b54;
+  font-size: 16;
+  font-weight: bold;
+}
+
+.expense-details {
+  color: #aab7c4;
+  font-size: 11;
+  margin-top: 7;
+}
+
+.delete-button {
+  background-color: #3b2428;
+  color: #ff7b7b;
+  border-radius: 8;
+  font-size: 8;
+  padding: 5 8;
+}
+
+.footer-text {
+  color: #657583;
+  font-size: 10;
+  text-align: center;
+  margin-top: 25;
+  margin-bottom: 20;
+}

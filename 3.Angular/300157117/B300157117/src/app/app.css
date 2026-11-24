@@ -1,0 +1,24 @@
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #c3002f, #7b1fa2);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 700; }
+.logo-icone {
+  display: inline-grid; place-items: center;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: white; color: #c3002f; font-weight: 800;
+}
+nav { display: flex; gap: 8px; }
+nav a {
+  color: white; text-decoration: none; padding: 8px 14px; border-radius: 8px;
+  font-weight: 600; transition: background 0.2s;
+}
+nav a:hover { background: rgba(255, 255, 255, 0.15); }
+nav a.actif { background: white; color: #7b1fa2; }
+main { max-width: 1000px; margin: 0 auto; padding: 28px 20px; }
+.pied { text-align: center; color: #6b7280; padding: 20px; font-size: 0.9rem; }

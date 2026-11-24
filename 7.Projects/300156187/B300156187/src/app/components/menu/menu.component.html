@@ -1,0 +1,38 @@
+<ScrollView>
+  <StackLayout class="menu-container" [class.dark]="theme.dark$ | async">
+    <Label text="Menu" class="page-title"></Label>
+    <Label text="Wonderfood's Morchid, Oran" class="page-subtitle"></Label>
+
+    <!-- Recherche -->
+    <TextField hint="Rechercher un plat..." [(ngModel)]="search" class="search"></TextField>
+
+    <!-- Catégories -->
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="chips-scroll">
+      <StackLayout orientation="horizontal" class="chips">
+        <Label *ngFor="let cat of categories" [text]="categoryEmoji[cat] + ' ' + cat" (tap)="selectCategory(cat)" [class.chip-active]="selectedCategory === cat" class="chip"></Label>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Squelette pendant le chargement -->
+    <WrapLayout *ngIf="loading" class="grid">
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+    </WrapLayout>
+
+    <!-- Grille 2 colonnes -->
+    <WrapLayout *ngIf="!loading" class="grid">
+      <StackLayout *ngFor="let dish of filteredDishes" class="dish-card anim-card" (tap)="openDish(dish)">
+        <Image [src]="dish.image" class="dish-img" stretch="aspectFill"></Image>
+        <Label [text]="dish.name" class="dish-name" textWrap="true"></Label>
+        <Label [text]="dish.category + '  •  ⭐ ' + dish.rating" class="dish-meta"></Label>
+        <GridLayout columns="*, auto" class="dish-bottom">
+          <Label col="0" [text]="dish.price + ' DA'" class="dish-price"></Label>
+          <Button col="1" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
+        </GridLayout>
+      </StackLayout>
+    </WrapLayout>
+    <Label *ngIf="!loading && filteredDishes.length === 0" text="Aucun plat trouvé." class="empty-msg"></Label>
+  </StackLayout>
+</ScrollView>

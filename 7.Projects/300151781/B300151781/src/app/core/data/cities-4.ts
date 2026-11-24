@@ -1,0 +1,96 @@
+﻿import { City } from '../models/city'
+
+// Amérique, Asie et Océanie (38 à 50)
+export const CITIES_4: City[] = [
+  {
+    id: 38, name: 'Lima', country: 'Pérou', flag: '🇵🇪', region: 'Amérique', color: '#D91023', lang: 'es',
+    tagline: 'La capitale gastronomique',
+    description: 'Au bord du Pacifique, Lima est réputée pour sa cuisine, son centre colonial et comme porte d\'entrée vers le Machu Picchu.',
+    highlights: ['Centre historique (UNESCO)', 'Quartier de Miraflores', 'Quartier bohème de Barranco', 'Musée Larco'],
+    bestSeason: 'Décembre à avril', currency: 'Sol (PEN)', language: 'Espagnol, quechua', timezone: 'UTC−5', tzOffset: -5,
+  },
+  {
+    id: 39, name: 'La Havane', country: 'Cuba', flag: '🇨🇺', region: 'Amérique', color: '#002A8F', lang: 'es',
+    tagline: 'Le charme d\'un autre temps',
+    description: 'Avec ses voitures anciennes, ses façades colorées et sa musique, La Havane semble figée dans le temps.',
+    highlights: ['Vieille Havane (UNESCO)', 'Malecón', 'Capitole national', 'Place de la Révolution'],
+    bestSeason: 'Novembre à avril', currency: 'Peso cubain (CUP)', language: 'Espagnol', timezone: 'UTC−5', tzOffset: -5,
+  },
+  {
+    id: 40, name: 'San Francisco', country: 'États-Unis', flag: '🇺🇸', region: 'Amérique', color: '#3C3B6E', lang: 'en',
+    tagline: 'La ville du Golden Gate',
+    description: 'Bâtie sur des collines face à la baie, San Francisco est célèbre pour son pont, ses tramways et son esprit innovant.',
+    highlights: ['Golden Gate Bridge', 'Île d\'Alcatraz', 'Tramways (cable cars)', 'Fisherman\'s Wharf'],
+    bestSeason: 'Septembre à novembre', currency: 'Dollar américain (USD)', language: 'Anglais', timezone: 'UTC−8', tzOffset: -8,
+  },
+  {
+    id: 41, name: 'Kyoto', country: 'Japon', flag: '🇯🇵', region: 'Asie', color: '#BC002D', lang: 'ja',
+    tagline: 'L\'âme traditionnelle du Japon',
+    description: 'Ancienne capitale impériale, Kyoto compte des centaines de temples, de jardins zen et le quartier des geishas.',
+    highlights: ['Pavillon d\'Or (Kinkaku-ji)', 'Sanctuaire Fushimi Inari', 'Forêt de bambous d\'Arashiyama', 'Quartier de Gion'],
+    bestSeason: 'Mars à mai, octobre à novembre', currency: 'Yen (JPY)', language: 'Japonais', timezone: 'UTC+9', tzOffset: 9,
+  },
+  {
+    id: 42, name: 'Pékin', country: 'Chine', flag: '🇨🇳', region: 'Asie', color: '#DE2910', lang: 'zh',
+    tagline: 'La cité impériale',
+    description: 'Capitale de la Chine depuis des siècles, Pékin abrite la Cité interdite et se trouve tout près de la Grande Muraille.',
+    highlights: ['Cité interdite', 'Grande Muraille (Mutianyu)', 'Temple du Ciel', 'Place Tian\'anmen'],
+    bestSeason: 'Avril à mai, septembre à octobre', currency: 'Yuan (CNY)', language: 'Mandarin', timezone: 'UTC+8', tzOffset: 8,
+  },
+  {
+    id: 43, name: 'Bangkok', country: 'Thaïlande', flag: '🇹🇭', region: 'Asie', color: '#2D2A4A', lang: 'th',
+    tagline: 'La cité des anges',
+    description: 'Animée et exotique, Bangkok mêle temples dorés, marchés flottants et cuisine de rue réputée dans le monde entier.',
+    highlights: ['Grand Palais', 'Wat Arun', 'Wat Pho (Bouddha couché)', 'Marché flottant'],
+    bestSeason: 'Novembre à février', currency: 'Baht (THB)', language: 'Thaï', timezone: 'UTC+7', tzOffset: 7,
+  },
+  {
+    id: 44, name: 'Singapour', country: 'Singapour', flag: '🇸🇬', region: 'Asie', color: '#EF3340', lang: 'en',
+    tagline: 'La cité-jardin du futur',
+    description: 'Ville-État ultra-moderne et verte, Singapour impressionne par son architecture, sa propreté et sa diversité culinaire.',
+    highlights: ['Gardens by the Bay', 'Marina Bay Sands', 'Île de Sentosa', 'Chinatown et Little India'],
+    bestSeason: 'Février à avril', currency: 'Dollar de Singapour (SGD)', language: 'Anglais, malais, mandarin, tamoul', timezone: 'UTC+8', tzOffset: 8,
+  },
+  {
+    id: 45, name: 'Hanoï', country: 'Viêt Nam', flag: '🇻🇳', region: 'Asie', color: '#DA251D', lang: 'vi',
+    tagline: 'La ville millénaire',
+    description: 'Capitale du Viêt Nam, Hanoï séduit par ses lacs, son vieux quartier animé et son héritage français.',
+    highlights: ['Lac Hoan Kiem', 'Vieux quartier des 36 rues', 'Temple de la Littérature', 'Mausolée de Hô Chi Minh'],
+    bestSeason: 'Octobre à avril', currency: 'Dong (VND)', language: 'Vietnamien', timezone: 'UTC+7', tzOffset: 7,
+  },
+  {
+    id: 46, name: 'Bombay', country: 'Inde', flag: '🇮🇳', region: 'Asie', color: '#FF9933', lang: 'hi',
+    tagline: 'La ville des rêves',
+    description: 'Capitale économique de l\'Inde et cœur de Bollywood, Bombay (Mumbai) est une mégapole intense et fascinante.',
+    highlights: ['Porte de l\'Inde', 'Gare Chhatrapati-Shivaji (UNESCO)', 'Marine Drive', 'Grottes d\'Elephanta'],
+    bestSeason: 'Novembre à février', currency: 'Roupie indienne (INR)', language: 'Marathi, hindi, anglais', timezone: 'UTC+5:30', tzOffset: 5.5,
+  },
+  {
+    id: 47, name: 'Doha', country: 'Qatar', flag: '🇶🇦', region: 'Asie', color: '#8A1538', lang: 'ar',
+    tagline: 'La perle du Golfe',
+    description: 'Capitale moderne du Qatar, Doha allie musées spectaculaires, gratte-ciel et souks traditionnels au bord du Golfe.',
+    highlights: ['Musée d\'art islamique', 'Souq Waqif', 'Corniche de Doha', 'Musée national du Qatar'],
+    bestSeason: 'Novembre à mars', currency: 'Riyal qatari (QAR)', language: 'Arabe, anglais', timezone: 'UTC+3', tzOffset: 3,
+  },
+  {
+    id: 48, name: 'Beyrouth', country: 'Liban', flag: '🇱🇧', region: 'Asie', color: '#ED1C24', lang: 'ar',
+    tagline: 'Le Paris du Moyen-Orient',
+    description: 'Ville méditerranéenne pleine d\'énergie, Beyrouth mêle histoire phénicienne, gastronomie réputée et vie nocturne.',
+    highlights: ['Rochers de la Grotte aux Pigeons', 'Corniche de Beyrouth', 'Musée national', 'Quartier de Gemmayzé'],
+    bestSeason: 'Avril à juin, septembre à octobre', currency: 'Livre libanaise (LBP)', language: 'Arabe, français', timezone: 'UTC+2', tzOffset: 2,
+  },
+  {
+    id: 49, name: 'Sydney', country: 'Australie', flag: '🇦🇺', region: 'Océanie', color: '#00843D', lang: 'en',
+    tagline: 'La reine du Pacifique',
+    description: 'Célèbre pour son opéra et son pont, Sydney offre des plages magnifiques et un art de vivre en plein air.',
+    highlights: ['Opéra de Sydney', 'Harbour Bridge', 'Plage de Bondi', 'Montagnes Bleues'],
+    bestSeason: 'Septembre à novembre, mars à mai', currency: 'Dollar australien (AUD)', language: 'Anglais', timezone: 'UTC+10', tzOffset: 10,
+  },
+  {
+    id: 50, name: 'Auckland', country: 'Nouvelle-Zélande', flag: '🇳🇿', region: 'Océanie', color: '#00247D', lang: 'en',
+    tagline: 'La ville des voiles',
+    description: 'Entre deux ports et des dizaines de volcans, Auckland est la porte d\'entrée vers les paysages grandioses de la Nouvelle-Zélande.',
+    highlights: ['Sky Tower', 'Volcan Rangitoto', 'Île de Waiheke', 'Musée d\'Auckland'],
+    bestSeason: 'Décembre à mars', currency: 'Dollar néo-zélandais (NZD)', language: 'Anglais, maori', timezone: 'UTC+12', tzOffset: 12,
+  },
+]

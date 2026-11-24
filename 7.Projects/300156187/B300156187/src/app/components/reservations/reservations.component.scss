@@ -1,0 +1,195 @@
+.reservations-container {
+  background-color: #f5f5f7;
+  padding: 20 16 24 16;
+}
+
+.dark.reservations-container {
+  background-color: #171210;
+}
+
+.page-title {
+  font-size: 26;
+  font-weight: bold;
+  color: #2b2118;
+}
+
+.page-subtitle {
+  font-size: 14;
+  color: #9a7b64;
+  margin-top: 2;
+  margin-bottom: 16;
+}
+
+.form-card {
+  background-color: #ffffff;
+  border-radius: 18;
+  padding: 16;
+  android-elevation: 2;
+}
+
+.field-label {
+  font-size: 14;
+  font-weight: bold;
+  color: #2b2118;
+  margin-bottom: 6;
+}
+
+.field {
+  background-color: #f5f5f7;
+  border-radius: 12;
+  border-width: 0;
+  padding: 12 14;
+  font-size: 15;
+  color: #2b2118;
+  placeholder-color: #b9a08d;
+  margin-bottom: 12;
+}
+
+.qty-row {
+  background-color: #f5f5f7;
+  border-radius: 12;
+  padding: 6;
+  margin-bottom: 12;
+}
+
+.qty-btn {
+  width: 40;
+  height: 40;
+  border-radius: 20;
+  background-color: #ffffff;
+  color: #e86a17;
+  font-size: 20;
+  font-weight: bold;
+  border-width: 0;
+}
+
+.qty-value {
+  font-size: 17;
+  font-weight: bold;
+  color: #2b2118;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.confirm-btn {
+  background-color: #e86a17;
+  color: #ffffff;
+  font-size: 16;
+  font-weight: bold;
+  border-radius: 16;
+  padding: 14 0;
+  margin-top: 8;
+  border-width: 0;
+  android-elevation: 2;
+}
+
+.error-msg {
+  font-size: 14;
+  color: #c0392b;
+  margin-top: 4;
+  margin-bottom: 8;
+}
+
+.confirm-msg {
+  font-size: 14;
+  font-weight: bold;
+  color: #1e9e6a;
+  text-align: center;
+  margin-top: 12;
+}
+
+.section-title {
+  font-size: 20;
+  font-weight: bold;
+  color: #2b2118;
+  margin: 20 0 12 0;
+}
+
+.res-card {
+  background-color: #ffffff;
+  border-radius: 16;
+  padding: 14;
+  margin-bottom: 12;
+  android-elevation: 2;
+}
+
+.res-name {
+  font-size: 16;
+  font-weight: bold;
+  color: #2b2118;
+}
+
+.res-meta {
+  font-size: 14;
+  color: #9a7b64;
+  margin-top: 2;
+}
+
+.cancel-btn {
+  background-color: #ffffff;
+  color: #c0392b;
+  font-size: 14;
+  font-weight: bold;
+  border-radius: 12;
+  border-width: 1;
+  border-color: #e5e4e2;
+  padding: 8 0;
+  margin-top: 10;
+}
+
+.empty-msg {
+  font-size: 15;
+  color: #9a7b64;
+  text-align: center;
+  margin-top: 8;
+}
+
+.anim-card {
+  animation-name: fadeUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(0, 14); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+
+/* --- Mode sombre : TOUT reste lisible (labels clairs, champs sombres) --- */
+.dark .page-title,
+.dark .field-label,
+.dark .section-title,
+.dark .res-name,
+.dark .qty-value {
+  color: #f5efe9;
+}
+
+.dark .page-subtitle,
+.dark .res-meta,
+.dark .empty-msg {
+  color: #b99f88;
+}
+
+.dark .form-card,
+.dark .res-card {
+  background-color: #2a211b;
+}
+
+.dark .field,
+.dark .qty-row {
+  background-color: #171210;
+}
+
+.dark .field {
+  color: #f5efe9;
+  placeholder-color: #b99f88;
+}
+
+.dark .qty-btn {
+  background-color: #3a2e26;
+}
+
+.dark .cancel-btn {
+  background-color: #2a211b;
+  border-color: #3a2e26;
+}

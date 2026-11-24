@@ -1,0 +1,13 @@
+<ScrollView>
+  <StackLayout class="login-container" [class.dark]="theme.dark$ | async">
+    <Image src="~/app/images/logo-wonderfood.png" width="180" height="180" stretch="aspectFit" class="anim-logo" horizontalAlignment="center" style="margin-top: 48; margin-bottom: 16;"></Image>
+    <Label class="app-title anim-field anim-delay-1" text="Wonder Food's" horizontalAlignment="center"></Label>
+    <Label class="app-subtitle anim-field anim-delay-2" text="Connectez-vous pour commander" horizontalAlignment="center" textWrap="true"></Label>
+    <TextField class="anim-field anim-delay-3" hint="Email" keyboardType="email" autocapitalizationType="none" autocorrect="false" [(ngModel)]="email"></TextField>
+    <TextField class="anim-field anim-delay-4" hint="Mot de passe" secure="true" [(ngModel)]="password"></TextField>
+    <Label *ngIf="error" [text]="error" textWrap="true" style="color: #C0392B; margin-top: 8;"></Label>
+    <Button class="btn-primary anim-field anim-delay-5" [text]="loading ? 'Connexion...' : 'Se connecter'" (tap)="onLogin()" [isEnabled]="!loading"></Button>
+    <Button class="btn-demo anim-field anim-delay-5" text="Essayer la démo" (tap)="loginDemo()"></Button>
+    <Label text="Créer un compte" class="register-link anim-field anim-delay-5" horizontalAlignment="center" (tap)="goRegister()"></Label>
+  </StackLayout>
+</ScrollView>

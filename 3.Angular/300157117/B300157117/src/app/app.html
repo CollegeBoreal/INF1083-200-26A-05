@@ -1,0 +1,18 @@
+<header class="entete">
+  <div class="logo">
+    <span class="logo-icone">A</span>
+    <span>{{ title() }}</span>
+  </div>
+  <nav>
+    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">🏠 Accueil</a>
+    <a routerLink="/utilisateurs" routerLinkActive="actif">👥 Utilisateurs (API)</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer class="pied">
+  INF1083 — Développement d'applications · {{ etudiant }} · {{ annee }}
+</footer>

@@ -1,0 +1,61 @@
+<ScrollView>
+  <StackLayout class="home-container" [class.dark]="theme.dark$ | async">
+    <!-- En-tête : menu tiroir + logo + bonjour + mode sombre -->
+    <GridLayout columns="auto, auto, *, auto" class="header">
+      <Label col="0" text="☰" class="drawer-btn" (tap)="onDrawerButtonTap()"></Label>
+      <StackLayout col="1" class="logo-mini">
+        <Label text="W" class="logo-mini-w"></Label>
+      </StackLayout>
+      <StackLayout col="2" class="header-text">
+        <Label text="Bonjour 👋" class="greeting"></Label>
+        <Label text="Qu'est-ce qui vous ferait plaisir ?" textWrap="true" class="subtitle"></Label>
+      </StackLayout>
+      <Button col="3" class="theme-btn" [text]="(theme.dark$ | async) ? '☀️' : '🌙'" (tap)="toggleTheme()"></Button>
+    </GridLayout>
+
+    <!-- Recherche -->
+    <TextField hint="Rechercher un plat..." [(ngModel)]="search" class="search"></TextField>
+
+    <!-- Catégories -->
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="chips-scroll">
+      <StackLayout orientation="horizontal" class="chips">
+        <Label *ngFor="let cat of categories" [text]="cat" (tap)="selectCategory(cat)" [class.chip-active]="selectedCategory === cat" class="chip"></Label>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Squelette pendant le chargement -->
+    <StackLayout *ngIf="loading" class="skeleton-wrap">
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-card anim-shimmer"></StackLayout>
+      <StackLayout class="skel-row anim-shimmer"></StackLayout>
+      <StackLayout class="skel-row anim-shimmer"></StackLayout>
+    </StackLayout>
+
+    <!-- Contenu -->
+    <StackLayout *ngIf="!loading" class="content anim-fade">
+      <Label text="Nos restaurants" class="section-title"></Label>
+      <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="rest-scroll">
+        <StackLayout orientation="horizontal">
+          <StackLayout *ngFor="let resto of restaurants" class="rest-card anim-card">
+            <Image [src]="resto.image" class="rest-img" stretch="aspectFill"></Image>
+            <Label [text]="resto.name" class="rest-name" textWrap="true"></Label>
+            <Label [text]="resto.address" class="rest-address" textWrap="true"></Label>
+            <Label [text]="'⭐ ' + resto.rating" class="rest-rating"></Label>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+
+      <Label text="Plats populaires" class="section-title"></Label>
+      <GridLayout *ngFor="let dish of filteredDishes" columns="92, *, 40" class="dish-card anim-card" (tap)="openDish(dish)">
+        <Image col="0" [src]="dish.image" class="dish-img" stretch="aspectFill"></Image>
+        <StackLayout col="1" class="dish-info">
+          <Label [text]="dish.name" class="dish-name" textWrap="true"></Label>
+          <Label [text]="dish.category" class="dish-cat"></Label>
+          <Label [text]="dish.price + ' DA'" class="dish-price"></Label>
+        </StackLayout>
+        <Button col="2" text="+" class="add-btn" (tap)="addToCart(dish)"></Button>
+      </GridLayout>
+      <Label *ngIf="filteredDishes.length === 0" text="Aucun plat trouvé." class="empty-msg"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

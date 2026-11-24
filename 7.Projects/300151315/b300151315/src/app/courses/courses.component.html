@@ -1,0 +1,52 @@
+<ActionBar class="bar" flat="true" backgroundColor="#5b3df5" color="#ffffff">
+  <GridLayout columns="*, auto">
+    <Label text="Mes cours" class="bar-title"></Label>
+    <Label col="1" [text]="showForm ? '&#xf00d;' : '&#xf067;'" class="fas bar-action" (tap)="showForm = !showForm"></Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout class="content">
+    <!-- Formulaire d'ajout -->
+    <StackLayout *ngIf="showForm" class="form">
+      <Label text="Nouveau cours" class="form-title"></Label>
+      <GridLayout columns="*, 12, 2*">
+        <TextField [(ngModel)]="code" hint="Code (INF1083)" class="input"></TextField>
+        <TextField col="2" [(ngModel)]="name" hint="Nom du cours" class="input"></TextField>
+      </GridLayout>
+      <TextField [(ngModel)]="room" hint="Local (B-2104)" class="input"></TextField>
+      <Label text="Jour" class="form-label"></Label>
+      <GridLayout columns="*, *, *, *, *">
+        <Label *ngFor="let w of weekDays; let i = index" [col]="i" [text]="w.short" class="chip" [class.chip-on]="day === w.day" (tap)="day = w.day"></Label>
+      </GridLayout>
+      <GridLayout columns="*, 12, *">
+        <StackLayout>
+          <Label text="Début" class="form-label"></Label>
+          <TextField [(ngModel)]="start" hint="09:00" class="input"></TextField>
+        </StackLayout>
+        <StackLayout col="2">
+          <Label text="Fin" class="form-label"></Label>
+          <TextField [(ngModel)]="end" hint="12:00" class="input"></TextField>
+        </StackLayout>
+      </GridLayout>
+      <Label *ngIf="error" [text]="error" class="error" textWrap="true"></Label>
+      <Button text="Ajouter le cours" class="btn-main" (tap)="add()"></Button>
+    </StackLayout>
+
+    <!-- Horaire de la semaine -->
+    <StackLayout *ngFor="let g of byDay()">
+      <Label [text]="g.name" class="section"></Label>
+      <GridLayout *ngFor="let c of g.courses" columns="6, *, auto" class="card">
+        <StackLayout [backgroundColor]="c.color" class="stripe"></StackLayout>
+        <StackLayout col="1" class="card-body">
+          <Label [text]="c.start + ' – ' + c.end + ' · Local ' + c.room" class="card-meta"></Label>
+          <Label [text]="c.code" class="card-code" [color]="c.color"></Label>
+          <Label [text]="c.name" class="card-title" textWrap="true"></Label>
+          <Label [text]="taskCount(c) + ' tâche(s) à faire'" class="card-meta"></Label>
+        </StackLayout>
+        <Label col="2" text="&#xf2ed;" class="far trash" (tap)="remove(c)"></Label>
+      </GridLayout>
+    </StackLayout>
+    <Label *ngIf="p.courses().length === 0" text="Aucun cours. Touchez + pour en ajouter un." class="empty" textWrap="true"></Label>
+  </StackLayout>
+</ScrollView>

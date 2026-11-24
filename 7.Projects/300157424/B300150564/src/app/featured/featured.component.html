@@ -1,0 +1,173 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+
+  <GridLayout columns="50, *">
+    <Label
+      class="fas menu-icon"
+      text="&#xf0c9;"
+      (tap)="onDrawerButtonTap()">
+    </Label>
+
+    <Label
+      col="1"
+      class="action-bar-title"
+      text="My Vehicles">
+    </Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="vehicles-page">
+
+    <Label text="🚘 My Vehicles" class="brand-title"></Label>
+
+    <Label
+      text="Manage the vehicles in your CarCare garage."
+      textWrap="true"
+      class="subtitle">
+    </Label>
+
+    <!-- SUMMARY -->
+    <StackLayout class="garage-summary">
+      <Label text="MY GARAGE" class="section-label"></Label>
+
+      <Label
+        [text]="vehicles.length + (vehicles.length === 1 ? ' vehicle' : ' vehicles')"
+        class="garage-count">
+      </Label>
+
+      <Label
+        text="Your vehicle information is saved locally."
+        class="card-description">
+      </Label>
+    </StackLayout>
+
+    <!-- VEHICLE LIST -->
+    <Label text="Garage" class="section-title"></Label>
+
+    <StackLayout
+      *ngFor="let vehicle of vehicles"
+      class="vehicle-card">
+
+      <GridLayout columns="55, *">
+        <Label
+          col="0"
+          text="🚗"
+          class="vehicle-icon">
+        </Label>
+
+        <StackLayout col="1">
+          <Label
+            [text]="vehicle.make + ' ' + vehicle.model"
+            class="vehicle-name">
+          </Label>
+
+          <Label
+            [text]="vehicle.year + ' • ' + vehicle.mileage.toLocaleString() + ' km'"
+            class="vehicle-details">
+          </Label>
+        </StackLayout>
+      </GridLayout>
+
+      <GridLayout columns="*, *" class="vehicle-actions">
+
+        <Button
+          col="0"
+          text="EDIT"
+          (tap)="editVehicle(vehicle)"
+          class="edit-button">
+        </Button>
+
+        <Button
+          col="1"
+          text="DELETE"
+          (tap)="deleteVehicle(vehicle.id)"
+          class="delete-button">
+        </Button>
+
+      </GridLayout>
+
+    </StackLayout>
+
+    <StackLayout
+      *ngIf="vehicles.length === 0"
+      class="empty-card">
+
+      <Label text="🚙" class="empty-icon"></Label>
+
+      <Label
+        text="Your garage is empty"
+        class="empty-title">
+      </Label>
+
+      <Label
+        text="Add your first vehicle below."
+        class="card-description">
+      </Label>
+
+    </StackLayout>
+
+    <!-- FORM -->
+    <Label
+      [text]="editingId !== null ? 'Edit Vehicle' : 'Add Vehicle'"
+      class="section-title form-title">
+    </Label>
+
+    <StackLayout class="form-card">
+
+      <Label text="MAKE" class="field-label"></Label>
+
+      <TextField
+        hint="Example: Porsche"
+        [(ngModel)]="make"
+        class="vehicle-input">
+      </TextField>
+
+      <Label text="MODEL" class="field-label"></Label>
+
+      <TextField
+        hint="Example: Macan"
+        [(ngModel)]="model"
+        class="vehicle-input">
+      </TextField>
+
+      <Label text="YEAR" class="field-label"></Label>
+
+      <TextField
+        hint="Example: 2024"
+        keyboardType="number"
+        [(ngModel)]="year"
+        class="vehicle-input">
+      </TextField>
+
+      <Label text="MILEAGE (KM)" class="field-label"></Label>
+
+      <TextField
+        hint="Example: 28450"
+        keyboardType="number"
+        [(ngModel)]="mileage"
+        class="vehicle-input">
+      </TextField>
+
+      <Button
+        [text]="editingId !== null ? 'SAVE CHANGES' : '+ ADD VEHICLE'"
+        (tap)="addOrUpdateVehicle()"
+        class="add-button">
+      </Button>
+
+      <Button
+        *ngIf="editingId !== null"
+        text="CANCEL EDIT"
+        (tap)="resetForm()"
+        class="cancel-button">
+      </Button>
+
+    </StackLayout>
+
+    <Label
+      text="CARCARE • YOUR GARAGE, YOUR CONTROL"
+      class="footer-text">
+    </Label>
+
+  </StackLayout>
+</ScrollView>

@@ -1,0 +1,148 @@
+@import '@nativescript/theme/core';
+@import '@nativescript/theme/default';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
+  font-weight: 400;
+}
+
+.fas {
+  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
+  font-weight: 900;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+  font-weight: 400;
+}
+
+// Common page class
+.page__content {
+  &-icon,
+  &-placeholder {
+    color: const(grey);
+    font-size: 20;
+    vertical-align: center;
+    horizontal-align: center;
+  }
+
+  &-icon {
+    font-size: 72;
+    vertical-align: top;
+    margin-top: 20%;
+  }
+}
+
+// Drawer navigation custom styles
+.nt-drawer__header-image {
+  color: const(grey);
+}
+
+// Mode sombre global — la classe .dark est sur la racine de l'app
+// (app.component.html), donc ces règles s'appliquent à toutes les pages.
+.dark Page,
+.dark .app-root {
+  background-color: #171210;
+}
+
+.dark .home-container,
+.dark .tabs-shell,
+.dark .login-container,
+.dark .menu-container,
+.dark .profile-container,
+.dark .cart-container,
+.dark .reservations-container,
+.dark .dish-detail-container {
+  background-color: #171210;
+}
+
+.dark .greeting,
+.dark .section-title,
+.dark .rest-name,
+.dark .dish-name,
+.dark .app-title,
+.dark .app-subtitle {
+  color: #F5EFE9;
+}
+
+.dark .subtitle,
+.dark .rest-address,
+.dark .dish-cat,
+.dark .empty-msg,
+.dark .tab-label {
+  color: #B99F88;
+}
+
+.dark .theme-btn,
+.dark .search,
+.dark .chip,
+.dark .rest-card,
+.dark .dish-card,
+.dark .bubble-bar {
+  background-color: #2A211B;
+}
+
+.dark .chip {
+  color: #D8C4B0;
+}
+
+.dark .chip-active,
+.dark .add-btn,
+.dark .badge {
+  background-color: #E86A17;
+  color: #FFFFFF;
+}
+
+.dark .tab-item.active .tab-label {
+  color: #F5A623;
+}
+
+.dark .skel-card,
+.dark .skel-row {
+  background-color: #3A2E26;
+}
+
+.dark TextField {
+  background-color: #2A211B;
+  color: #F5EFE9;
+  placeholder-color: #B99F88;
+}
+
+// Tiroir latéral Wonder Food's (Labo 6)
+.drawer-header {
+  background-color: #e86a17;
+  padding-top: 44;
+  padding-bottom: 16;
+}
+
+.drawer-logo {
+  margin-bottom: 8;
+}
+
+.drawer-brand {
+  color: white;
+  font-size: 20;
+  font-weight: bold;
+}
+
+.drawer-footnote {
+  color: #ffe1cc;
+  font-size: 13;
+}
+
+.drawer-icon {
+  font-size: 18;
+  vertical-align: center;
+}
+
+.dark .nt-drawer__content {
+  background-color: #171210;
+}
+
+.dark .nt-drawer__list-item Label {
+  color: #f5efe9;
+}

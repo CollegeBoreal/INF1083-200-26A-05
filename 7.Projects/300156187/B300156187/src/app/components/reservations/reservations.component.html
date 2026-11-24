@@ -1,0 +1,39 @@
+<ScrollView>
+  <StackLayout class="reservations-container" [class.dark]="theme.dark$ | async">
+    <Label text="Réservations" class="page-title"></Label>
+    <Label text="Réservez votre table chez Wonder Food's" class="page-subtitle"></Label>
+
+    <!-- Formulaire -->
+    <StackLayout class="form-card">
+      <Label text="Nom" class="field-label"></Label>
+      <TextField hint="Votre nom" [(ngModel)]="name" class="field"></TextField>
+      <Label text="Téléphone" class="field-label"></Label>
+      <TextField hint="Ex. 0550 12 34 56" keyboardType="phone" [(ngModel)]="phone" class="field"></TextField>
+      <Label text="Date" class="field-label"></Label>
+      <TextField hint="Ex. 25/12/2026" [(ngModel)]="date" class="field"></TextField>
+      <Label text="Heure" class="field-label"></Label>
+      <TextField hint="Ex. 19:30" [(ngModel)]="time" class="field"></TextField>
+      <Label text="Nombre de personnes" class="field-label"></Label>
+      <GridLayout columns="auto, *, auto" class="qty-row">
+        <Button col="0" text="−" class="qty-btn" (tap)="decreasePersons()"></Button>
+        <Label col="1" [text]="persons" class="qty-value"></Label>
+        <Button col="2" text="+" class="qty-btn" (tap)="increasePersons()"></Button>
+      </GridLayout>
+      <Label *ngIf="error" [text]="error" textWrap="true" class="error-msg"></Label>
+      <Button text="Confirmer la réservation" class="confirm-btn" (tap)="confirm()"></Button>
+      <Label *ngIf="confirmMessage" [text]="confirmMessage" textWrap="true" class="confirm-msg"></Label>
+    </StackLayout>
+
+    <!-- Mes réservations -->
+    <Label text="Mes réservations" class="section-title"></Label>
+    <StackLayout *ngIf="(reservations.reservations$ | async)?.length === 0">
+      <Label text="Aucune réservation pour le moment." class="empty-msg"></Label>
+    </StackLayout>
+    <StackLayout *ngFor="let r of (reservations.reservations$ | async)" class="res-card anim-card">
+      <Label [text]="r.name" class="res-name" textWrap="true"></Label>
+      <Label [text]="r.date + ' à ' + r.time + '  •  ' + r.persons + ' personne(s)'" class="res-meta" textWrap="true"></Label>
+      <Label [text]="'Tél : ' + r.phone" class="res-meta"></Label>
+      <Button text="Annuler" class="cancel-btn" (tap)="cancel(r)"></Button>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

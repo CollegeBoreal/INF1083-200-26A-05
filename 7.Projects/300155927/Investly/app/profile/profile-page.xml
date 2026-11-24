@@ -1,0 +1,55 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ScrollView>
+    <StackLayout>
+      <StackLayout class="entete" paddingTop="26" tap="{{ onNom }}">
+        <Label text="{{ initiales }}" class="avatar" />
+        <Label text="{{ nom || 'Touche ici pour ajouter ton nom' }}" class="entete-titre" fontSize="18" textAlignment="center" marginTop="8" />
+        <Label text="Compte de démonstration" class="entete-petit" textAlignment="center" />
+      </StackLayout>
+
+      <Label text="Sécurité" class="section" />
+      <GridLayout columns="auto, *, auto" class="menu">
+        <Label col="0" text="🔒" class="menu-rond" />
+        <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+          <Label text="Verrouillage biométrique" class="menu-titre" />
+          <Label text="Empreinte ou visage à l'ouverture" class="discret" />
+        </StackLayout>
+        <Switch col="2" checked="{{ biometrie }}" checkedChange="onBiometrie" />
+      </GridLayout>
+
+      <Label text="{{ 'Mes alertes de prix (' + alertes.length + ')' }}" class="section" />
+      <Label text="Aucune alerte. Ouvre un actif et touche 🔔 pour en créer une." class="vide" textWrap="true" visibility="{{ alertes.length ? 'collapsed' : 'visible' }}" />
+      <Repeater items="{{ alertes }}">
+        <Repeater.itemTemplate>
+          <GridLayout columns="auto, *, auto" class="menu">
+            <Label col="0" text="🔔" class="menu-rond" />
+            <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+              <Label text="{{ ticker }}" class="menu-titre" />
+              <Label text="{{ description }}" class="discret" />
+            </StackLayout>
+            <Button col="2" text="✕" tap="onSupprimerAlerte" class="btn-rond" />
+          </GridLayout>
+        </Repeater.itemTemplate>
+      </Repeater>
+
+      <Label text="Mon compte" class="section" />
+      <GridLayout columns="auto, *, auto" class="menu" tap="{{ onTransactions }}">
+        <Label col="0" text="🧾" class="menu-rond" />
+        <StackLayout col="1" marginLeft="12"><Label text="Historique des transactions" class="menu-titre" /><Label text="{{ nbTransactions }}" class="discret" /></StackLayout>
+        <Label col="2" text="›" class="chevron" />
+      </GridLayout>
+      <GridLayout columns="auto, *, auto" class="menu" tap="{{ onPartager }}">
+        <Label col="0" text="📤" class="menu-rond" />
+        <StackLayout col="1" marginLeft="12"><Label text="Partager ma performance" class="menu-titre" /><Label text="Seulement le %, jamais les montants" class="discret" /></StackLayout>
+        <Label col="2" text="›" class="chevron" />
+      </GridLayout>
+      <GridLayout columns="auto, *, auto" class="menu" tap="{{ onReinitialiser }}">
+        <Label col="0" text="↺" class="menu-rond" />
+        <StackLayout col="1" marginLeft="12"><Label text="Réinitialiser la simulation" class="menu-titre" /><Label text="Revenir au portefeuille de départ" class="discret" /></StackLayout>
+        <Label col="2" text="›" class="chevron" />
+      </GridLayout>
+
+      <Label text="INVESTLY · projet scolaire. Toutes les données de marché sont simulées et aucune transaction réelle n'est effectuée. Ceci n'est pas un conseil financier." class="avertissement" textWrap="true" />
+    </StackLayout>
+  </ScrollView>
+</Page>
