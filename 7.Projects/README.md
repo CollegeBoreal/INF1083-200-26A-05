@@ -19,6 +19,7 @@ Au niveau technique:
 * donner les `templates` (patrons) que vous utilisez
 * donner les `plugins` également
 * un minimum de 3 pages (onglets/menu) est requis
+* un accès à une base de données (i.e. API)
 
 https://market.nativescript.org
 
