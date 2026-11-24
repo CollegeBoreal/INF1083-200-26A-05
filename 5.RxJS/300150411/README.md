@@ -1,11 +1,9 @@
-# RAPPORT DE TRAVAIL
 ## Développement d'une application mobile avec NativeScript, Angular et RxJS
 
 **Nom de l'étudiant :** Bourhane Kessouri  
 **Numéro d'étudiant :** 300150411  
 **Cours :** Développement d'applications  
 **Projet :** Recherche de pays par capitale  
-**Environnement :** Windows, Visual Studio Code, NativeScript, Angular et Android
 
 ---
 
@@ -377,4 +375,6 @@ J'ai également appris à préparer l'environnement Android et à compiler un pr
 
 La compilation Android a réussi et le fichier APK a été généré. Il reste à résoudre le problème de virtualisation pour démarrer l'émulateur et terminer les tests visuels de l'application.
 
-**Fin du rapport.**
+<image src=images/9999.png width=50% height=50% > </image>
+<image src=images/1000.png width=50% height=50% > </image>
+
