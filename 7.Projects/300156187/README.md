@@ -30,8 +30,8 @@ l'application est `com.restaurant.app`.
 
 **Wonder Food's** est une application mobile de commande pour le restaurant
 **Wonderfood's Morchid, à Oran** (Algérie). Le client commande aujourd'hui par
-WhatsApp ou par téléphone : l'application lui donne un menu
-clair avec photos et prix, un panier, et la possibilité de réserver une table,
+WhatsApp ou par téléphone, l'application lui donne un menu
+clair avec photos et prix, un panier, et la possibilité de commander un plat,
 le tout depuis son téléphone.
 
 L'application est développée en **NativeScript + Angular**. Elle fonctionne
