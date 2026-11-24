@@ -1,0 +1,23 @@
+﻿<h1>Utilisateurs - API REST</h1>
+
+<p>Source : JSONPlaceholder</p>
+
+<button (click)="charger()">Charger les utilisateurs</button>
+
+@if (chargement()) {
+  <p>Chargement...</p>
+}
+
+@if (erreur()) {
+  <p>{{ erreur() }}</p>
+}
+
+<div class="cards">
+  @for (user of utilisateurs(); track user.id) {
+    <article>
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.phone }}</p>
+    </article>
+  }
+</div>
