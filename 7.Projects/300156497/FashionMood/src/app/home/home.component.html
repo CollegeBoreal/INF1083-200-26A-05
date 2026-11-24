@@ -1,0 +1,81 @@
+
+<ScrollView class="outfits-page">
+  <StackLayout class="main-content">
+
+    <!-- Header -->
+    <GridLayout columns="auto, *" class="header">
+      <Label col="0" text="🎀" class="header-bow"></Label>
+      <StackLayout col="1" verticalAlignment="center">
+        <Label text="Fashion Mood ♡" class="app-title"></Label>
+        <Label text="Your style, your mood ✨" class="app-subtitle"></Label>
+      </StackLayout>
+    </GridLayout>
+
+    <!-- Search bar -->
+    <GridLayout columns="auto, *" class="search-box">
+      <Label col="0" text="⌕" class="search-icon"></Label>
+      <TextField
+        col="1"
+        hint="Search outfits..."
+        class="search-input">
+      </TextField>
+    </GridLayout>
+
+    <!-- Categories -->
+    <ScrollView orientation="horizontal" class="category-scroll">
+      <StackLayout orientation="horizontal" class="category-list">
+        <Label
+          *ngFor="let category of categories"
+          [text]="category"
+          [class.selected-category]="selectedCategory === category"
+          class="category-button"
+          (tap)="selectCategory(category)">
+        </Label>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Outfit gallery -->
+    <WrapLayout class="outfit-gallery" orientation="horizontal">
+
+      <StackLayout
+        *ngFor="let outfit of filteredOutfits"
+        class="outfit-card"
+        width="48%">
+
+        <GridLayout rows="210" columns="*">
+          <Image
+            row="0"
+            col="0"
+            [src]="outfit.image"
+            stretch="aspectFill"
+            class="outfit-image">
+          </Image>
+
+          <Label
+            row="0"
+            col="0"
+            [text]="outfit.favorite ? '❤️' : '♡'"
+            class="favorite-button"
+            horizontalAlignment="right"
+            verticalAlignment="top"
+            (tap)="toggleFavorite(outfit)">
+          </Label>
+        </GridLayout>
+
+        <StackLayout class="outfit-info">
+          <Label [text]="outfit.name" class="outfit-name"></Label>
+          <Label [text]="outfit.category" class="outfit-category"></Label>
+        </StackLayout>
+
+      </StackLayout>
+
+    </WrapLayout>
+
+    <Label
+      text="You deserve to feel beautiful every day 💗"
+      class="footer-message">
+    </Label>
+
+  </StackLayout>
+</ScrollView>
+
