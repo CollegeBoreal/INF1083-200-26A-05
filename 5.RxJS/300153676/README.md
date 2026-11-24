@@ -12,3 +12,9 @@ Extraire le dossier `b300153676` de [l’archive du projet](./RxJS-300153676.zip
 npm.cmd ci
 ns.cmd run android
 ```
+
+## Test sur Android
+
+La recherche de la capitale Ottawa affiche le pays Canada dans l’émulateur Android.
+
+![Résultat de la recherche Ottawa sur Android](./images/recherche-ottawa.png)
