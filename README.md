@@ -41,3 +41,9 @@ INF 1083-200 Développement d'applications
 - Lire, ajouter et modifier des données.
 - Effectuer la validation des entrées utilisateur.
 - Comprendre le modèle client-serveur.
+
+# 📚 References
+
+```
+=[[1]]*,02+[[[[2]]]]*,08+[[3]]*,1+[[4]]*,2+[[5]]*,2+[[6]]*,2+[[7]]*,2
+```
