@@ -71,7 +71,7 @@ mv id_ed25519 Nabil_cle_privee
 mv id_ed25519.pub Nabil_cle_pub
 ```
 
-![Génération de la clé SSH](images/cle-ssh.png)
+![Génération de la clé SSH](images/clé SSH.png)
 
 ## 5. Fichier de configuration SSH
 
