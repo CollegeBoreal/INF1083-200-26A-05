@@ -1,0 +1,55 @@
+﻿<ActionBar title="Imperative Animation">
+    <NavigationButton text="Menu"
+        android.systemIcon="ic_menu_sort_by_size"
+        (tap)="onDrawerButtonTap()">
+    </NavigationButton>
+</ActionBar>
+
+<StackLayout padding="15">
+
+    <Label text="FC BARCELONA"
+        fontSize="28"
+        fontWeight="bold"
+        color="#004D98"
+        horizontalAlignment="center"
+        margin="15">
+    </Label>
+
+    <Label text="TypeScript Animation"
+        fontSize="20"
+        horizontalAlignment="center">
+    </Label>
+
+    <AbsoluteLayout width="300"
+        height="300"
+        backgroundColor="#004D98"
+        borderRadius="20"
+        margin="15">
+
+        <Image #cible
+            src="res://logo"
+            width="80"
+            height="80"
+            left="110"
+            top="110">
+        </Image>
+
+    </AbsoluteLayout>
+
+    <Button text="Animate"
+        (tap)="animate($any(cible))"
+        backgroundColor="#A50044"
+        color="white"
+        fontSize="20"
+        height="55"
+        borderRadius="10">
+    </Button>
+
+    <Label text="INF1083 | 300151449"
+        horizontalAlignment="center"
+        margin="20">
+    </Label>
+
+</StackLayout>
+
+
