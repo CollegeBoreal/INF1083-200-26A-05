@@ -1,10 +1,32 @@
-<ActionBar title="Computer Scientists" iosLargeTitle="true"> </ActionBar>
+<ActionBar
+  title="🎬 Visages d’Hollywood"
+  backgroundColor="#111827"
+  color="#FDE68A"
+></ActionBar>
 
-<GridLayout>
-  <ListView [items]="personService.items()">
+<GridLayout rows="auto, *" backgroundColor="#111827">
+  <Label
+    row="0"
+    text="Choisis un nom pour découvrir ses films."
+    textWrap="true"
+    color="#E5E7EB"
+    class="px-4 py-3 text-base"
+  ></Label>
+
+  <ListView row="1" [items]="personService.items()" separatorColor="transparent">
     <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name" class="text-lg text-gray-500 p-4"></Label>
+      <StackLayout
+        [nsRouterLink]="['/item', item.id]"
+        pageTransition="slideLeft"
+        [pageTransitionDuration]="350"
+        backgroundColor="#253247"
+        class="mx-4 my-1 rounded-xl px-4 py-3"
+      >
+        <Label
+          [text]="'🎬  ' + item.name"
+          color="#FFFFFF"
+          class="text-lg"
+        ></Label>
       </StackLayout>
     </ng-template>
   </ListView>
