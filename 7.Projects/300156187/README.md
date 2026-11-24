@@ -1,8 +1,11 @@
 # 🍔 Wonder Food's — Application mobile de restaurant
 
 > Projet final du cours **INF1083 — Développement mobile (NativeScript)**
+
 > Collège Boréal, session automne 2026.
+
 > Étudiant : **Idir Islam Chili 
+
 >🆔 300156187**
 
 ## ✅ Exigences de l'énoncé (7.Projects)
