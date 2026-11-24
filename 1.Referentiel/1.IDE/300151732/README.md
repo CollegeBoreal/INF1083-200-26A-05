@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-Configuration SSH
-
-Etape1: Generer la cle SSH
-
-![Generation de la cle SSH](Images/cl� SSH.png)
-
-=======
 # Référentiel — IDE : Git, SSH et Visual Studio Code
 
 Ce projet est réalisé dans le cadre du cours Développement d'applications (INF1083-200-26A-05).
->>>>>>> 538452d0ee3cf689d9cc7dce62d44de628fa6214
 
 | | |
 |---|---|
@@ -80,7 +71,7 @@ mv id_ed25519 Nabil_cle_privee
 mv id_ed25519.pub Nabil_cle_pub
 ```
 
-![Génération de la clé SSH](images/clé SSH.png)
+![Génération de la clé SSH](images/cle-ssh.png)
 
 ## 5. Fichier de configuration SSH
 
@@ -157,4 +148,3 @@ Version installée : 1.146.0.
 - [Tutoriel sur Git](https://github.com/CollegeBoreal/Tutoriels/tree/main/0.GIT)
 - [Générer une clé SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [Ajouter une clé SSH à GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-
