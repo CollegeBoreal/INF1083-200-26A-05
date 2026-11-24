@@ -80,14 +80,3 @@ ns run android
 | Icônes des onglets affichées comme des carrés | Les onglets sont créés par code avant le CSS : la police `fa-solid-900` est donnée à chaque onglet au chargement du `TabView` |
 | `TS2339: Property 'value' does not exist on type 'Event'` (Switch) | `$any($event).value` dans le template |
 | Mes autres labos NativeScript sont sur le même téléphone | Identifiant propre : `org.nativescript.projet.b300151315` |
-
-## ❓ Question au professeur — 2e projet (contenu généré)
-
-Pour le 2e projet (*Application hybride et web avec contenu généré*), est-ce qu'on doit utiliser une API précise ?
-
-Je propose **MétéoBoréal**, une application météo NativeScript (Angular) avec l'API gratuite **Open-Meteo** (https://open-meteo.com, sans clé) :
-- **Aujourd'hui** : météo à ma position (plugin `@nativescript/geolocation`)
-- **Prévisions** : les 7 prochains jours
-- **Villes** : recherche d'une ville et favoris
-
-Est-ce que cette API est acceptée, ou est-ce que vous avez une API à nous fournir ?
