@@ -9,11 +9,11 @@ INF 1083-200 Développement d'applications
 |---------|--------|:-------------------------------------------------|:-------------------------------------------------------------- |----|
 | :one:   | 16-sep | [0.PlanDeCours](0.PlanDeCours)                   | [🎉](0.PlanDeCours/.scripts/Participation.md)                  | 0️⃣2️⃣
 | :two:   | 07-oct | [2.Nativescript](2.NativeScript)                 | [🎉](2.NativeScript/.scripts/Participation.md)                 | 0️⃣8️⃣
-| :three: | 13-oct | [3.Angular](3.Angular)                           | [🎉](3.Angular/.scripts/Participation.md)                      | :one:0️⃣
-| :four:  | 20-oct | [4.Forms](4.Forms)                               | [🎉](4.Forms/.scripts/Participation.md)                        | 2️⃣0️⃣
-| :five:  | 03-nov | [5.RxJS](5.RxJS)                                 | [🎉](5.RxJS/.scripts/Participation.md)                         | 2️⃣0️⃣
-| :six:   | 10-nov | [6.Animations](6.Animations)                     | [🎉](6.Animations/.scripts/Participation.md)                   | 2️⃣0️⃣
-| :six:   | 30-nov | [7.Projects](7.Projects)                         | [🎉](7.Projects/.scripts/Participation.md)                     | 3️⃣0️⃣
+| :three: | 13-oct | [3.Angular](3.Angular)                           | [🎉](3.Angular/.scripts/Participation.md)                      | 1️⃣0️⃣
+| :four:  | 20-oct | [4.Forms](4.Forms)                               | [🎉](4.Forms/.scripts/Participation.md)                        | 1️⃣0️⃣
+| :five:  | 03-nov | [5.RxJS](5.RxJS)                                 | [🎉](5.RxJS/.scripts/Participation.md)                         | 1️⃣0️⃣
+| :six:   | 10-nov | [6.Animations](6.Animations)                     | [🎉](6.Animations/.scripts/Participation.md)                   | 1️⃣5️⃣
+| :six:   | 30-nov | [7.Projects](7.Projects)                         | [🎉](7.Projects/.scripts/Participation.md)                     | 2️⃣5️⃣
 
 ---
 
