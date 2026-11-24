@@ -1,0 +1,45 @@
+ActionBar {
+  background-color: #183153;
+  color: white;
+}
+.page {
+  background-color: #f4f6fa;
+}
+.heading {
+  font-size: 24;
+  font-weight: bold;
+  color: #183153;
+  margin: 18 16 8 16;
+}
+.subtitle {
+  font-size: 14;
+  color: #64748b;
+  margin: 0 16 16 16;
+}
+.person-row {
+  background-color: white;
+  border-radius: 10;
+  margin: 6 12;
+  padding: 16;
+}
+.person-name {
+  font-size: 18;
+  font-weight: bold;
+  color: #183153;
+}
+.person-country {
+  font-size: 13;
+  color: #64748b;
+  margin-top: 4;
+}
+.section-title {
+  font-size: 16;
+  font-weight: bold;
+  margin: 18 16 8 16;
+  color: #183153;
+}
+.body-text {
+  font-size: 16;
+  color: #334155;
+  margin: 4 16;
+}
