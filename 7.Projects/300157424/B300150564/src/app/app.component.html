@@ -1,0 +1,153 @@
+<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+
+  <GridLayout
+    tkDrawerContent
+    rows="auto, *"
+    class="nt-drawer__content">
+
+    <!-- CARCARE HEADER -->
+    <StackLayout
+      row="0"
+      class="nt-drawer__header">
+
+      <Label
+        text="🚗"
+        class="nt-drawer__header-image t-36">
+      </Label>
+
+      <Label
+        class="nt-drawer__header-brand"
+        text="CarCare">
+      </Label>
+
+      <Label
+        class="nt-drawer__header-footnote"
+        text="Smart vehicle management">
+      </Label>
+
+    </StackLayout>
+
+    <!-- NAVIGATION -->
+    <ScrollView
+      row="1"
+      class="nt-drawer__body">
+
+      <StackLayout>
+
+        <!-- DASHBOARD -->
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/home')"
+          (tap)="onNavItemTap('/home')">
+
+          <Label
+            col="0"
+            text="&#xf015;"
+            class="nt-icon fas">
+          </Label>
+
+          <Label
+            col="1"
+            text="Dashboard"
+            class="p-r-10">
+          </Label>
+
+        </GridLayout>
+
+        <!-- MAINTENANCE -->
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/browse')"
+          (tap)="onNavItemTap('/browse')">
+
+          <Label
+            col="0"
+            text="&#xf0ad;"
+            class="nt-icon fas">
+          </Label>
+
+          <Label
+            col="1"
+            text="Maintenance"
+            class="p-r-10">
+          </Label>
+
+        </GridLayout>
+
+        <!-- EXPENSES -->
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/search')"
+          (tap)="onNavItemTap('/search')">
+
+          <Label
+            col="0"
+            text="&#xf155;"
+            class="nt-icon fas">
+          </Label>
+
+          <Label
+            col="1"
+            text="Expenses"
+            class="p-r-10">
+          </Label>
+
+        </GridLayout>
+
+        <!-- MY VEHICLES -->
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/featured')"
+          (tap)="onNavItemTap('/featured')">
+
+          <Label
+            col="0"
+            text="&#xf1b9;"
+            class="nt-icon fas">
+          </Label>
+
+          <Label
+            col="1"
+            text="My Vehicles"
+            class="p-r-10">
+          </Label>
+
+        </GridLayout>
+
+        <StackLayout class="hr"></StackLayout>
+
+        <!-- SETTINGS -->
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/settings')"
+          (tap)="onNavItemTap('/settings')">
+
+          <Label
+            col="0"
+            text="&#xf013;"
+            class="nt-icon fas">
+          </Label>
+
+          <Label
+            col="1"
+            text="Settings"
+            class="p-r-10">
+          </Label>
+
+        </GridLayout>
+
+      </StackLayout>
+    </ScrollView>
+
+  </GridLayout>
+
+  <GridLayout tkMainContent>
+    <page-router-outlet></page-router-outlet>
+  </GridLayout>
+
+</RadSideDrawer>

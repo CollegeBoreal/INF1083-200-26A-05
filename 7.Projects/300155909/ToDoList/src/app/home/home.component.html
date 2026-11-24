@@ -1,0 +1,113 @@
+
+<ActionBar title="To Do List"></ActionBar>
+
+<GridLayout rows="auto,*,auto" backgroundColor="#F8F7FC">
+
+  <StackLayout row="0" padding="24">
+    <Label text="Good day! ☀️"
+           fontSize="16"
+           color="#88839A"></Label>
+
+    <Label text="My Day"
+           fontSize="32"
+           fontWeight="bold"
+           color="#29243D"
+           marginTop="8"></Label>
+
+    <Label text="Make today count."
+           fontSize="15"
+           color="#88839A"
+           marginTop="5"></Label>
+
+    <GridLayout columns="*,*" marginTop="22">
+      <StackLayout col="0"
+                   backgroundColor="#EEE9FF"
+                   borderRadius="16"
+                   padding="15"
+                   marginRight="6">
+        <Label [text]="tasks.length.toString()"
+               fontSize="27"
+               fontWeight="bold"
+               color="#7656D6"></Label>
+        <Label text="Tasks today" color="#665B80"></Label>
+      </StackLayout>
+
+      <StackLayout col="1"
+                   backgroundColor="#E5F6EF"
+                   borderRadius="16"
+                   padding="15"
+                   marginLeft="6">
+        <Label [text]="completedTasks.toString()"
+               fontSize="27"
+               fontWeight="bold"
+               color="#269B70"></Label>
+        <Label text="Completed" color="#527D6B"></Label>
+      </StackLayout>
+    </GridLayout>
+  </StackLayout>
+
+  <ScrollView row="1">
+    <StackLayout padding="24" paddingTop="5">
+
+      <Label text="Today's tasks"
+             fontSize="20"
+             fontWeight="bold"
+             color="#29243D"
+             marginBottom="15"></Label>
+
+      <Label *ngIf="tasks.length === 0"
+             text="✨ No tasks yet. Add your first task!"
+             color="#88839A"
+             textAlignment="center"
+             marginTop="25"></Label>
+
+      <GridLayout *ngFor="let task of tasks"
+                  columns="*,auto"
+                  backgroundColor="white"
+                  borderRadius="14"
+                  padding="15"
+                  marginBottom="10">
+
+        <Label col="0"
+               [text]="(task.completed ? '✓  ' : '○  ') + task.title"
+               [color]="task.completed ? '#269B70' : '#29243D'"
+               fontSize="16"
+               textWrap="true"
+               (tap)="toggleTask(task)"></Label>
+
+        <Label col="1"
+               text="✕"
+               color="#D66A75"
+               fontSize="18"
+               padding="5"
+               (tap)="deleteTask(task)"></Label>
+
+      </GridLayout>
+
+    </StackLayout>
+  </ScrollView>
+
+  <StackLayout row="2"
+               padding="15"
+               backgroundColor="white">
+
+    <TextField hint="Write a new task..."
+               [(ngModel)]="newTask"
+               backgroundColor="#F3F0FA"
+               borderRadius="12"
+               padding="12"
+               fontSize="15"></TextField>
+
+    <Button text="+  Add a new task"
+            (tap)="addTask()"
+            backgroundColor="#7656D6"
+            color="white"
+            borderRadius="12"
+            height="50"
+            marginTop="8"
+            fontSize="16">
+    </Button>
+
+  </StackLayout>
+
+</GridLayout>

@@ -1,0 +1,15 @@
+<!-- Navigation par onglets (patron : @nativescript/template-tab-navigation) -->
+<TabView androidTabsPosition="bottom" selectedTabTextColor="#0B1B3F" tabTextColor="#94A3B8" tabBackgroundColor="#FFFFFF">
+  <TabViewItem title="Portefeuille">
+    <Frame defaultPage="portfolio/portfolio-page" />
+  </TabViewItem>
+  <TabViewItem title="Marchés">
+    <Frame defaultPage="markets/markets-page" />
+  </TabViewItem>
+  <TabViewItem title="Analyse">
+    <Frame defaultPage="analysis/analysis-page" />
+  </TabViewItem>
+  <TabViewItem title="Profil">
+    <Frame defaultPage="profile/profile-page" />
+  </TabViewItem>
+</TabView>

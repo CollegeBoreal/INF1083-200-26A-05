@@ -1,0 +1,129 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+
+  <GridLayout columns="50, *">
+    <Label
+      class="fas menu-icon"
+      text="&#xf0c9;"
+      (tap)="onDrawerButtonTap()">
+    </Label>
+
+    <Label
+      col="1"
+      class="action-bar-title"
+      text="Settings">
+    </Label>
+  </GridLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="settings-page">
+
+    <Label text="⚙️ Settings" class="brand-title"></Label>
+    <Label
+      text="Customize your CarCare experience."
+      class="subtitle">
+    </Label>
+
+    <!-- REMINDERS -->
+    <Label text="Notifications" class="section-title"></Label>
+
+    <GridLayout columns="*, auto" class="setting-card">
+      <StackLayout col="0">
+        <Label
+          text="🔔 Maintenance Reminders"
+          class="setting-name">
+        </Label>
+
+        <Label
+          text="Receive reminders for upcoming services."
+          textWrap="true"
+          class="setting-description">
+        </Label>
+      </StackLayout>
+
+      <Switch
+        col="1"
+        [checked]="maintenanceReminders"
+        (checkedChange)="onReminderChange($event)"
+        class="setting-switch">
+      </Switch>
+    </GridLayout>
+
+    <!-- DISTANCE UNIT -->
+    <Label text="Distance Unit" class="section-title"></Label>
+
+    <StackLayout class="setting-card">
+
+      <Label
+        text="📏 Preferred Unit"
+        class="setting-name">
+      </Label>
+
+      <Label
+        text="Choose how vehicle distances are displayed."
+        textWrap="true"
+        class="setting-description">
+      </Label>
+
+      <GridLayout columns="*, *" class="unit-buttons">
+
+        <Button
+          col="0"
+          text="KILOMETERS"
+          (tap)="setDistanceUnit('km')"
+          [class.unit-selected]="distanceUnit === 'km'"
+          class="unit-button">
+        </Button>
+
+        <Button
+          col="1"
+          text="MILES"
+          (tap)="setDistanceUnit('mi')"
+          [class.unit-selected]="distanceUnit === 'mi'"
+          class="unit-button">
+        </Button>
+
+      </GridLayout>
+
+      <Label
+        [text]="'Selected unit: ' + (distanceUnit === 'km' ? 'Kilometers' : 'Miles')"
+        class="selected-value">
+      </Label>
+
+    </StackLayout>
+
+    <!-- DATA -->
+    <Label text="Application" class="section-title"></Label>
+
+    <StackLayout class="setting-card">
+      <Label text="🚗 CarCare" class="setting-name"></Label>
+      <Label text="Version 1.0.0" class="setting-description"></Label>
+
+      <Label
+        text="Vehicle maintenance, expense and garage management."
+        textWrap="true"
+        class="setting-description app-description">
+      </Label>
+    </StackLayout>
+
+    <!-- RESET -->
+    <Button
+      text="RESET SETTINGS"
+      (tap)="resetSettings()"
+      class="reset-button">
+    </Button>
+
+    <Label
+      text="Resets preferences only. Vehicles and expenses are not deleted."
+      textWrap="true"
+      class="reset-note">
+    </Label>
+
+    <Label
+      text="CARCARE • DRIVE WITH CONFIDENCE"
+      class="footer-text">
+    </Label>
+
+  </StackLayout>
+</ScrollView>

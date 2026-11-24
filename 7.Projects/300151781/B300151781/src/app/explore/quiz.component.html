@@ -1,0 +1,33 @@
+<ActionBar title="Quiz des drapeaux" class="action-bar">
+  <NavigationButton text="Retour" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout>
+    <StackLayout *ngIf="!finished">
+      <GridLayout columns="*, auto" class="quiz__bar">
+        <Label col="0" [text]="'Question ' + question + ' / ' + total" class="quiz__step"></Label>
+        <Label col="1" [text]="'⭐ ' + score + '   🏆 ' + best" class="quiz__score"></Label>
+      </GridLayout>
+      <Progress [value]="question" [maxValue]="total" class="quiz__progress"></Progress>
+
+      <StackLayout #flagCard class="quiz__card">
+        <Label [text]="answer.flag" class="quiz__flag"></Label>
+        <Label text="Quelle ville se trouve dans ce pays ?" class="quiz__question" textWrap="true"></Label>
+      </StackLayout>
+
+      <Button *ngFor="let city of choices" [text]="city.name" [class]="choiceClass(city)" (tap)="pick(city, $event)"></Button>
+
+      <Label *ngIf="picked" [text]="picked.id === answer.id ? '✅ Bravo ! ' + answer.name + ', ' + answer.country : '❌ Réponse : ' + answer.name + ' (' + answer.country + ')'" class="quiz__feedback" textWrap="true"></Label>
+      <Button *ngIf="picked" [text]="question === total ? 'Voir mon résultat' : 'Question suivante →'" class="btn-primary" (tap)="next()"></Button>
+    </StackLayout>
+
+    <StackLayout *ngIf="finished" class="quiz__result" (loaded)="onResult($event)">
+      <Label [text]="medal" class="quiz__medal"></Label>
+      <Label [text]="score + ' / ' + total" class="quiz__final"></Label>
+      <Label [text]="verdict" class="quiz__verdict" textWrap="true"></Label>
+      <Label [text]="'Meilleur score : ' + best + ' / ' + total" class="quiz__best"></Label>
+      <Button text="🔄 Rejouer" class="btn-primary" (tap)="restart()"></Button>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

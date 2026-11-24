@@ -1,0 +1,103 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <GridLayout>
+    <ScrollView>
+      <StackLayout>
+        <!-- En-tête : valeur totale + graphique -->
+        <StackLayout class="entete">
+          <GridLayout columns="*, auto">
+            <Label col="0" text="INVESTLY" class="logo" />
+            <Label col="1" text="{{ bonjour }}" class="entete-petit" />
+          </GridLayout>
+          <Label text="Valeur totale du portefeuille" class="entete-petit" marginTop="14" />
+          <Label text="{{ total }}" class="total" />
+          <Label text="{{ jourTexte }}" color="{{ jourCouleur }}" fontSize="14" />
+          <WebView src="{{ graphique }}" height="150" marginTop="10" isUserInteractionEnabled="false" />
+          <Repeater items="{{ periodes }}" class="periodes">
+            <Repeater.itemsLayout><StackLayout orientation="horizontal" /></Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+              <Button text="{{ cle }}" tap="onPeriodeTap" class="{{ actif ? 'periode periode-actif' : 'periode' }}" />
+            </Repeater.itemTemplate>
+          </Repeater>
+        </StackLayout>
+
+        <!-- Résumé -->
+        <GridLayout columns="*, *" margin="10 12 0 12">
+          <StackLayout col="0" class="mini-carte">
+            <Label text="Gain total" class="etiquette" />
+            <Label text="{{ gain }}" class="valeur" color="{{ gainCouleur }}" />
+            <Label text="{{ gainPct }}" class="discret" color="{{ gainCouleur }}" />
+          </StackLayout>
+          <StackLayout col="1" class="mini-carte">
+            <Label text="Liquidités" class="etiquette" />
+            <Label text="{{ liquidites }}" class="valeur" />
+            <Label text="disponibles pour investir" class="discret" />
+          </StackLayout>
+        </GridLayout>
+
+        <!-- Répartition -->
+        <Label text="Répartition" class="section" />
+        <StackLayout class="carte">
+          <Repeater items="{{ repartition }}">
+            <Repeater.itemTemplate>
+              <StackLayout marginBottom="10">
+                <GridLayout columns="auto, *, auto">
+                  <StackLayout col="0" class="point" backgroundColor="{{ couleur }}" />
+                  <Label col="1" text="{{ nom }}" class="texte" />
+                  <Label col="2" text="{{ pctTexte }}" class="texte gras" />
+                </GridLayout>
+                <Progress value="{{ pct100 }}" maxValue="100" color="{{ couleur }}" />
+              </StackLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+        </StackLayout>
+
+        <!-- Positions -->
+        <Label text="{{ 'Mes positions (' + positions.length + ')' }}" class="section" />
+        <StackLayout class="carte" padding="0">
+          <Repeater items="{{ positions }}">
+            <Repeater.itemTemplate>
+              <GridLayout columns="auto, *, auto" class="ligne" tap="onPositionTap">
+                <Label col="0" text="{{ ticker }}" class="badge" backgroundColor="{{ couleur }}" />
+                <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+                  <Label text="{{ nom }}" class="ticker" />
+                  <Label text="{{ quantiteTexte }}" class="discret" />
+                </StackLayout>
+                <StackLayout col="2" horizontalAlignment="right" verticalAlignment="center">
+                  <Label text="{{ valeurTexte }}" class="texte gras" textAlignment="right" />
+                  <Label text="{{ gainTexte }}" color="{{ gainCouleur }}" fontSize="12" textAlignment="right" />
+                </StackLayout>
+              </GridLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+        </StackLayout>
+
+        <!-- Transactions -->
+        <Label text="Dernières transactions" class="section" visibility="{{ transactions.length ? 'visible' : 'collapsed' }}" />
+        <StackLayout class="carte" padding="0" visibility="{{ transactions.length ? 'visible' : 'collapsed' }}">
+          <Repeater items="{{ transactions }}">
+            <Repeater.itemTemplate>
+              <GridLayout columns="*, auto" class="ligne">
+                <StackLayout col="0">
+                  <Label text="{{ titre }}" class="texte gras" />
+                  <Label text="{{ date }}" class="discret" />
+                </StackLayout>
+                <Label col="1" text="{{ montant }}" class="texte" verticalAlignment="center" />
+              </GridLayout>
+            </Repeater.itemTemplate>
+          </Repeater>
+        </StackLayout>
+
+        <Label text="Données de marché simulées à des fins pédagogiques. Ceci n'est pas un conseil financier." class="avertissement" textWrap="true" />
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Écran de verrouillage biométrique -->
+    <StackLayout class="verrou" visibility="{{ verrouille ? 'visible' : 'collapsed' }}" verticalAlignment="stretch">
+      <StackLayout verticalAlignment="center" marginTop="220">
+        <Label text="🔒" fontSize="48" textAlignment="center" />
+        <Label text="INVESTLY est verrouillé" class="verrou-titre" />
+        <Button text="Déverrouiller" tap="{{ onDeverrouiller }}" class="btn-acheter" margin="24 40" />
+      </StackLayout>
+    </StackLayout>
+  </GridLayout>
+</Page>

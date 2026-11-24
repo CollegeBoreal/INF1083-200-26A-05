@@ -24,3 +24,7 @@ ns build android
 ## ✅ Résultat
 - `ns build android` : réussi, APK debug générée.
 - API vérifiée : https://countries.nexperts.nl/capital/Paris répond France.
+
+## 📸 Capture d'écran
+
+![Recherche de pays par capitale — Paris](images/search.jpeg)

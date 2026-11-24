@@ -1,0 +1,21 @@
+﻿<TabView androidTabsPosition="bottom" selectedTabTextColor="#4F46E5" tabTextColor="#94A3B8" [tabBackgroundColor]="(dark$ | async) ? '#0F172A' : '#FFFFFF'" androidSelectedTabHighlightColor="#4F46E5">
+  <GridLayout *tabItem="{ title: '🧭 Explorer' }">
+    <page-router-outlet name="exploreTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '♥ Favoris' }">
+    <page-router-outlet name="favoritesTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '🗺️ Carte' }">
+    <page-router-outlet name="mapTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '🧳 Voyage' }">
+    <page-router-outlet name="tripTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '🌍 Infos' }">
+    <page-router-outlet name="aboutTab"></page-router-outlet>
+  </GridLayout>
+</TabView>

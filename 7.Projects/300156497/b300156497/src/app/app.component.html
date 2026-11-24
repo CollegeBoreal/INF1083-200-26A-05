@@ -1,0 +1,15 @@
+
+<TabView androidTabsPosition="bottom">
+  <GridLayout *tabItem="{ title: '👗 Outfits' }">
+    <page-router-outlet name="homeTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '❤️ Favorites' }">
+    <page-router-outlet name="browseTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: '👤 Profile' }">
+    <page-router-outlet name="searchTab"></page-router-outlet>
+  </GridLayout>
+</TabView>
+

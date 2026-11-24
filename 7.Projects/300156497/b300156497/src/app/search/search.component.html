@@ -1,0 +1,210 @@
+
+<ScrollView backgroundColor="#fff4f8">
+  <StackLayout padding="20">
+
+    <Label
+      text="My Profile 🎀"
+      fontSize="30"
+      fontWeight="bold"
+      color="#a83e69"
+      textAlignment="center"
+      marginTop="20"
+      marginBottom="20">
+    </Label>
+
+    <!-- Profile -->
+    <StackLayout
+      backgroundColor="white"
+      borderRadius="25"
+      padding="20"
+      horizontalAlignment="center">
+
+      <Image
+        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400"
+        width="115"
+        height="115"
+        borderRadius="60"
+        stretch="aspectFill">
+      </Image>
+
+      <Label
+        text="Mouna"
+        fontSize="25"
+        fontWeight="bold"
+        color="#a83e69"
+        textAlignment="center"
+        marginTop="12">
+      </Label>
+
+      <Label
+        text="Fashion lover ✨"
+        fontSize="15"
+        color="#c47b99"
+        textAlignment="center"
+        marginTop="5">
+      </Label>
+
+      <Label
+        text="Welcome to my fashion world 💗"
+        fontSize="13"
+        color="#b66b8b"
+        textAlignment="center"
+        marginTop="10">
+      </Label>
+    </StackLayout>
+
+    <!-- Statistics -->
+    <Label
+      text="My Collection 💗"
+      fontSize="21"
+      fontWeight="bold"
+      color="#a83e69"
+      marginTop="25"
+      marginBottom="12">
+    </Label>
+
+    <GridLayout columns="*,*" columnGap="12">
+
+      <StackLayout
+        col="0"
+        backgroundColor="white"
+        borderRadius="20"
+        padding="15">
+
+        <Label
+          text="❤️"
+          fontSize="30"
+          textAlignment="center">
+        </Label>
+
+        <Label
+          [text]="favoritesCount.toString()"
+          fontSize="27"
+          fontWeight="bold"
+          color="#d35e8d"
+          textAlignment="center">
+        </Label>
+
+        <Label
+          text="Favorites"
+          fontSize="13"
+          color="#a83e69"
+          textAlignment="center">
+        </Label>
+      </StackLayout>
+
+      <StackLayout
+        col="1"
+        backgroundColor="white"
+        borderRadius="20"
+        padding="15">
+
+        <Label
+          text="👗"
+          fontSize="30"
+          textAlignment="center">
+        </Label>
+
+        <Label
+          [text]="outfitsCount.toString()"
+          fontSize="27"
+          fontWeight="bold"
+          color="#d35e8d"
+          textAlignment="center">
+        </Label>
+
+        <Label
+          text="Available outfits"
+          fontSize="13"
+          color="#a83e69"
+          textAlignment="center">
+        </Label>
+      </StackLayout>
+
+    </GridLayout>
+
+    <!-- My Style -->
+    <Label
+      text="My Style ✨"
+      fontSize="21"
+      fontWeight="bold"
+      color="#a83e69"
+      marginTop="25"
+      marginBottom="12">
+    </Label>
+
+    <StackLayout
+      backgroundColor="white"
+      borderRadius="20"
+      padding="18">
+
+      <Label
+        text="🎀  Pink & Feminine"
+        fontSize="16"
+        color="#a83e69"
+        marginBottom="15">
+      </Label>
+
+      <Label
+        text="🌷  Elegant & Chic"
+        fontSize="16"
+        color="#a83e69"
+        marginBottom="15">
+      </Label>
+
+      <Label
+        text="💗  Soft Girl Style"
+        fontSize="16"
+        color="#a83e69">
+      </Label>
+    </StackLayout>
+
+    <!-- Settings -->
+    <Label
+      text="Settings ⚙️"
+      fontSize="21"
+      fontWeight="bold"
+      color="#a83e69"
+      marginTop="25"
+      marginBottom="12">
+    </Label>
+
+    <StackLayout
+      backgroundColor="white"
+      borderRadius="20"
+      padding="18">
+
+      <Label
+        text="🔔  Notifications"
+        fontSize="16"
+        color="#a83e69"
+        marginBottom="20">
+      </Label>
+
+      <Label
+        text="💕  About Us"
+        fontSize="16"
+        color="#a83e69"
+        marginBottom="20">
+      </Label>
+
+      <Label
+        text="💌  Contact"
+        fontSize="16"
+        color="#a83e69">
+      </Label>
+
+    </StackLayout>
+
+    <Label
+      text="Made with love for Mouna 💗"
+      fontSize="14"
+      color="#c47b99"
+      textAlignment="center"
+      marginTop="25"
+      marginBottom="25">
+    </Label>
+
+  </StackLayout>
+</ScrollView>
+

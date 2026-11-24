@@ -1,0 +1,61 @@
+﻿<ActionBar title="Lounivers" class="action-bar"></ActionBar>
+
+<ScrollView class="page">
+  <StackLayout>
+    <StackLayout class="header">
+      <Label text="Carte du monde" class="header__title"></Label>
+      <Label [text]="pins.length + ' destinations · ' + visitedCount + ' déjà consultées'" class="header__subtitle"></Label>
+    </StackLayout>
+
+    <!-- Filtres + zoom -->
+    <GridLayout columns="*, auto, auto, auto" class="map-tools">
+      <ScrollView col="0" orientation="horizontal" scrollBarIndicatorVisible="false">
+        <StackLayout orientation="horizontal">
+          <Label *ngFor="let r of regions" [text]="r" class="chip" [class.chip--active]="r === region" (tap)="selectRegion(r)"></Label>
+        </StackLayout>
+      </ScrollView>
+      <Label col="1" text="−" class="zoom" (tap)="zoom(-1)"></Label>
+      <Label col="2" [text]="zoomLabel" class="zoom__level"></Label>
+      <Label col="3" text="+" class="zoom" (tap)="zoom(1)"></Label>
+    </GridLayout>
+
+    <!-- Carte : image en points + une épingle par ville -->
+    <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false" class="map" (loaded)="onScrollerLoaded($event)">
+      <AbsoluteLayout [width]="width" [height]="height">
+        <Image src="~/assets/world_dots.png" [width]="width" [height]="height" stretch="fill" left="0" top="0"></Image>
+        <Label
+          *ngFor="let pin of pins"
+          [left]="pin.x"
+          [top]="pin.y"
+          [width]="pinSize"
+          [height]="pinSize"
+          class="pin"
+          [class.pin--visited]="badgeService.isVisited(pin.city.id)"
+          [class.pin--selected]="selected?.id === pin.city.id"
+          [backgroundColor]="pin.city.color"
+          (tap)="select(pin, $event)"
+        ></Label>
+      </AbsoluteLayout>
+    </ScrollView>
+    <Label text="Faites glisser la carte · touchez un point pour découvrir la ville" class="map-hint" textWrap="true"></Label>
+
+    <!-- Ville sélectionnée -->
+    <GridLayout *ngIf="selected" columns="6, auto, *" class="city-card map-card" (loaded)="onCard($event)">
+      <StackLayout col="0" class="city-card__accent" [backgroundColor]="selected.color"></StackLayout>
+      <Label col="1" [text]="selected.flag" class="city-card__flag"></Label>
+      <StackLayout col="2" class="city-card__body">
+        <Label [text]="selected.name + ' · ' + selected.country" class="city-card__name" textWrap="true"></Label>
+        <Label [text]="selected.tagline" class="city-card__meta" textWrap="true"></Label>
+        <Label [text]="'🕒 ' + localTime + ' sur place   📍 ' + distance + ' du Collège Boréal'" class="city-card__tag" textWrap="true"></Label>
+        <Button text="Voir la fiche →" class="map-card__button" [backgroundColor]="selected.color" (tap)="open()"></Button>
+      </StackLayout>
+    </GridLayout>
+
+    <StackLayout *ngIf="!selected" class="card">
+      <Label text="🗺️ LÉGENDE" class="card__label"></Label>
+      <Label text="● Chaque point a la couleur du drapeau de son pays." class="card__text" textWrap="true"></Label>
+      <Label text="◎ Un contour doré indique une ville déjà consultée." class="card__text" textWrap="true"></Label>
+      <Label text="＋ / − pour zoomer, puis faites glisser la carte." class="card__text" textWrap="true"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

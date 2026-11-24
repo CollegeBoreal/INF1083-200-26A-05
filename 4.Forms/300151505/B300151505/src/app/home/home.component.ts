@@ -1,60 +1,42 @@
-import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-
+import { Component, NO_ERRORS_SCHEMA, inject, signal } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import {
   NativeScriptCommonModule,
-  NativeScriptRouterModule,
   NativeScriptFormsModule,
+  NativeScriptRouterModule,
 } from '@nativescript/angular';
 
 @Component({
   selector: 'Home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  imports: [
-    NativeScriptCommonModule,
-    NativeScriptRouterModule,
-    NativeScriptFormsModule,
-    ReactiveFormsModule,
-  ],
+  // NativeScriptFormsModule : relie les TextField NativeScript aux contrôles du formulaire
+  // ReactiveFormsModule     : fournit [formGroup] et formControlName
+  imports: [NativeScriptCommonModule, NativeScriptFormsModule, NativeScriptRouterModule, ReactiveFormsModule],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class HomeComponent {
 
-  bookingForm: FormGroup;
+  // Injection du FormBuilder (équivalent à : constructor(private formBuilder: FormBuilder))
+  private formBuilder = inject(FormBuilder);
 
-  constructor(private formBuilder: FormBuilder) {
-    this.bookingForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      email: ['', Validators.required],
-      username: ['', Validators.required],
-      phone: ['', Validators.required],
-      carType: ['', Validators.required],
-      pickupLocation: ['', Validators.required],
-      pickupDate: ['', Validators.required],
-      returnDate: ['', Validators.required],
-      insurance: [false],
-    });
-  }
+  // Le formulaire réactif : deux champs obligatoires
+  signUpForm: FormGroup = this.formBuilder.group({
+    email: ['', Validators.required],
+    username: ['', Validators.required],
+  });
 
-  onBookNow() {
-    console.log('CAR RENTAL BOOKING');
-    console.log('Full Name: ' + this.bookingForm.value.fullName);
-    console.log('Email: ' + this.bookingForm.value.email);
-    console.log('Username: ' + this.bookingForm.value.username);
-    console.log('Phone: ' + this.bookingForm.value.phone);
-    console.log('Car Type: ' + this.bookingForm.value.carType);
-    console.log('Pick-up Location: ' + this.bookingForm.value.pickupLocation);
-    console.log('Pick-up Date: ' + this.bookingForm.value.pickupDate);
-    console.log('Return Date: ' + this.bookingForm.value.returnDate);
-    console.log(
-      'Additional Insurance: ' +
-        (this.bookingForm.value.insurance ? 'Yes' : 'No')
+  // signal() : l'application utilise la détection de changements "zoneless"
+  resultat = signal('');
+
+  onButtonTap() {
+    // 🫵 Afficher le courriel et l'utilisateur dans la console
+    console.log(JSON.stringify(this.signUpForm.value));
+
+    // Afficher aussi le résultat à l'écran
+    this.resultat.set(
+      this.signUpForm.valid
+        ? JSON.stringify(this.signUpForm.value)
+        : 'Veuillez remplir les deux champs.'
     );
   }
 }

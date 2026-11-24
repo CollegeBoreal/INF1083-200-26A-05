@@ -1,0 +1,22 @@
+<ActionBar class="fz-bar">
+  <Label text="⚽ FootZone — Matchs" class="fz-bar-titre"></Label>
+</ActionBar>
+
+<GridLayout rows="auto, *" class="fz-page">
+  <Button row="0" [text]="seulementAlgerie() ? '🇩🇿 Matchs de l’Algérie  ✓' : 'Tous les matchs mémorables'"
+          (tap)="basculer()" [class]="seulementAlgerie() ? 'fz-filtre-large fz-filtre-actif' : 'fz-filtre-large'"></Button>
+
+  <ListView row="1" [items]="matchs()" separatorColor="transparent">
+    <ng-template let-m="item">
+      <StackLayout class="fz-match">
+        <Label [text]="m.competition + ' · ' + m.date" class="fz-sous-titre" textWrap="true"></Label>
+        <GridLayout columns="*, auto, *" class="m-t-5">
+          <Label col="0" [text]="m.domicile" class="fz-equipe" textWrap="true"></Label>
+          <Label col="1" [text]="m.score" class="fz-score"></Label>
+          <Label col="2" [text]="m.exterieur" class="fz-equipe fz-droite" textWrap="true"></Label>
+        </GridLayout>
+        <Label [text]="m.resume" class="fz-resume" textWrap="true"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

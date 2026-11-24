@@ -1,0 +1,13 @@
+<ActionBar title="Personnalités africaines"></ActionBar>
+<GridLayout rows="auto,auto,*" class="page">
+  <Label row="0" text="Personnalités africaines" class="heading"></Label>
+  <Label row="1" text="Découvrez cinq personnalités qui ont marqué l’histoire et la culture." class="subtitle" textWrap="true"></Label>
+  <ListView row="2" [items]="personService.people()">
+    <ng-template let-person="item">
+      <GridLayout rows="auto,auto" class="person-row" [nsRouterLink]="['/people', person.id]">
+        <Label row="0" [text]="person.name" class="person-name"></Label>
+        <Label row="1" [text]="person.nationality" class="person-country"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

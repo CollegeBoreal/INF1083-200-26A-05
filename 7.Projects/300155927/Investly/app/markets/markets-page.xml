@@ -1,0 +1,56 @@
+<Page navigatingTo="onNavigatingTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <GridLayout rows="auto, auto, auto, *">
+    <StackLayout row="0" class="entete">
+      <Label text="Marchés" class="entete-titre" />
+      <Label text="Prix simulés · mise à jour toutes les 3 s" class="entete-petit" />
+      <TextField text="{{ recherche }}" hint="🔍  Rechercher : Apple, BTC, ETF…" class="recherche" />
+    </StackLayout>
+
+    <!-- Indices -->
+    <Repeater row="1" items="{{ indices }}" margin="12 12 4 12">
+      <Repeater.itemsLayout><WrapLayout /></Repeater.itemsLayout>
+      <Repeater.itemTemplate>
+        <StackLayout width="33.3%">
+          <StackLayout class="indice">
+          <Label text="{{ nom }}" class="discret" />
+          <Label text="{{ valeur }}" class="texte gras" />
+          <Label text="{{ variation }}" color="{{ couleur }}" fontSize="12" class="gras" />
+          </StackLayout>
+        </StackLayout>
+      </Repeater.itemTemplate>
+    </Repeater>
+
+    <!-- Filtres -->
+    <ScrollView row="2" orientation="horizontal" scrollBarIndicatorVisible="false" margin="8 0 8 16">
+      <Repeater items="{{ filtres }}">
+        <Repeater.itemsLayout><StackLayout orientation="horizontal" /></Repeater.itemsLayout>
+        <Repeater.itemTemplate>
+          <Button text="{{ nom }}" tap="onFiltreTap" class="{{ actif ? 'chip chip-actif' : 'chip' }}" />
+        </Repeater.itemTemplate>
+      </Repeater>
+    </ScrollView>
+
+    <!-- Liste des actifs -->
+    <ListView row="3" items="{{ actifs }}" itemTap="onActifTap" separatorColor="#EEF2F7">
+      <ListView.itemTemplate>
+        <GridLayout columns="auto, *, auto" class="ligne">
+          <Label col="0" text="{{ ticker }}" class="badge" backgroundColor="{{ couleur }}" />
+          <StackLayout col="1" marginLeft="12" verticalAlignment="center">
+            <Label>
+              <FormattedString>
+                <Span text="{{ ticker }}" class="ticker" />
+                <Span text="{{ favori ? '  ★' : '' }}" class="etoile" />
+              </FormattedString>
+            </Label>
+            <Label text="{{ nom + ' · ' + type }}" class="discret" />
+          </StackLayout>
+          <StackLayout col="2" verticalAlignment="center">
+            <Label text="{{ prixTexte }}" class="texte gras" textAlignment="right" />
+            <Label text="{{ variationTexte }}" class="pill" backgroundColor="{{ couleurVar }}" horizontalAlignment="right" marginTop="3" />
+          </StackLayout>
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+    <Label row="3" text="Aucun actif trouvé." class="vide" visibility="{{ actifs.length ? 'collapsed' : 'visible' }}" />
+  </GridLayout>
+</Page>

@@ -1,0 +1,15 @@
+<ActionBar title="Détails">
+  <NavigationButton text="Retour" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<ScrollView class="page">
+  <StackLayout>
+    <Label [text]="person()?.name || 'Personnalité introuvable'" class="heading" textWrap="true"></Label>
+    <Label text="Nationalité" class="section-title"></Label>
+    <Label [text]="person()?.nationality || ''" class="body-text"></Label>
+    <Label text="Présentation" class="section-title"></Label>
+    <Label [text]="person()?.description || ''" class="body-text" textWrap="true"></Label>
+    <Label text="Réalisations importantes" class="section-title"></Label>
+    <Label [text]="formatAchievements(person()?.achievements)" class="body-text" textWrap="true"></Label>
+    <Button text="Retour à la liste" (tap)="goBack()" class="m-4"></Button>
+  </StackLayout>
+</ScrollView>

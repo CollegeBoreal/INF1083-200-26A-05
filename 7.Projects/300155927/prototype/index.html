@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INVESTLY — prototype (v2)</title>
+  <style>
+/* INVESTLY — prototype : bleu nuit, menthe, gris clair */
+:root {
+  --nuit: #0B1B3F; --nuit-2: #1E2D55; --menthe: #10B981; --vert: #16A34A; --rouge: #DC2626;
+  --fond: #F5F7FB; --texte: #0F172A; --gris: #64748B; --gris-clair: #94A3B8; --bord: #E8EDF5;
+  /* Nouveau fond de page (hors téléphone) */
+  --page-haut: #0B1A36; --page-bas: #08232F; --page-texte: #C9D6EA; --page-fort: #FFFFFF;
+  --page-doux: #8FA3C2; --page-filet: rgba(255,255,255,.14); --page-grille: rgba(255,255,255,.045);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--page-haut); }
+body { font-family: "Segoe UI", Arial, sans-serif; color: var(--texte); min-height: 100vh;
+  background-color: var(--page-haut);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2310b981' stop-opacity='.16'/%3E%3Cstop offset='1' stop-color='%2310b981' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 760 L90 735 L170 770 L260 700 L340 715 L430 650 L520 680 L610 610 L700 640 L790 560 L880 590 L970 500 L1060 530 L1150 440 L1240 470 L1330 360 L1420 390 L1510 290 L1600 260 L1600 900 L0 900 Z' fill='url(%23a)'/%3E%3Cpath d='M0 760 L90 735 L170 770 L260 700 L340 715 L430 650 L520 680 L610 610 L700 640 L790 560 L880 590 L970 500 L1060 530 L1150 440 L1240 470 L1330 360 L1420 390 L1510 290 L1600 260' fill='none' stroke='%2310b981' stroke-opacity='.45' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    linear-gradient(var(--page-grille) 1px, transparent 1px),
+    linear-gradient(90deg, var(--page-grille) 1px, transparent 1px),
+    radial-gradient(ellipse at 78% 45%, rgba(16,185,129,.14), transparent 55%),
+    linear-gradient(160deg, var(--page-haut) 0%, var(--page-bas) 100%);
+  background-size: cover, 56px 56px, 56px 56px, auto, auto;
+  background-position: center bottom, 0 0, 0 0, center, center;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat;
+  background-attachment: fixed; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; border: none; background: none; }
+[hidden] { display: none !important; }
+
+.scene { display: flex; gap: 48px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 32px 16px; min-height: 100vh; }
+.intro { max-width: 480px; line-height: 1.5; color: var(--page-texte); }
+.marque { font-size: 40px; font-weight: 800; color: var(--page-fort); letter-spacing: 1px; margin-bottom: 14px; }
+.marque span { color: var(--menthe); }
+.intro .sous { color: var(--page-doux); font-size: 13px; margin-bottom: 14px; }
+.intro p { line-height: 1.6; }
+.intro strong, .intro b { color: var(--page-fort); }
+.intro .resume { font-size: 15px; color: var(--page-fort); }
+.intro .titre-bloc { font-size: 16px; font-weight: 700; color: var(--page-fort); margin: 22px 0 8px; padding-top: 14px; border-top: 1px solid var(--page-filet); }
+.intro ol { margin: 12px 0 14px 20px; font-size: 14px; }
+.intro ol li::marker { color: var(--menthe); font-weight: 700; }
+.intro .note { font-size: 13px; background: #FFF7E6; border: 1px solid #FCD9A4; border-radius: 10px; padding: 10px 12px; margin-bottom: 14px; color: #6B4E16; }
+.lien-reinit { color: var(--page-texte); text-decoration: underline; text-decoration-color: var(--menthe); font-size: 13px; }
+
+.telephone { width: 390px; height: 800px; background: #0A0F1E; border-radius: 48px; padding: 14px; position: relative; box-shadow: 0 30px 60px rgba(11,27,63,.3); flex-shrink: 0; }
+.encoche { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 120px; height: 26px; background: #0A0F1E; border-radius: 0 0 16px 16px; z-index: 50; }
+.ecran { width: 100%; height: 100%; background: var(--fond); border-radius: 36px; overflow: hidden; position: relative; }
+.vue { position: absolute; inset: 0; display: none; flex-direction: column; }
+.vue.active { display: flex; }
+.defile { flex: 1; overflow-y: auto; padding-bottom: 84px; }
+.defile.sans-nav { padding-bottom: 16px; }
+.defile::-webkit-scrollbar { width: 0; }
+
+/* En-têtes */
+.entete { background: var(--nuit); color: #fff; padding: 42px 18px 14px; }
+.entete.centre { text-align: center; cursor: pointer; }
+.entete h2 { font-size: 22px; }
+.entete-ligne { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: var(--menthe); font-weight: 800; letter-spacing: 1.5px; font-size: 15px; }
+.petit { font-size: 13px; color: var(--gris-clair); }
+.marge-haut { margin-top: 14px; }
+.total { font-size: 34px; font-weight: 800; margin-top: 2px; transition: color .3s; }
+.jour { font-size: 14px; font-weight: 600; }
+.direct { color: var(--menthe); font-size: 11px; animation: clignote 1.5s infinite; }
+@keyframes clignote { 50% { opacity: .3; } }
+.recherche { width: 100%; margin-top: 12px; background: var(--nuit-2); border: none; border-radius: 12px; padding: 10px 14px; color: #fff; outline: none; }
+.recherche::placeholder { color: var(--gris-clair); }
+
+.graphique { height: 150px; margin-top: 10px; }
+.graphique svg { display: block; }
+.periodes { display: flex; gap: 6px; margin-top: 8px; }
+.periode { width: 52px; height: 30px; border-radius: 14px; font-size: 13px; color: var(--gris-clair); }
+.periode.actif { background: var(--menthe); color: var(--nuit); font-weight: 700; }
+.periodes.clair { padding: 0 18px 14px; }
+.periodes.clair .periode { color: var(--gris); }
+.periodes.clair .periode.actif { background: var(--nuit); color: #fff; }
+
+/* Cartes */
+h3 { font-size: 16px; margin: 18px 16px 8px; color: var(--texte); }
+.carte { background: #fff; border: 1px solid var(--bord); border-radius: 16px; margin: 0 16px; padding: 14px; }
+.carte.liste { padding: 0; overflow: hidden; }
+.grille-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 16px 0; }
+.mini-carte { background: #fff; border: 1px solid var(--bord); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 2px; }
+.mini-carte small, .carte small { color: var(--gris); font-size: 12px; }
+.mini-carte b { font-size: 17px; }
+.grand { font-size: 30px; font-weight: 800; }
+.rouge { color: var(--rouge); }
+.avertissement { font-size: 11px; color: var(--gris-clair); text-align: center; margin: 18px 26px 6px; }
+.vide { text-align: center; color: var(--gris-clair); margin: 24px; font-size: 14px; }
+.petit-vide { margin: 4px 24px 8px; font-size: 13px; }
+
+/* Répartition */
+.barre-empilee { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin-bottom: 12px; }
+.barre-empilee span { height: 100%; transition: width .4s; }
+.legende { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; font-size: 13px; }
+.legende div { display: flex; align-items: center; gap: 6px; }
+.legende b { margin-left: auto; }
+.point { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.barre-secteur { margin-bottom: 10px; font-size: 13px; }
+.barre-secteur .haut { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.barre-secteur .haut b { margin-left: auto; }
+.progression { height: 8px; background: #EEF2F7; border-radius: 4px; overflow: hidden; }
+.progression span { display: block; height: 100%; border-radius: 4px; }
+.conseil { display: block; margin-top: 4px; line-height: 1.4; }
+
+/* Listes */
+.ligne { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-bottom: 1px solid #EEF2F7; width: 100%; text-align: left; background: #fff; }
+.ligne:last-child { border-bottom: none; }
+button.ligne:hover { background: #F8FAFC; }
+.badge { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; flex-shrink: 0; }
+.ligne .milieu { flex: 1; min-width: 0; }
+.ligne .milieu b { display: block; font-size: 15px; }
+.ligne .milieu small { color: var(--gris); font-size: 12px; }
+.ligne .droite { text-align: right; }
+.ligne .droite b { display: block; font-size: 14px; }
+.ligne .droite small { font-size: 12px; font-weight: 600; }
+.pill { display: inline-block; border-radius: 8px; padding: 3px 8px; font-size: 12px; font-weight: 700; color: #fff; min-width: 70px; text-align: center; margin-top: 3px; transition: background .3s; }
+.etoile-petite { color: #F59E0B; font-size: 13px; }
+.flash-vert { animation: flashV .8s; } .flash-rouge { animation: flashR .8s; }
+@keyframes flashV { from { color: var(--vert); } } @keyframes flashR { from { color: var(--rouge); } }
+
+/* Marchés */
+.indices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 16px 0; }
+.indice { background: #fff; border: 1px solid var(--bord); border-radius: 12px; padding: 10px; font-size: 12px; }
+.indice small { color: var(--gris); display: block; }
+.indice b { display: block; font-size: 14px; color: var(--texte); }
+.filtres { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px; }
+.filtres::-webkit-scrollbar { height: 0; }
+.chip { border: 1px solid #CBD5E1; background: #fff; border-radius: 16px; padding: 7px 14px; font-size: 13px; white-space: nowrap; color: #334155; }
+.chip.actif { background: var(--nuit); border-color: var(--nuit); color: #fff; }
+
+/* Fiche actif */
+.barre-haut { display: flex; align-items: center; justify-content: space-between; padding: 40px 16px 6px; background: #fff; }
+.barre-haut b { font-size: 18px; }
+.rond { width: 40px; height: 40px; border-radius: 50%; background: #F1F5F9; color: var(--nuit); font-size: 17px; margin-left: 4px; }
+#btn-retour { font-size: 24px; margin-left: 0; }
+.rond.etoile { color: #F59E0B; }
+.blanc { background: #fff; }
+.actif-entete { padding: 6px 18px 0; }
+.actif-entete small { color: var(--gris); font-size: 12px; }
+.gros-prix { font-size: 32px; font-weight: 800; }
+.details div { display: flex; justify-content: space-between; font-size: 14px; padding: 5px 0; }
+.details small { font-size: 13px; }
+.alerte-info { margin: 10px 18px 0; font-size: 13px; color: var(--gris); }
+.barre-bas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 16px 22px; background: #fff; border-top: 1px solid #E2E8F0; }
+.btn-acheter, .btn-vendre { height: 48px; border-radius: 14px; font-weight: 700; font-size: 15px; }
+.btn-acheter { background: var(--menthe); color: #fff; }
+.btn-vendre { border: 1.5px solid var(--nuit); color: var(--nuit); background: #fff; }
+.btn-vendre:disabled { opacity: .35; cursor: not-allowed; }
+
+/* Analyse */
+.ligne-info { display: flex; justify-content: space-between; margin-top: 10px; font-size: 13px; }
+.comparaison { font-size: 14px; margin-top: 4px; }
+
+/* Profil */
+.avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--menthe); color: var(--nuit); font-size: 28px; font-weight: 800; display: grid; place-items: center; margin: 0 auto 8px; }
+.menu { display: flex; align-items: center; gap: 12px; width: calc(100% - 32px); margin: 0 16px 8px; background: #fff; border: 1px solid var(--bord); border-radius: 14px; padding: 13px; text-align: left; }
+.menu > span:nth-child(2) { flex: 1; }
+.menu b { display: block; font-size: 15px; }
+.menu small { color: var(--gris); font-size: 12px; }
+.menu i { font-style: normal; color: #CBD5E1; font-size: 22px; }
+.pastille { width: 38px; height: 38px; border-radius: 50%; background: #ECFDF5; display: grid; place-items: center; font-size: 17px; flex-shrink: 0; }
+.supprimer { width: 32px; height: 32px; border-radius: 50%; background: #F1F5F9; color: var(--gris); }
+.interrupteur { position: relative; width: 48px; height: 28px; flex-shrink: 0; }
+.interrupteur input { opacity: 0; width: 0; height: 0; }
+.interrupteur span { position: absolute; inset: 0; background: #CBD5E1; border-radius: 14px; cursor: pointer; transition: .2s; }
+.interrupteur span::before { content: ""; position: absolute; width: 22px; height: 22px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .2s; }
+.interrupteur input:checked + span { background: var(--menthe); }
+.interrupteur input:checked + span::before { transform: translateX(20px); }
+
+/* Onglets */
+.onglets { position: absolute; bottom: 0; left: 0; right: 0; height: 74px; background: #fff; border-top: 1px solid #E2E8F0; display: grid; grid-template-columns: repeat(4, 1fr); padding-bottom: 10px; z-index: 5; }
+.onglet { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 11px; color: var(--gris-clair); }
+.onglet .ico { font-size: 18px; line-height: 1; }
+.onglet.actif { color: var(--nuit); font-weight: 700; }
+.onglet.actif .ico { color: var(--menthe); }
+
+/* Verrou, toast, fenêtre */
+.verrou { position: absolute; inset: 0; background: var(--nuit); color: #fff; z-index: 45; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; text-align: center; gap: 12px; }
+.cadenas { font-size: 54px; }
+.verrou p { font-size: 13px; color: var(--gris-clair); }
+.verrou .btn-acheter { width: 100%; margin-top: 10px; }
+.toast { position: absolute; bottom: 92px; left: 50%; transform: translateX(-50%); background: var(--texte); color: #fff; padding: 10px 18px; border-radius: 20px; font-size: 13px; z-index: 60; width: max-content; max-width: 88%; text-align: center; }
+.voile { position: absolute; inset: 0; background: rgba(11,27,63,.5); display: grid; place-items: center; z-index: 55; padding: 22px; }
+.fenetre { background: #fff; border-radius: 16px; padding: 20px; width: 100%; max-height: 90%; overflow-y: auto; }
+.fenetre h3 { margin: 0 0 10px; }
+.fenetre p, .fenetre li { font-size: 14px; line-height: 1.5; }
+.fenetre ul { padding-left: 18px; }
+.fenetre label { font-size: 12px; font-weight: 600; color: var(--gris); }
+.fenetre input { width: 100%; border: 1px solid #CBD5E1; border-radius: 10px; padding: 10px; font-size: 16px; margin: 4px 0 6px; }
+.fenetre .estimation { font-size: 13px; color: var(--gris); }
+.fenetre .erreur { color: var(--rouge); font-size: 13px; }
+.fenetre-boutons { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+.fenetre-boutons button { padding: 9px 16px; border-radius: 12px; font-weight: 700; font-size: 14px; }
+.fenetre-boutons .ok { background: var(--nuit); color: #fff; }
+.fenetre-boutons .vert { background: var(--menthe); color: #fff; }
+.fenetre-boutons .annuler { color: var(--gris); }
+
+@media (max-width: 440px) {
+  .scene { padding: 0; gap: 0; }
+  .intro { padding: 24px 20px; }
+  .telephone { width: 100vw; height: 100vh; border-radius: 0; padding: 0; }
+  .encoche { display: none; }
+  .ecran { border-radius: 0; }
+}
+
+</style>
+</head>
+<body>
+  <main class="scene">
+    <section class="intro">
+      <div class="marque">INVEST<span>LY</span></div>
+      <p class="resume"><strong>INVESTLY</strong> est une application mobile pour suivre un portefeuille d'investissement,
+        consulter les marchés financiers et comprendre ses performances. Ce prototype en HTML, CSS et JavaScript simule
+        l'application NativeScript.</p>
+
+      <h2 class="titre-bloc">Le projet</h2>
+      <p>Un investisseur débutant passe souvent d'une application à l'autre pour voir ses placements, les cours du jour
+        et son rendement. INVESTLY réunit tout cela au même endroit, avec des chiffres simples à lire : combien vaut
+        mon portefeuille, ce qui a bougé aujourd'hui, et si je fais mieux ou moins bien que le marché.</p>
+
+      <h2 class="titre-bloc">Les cinq écrans</h2>
+      <ol>
+        <li><b>Portefeuille</b> : valeur totale, graphique, répartition, positions</li>
+        <li><b>Marchés</b> : indices, recherche, filtres, prix en direct</li>
+        <li><b>Fiche actif</b> : graphique, statistiques, achat / vente, alerte</li>
+        <li><b>Analyse</b> : rendement, comparaison S&amp;P 500, risque, secteurs</li>
+        <li><b>Profil</b> : verrouillage, alertes, transactions, partage</li>
+      </ol>
+
+      <p class="note">⚠️ Prix simulés qui bougent toutes les 3 secondes. Aucun argent réel. Ceci n'est pas un conseil financier.</p>
+      <button class="lien-reinit" id="reinit">Réinitialiser le prototype</button>
+    </section>
+
+    <div class="telephone">
+      <div class="encoche"></div>
+      <div class="ecran">
+
+        <!-- ===== 1. Portefeuille ===== -->
+        <section class="vue active" id="vue-portefeuille">
+          <div class="defile">
+            <header class="entete">
+              <div class="entete-ligne"><span class="logo">INVESTLY</span><span class="petit" id="bonjour">Bonjour 👋</span></div>
+              <div class="petit marge-haut">Valeur totale du portefeuille</div>
+              <div class="total" id="pf-total"></div>
+              <div id="pf-jour" class="jour"></div>
+              <div class="graphique sombre" id="pf-graphique"></div>
+              <div class="periodes" id="pf-periodes"></div>
+            </header>
+            <div class="grille-2">
+              <div class="mini-carte"><small>Gain total</small><b id="pf-gain"></b><small id="pf-gain-pct"></small></div>
+              <div class="mini-carte"><small>Liquidités</small><b id="pf-liquidites"></b><small>disponibles pour investir</small></div>
+            </div>
+            <h3>Répartition</h3>
+            <div class="carte">
+              <div class="barre-empilee" id="pf-barre"></div>
+              <div id="pf-legende" class="legende"></div>
+            </div>
+            <h3 id="pf-titre-positions">Mes positions</h3>
+            <div class="carte liste" id="pf-positions"></div>
+            <h3 id="pf-titre-transactions" hidden>Dernières transactions</h3>
+            <div class="carte liste" id="pf-transactions" hidden></div>
+            <p class="avertissement">Données simulées à des fins pédagogiques. Ceci n'est pas un conseil financier.</p>
+          </div>
+        </section>
+
+        <!-- ===== 2. Marchés ===== -->
+        <section class="vue" id="vue-marches">
+          <header class="entete">
+            <h2>Marchés</h2>
+            <div class="petit">Prix simulés · mise à jour toutes les 3 s <span class="direct">● direct</span></div>
+            <input id="recherche" class="recherche" type="search" placeholder="🔍  Rechercher : Apple, BTC, ETF…">
+          </header>
+          <div class="defile">
+            <div class="indices" id="indices"></div>
+            <div class="filtres" id="filtres"></div>
+            <div class="carte liste" id="liste-actifs"></div>
+            <p class="vide" id="aucun-actif" hidden>Aucun actif trouvé.</p>
+          </div>
+        </section>
+
+        <!-- ===== Fiche actif ===== -->
+        <section class="vue" id="vue-actif">
+          <div class="barre-haut">
+            <button class="rond" id="btn-retour" aria-label="Retour">‹</button>
+            <b id="a-ticker"></b>
+            <div>
+              <button class="rond etoile" id="btn-favori" aria-label="Favori">☆</button>
+              <button class="rond" id="btn-alerte" aria-label="Alerte">🔔</button>
+              <button class="rond" id="btn-partager" aria-label="Partager">⤴</button>
+            </div>
+          </div>
+          <div class="defile sans-nav">
+            <div class="blanc">
+              <div class="actif-entete">
+                <small id="a-info"></small>
+                <div class="gros-prix" id="a-prix"></div>
+                <b id="a-jour"></b>
+              </div>
+              <div class="graphique" id="a-graphique"></div>
+              <div class="periodes clair" id="a-periodes"></div>
+            </div>
+            <h3>Statistiques</h3>
+            <div class="grille-2">
+              <div class="mini-carte"><small id="a-l-var">Variation</small><b id="a-var"></b></div>
+              <div class="mini-carte"><small>Volatilité (annuelle)</small><b id="a-vol"></b></div>
+              <div class="mini-carte"><small id="a-l-haut">Plus haut</small><b id="a-haut"></b></div>
+              <div class="mini-carte"><small id="a-l-bas">Plus bas</small><b id="a-bas"></b></div>
+            </div>
+            <div id="a-position-bloc" hidden>
+              <h3>Ma position</h3>
+              <div class="carte details" id="a-position"></div>
+            </div>
+            <p class="alerte-info" id="a-alertes" hidden></p>
+            <p class="avertissement">Simulation : aucun argent réel n'est utilisé.</p>
+          </div>
+          <div class="barre-bas">
+            <button class="btn-vendre" id="btn-vendre">Vendre</button>
+            <button class="btn-acheter" id="btn-acheter">Acheter</button>
+          </div>
+        </section>
+
+        <!-- ===== 3. Analyse ===== -->
+        <section class="vue" id="vue-analyse">
+          <div class="defile">
+            <header class="entete">
+              <h2>Analyse</h2>
+              <div class="petit">Performance de ton portefeuille</div>
+              <div class="periodes" id="an-periodes"></div>
+            </header>
+            <div class="carte">
+              <small id="an-l-rendement">Rendement</small>
+              <div class="grand" id="an-rendement"></div>
+              <small id="an-variation"></small>
+              <div class="graphique" id="an-graphique"></div>
+              <div class="ligne-info"><small>S&amp;P 500 (même période)</small><b id="an-indice"></b></div>
+              <p id="an-comparaison" class="comparaison"></p>
+            </div>
+            <h3>Indicateurs de risque</h3>
+            <div class="grille-2">
+              <div class="mini-carte"><small>Volatilité (annuelle)</small><b id="an-vol"></b><small id="an-risque"></small></div>
+              <div class="mini-carte"><small>Baisse maximale</small><b id="an-baisse" class="rouge"></b><small>du sommet au creux</small></div>
+              <div class="mini-carte"><small>Plus haut</small><b id="an-haut"></b></div>
+              <div class="mini-carte"><small>Plus bas</small><b id="an-bas"></b></div>
+            </div>
+            <h3>Meilleures et pires positions</h3>
+            <div class="carte liste" id="an-classement"></div>
+            <h3>Répartition par secteur</h3>
+            <div class="carte">
+              <div id="an-secteurs"></div>
+              <small id="an-conseil" class="conseil"></small>
+            </div>
+            <p class="avertissement">Analyse calculée sur des données simulées, avec les positions actuelles. Ceci n'est pas un conseil financier.</p>
+          </div>
+        </section>
+
+        <!-- ===== 4. Profil ===== -->
+        <section class="vue" id="vue-profil">
+          <div class="defile">
+            <header class="entete centre" id="profil-entete">
+              <div class="avatar" id="avatar">👤</div>
+              <h2 id="profil-nom">Touche ici pour ajouter ton nom</h2>
+              <div class="petit">Compte de démonstration</div>
+            </header>
+            <h3>Sécurité</h3>
+            <div class="menu">
+              <span class="pastille">🔒</span>
+              <span><b>Verrouillage biométrique</b><small>Empreinte ou visage à l'ouverture</small></span>
+              <label class="interrupteur"><input type="checkbox" id="bio"><span></span></label>
+            </div>
+            <h3 id="titre-alertes">Mes alertes de prix (0)</h3>
+            <p class="vide petit-vide" id="alertes-vide">Aucune alerte. Ouvre un actif et touche 🔔 pour en créer une.</p>
+            <div id="liste-alertes"></div>
+            <h3>Mon compte</h3>
+            <button class="menu" data-action="transactions"><span class="pastille">🧾</span><span><b>Historique des transactions</b><small id="nb-transactions">0 transaction</small></span><i>›</i></button>
+            <button class="menu" data-action="partager"><span class="pastille">📤</span><span><b>Partager ma performance</b><small>Seulement le %, jamais les montants</small></span><i>›</i></button>
+            <button class="menu" data-action="reinitialiser"><span class="pastille">↺</span><span><b>Réinitialiser la simulation</b><small>Revenir au portefeuille de départ</small></span><i>›</i></button>
+            <p class="avertissement">INVESTLY · projet scolaire. Données simulées, aucune transaction réelle. Ceci n'est pas un conseil financier.</p>
+          </div>
+        </section>
+
+        <nav class="onglets" id="onglets">
+          <button class="onglet actif" data-vue="portefeuille"><span class="ico">◔</span>Portefeuille</button>
+          <button class="onglet" data-vue="marches"><span class="ico">↗</span>Marchés</button>
+          <button class="onglet" data-vue="analyse"><span class="ico">▤</span>Analyse</button>
+          <button class="onglet" data-vue="profil"><span class="ico">◉</span>Profil</button>
+        </nav>
+
+        <!-- Verrouillage -->
+        <div class="verrou" id="verrou" hidden>
+          <div class="cadenas">🔒</div>
+          <h2>INVESTLY est verrouillé</h2>
+          <p>Dans l'application, l'empreinte digitale ou la reconnaissance faciale est demandée ici (plugin <b>@nativescript/biometrics</b>).</p>
+          <button class="btn-acheter" id="btn-deverrouiller">👆 Déverrouiller</button>
+        </div>
+
+        <div class="toast" id="toast" hidden></div>
+        <div class="voile" id="voile" hidden>
+          <div class="fenetre">
+            <h3 id="fenetre-titre"></h3>
+            <div id="fenetre-contenu"></div>
+            <div class="fenetre-boutons" id="fenetre-boutons"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<ActionBar>
+  <Label text="Recherche — b300151505"></Label>
+</ActionBar>
+
+<StackLayout class="form p-4">
+
+  <Label text="Chercher un pays par sa capitale" class="h3 m-b-10"></Label>
+
+  <TextField
+    class="input"
+    hint="Capital"
+    [(ngModel)]="name">
+  </TextField>
+
+  <Button
+    text="Search"
+    class="btn btn-primary"
+    (tap)="searchCapital()">
+  </Button>
+
+  <Label [text]="message()" class="m-t-10 m-b-10" textWrap="true"></Label>
+
+  <ListView
+    [items]="countries()"
+    height="650">
+
+    <ng-template let-item="item">
+      <StackLayout class="p-10">
+        <Label [text]="item.name" class="h2"></Label>
+        <Label [text]="'Capitale : ' + item.capital"></Label>
+      </StackLayout>
+    </ng-template>
+
+  </ListView>
+
+</StackLayout>

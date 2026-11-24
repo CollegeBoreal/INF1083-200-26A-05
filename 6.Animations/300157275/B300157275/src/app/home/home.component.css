@@ -1,0 +1,1 @@
+@keyframes changerCouleur { from { background-color: red; } to { background-color: green; } } .carre-anime { width: 150; height: 150; background-color: red; animation-name: changerCouleur; animation-duration: 3s; animation-iteration-count: infinite; }

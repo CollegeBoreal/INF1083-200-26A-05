@@ -1,0 +1,55 @@
+<Page navigatingTo="onNavigatingTo" navigatedFrom="onNavigatedFrom" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <GridLayout rows="auto, *, auto">
+    <!-- Barre du haut -->
+    <GridLayout row="0" columns="auto, *, auto, auto, auto" padding="14 16 6 16" backgroundColor="#FFFFFF">
+      <Button col="0" text="‹" tap="{{ onRetour }}" class="retour" />
+      <Label col="1" text="{{ ticker }}" class="ticker" fontSize="18" textAlignment="center" verticalAlignment="center" />
+      <Button col="2" text="{{ favori ? '★' : '☆' }}" tap="{{ onFavori }}" class="btn-rond" color="#F59E0B" />
+      <Button col="3" text="🔔" tap="{{ onAlerte }}" class="btn-rond" />
+      <Button col="4" text="⤴" tap="{{ onPartager }}" class="btn-rond" />
+    </GridLayout>
+
+    <ScrollView row="1">
+      <StackLayout backgroundColor="#FFFFFF">
+        <StackLayout padding="6 18 0 18">
+          <Label text="{{ nom + ' · ' + type + ' · ' + secteur }}" class="discret" />
+          <Label text="{{ prix }}" class="gros-prix" />
+          <Label text="{{ variationJour }}" color="{{ couleurJour }}" class="gras" fontSize="14" />
+        </StackLayout>
+
+        <WebView src="{{ graphique }}" height="200" margin="12 0 0 0" isUserInteractionEnabled="false" />
+        <Repeater items="{{ periodes }}" margin="6 18">
+          <Repeater.itemsLayout><StackLayout orientation="horizontal" /></Repeater.itemsLayout>
+          <Repeater.itemTemplate>
+            <Button text="{{ cle }}" tap="onPeriodeTap" class="{{ actif ? 'periode periode-clair periode-actif' : 'periode periode-clair' }}" />
+          </Repeater.itemTemplate>
+        </Repeater>
+
+        <StackLayout backgroundColor="#F5F7FB" paddingBottom="16">
+          <Label text="Statistiques" class="section" />
+          <GridLayout columns="*, *" rows="auto, auto" margin="0 12">
+            <StackLayout row="0" col="0" class="mini-carte"><Label text="{{ 'Variation ' + periode }}" class="etiquette" /><Label text="{{ stats.variation }}" class="valeur" color="{{ stats.couleur }}" /></StackLayout>
+            <StackLayout row="0" col="1" class="mini-carte"><Label text="Volatilité (annuelle)" class="etiquette" /><Label text="{{ stats.volatilite }}" class="valeur" /></StackLayout>
+            <StackLayout row="1" col="0" class="mini-carte"><Label text="{{ 'Plus haut ' + periode }}" class="etiquette" /><Label text="{{ stats.haut }}" class="valeur" /></StackLayout>
+            <StackLayout row="1" col="1" class="mini-carte"><Label text="{{ 'Plus bas ' + periode }}" class="etiquette" /><Label text="{{ stats.bas }}" class="valeur" /></StackLayout>
+          </GridLayout>
+
+          <Label text="Ma position" class="section" visibility="{{ position ? 'visible' : 'collapsed' }}" />
+          <StackLayout class="carte" visibility="{{ position ? 'visible' : 'collapsed' }}">
+            <GridLayout columns="*, auto"><Label text="Quantité" class="etiquette" /><Label col="1" text="{{ position.quantite }}" class="texte gras" /></GridLayout>
+            <GridLayout columns="*, auto" marginTop="8"><Label text="Prix de revient moyen" class="etiquette" /><Label col="1" text="{{ position.prixRevient }}" class="texte gras" /></GridLayout>
+            <GridLayout columns="*, auto" marginTop="8"><Label text="Valeur actuelle" class="etiquette" /><Label col="1" text="{{ position.valeur }}" class="texte gras" /></GridLayout>
+            <GridLayout columns="*, auto" marginTop="8"><Label text="Gain / perte" class="etiquette" /><Label col="1" text="{{ position.gain }}" class="texte gras" color="{{ position.couleur }}" /></GridLayout>
+          </StackLayout>
+          <Label text="{{ alertesTexte }}" class="discret" margin="10 18 0 18" textWrap="true" visibility="{{ alertesTexte ? 'visible' : 'collapsed' }}" />
+          <Label text="Simulation : aucun argent réel n'est utilisé." class="avertissement" />
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+
+    <GridLayout row="2" columns="*, *" class="barre-bas">
+      <Button col="0" text="Vendre" tap="{{ onVendre }}" class="btn-vendre" marginRight="6" isEnabled="{{ position ? true : false }}" opacity="{{ position ? 1 : 0.4 }}" />
+      <Button col="1" text="Acheter" tap="{{ onAcheter }}" class="btn-acheter" marginLeft="6" />
+    </GridLayout>
+  </GridLayout>
+</Page>

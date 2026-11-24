@@ -1,0 +1,57 @@
+@import '@nativescript/theme/css/core.css';
+
+/* Palette INVESTLY : bleu nuit, menthe, gris clair */
+Page { background-color: #F5F7FB; }
+.entete { background-color: #0B1B3F; padding: 18 18 14 18; }
+.entete-petit { font-size: 13; color: #94A3B8; }
+.entete-titre { font-size: 22; font-weight: bold; color: #FFFFFF; }
+.logo { font-size: 15; font-weight: bold; color: #10B981; letter-spacing: 0.15; }
+.total { font-size: 34; font-weight: bold; color: #FFFFFF; margin-top: 2; }
+.recherche { background-color: #1E2D55; color: #FFFFFF; placeholder-color: #94A3B8; border-radius: 12; padding: 9 14; font-size: 14; margin-top: 12; }
+
+.periodes { margin: 8 0; }
+.periode { background-color: transparent; color: #94A3B8; font-size: 13; border-radius: 14; height: 30; width: 52; padding: 0; margin-right: 6; }
+.periode-actif { background-color: #10B981; color: #0B1B3F; font-weight: bold; }
+.periode-clair { color: #64748B; }
+.periode-clair.periode-actif { background-color: #0B1B3F; color: #FFFFFF; }
+
+.section { font-size: 16; font-weight: bold; color: #0F172A; margin: 18 16 8 16; }
+.carte { background-color: #FFFFFF; border-radius: 16; margin: 6 16; padding: 14; border-width: 1; border-color: #E8EDF5; }
+.mini-carte { background-color: #FFFFFF; border-radius: 14; padding: 12; border-width: 1; border-color: #E8EDF5; margin: 4; }
+.etiquette { font-size: 12; color: #64748B; }
+.valeur { font-size: 17; font-weight: bold; color: #0F172A; }
+.texte { font-size: 14; color: #0F172A; }
+.discret { font-size: 12; color: #64748B; }
+.gras { font-weight: bold; }
+
+.ligne { padding: 12 14; background-color: #FFFFFF; border-bottom-width: 1; border-color: #EEF2F7; }
+.badge { width: 42; height: 42; border-radius: 21; color: #FFFFFF; font-size: 11; font-weight: bold; text-align: center; vertical-align: center; }
+.ticker { font-size: 15; font-weight: bold; color: #0F172A; }
+.pill { border-radius: 8; padding: 4 8; font-size: 12; font-weight: bold; color: #FFFFFF; text-align: center; min-width: 74; }
+.etoile { color: #F59E0B; font-size: 13; }
+
+.chip { border-radius: 16; border-width: 1; border-color: #CBD5E1; color: #334155; background-color: #FFFFFF; font-size: 13; height: 34; margin: 0 8 0 0; padding: 0 14; }
+.chip-actif { background-color: #0B1B3F; border-color: #0B1B3F; color: #FFFFFF; }
+
+.indice { background-color: #FFFFFF; border-radius: 12; padding: 10; margin: 0 4; border-width: 1; border-color: #E8EDF5; }
+
+.barre-bas { background-color: #FFFFFF; border-top-width: 1; border-color: #E2E8F0; padding: 10 16; }
+.btn-acheter { background-color: #10B981; color: #FFFFFF; font-weight: bold; font-size: 15; border-radius: 14; height: 48; }
+.btn-vendre { background-color: #FFFFFF; color: #0B1B3F; border-color: #0B1B3F; border-width: 1.5; font-weight: bold; font-size: 15; border-radius: 14; height: 48; }
+.btn-rond { width: 40; height: 40; border-radius: 20; background-color: #F1F5F9; color: #0B1B3F; font-size: 16; padding: 0; margin-left: 6; }
+.retour { width: 40; height: 40; border-radius: 20; background-color: #F1F5F9; color: #0B1B3F; font-size: 22; padding: 0; }
+.gros-prix { font-size: 32; font-weight: bold; color: #0F172A; }
+
+Progress { color: #10B981; background-color: #EEF2F7; height: 8; border-radius: 4; margin-top: 6; }
+.point { width: 10; height: 10; border-radius: 5; margin-right: 8; vertical-align: center; }
+
+.menu { background-color: #FFFFFF; border-radius: 14; margin: 5 16; padding: 14; border-width: 1; border-color: #E8EDF5; }
+.menu-rond { width: 38; height: 38; border-radius: 19; background-color: #ECFDF5; font-size: 17; text-align: center; vertical-align: center; }
+.menu-titre { font-size: 15; font-weight: bold; color: #0F172A; }
+.chevron { font-size: 22; color: #CBD5E1; vertical-align: center; }
+.avatar { width: 80; height: 80; border-radius: 40; background-color: #10B981; color: #0B1B3F; font-size: 28; font-weight: bold; text-align: center; vertical-align: center; horizontal-align: center; }
+.avertissement { font-size: 11; color: #94A3B8; text-align: center; margin: 16 24 20 24; }
+.vide { color: #94A3B8; text-align: center; margin: 24; }
+
+.verrou { background-color: #0B1B3F; }
+.verrou-titre { font-size: 22; font-weight: bold; color: #FFFFFF; text-align: center; margin-top: 12; }
