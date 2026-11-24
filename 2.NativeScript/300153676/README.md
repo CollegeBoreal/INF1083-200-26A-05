@@ -16,3 +16,9 @@ Depuis le dossier `300153676` :
 cd B300153676
 ns run android
 ```
+
+## Test sur Android
+
+Au lancement, la page **Computer Scientists** affiche la liste des informaticiens, dont Alan Turing et Grace Hopper.
+
+![Liste Computer Scientists sur Android](./images/Screenshot%202026-11-23%20233218.png)
