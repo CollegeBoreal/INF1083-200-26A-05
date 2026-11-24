@@ -15,7 +15,7 @@
 | 📁 Répertoire avec son 🆔 + `README.md` + répertoire `images` 🖼️ | Ce dossier : `300156187/` contient ce `README.md` et le dossier `images/` |
 | 📝 Présenter le projet en un bref résumé | Section [📝 Bref résumé](#-bref-résumé-du-projet) |
 | 📱 Donner le nom de l'application | Section [📱 Nom de l'application](#-nom-de-lapplication) |
-| 🎨 Faire un design manuel (si souhaité) | Section [🎨 Design](#-design) — inspiré de « Foodie » (@dailyflutterui) |
+| 🎨 Faire un design manuel (si souhaité) | Section [🎨 Design](#-design)  |
 | 🛠️ Donner les `templates` (patrons) utilisés | Section [🛠️ Technique](#technique) |
 | 🧩 Donner les `plugins` | Section [🛠️ Technique](#technique) + [🔗 market.nativescript.org](https://market.nativescript.org) |
 | 📄 Un minimum de 3 pages (onglets/menu) | **8 écrans** — voir [📄 Pages](#pages--8-écrans) |
