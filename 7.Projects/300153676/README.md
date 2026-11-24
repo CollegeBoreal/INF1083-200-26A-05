@@ -21,3 +21,11 @@ Le projet utilise le patron Angular à onglets `@nativescript/template-tab-navig
 Extraire le [projet ParcLabo](./ParcLabo-300153676.zip), ouvrir un terminal dans `b300153676`, puis lancer `npm ci` et `ns run android`.
 
 Pour essayer, ouvrir **Ajouter**, saisir **Routeur Cisco** et **C250**, laisser **Disponible** activé et toucher **Enregistrer**. Consulter ensuite **Matériel** et **Bilan**. Après la fermeture et la réouverture de l’application, le routeur doit toujours figurer dans la liste.
+
+## Test sur Android
+
+Depuis l’onglet Ajouter, j’ai enregistré un Routeur Cisco dans la salle C250 avec le statut Disponible. L’onglet Matériel affiche le routeur et le bilan indique un appareil au total, un disponible et zéro en service. Après avoir fermé puis rouvert ParcLabo, j’ai retrouvé le routeur dans la salle C250.
+
+![Routeur Cisco disponible dans la salle C250](./images/materiel.png)
+
+![Bilan du parc avec un appareil disponible et zéro en service](./images/bilan.png)
