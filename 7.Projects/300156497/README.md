@@ -104,6 +104,8 @@ Fonctionnalités :
 🤖 Android Emulator	Tests de l'application
 🐙 Git & GitHub	Gestion du code source
 # 📂 Structure du projet
+
+```
 FashionMood/
 │
 ├── src/
@@ -137,6 +139,8 @@ FashionMood/
 │   └── profile.png
 │
 └── README.md
+```
+
 # 💻 Fonctionnalités techniques développées
 🎀 Navigation par onglets
 L'application utilise un système de navigation basé sur TabView permettant d'accéder rapidement aux principales sections :
