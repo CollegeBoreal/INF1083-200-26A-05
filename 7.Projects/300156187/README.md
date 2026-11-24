@@ -4,9 +4,9 @@
 
 > Collège Boréal, session automne 2026.
 
-> Étudiant : **Idir Islam Chili 
+> Étudiant : Idir Islam Chili 
 
->🆔 300156187**
+>🆔 300156187
 
 ## ✅ Exigences de l'énoncé (7.Projects)
 
