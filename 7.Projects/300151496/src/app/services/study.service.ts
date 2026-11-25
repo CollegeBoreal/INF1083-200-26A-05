@@ -1,4 +1,4 @@
-import { Injectable, NgZone, inject } from '@angular/core';
+import { Injectable, NgZone, Inject, Optional } from '@angular/core';
 import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
 import { Firestore, collection, collectionData, doc, setDoc, updateDoc, deleteDoc, getDocs, writeBatch } from '@angular/fire/firestore';
 import { QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
@@ -30,11 +30,6 @@ function withoutId<T extends { id: string }>(item: T): Omit<T, 'id'> {
 
 @Injectable({ providedIn: 'root' })
 export class StudyService {
-  // Injection par inject() (plutôt que par le constructeur) : le type
-  // Firestore d'AngularFire n'est pas reconnu comme jeton d'injection
-  // par le compilateur Angular en mode développement (ng serve).
-  private firestore = inject(Firestore);
-  private ngZone = inject(NgZone);
   private coursesSubject = new BehaviorSubject<Course[]>([]);
   private tasksSubject = new BehaviorSubject<StudyTask[]>([]);
   courses$ = this.coursesSubject.asObservable();
@@ -43,49 +38,65 @@ export class StudyService {
   get coursesSnapshot() { return this.coursesSubject.value; }
   get tasksSnapshot() { return this.tasksSubject.value; }
 
-  constructor() {
+  // Firestore est OPTIONNEL (@Optional) : si l'injection échoue ou si la
+  // base est indisponible, le service fonctionne quand même avec les données
+  // locales. Le constructeur ne fait JAMAIS d'appel Firestore et ne peut
+  // pas lever d'exception : c'était ça le bug — une erreur dans le
+  // constructeur cassait le service, et toutes les pages qui l'utilisent
+  // restaient vides.
+  constructor(
+    @Optional() @Inject(Firestore) private firestore: Firestore | null,
+    private ngZone: NgZone
+  ) {
     // L'écran n'est JAMAIS vide : on affiche les données par défaut tout de
     // suite, puis Firestore prend le relais quand ses données arrivent.
-    // Si Firestore est indisponible, l'application continue avec les données
-    // locales au lieu de rester vide.
     this.coursesSubject.next([...seedCourses]);
     this.tasksSubject.next([...seedTasks]);
-    // 1. D'abord, compléter les données initiales manquantes (lecture unique,
-    //    puis écriture en un seul lot atomique) — voir seedIfEmpty().
-    // 2. Ensuite seulement, s'abonner aux flux en direct : chaque changement
-    //    dans la base met à jour l'application automatiquement.
-    // Les mises à jour Firestore arrivent hors de la zone Angular : on les
-    // remet dans la zone (ngZone.run) pour que l'affichage se rafraîchisse.
-    // Même si le seed échoue, l'abonnement démarre quand même (.finally).
-    const courses$ = collectionData(collection(this.firestore, 'courses'), { idField: 'id' }) as Observable<Course[]>;
-    const tasks$ = collectionData(collection(this.firestore, 'tasks'), { idField: 'id' }) as Observable<StudyTask[]>;
-    this.seedIfEmpty()
-      .catch(() => { /* Firestore indisponible : on garde les données locales. */ })
-      .finally(() => {
-        combineLatest([courses$, tasks$]).subscribe(([courses, tasks]) => {
-          this.ngZone.run(() => {
-            this.coursesSubject.next(courses);
-            this.tasksSubject.next(tasks);
-          });
+    // Firestore en arrière-plan, sans jamais bloquer ni casser l'appli.
+    if (this.firestore) {
+      this.initFirestore().catch(() => { /* Firestore indisponible : données locales. */ });
+    }
+  }
+
+  // Toute la logique Firestore est ici, hors du constructeur, et protégée :
+  // une erreur ne remonte jamais jusqu'au service.
+  private async initFirestore() {
+    const firestore = this.firestore;
+    if (!firestore) return;
+    try {
+      await this.seedIfEmpty();
+      const courses$ = collectionData(collection(firestore, 'courses'), { idField: 'id' }) as Observable<Course[]>;
+      const tasks$ = collectionData(collection(firestore, 'tasks'), { idField: 'id' }) as Observable<StudyTask[]>;
+      combineLatest([courses$, tasks$]).subscribe(([courses, tasks]) => {
+        // Les mises à jour Firestore arrivent hors de la zone Angular : on
+        // les remet dans la zone (ngZone.run) pour que l'affichage se rafraîchisse.
+        this.ngZone.run(() => {
+          this.coursesSubject.next(courses);
+          this.tasksSubject.next(tasks);
         });
       });
+    } catch {
+      // Firestore indisponible : l'appli continue avec les données locales.
+    }
   }
 
   // Premier lancement (ou base incomplète) : écrit les cours et tâches par
   // défaut MANQUANTS, en un seul lot atomique. N'écrase jamais les données
   // existantes (cours créés par l'utilisateur, tâches ajoutées, ...).
   private async seedIfEmpty() {
-    const coursesSnap = await getDocs(collection(this.firestore, 'courses'));
-    const tasksSnap = await getDocs(collection(this.firestore, 'tasks'));
+    const firestore = this.firestore;
+    if (!firestore) return;
+    const coursesSnap = await getDocs(collection(firestore, 'courses'));
+    const tasksSnap = await getDocs(collection(firestore, 'tasks'));
     const existingCourseIds = new Set(coursesSnap.docs.map((d: QueryDocumentSnapshot<DocumentData>) => d.id));
     const existingTaskIds = new Set(tasksSnap.docs.map((d: QueryDocumentSnapshot<DocumentData>) => d.id));
-    const batch = writeBatch(this.firestore);
+    const batch = writeBatch(firestore);
     let hasWrites = false;
     for (const c of seedCourses) {
-      if (!existingCourseIds.has(c.id)) { batch.set(doc(this.firestore, 'courses', c.id), withoutId(c)); hasWrites = true; }
+      if (!existingCourseIds.has(c.id)) { batch.set(doc(firestore, 'courses', c.id), withoutId(c)); hasWrites = true; }
     }
     for (const t of seedTasks) {
-      if (!existingTaskIds.has(t.id)) { batch.set(doc(this.firestore, 'tasks', t.id), withoutId(t)); hasWrites = true; }
+      if (!existingTaskIds.has(t.id)) { batch.set(doc(firestore, 'tasks', t.id), withoutId(t)); hasWrites = true; }
     }
     if (hasWrites) await batch.commit();
   }
@@ -94,31 +105,35 @@ export class StudyService {
     const id = crypto.randomUUID();
     const newCourse = { ...course, id };
     this.coursesSubject.next([...this.coursesSnapshot, newCourse]);
-    await setDoc(doc(this.firestore, 'courses', id), withoutId(newCourse));
+    if (this.firestore) { try { await setDoc(doc(this.firestore, 'courses', id), withoutId(newCourse)); } catch { /* hors ligne : gardé en local. */ } }
   }
   async addTask(task: Omit<StudyTask, 'id' | 'done'>) {
     const id = crypto.randomUUID();
     const newTask = { ...task, id, done: false };
     this.tasksSubject.next([...this.tasksSnapshot, newTask]);
-    await setDoc(doc(this.firestore, 'tasks', id), withoutId(newTask));
+    if (this.firestore) { try { await setDoc(doc(this.firestore, 'tasks', id), withoutId(newTask)); } catch { /* hors ligne : gardé en local. */ } }
   }
   async toggleTask(id: string) {
     const task = this.tasksSnapshot.find(t => t.id === id);
     if (!task) return;
     const updated = { ...task, done: !task.done };
     this.tasksSubject.next(this.tasksSnapshot.map(t => t.id === id ? updated : t));
-    await updateDoc(doc(this.firestore, 'tasks', id), { done: updated.done });
+    if (this.firestore) { try { await updateDoc(doc(this.firestore, 'tasks', id), { done: updated.done }); } catch { /* hors ligne. */ } }
   }
   async deleteTask(id: string) {
     this.tasksSubject.next(this.tasksSnapshot.filter(t => t.id !== id));
-    await deleteDoc(doc(this.firestore, 'tasks', id));
+    if (this.firestore) { try { await deleteDoc(doc(this.firestore, 'tasks', id)); } catch { /* hors ligne. */ } }
   }
   async deleteCourse(id: string) {
     const tasksToDelete = this.tasksSnapshot.filter(t => t.courseId === id);
     this.coursesSubject.next(this.coursesSnapshot.filter(c => c.id !== id));
     this.tasksSubject.next(this.tasksSnapshot.filter(t => t.courseId !== id));
-    await deleteDoc(doc(this.firestore, 'courses', id));
-    for (const t of tasksToDelete) { await deleteDoc(doc(this.firestore, 'tasks', t.id)); }
+    if (this.firestore) {
+      try {
+        await deleteDoc(doc(this.firestore, 'courses', id));
+        for (const t of tasksToDelete) { await deleteDoc(doc(this.firestore, 'tasks', t.id)); }
+      } catch { /* hors ligne. */ }
+    }
   }
   course(id: string) { return this.coursesSnapshot.find(c => c.id === id); }
   daysUntil(date: string) { const a = new Date(); a.setHours(0, 0, 0, 0); return Math.ceil((new Date(date + 'T00:00:00').getTime() - a.getTime()) / 86400000); }

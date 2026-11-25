@@ -9,7 +9,29 @@
 ## Langage et template utilisés
 
 - **Langage :** TypeScript (TypeScript 5.5.4), avec Angular 18.2.0, RxJS 7.8.1 et Zone.js. Tout le code de l'application (composants, services, modèles) est écrit en TypeScript.
-- **Template :** Angular CLI — projet créé avec `ng new studybuddy` (modèle par défaut d'Angular CLI). Architecture NgModule : `AppModule` déclare les composants (tableau de bord, tâches, cours), `main.ts` démarre l'application avec `platformBrowserDynamic().bootstrapModule(AppModule)`, et le routing est défini dans `AppModule` (routes `/`, `/taches`, `/cours`).
+- **Template (patron) :** Angular CLI — projet créé avec `ng new studybuddy` (modèle par défaut d'Angular CLI). Architecture NgModule : `AppModule` déclare les composants (tableau de bord, tâches, cours), `main.ts` démarre l'application avec `platformBrowserDynamic().bootstrapModule(AppModule)`, et le routing est défini dans `AppModule` (routes `/`, `/taches`, `/cours`). La navigation se fait par la barre latérale (sidebar) avec `routerLink` et `routerLinkActive` — aucun autre patron de navigation n'est utilisé.
+
+## Plugins utilisés
+
+Les bibliothèques ajoutées au projet (plugins), avec leur version et leur rôle :
+
+| Plugin | Version | Rôle |
+|---|---|---|
+| `@angular/fire` | 18.0.1 | Connecte l'application à Firebase (base de données Firestore) |
+| `firebase` | 10.14.1 | SDK Firebase (utilisé par `@angular/fire`) |
+| `@angular/service-worker` | 18.2.0 | Service worker PWA (installé par `ng add @angular/pwa`) : application installable sur téléphone, utilisable hors ligne |
+
+## Technologies utilisées
+
+| Technologie | Version / utilisation |
+|---|---|
+| Angular | 18.2.0 |
+| TypeScript | 5.5.4 |
+| RxJS | 7.8.1 |
+| Zone.js | 0.14.10 |
+| AngularFire (`@angular/fire`) | 18.0.1 |
+| Firebase (Firestore) | 10.14.1 |
+| Angular Service Worker (PWA) | 18.2.0 |
 
 ![Aperçu StudyBuddy](src/assets/studybuddy-preview.svg)
 
@@ -37,6 +59,21 @@ Pour l'installer sur ton téléphone : ouvre l'adresse de l'application déploy�
 ## 🗄️ Base de données en ligne — Firebase Firestore
 
 Les cours et les tâches ne sont plus stockés seulement dans le navigateur (`localStorage`) : ils sont sauvegardés dans une **base de données en ligne Firebase Firestore**, donc ils suivent l'utilisateur d'un appareil à l'autre et ne disparaissent pas si on vide le navigateur.
+
+### Rôle de Firestore (en simple)
+
+Firestore est la **base de données en ligne** de l'application. Son rôle :
+- **Sauvegarder** les cours et les tâches dans le cloud (chez Google), pas seulement dans le navigateur.
+- **Suivre l'utilisateur** d'un appareil à l'autre : les mêmes données sur le PC, le téléphone et l'émulateur.
+- **Ne pas perdre les données** si on vide le navigateur ou si on change d'appareil — avec `localStorage` (l'ancienne méthode), tout disparaissait.
+
+### Pourquoi ça prend du temps (et ce qui s'affiche en attendant)
+
+Firestore est en ligne : à chaque ouverture, l'application doit aller chercher les données sur les serveurs de Google — ça prend quelques secondes (le temps du réseau). Pendant ce temps, l'application affiche **tout de suite** les données par défaut (3 cours, 5 tâches d'exemple) pour que l'écran ne soit jamais vide, puis elle remplace par les vraies données de Firestore quand elles arrivent. Si Firestore est indisponible (hors ligne), l'application continue avec les données locales.
+
+Le service `StudyService` rend Firestore **optionnel** (`@Optional() @Inject(Firestore)`) : si la connexion échoue, l'application fonctionne quand même — elle ne plante pas et ne reste pas vide.
+
+### Détails techniques
 
 - **Base de données :** Cloud Firestore (Firebase, offre gratuite Spark).
 - **Collections :** `courses` (cours) et `tasks` (tâches). Chaque document utilise l'identifiant du cours ou de la tâche comme identifiant de document.
@@ -110,14 +147,6 @@ Captures de l'application en cours d'exécution sur `http://localhost:4200` :
 
 ### Mes cours
 ![Mes cours — INF1083, INF1030, INF1050](images/cours.png)
-
-## Technologies
-
-- Angular 18, TypeScript, Angular Router
-- Progressive Web App (PWA) : manifest, service worker (`@angular/service-worker`), icônes installables
-- Reactive Forms et Template Driven Forms
-- RxJS (`BehaviorSubject`, `Observable`, `map`)
-- CSS responsive; base de données en ligne Firebase Firestore (collections `courses` et `tasks`)
 
 ## Installation et démarrage
 
