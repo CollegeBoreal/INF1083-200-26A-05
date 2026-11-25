@@ -1,6 +1,7 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, inject } from '@angular/core';
 import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
 import { Firestore, collection, collectionData, doc, setDoc, updateDoc, deleteDoc, getDocs, writeBatch } from '@angular/fire/firestore';
+import { QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
 import { Course, StudyTask } from '../models/study.models';
 
 // Données initiales : insérées dans Firestore au premier lancement,
@@ -29,6 +30,11 @@ function withoutId<T extends { id: string }>(item: T): Omit<T, 'id'> {
 
 @Injectable({ providedIn: 'root' })
 export class StudyService {
+  // Injection par inject() (plutôt que par le constructeur) : le type
+  // Firestore d'AngularFire n'est pas reconnu comme jeton d'injection
+  // par le compilateur Angular en mode développement (ng serve).
+  private firestore = inject(Firestore);
+  private ngZone = inject(NgZone);
   private coursesSubject = new BehaviorSubject<Course[]>([]);
   private tasksSubject = new BehaviorSubject<StudyTask[]>([]);
   courses$ = this.coursesSubject.asObservable();
@@ -37,7 +43,7 @@ export class StudyService {
   get coursesSnapshot() { return this.coursesSubject.value; }
   get tasksSnapshot() { return this.tasksSubject.value; }
 
-  constructor(private firestore: Firestore, private ngZone: NgZone) {
+  constructor() {
     // 1. D'abord, compléter les données initiales manquantes (lecture unique,
     //    puis écriture en un seul lot atomique) — voir seedIfEmpty().
     // 2. Ensuite seulement, s'abonner aux flux en direct : chaque changement
@@ -62,8 +68,8 @@ export class StudyService {
   private async seedIfEmpty() {
     const coursesSnap = await getDocs(collection(this.firestore, 'courses'));
     const tasksSnap = await getDocs(collection(this.firestore, 'tasks'));
-    const existingCourseIds = new Set(coursesSnap.docs.map(d => d.id));
-    const existingTaskIds = new Set(tasksSnap.docs.map(d => d.id));
+    const existingCourseIds = new Set(coursesSnap.docs.map((d: QueryDocumentSnapshot<DocumentData>) => d.id));
+    const existingTaskIds = new Set(tasksSnap.docs.map((d: QueryDocumentSnapshot<DocumentData>) => d.id));
     const batch = writeBatch(this.firestore);
     let hasWrites = false;
     for (const c of seedCourses) {
