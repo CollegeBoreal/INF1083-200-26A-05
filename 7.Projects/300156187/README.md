@@ -4,9 +4,9 @@
 
 > Collège Boréal, session automne 2026.
 
-> Étudiant : **Idir Islam Chili 
+> Étudiant : Idir Islam Chili 
 
->🆔 300156187**
+>🆔 300156187
 
 ## ✅ Exigences de l'énoncé (7.Projects)
 
@@ -15,7 +15,7 @@
 | 📁 Répertoire avec son 🆔 + `README.md` + répertoire `images` 🖼️ | Ce dossier : `300156187/` contient ce `README.md` et le dossier `images/` |
 | 📝 Présenter le projet en un bref résumé | Section [📝 Bref résumé](#-bref-résumé-du-projet) |
 | 📱 Donner le nom de l'application | Section [📱 Nom de l'application](#-nom-de-lapplication) |
-| 🎨 Faire un design manuel (si souhaité) | Section [🎨 Design](#-design) — inspiré de « Foodie » (@dailyflutterui) |
+| 🎨 Faire un design manuel (si souhaité) | Section [🎨 Design](#-design)  |
 | 🛠️ Donner les `templates` (patrons) utilisés | Section [🛠️ Technique](#technique) |
 | 🧩 Donner les `plugins` | Section [🛠️ Technique](#technique) + [🔗 market.nativescript.org](https://market.nativescript.org) |
 | 📄 Un minimum de 3 pages (onglets/menu) | **8 écrans** — voir [📄 Pages](#pages--8-écrans) |
@@ -30,8 +30,8 @@ l'application est `com.restaurant.app`.
 
 **Wonder Food's** est une application mobile de commande pour le restaurant
 **Wonderfood's Morchid, à Oran** (Algérie). Le client commande aujourd'hui par
-WhatsApp ou par téléphone : l'application lui donne un menu
-clair avec photos et prix, un panier, et la possibilité de réserver une table,
+WhatsApp ou par téléphone, l'application lui donne un menu
+clair avec photos et prix, un panier, et la possibilité de commander un plat,
 le tout depuis son téléphone.
 
 L'application est développée en **NativeScript + Angular**. Elle fonctionne
@@ -71,12 +71,15 @@ rouge « WONDER FOOD'S »), affiché sur l'écran de connexion.
   **laboratoire 6 Animations** du cours, qui fonctionne sur téléphone :
   Angular 22, NativeScript 9.1.3, mêmes versions, même
   `package-lock.json`).
+
 - **🧩 Plugins :**
+
   - `nativescript-ui-sidedrawer` (~15.2.0) — le tiroir latéral (RadSideDrawer).
   - Modules officiels NativeScript et Angular : `@nativescript/angular`,
     `@nativescript/core`, `@nativescript/theme` (thème et styles).
-  - Aucun autre plugin.
+  - `@nativescript/geolocation` (^9.0.0) — demande l'accès à la position et récupère les coordonnées GPS à l'ouverture de l'accueil.
   - Voir les plugins disponibles sur [🔗 market.nativescript.org](https://market.nativescript.org).
+
 - **⚙️ Versions :** Angular ~22.0.0, @nativescript/core ~9.1.0 (9.1.3
   installé), @nativescript/theme ^3.1.0, TypeScript ~6.0.0,
   zone.js ~0.16.0, @nativescript/webpack ~5.0.25.
@@ -106,8 +109,9 @@ Bien au-delà du minimum de 3 pages requis par l'énoncé :
 ## 🗄️ Base de données et API
 
 - **Base de données :** SQL Server (`restaurant_app`), servie par une API
-  Node.js + Express (`backend/`). L'application essaie d'abord l'API, puis
-  retombe sur les données démo si l'API est injoignable.
+  Node.js + Express (`backend/`). L'application affiche d'abord les données
+  démo, puis les remplace par les vraies données si l'API répond.
+
 - **Tables (7) :** branches, categories, dishes, users, orders, order_items,
   reservations.
 
@@ -136,7 +140,7 @@ Bien au-delà du minimum de 3 pages requis par l'énoncé :
 > ✅ **Test réussi le 20 novembre 2026 sur iPhone** (`npm install` puis
 > `ns preview --no-hmr`) : l'écran de connexion s'affiche, la navigation
 > par tiroir fonctionne, le mode sombre fonctionne sur tous les écrans.
-
+>
 > Si l'API tourne sur le même PC, l'application l'appelle à
 > `http://10.0.2.2:3000/api` (émulateur Android). Sur iPhone avec
 > `ns preview`, mettre l'adresse IP LAN du PC dans
@@ -168,12 +172,14 @@ Bien au-delà du minimum de 3 pages requis par l'énoncé :
    node server.js
    ```
    Message attendu : « API Wonder Food's en écoute sur le port 3000 ».
+
    Sans base de données joignable, l'API fonctionne en mode démo (données en
    mémoire) pour que l'application reste utilisable.
 
 Endpoints : `GET /api/branches`, `GET /api/dishes`, `GET /api/dishes/:id`,
 `POST /api/login`, `POST /api/register`, `GET /api/orders`,
 `POST /api/orders`, `GET /api/reservations`, `POST /api/reservations`.
+
 Voir `backend/README.md` pour le détail.
 
 ## 📂 Structure du projet
@@ -199,7 +205,7 @@ Voir `backend/README.md` pour le détail.
     │       ├── models/models.ts
     │       ├── data/demo-data.ts      ← données démo (15 plats)
     │       ├── images/logo-wonderfood.png
-    │       ├── services/              ← theme, auth, data, cart, reservations, guard
+    │       ├── services/              ← theme, auth, data, cart, reservations, guard, location
     │       └── components/            ← login, register, home, menu,
     │                                    dish-detail, cart, reservations, profile
     └── backend/                 ← API Express + SQL Server
@@ -225,7 +231,11 @@ Les captures sont dans le dossier `images/` :
 - `Wonderpic_2.jpg` — ⭐ vues de l'interface sur fond marbre : 3 iPhones
   (menu boissons, panier, réservations), titre « VUES DE L'INTERFACE DE
   L'APPLICATION ». Vraies captures de l'application sur iPhone.
-  
+
+![Demande de localisation](images/localisation.jpeg)
+
+- `localisation.jpeg` — 📍 demande d'accès à la position à l'ouverture de l'accueil (géolocalisation, plugin `@nativescript/geolocation`).
+
 ## ⚠️ État et limites connues
 
 - ✅ L'application est construite sur la base exacte du laboratoire 6

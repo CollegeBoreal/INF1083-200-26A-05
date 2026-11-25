@@ -1,0 +1,53 @@
+﻿<ActionBar title="FC Barcelona - Sign Up"
+  backgroundColor="#004D98"
+  color="white">
+</ActionBar>
+
+<StackLayout [formGroup]="signUpForm" padding="25">
+
+  <Label text="FC BARCELONA"
+    fontSize="26"
+    fontWeight="bold"
+    color="#004D98"
+    horizontalAlignment="center">
+  </Label>
+
+  <Label text="Fan Club Registration"
+    fontSize="18"
+    marginTop="15"
+    marginBottom="30"
+    horizontalAlignment="center">
+  </Label>
+
+  <TextField
+    formControlName="email"
+    hint="Email"
+    keyboardType="email"
+    autocapitalizationType="none"
+    marginBottom="20"
+    fontSize="18">
+  </TextField>
+
+  <TextField
+    formControlName="username"
+    hint="Username"
+    marginBottom="20"
+    fontSize="18">
+  </TextField>
+
+  <Button
+    text="Sign Up"
+    (tap)="onButtonTap()"
+    backgroundColor="#A50044"
+    color="white"
+    borderRadius="8"
+    height="50">
+  </Button>
+
+  <Label text="INF1083 | 300151449"
+    horizontalAlignment="center"
+    marginTop="30"
+    color="gray">
+  </Label>
+
+</StackLayout>
