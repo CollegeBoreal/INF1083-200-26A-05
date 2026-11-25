@@ -44,22 +44,31 @@ export class StudyService {
   get tasksSnapshot() { return this.tasksSubject.value; }
 
   constructor() {
+    // L'écran n'est JAMAIS vide : on affiche les données par défaut tout de
+    // suite, puis Firestore prend le relais quand ses données arrivent.
+    // Si Firestore est indisponible, l'application continue avec les données
+    // locales au lieu de rester vide.
+    this.coursesSubject.next([...seedCourses]);
+    this.tasksSubject.next([...seedTasks]);
     // 1. D'abord, compléter les données initiales manquantes (lecture unique,
     //    puis écriture en un seul lot atomique) — voir seedIfEmpty().
     // 2. Ensuite seulement, s'abonner aux flux en direct : chaque changement
     //    dans la base met à jour l'application automatiquement.
     // Les mises à jour Firestore arrivent hors de la zone Angular : on les
     // remet dans la zone (ngZone.run) pour que l'affichage se rafraîchisse.
+    // Même si le seed échoue, l'abonnement démarre quand même (.finally).
     const courses$ = collectionData(collection(this.firestore, 'courses'), { idField: 'id' }) as Observable<Course[]>;
     const tasks$ = collectionData(collection(this.firestore, 'tasks'), { idField: 'id' }) as Observable<StudyTask[]>;
-    this.seedIfEmpty().then(() => {
-      combineLatest([courses$, tasks$]).subscribe(([courses, tasks]) => {
-        this.ngZone.run(() => {
-          this.coursesSubject.next(courses);
-          this.tasksSubject.next(tasks);
+    this.seedIfEmpty()
+      .catch(() => { /* Firestore indisponible : on garde les données locales. */ })
+      .finally(() => {
+        combineLatest([courses$, tasks$]).subscribe(([courses, tasks]) => {
+          this.ngZone.run(() => {
+            this.coursesSubject.next(courses);
+            this.tasksSubject.next(tasks);
+          });
         });
       });
-    });
   }
 
   // Premier lancement (ou base incomplète) : écrit les cours et tâches par
