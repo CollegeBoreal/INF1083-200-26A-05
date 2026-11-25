@@ -1,0 +1,17 @@
+<div class="carte">
+    <h1>{{ titre }}</h1>
+    <p class="nom">Étudiant : {{ nom }}</p>
+
+    <button (click)="saluer()">Cliquez-moi</button>
+
+    @if (connecte) {
+    <span class="badge">Connecté</span>
+    }
+
+    <h3>Liste des noms</h3>
+    <ul>
+        @for (n of noms; track n) {
+        <li>{{ n }}</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+<div class="carte">
+    <h2>Utilisateurs (API REST)</h2>
+    <ul>
+        @for (u of users; track u.id) {
+        <li><strong>{{ u.name }}</strong> – {{ u.email }}</li>
+        }
+    </ul>
+</div>
