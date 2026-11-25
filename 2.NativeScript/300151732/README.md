@@ -1,238 +1,200 @@
-﻿# NativeScript - Participation
+﻿# 📱 Installation et déploiement d'une application NativeScript sous Android
 
 **Étudiant :** Nabil  
 **Numéro étudiant :** 300151732  
-**Cours :** INF1083-200-26A-05
+**Cours :** INF1083-200-26A-05  
+**Date :** 24 novembre 2026
 
 ---
 
-# Objectif
+# Introduction
 
-Installer l'environnement de développement NativeScript, créer une première application Angular Hello World et l'exécuter sur un émulateur Android.
-
----
-
-# Structure du projet
-
-```text
-300151732
-│
-├── README.md
-├── images
-└── B300151732
-```
+Ce laboratoire a pour objectif de mettre en place un environnement complet de développement mobile avec NativeScript. Les différentes étapes incluent l'installation des outils requis, la configuration de l'environnement Android, la création d'un projet Angular et le déploiement de l'application dans un émulateur Android.
 
 ---
 
-# Installation de NativeScript
+# Objectifs
 
-Validation de l'installation :
+- Installer NativeScript;
+- Installer et configurer le JDK;
+- Installer Android Studio;
+- Configurer l'environnement Android;
+- Créer une application Angular Hello World;
+- Déployer l'application dans un émulateur Android.
+
+---
+
+# 1. Installation de NativeScript
+
+La première étape consistait à vérifier l'installation de NativeScript à l'aide de la commande suivante :
 
 ```powershell
 ns --version
 ```
 
-Résultat :
+### Figure 1 - Vérification de l'installation de NativeScript
 
-```text
-9.1.2
-Up to date
-```
+![Figure 1](images/01-ns-version.png)
 
-images/01-ns-version.png
+La capture montre que NativeScript version 9.1.2 est correctement installé et prêt à être utilisé.
 
 ---
 
-# Installation du JDK 21
+# 2. Installation du JDK
 
-Validation :
+Le Java Development Kit (JDK) est requis pour le développement Android. Son installation a été validée grâce à la commande suivante :
 
 ```powershell
-javac -version
+javac --version
 ```
 
-Résultat :
+### Figure 2 - Validation du JDK
 
-```text
-javac 21.0.13.1
-```
+![Figure 2](images/02-jdk.png)
 
-images/02-jdk.png
+La version 21 du compilateur Java est correctement détectée.
 
 ---
 
-# Configuration de JAVA_HOME
+# 3. Configuration de JAVA_HOME
 
-Commande de validation :
+La variable d'environnement JAVA_HOME a été configurée afin de permettre aux outils Android de localiser le JDK.
 
-```powershell
-$env:JAVA_HOME
-```
+### Figure 3 - Vérification de JAVA_HOME
 
-Résultat :
+![Figure 3](images/03-java-home.png)
 
-```text
-C:\Program Files\Eclipse Adoptium\jdk-21.0.13.10002-hotspot
-```
-
-images/03-java-home.png
+La capture confirme que JAVA_HOME pointe vers le répertoire du JDK installé.
 
 ---
 
-# Installation d'Android Studio
+# 4. Installation d'Android Studio
 
-Installation d'Android Studio Rabbit 2 avec :
+Android Studio a été installé afin d'obtenir le SDK Android, l'émulateur et les outils de développement nécessaires.
 
-- Android SDK
-- Android Virtual Device
-- Android Platform Tools
+### Figure 4 - Android Studio installé
 
-images/04-android-studio.png
+![Figure 4](images/04-android-studio.png)
 
----
-
-# Configuration du SDK Android
-
-Validation :
-
-```powershell
-$env:ANDROID_HOME
-```
-
-Résultat :
-
-```text
-C:\Users\nabil\AppData\Local\Android\Sdk
-```
-
-Validation d'ADB :
-
-```powershell
-adb --version
-```
-
-Résultat :
-
-```text
-Android Debug Bridge version 1.0.41
-```
-
-images/06-android-home.png
+L'écran d'accueil confirme que l'installation d'Android Studio s'est déroulée avec succès.
 
 ---
 
-# Vérification de l'environnement
+# 5. Vérification du SDK Android
 
-Commande :
+Une vérification a été effectuée afin de confirmer la présence du SDK Android.
+
+### Figure 5 - Validation du SDK Android
+
+![Figure 5](images/05-SDK.png)
+
+La valeur retournée confirme que le SDK Android est bien installé sur le poste de travail.
+
+---
+
+# 6. Configuration de ANDROID_HOME
+
+La variable d'environnement ANDROID_HOME a été configurée afin que NativeScript puisse localiser le SDK Android.
+
+### Figure 6 - Validation de ANDROID_HOME
+
+![Figure 6](images/06-android-home.png)
+
+La capture montre également que l'outil ADB est correctement installé.
+
+---
+
+# 7. Vérification de l'environnement NativeScript
+
+L'outil de diagnostic intégré à NativeScript a été utilisé afin de valider l'ensemble de la configuration.
 
 ```powershell
 ns doctor
 ```
 
-Résultat :
+### Figure 7 - Diagnostic de l'environnement
 
-```text
-No issues were detected.
-```
+![Figure 7](images/07-ns-doctor.png)
 
-Tous les composants requis ont été validés avec succès.
-
-images/07-ns-doctor.png
+Aucune erreur n'a été détectée et toutes les composantes requises sont fonctionnelles.
 
 ---
 
-# Création du projet NativeScript
+# 8. Création du projet NativeScript
 
-Commande :
+Le projet a été créé avec la commande suivante :
 
 ```powershell
 ns create B300151732
 ```
 
-Options sélectionnées :
+Les options Angular et Hello World ont été sélectionnées.
 
-- Angular
-- Hello World
+### Figure 8 - Sélection du modèle du projet
 
-images/08-ns-create-choix.png
-
-Résultat :
-
-```text
-Project B300151732 was successfully created.
-```
-
-images/09-ns-create-succes.png
+![Figure 8](images/08-ns-create-choix.png)
 
 ---
 
-# Création de l'émulateur Android
+# 9. Création réussie du projet
 
-Création d'un appareil virtuel :
+NativeScript a généré automatiquement la structure complète du projet.
 
-- Medium Phone API 37.0
-- Android 17
-- Architecture x86_64
+### Figure 9 - Projet créé avec succès
 
-images/10-emulateur.png
+![Figure 9](images/09-ns-create-succes.png)
+
+Le message de confirmation indique que le projet a été créé correctement.
 
 ---
 
-# Vérification de l'émulateur
+# 10. Création de l'émulateur Android
 
-Commande :
+Un appareil virtuel Android a été créé afin de tester l'application sans utiliser un appareil physique.
+
+### Figure 10 - Émulateur Android
+
+![Figure 10](images/10-emulateur.png)
+
+L'émulateur constitue l'environnement de test utilisé pour le déploiement de l'application.
+
+---
+
+# 11. Vérification de la connexion ADB
+
+Une vérification de la communication entre l'émulateur et l'ordinateur a été réalisée.
 
 ```powershell
 adb devices
 ```
 
-Résultat :
+### Figure 11 - Détection de l'émulateur
 
-```text
-List of devices attached
-emulator-5554   device
-```
+![Figure 11](images/11-adb-devices.png)
 
-images/11-adb-devices.png
+Le périphérique virtuel est correctement détecté par Android Debug Bridge.
 
 ---
 
-# Exécution de l'application
+# 12. Déploiement de l'application
 
-Commande :
+L'application a été exécutée avec la commande suivante :
 
 ```powershell
 ns run android
 ```
 
-Résultat :
+### Figure 12 - Application NativeScript en exécution
 
-```text
-Successfully installed on device emulator-5554.
-Successfully synced application org.nativescript.B300151732.
-Angular is running in development mode.
-```
+![Figure 12](images/12-premier-lancement.png)
 
-L'application a été exécutée avec succès dans l'émulateur Android.
-
-images/12-premier-lancement.png
+L'application Angular a été compilée, installée et exécutée avec succès dans l'émulateur Android.
 
 ---
 
 # Conclusion
 
-Cette activité a permis :
-
-- d'installer NativeScript 9.1.2 ;
-- d'installer le JDK 21 ;
-- d'installer Android Studio ;
-- de configurer JAVA_HOME et ANDROID_HOME ;
-- de valider l'environnement avec `ns doctor` ;
-- de créer un projet Angular Hello World ;
-- de créer un émulateur Android ;
-- de déployer et exécuter l'application avec succès.
-
-L'environnement NativeScript est maintenant complètement opérationnel.
+Cette activité a permis d'installer et de configurer avec succès l'ensemble des outils nécessaires au développement mobile avec NativeScript. Le projet Angular a été créé, compilé et exécuté dans un émulateur Android, démontrant le bon fonctionnement de l'environnement de développement.
 
 ---
 
