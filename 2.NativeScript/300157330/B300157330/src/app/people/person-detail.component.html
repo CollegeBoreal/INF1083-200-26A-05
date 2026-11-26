@@ -1,39 +1,46 @@
-<ActionBar title="Details">
+<ActionBar title="⭐ Profil" backgroundColor="#111827" color="#FDE68A">
   @if (isAndroid) {
-  <StackLayout orientation="horizontal" horizontalAlignment="left">
-    <Label
-      text="< Back"
-      color="#1976d2"
-      (tap)="goBack()"
-      style="font-size: 18; margin-left: 4"
-    ></Label>
-    <Label
-      text="Details"
-      color="#333"
-      style="font-size: 20; font-weight: 600; margin-left: 30"
-    ></Label>
-  </StackLayout>
+    <StackLayout orientation="horizontal" horizontalAlignment="left">
+      <Label
+        text="‹ Retour"
+        color="#FDE68A"
+        class="mr-6 text-lg"
+        (tap)="goBack()"
+      ></Label>
+      <Label text="⭐ Profil" color="#FDE68A" class="text-xl font-bold"></Label>
+    </StackLayout>
   }
 </ActionBar>
 
-<FlexboxLayout flexDirection="column">
-  <FlexboxLayout class="m-4">
-    <Label class="text-3xl text-gray-400" [text]="person()?.id + '. '"></Label>
-    <Label class="text-3xl" [text]="person()?.name"></Label>
-  </FlexboxLayout>
-
-  <StackLayout class="text-xl m-2 ml-6">
-    <Label class="mb-2" fontWeight="700" text="Nationality:"></Label>
-    <Label textWrap="true" [text]="person()?.nationality"></Label>
-  </StackLayout>
-
-  <StackLayout class="text-xl m-2">
-    <Label class="m-2 ml-4" fontWeight="700" text="Notable Achievements:"></Label>
+<ScrollView backgroundColor="#111827">
+  <StackLayout class="p-4">
     <Label
-      class="text-xl m-2 ml-4"
-      [text]="formatAchievements(person()?.notableAchievements)"
+      [text]="person()?.name"
       textWrap="true"
-    >
-    </Label>
+      color="#FFFFFF"
+      class="mb-4 text-3xl font-bold"
+    ></Label>
+
+    <StackLayout backgroundColor="#253247" class="mb-3 rounded-xl p-4">
+      <Label
+        text="🌍 Nationalité"
+        color="#FDE68A"
+        class="mb-2 text-lg font-bold"
+      ></Label>
+      <Label [text]="person()?.nationality" textWrap="true" color="#FFFFFF"></Label>
+    </StackLayout>
+
+    <StackLayout backgroundColor="#253247" class="rounded-xl p-4">
+      <Label
+        text="🍿 Films marquants"
+        color="#FDE68A"
+        class="mb-2 text-lg font-bold"
+      ></Label>
+      <Label
+        [text]="formatAchievements(person()?.notableAchievements)"
+        textWrap="true"
+        color="#FFFFFF"
+      ></Label>
+    </StackLayout>
   </StackLayout>
-</FlexboxLayout>
+</ScrollView>

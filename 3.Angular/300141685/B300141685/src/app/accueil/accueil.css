@@ -1,0 +1,38 @@
+.carte {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #1e3a8a;
+  margin-top: 0;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.badge {
+  background: #16a34a;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+li {
+  padding: 6px 0;
+}

@@ -9,7 +9,29 @@
 ## Langage et template utilisés
 
 - **Langage :** TypeScript (TypeScript 5.5.4), avec Angular 18.2.0, RxJS 7.8.1 et Zone.js. Tout le code de l'application (composants, services, modèles) est écrit en TypeScript.
-- **Template :** Angular CLI — projet créé avec `ng new studybuddy` (modèle par défaut d'Angular CLI). Architecture NgModule : `AppModule` déclare les composants (tableau de bord, tâches, cours), `main.ts` démarre l'application avec `platformBrowserDynamic().bootstrapModule(AppModule)`, et le routing est défini dans `AppModule` (routes `/`, `/taches`, `/cours`).
+- **Template (patron) :** Angular CLI — projet créé avec `ng new studybuddy` (modèle par défaut d'Angular CLI). Architecture NgModule : `AppModule` déclare les composants (tableau de bord, tâches, cours), `main.ts` démarre l'application avec `platformBrowserDynamic().bootstrapModule(AppModule)`, et le routing est défini dans `AppModule` (routes `/`, `/taches`, `/cours`). La navigation se fait par la barre latérale (sidebar) avec `routerLink` et `routerLinkActive` — aucun autre patron de navigation n'est utilisé.
+
+## Plugins utilisés
+
+Les bibliothèques ajoutées au projet (plugins), avec leur version et leur rôle :
+
+| Plugin | Version | Rôle |
+|---|---|---|
+| `@angular/fire` | 18.0.1 | Connecte l'application à Firebase (base de données Firestore) |
+| `firebase` | 10.14.1 | SDK Firebase (utilisé par `@angular/fire`) |
+| `@angular/service-worker` | 18.2.0 | Service worker PWA (installé par `ng add @angular/pwa`) : application installable sur téléphone, utilisable hors ligne |
+
+## Technologies utilisées
+
+| Technologie | Version / utilisation |
+|---|---|
+| Angular | 18.2.0 |
+| TypeScript | 5.5.4 |
+| RxJS | 7.8.1 |
+| Zone.js | 0.14.10 |
+| AngularFire (`@angular/fire`) | 18.0.1 |
+| Firebase (Firestore) | 10.14.1 |
+| Angular Service Worker (PWA) | 18.2.0 |
 
 ![Aperçu StudyBuddy](src/assets/studybuddy-preview.svg)
 
@@ -21,7 +43,7 @@
 - Recherche et filtres par cours et statut avec formulaire Template Driven (`ngModel`).
 - Formulaires Reactive Forms avec règles de validation.
 - Cocher et supprimer des tâches; supprimer un cours et ses tâches liées.
-- Conservation locale des données dans le navigateur (`localStorage`), sans compte ni serveur.
+- **Base de données en ligne (Firebase Firestore)** : les cours et les tâches sont sauvegardés dans le cloud, pas seulement dans le navigateur — ils suivent l'utilisateur d'un appareil à l'autre (voir la section ci-dessous).
 - **Météo en direct (API externe)** : la météo actuelle de Toronto s'affiche sur le tableau de bord, récupérée en direct depuis l'API Open-Meteo (voir la section ci-dessous).
 - **Citation motivante en direct (API externe)** : une citation différente à chaque visite, récupérée depuis l'API DummyJSON.
 - **Jours fériés du Canada en direct (API externe)** : les 3 prochains jours fériés nationaux, récupérés depuis l'API Nager.Date, pour planifier les révisions.
@@ -33,6 +55,31 @@
 StudyBuddy est une **Progressive Web App** : elle s'installe sur téléphone comme une application, avec son icône sur l'écran d'accueil, et fonctionne hors ligne grâce au service worker (`ngsw-config.json`, `@angular/service-worker`).
 
 Pour l'installer sur ton téléphone : ouvre l'adresse de l'application déployée dans le navigateur du téléphone, puis « Ajouter à l'écran d'accueil » (Android / Chrome) ou « Sur l'écran d'accueil » (iPhone / Safari). L'application s'ouvre ensuite en plein écran, sans barre de navigateur.
+
+## 🗄️ Base de données en ligne — Firebase Firestore
+
+Les cours et les tâches ne sont plus stockés seulement dans le navigateur (`localStorage`) : ils sont sauvegardés dans une **base de données en ligne Firebase Firestore**, donc ils suivent l'utilisateur d'un appareil à l'autre et ne disparaissent pas si on vide le navigateur.
+
+### Rôle de Firestore (en simple)
+
+Firestore est la **base de données en ligne** de l'application. Son rôle :
+- **Sauvegarder** les cours et les tâches dans le cloud (chez Google), pas seulement dans le navigateur.
+- **Suivre l'utilisateur** d'un appareil à l'autre : les mêmes données sur le PC, le téléphone et l'émulateur.
+- **Ne pas perdre les données** si on vide le navigateur ou si on change d'appareil — avec `localStorage` (l'ancienne méthode), tout disparaissait.
+
+### Pourquoi ça prend du temps (et ce qui s'affiche en attendant)
+
+Firestore est en ligne : à chaque ouverture, l'application doit aller chercher les données sur les serveurs de Google — ça prend quelques secondes (le temps du réseau). Pendant ce temps, l'application affiche **tout de suite** les données par défaut (3 cours, 5 tâches d'exemple) pour que l'écran ne soit jamais vide, puis elle remplace par les vraies données de Firestore quand elles arrivent. Si Firestore est indisponible (hors ligne), l'application continue avec les données locales.
+
+Le service `StudyService` rend Firestore **optionnel** (`@Optional() @Inject(Firestore)`) : si la connexion échoue, l'application fonctionne quand même — elle ne plante pas et ne reste pas vide.
+
+### Détails techniques
+
+- **Base de données :** Cloud Firestore (Firebase, offre gratuite Spark).
+- **Collections :** `courses` (cours) et `tasks` (tâches). Chaque document utilise l'identifiant du cours ou de la tâche comme identifiant de document.
+- **Comment ça marche :** le service `StudyService` (`src/app/services/study.service.ts`) s'abonne aux deux collections avec `collectionData` (flux en direct RxJS) : chaque changement dans la base met à jour l'application automatiquement. Les ajouts, modifications et suppressions écrivent dans Firestore (`setDoc`, `updateDoc`, `deleteDoc`) et mettent à jour l'affichage tout de suite. Au premier lancement, l'application complète les cours et tâches par défaut manquants en un seul lot atomique (`writeBatch`, vérifié par `getDocs`) — sans jamais écraser les données existantes. Les mises à jour Firestore sont remises dans la zone Angular (`NgZone.run`) pour que l'affichage se rafraîchisse immédiatement.
+- **Code :** AngularFire (`@angular/fire`) — `provideFirebaseApp` et `provideFirestore` dans `AppModule`, configuration dans `src/environments/environment.ts` (projet `studybuddy-53739`, déjà branchée).
+- **Configuration requise :** la base Firestore doit être créée en mode test pour ce labo. Sans ces valeurs, l'application ne peut pas se connecter à la base de données.
 
 ## 🌤️ Données en direct — APIs externes (gratuites, sans clé)
 
@@ -76,6 +123,18 @@ Résultat : le tableau de bord s'affiche correctement sur le téléphone virtuel
 
 ![StudyBuddy sur émulateur Android — tableau de bord affiché dans Chrome à l'adresse 10.0.2.2:4200](images/emulateur.png)
 
+## Test avec Firebase et les APIs en direct
+
+L'application a été testée en ligne (déploiement temporaire) avec la base Firestore et les 3 APIs en direct — vérifié le 2026-11-24 :
+
+- **Base de données :** les 3 cours (INF1083, INF1030, INF1050) et les 6 tâches s'affichent depuis Firestore. Une tâche ajoutée dans l'application (« TEST FIREBASE ») s'est bien enregistrée dans la base et reste présente après rechargement de la page — l'écriture dans Firestore est confirmée.
+- **Météo :** −3 °C, ciel dégagé, vent 8–9 km/h, humidité ~70 % (Toronto, Open-Meteo).
+- **Citation :** une citation différente à chaque chargement (DummyJSON).
+- **Jours fériés :** Noël 25 déc. 2026, Jour de l'An 1 janv. 2027, Vendredi saint 26 mars 2027 (Nager.Date).
+- **Compteurs :** 5 tâches à faire, 1 terminée, progression 17 %.
+
+Remarque : le tableau de bord « À ne pas oublier » affiche volontairement les 4 prochaines tâches seulement (`.slice(0, 4)`) — le lien « Tout voir → » mène à la page complète des tâches.
+
 ## Aperçu des écrans
 
 Captures de l'application en cours d'exécution sur `http://localhost:4200` :
@@ -88,14 +147,6 @@ Captures de l'application en cours d'exécution sur `http://localhost:4200` :
 
 ### Mes cours
 ![Mes cours — INF1083, INF1030, INF1050](images/cours.png)
-
-## Technologies
-
-- Angular 18, TypeScript, Angular Router
-- Progressive Web App (PWA) : manifest, service worker (`@angular/service-worker`), icônes installables
-- Reactive Forms et Template Driven Forms
-- RxJS (`BehaviorSubject`, `Observable`, `map`)
-- CSS responsive; stockage local via `localStorage`
 
 ## Installation et démarrage
 
@@ -118,7 +169,7 @@ npm run build
 ```text
 src/app/
 ├── models/study.models.ts       # Interfaces Course et StudyTask
-├── services/study.service.ts    # État, opérations et persistance locale
+├── services/study.service.ts    # État, opérations et base de données Firestore
 ├── services/weather.service.ts  # Météo en direct (API Open-Meteo, HttpClient + RxJS)
 ├── services/quote.service.ts    # Citation motivante (API DummyJSON, HttpClient + RxJS)
 ├── services/holiday.service.ts  # Jours fériés Canada (API Nager.Date, HttpClient + RxJS)
@@ -128,6 +179,8 @@ src/app/
 │   └── courses.component.ts    # Gestion des cours
 ├── app.component.ts             # Navigation principale
 └── app.module.ts                # Déclarations et routes Angular
+src/environments/
+└── environment.ts               # Configuration Firebase (à remplacer par celle du projet)
 ```
 
 ## Concepts du module mis en pratique
@@ -142,7 +195,8 @@ src/app/
 | HttpClient / API externe | `WeatherService`, `QuoteService` et `HolidayService` récupèrent des données en direct (météo Open-Meteo, citation DummyJSON, jours fériés Nager.Date) via `HttpClient` ; `catchError` gère l’erreur réseau |
 | RxJS | Flux `BehaviorSubject`, `Observable` et `map` pour le résumé |
 | Modèles TypeScript | Interfaces `Course` et `StudyTask` |
-| Persistance | Données conservées sur l’appareil avec `localStorage` |
+| Persistance | Cours et tâches sauvegardés en ligne dans Firebase Firestore (collections `courses` et `tasks`, flux en direct) |
+| Base de données | Firebase Firestore via AngularFire (`collectionData`, `setDoc`, `updateDoc`, `deleteDoc`) |
 | PWA / mobile | Manifest, service worker et icônes — installable sur téléphone, hors ligne |
 
 ## Idées d’amélioration

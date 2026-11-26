@@ -1,4 +1,4 @@
-# Participation au 24-11-2026 21:28
+# Participation au 25-11-2026 11:27
 
 | Table des matières            | Description                                             |
 |-------------------------------|---------------------------------------------------------|
@@ -26,7 +26,7 @@
 | 7 | [300151496](../300151496/README.md) :point_right: [anisouhocine](https://github.com/anisouhocine) <image src='https://avatars0.githubusercontent.com/u/236670164?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 8 | [300151505](../300151505/README.md) :point_right: [300151505](https://github.com/300151505) <image src='https://avatars0.githubusercontent.com/u/232939190?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 9 | [300151609](../300151609/README.md) :point_right: [ramzi34000](https://github.com/ramzi34000) <image src='https://avatars0.githubusercontent.com/u/231497021?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| 10 | [300151732](../300151732/README.md) :point_right: [nabil17581](https://github.com/nabil17581) <image src='https://avatars0.githubusercontent.com/u/231499758?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :x: |
+| 10 | [300151732](../300151732/README.md) :point_right: [nabil17581](https://github.com/nabil17581) <image src='https://avatars0.githubusercontent.com/u/231499758?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
 | 11 | [300151781](../300151781/README.md) :point_right: [lounesallouti](https://github.com/lounesallouti) <image src='https://avatars0.githubusercontent.com/u/257377074?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 12 | [300151835](../300151835/README.md) :point_right: [benhammoucheliza928-eng](https://github.com/benhammoucheliza928-eng) <image src='https://avatars0.githubusercontent.com/u/255944310?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 13 | [300153676](../300153676/README.md) :point_right: [lyes-ik](https://github.com/lyes-ik) <image src='https://avatars0.githubusercontent.com/u/255968971?s=460&v=4' width=20 height=20></image> | :heavy_check_mark: | :heavy_check_mark: |
@@ -49,4 +49,4 @@
 | 30 | [300157374](../300157374/README.md) :point_right: [yanisna](https://github.com/yanisna) <image src='https://avatars0.githubusercontent.com/u/255961683?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 31 | [300157416](../300157416/README.md) :point_right: [lounisyounes](https://github.com/lounisyounes) <image src='https://avatars0.githubusercontent.com/u/232939450?s=460&v=4' width=20 height=20></image> | :x: | :x: |
 | 32 | [300157424](../300157424/README.md) :point_right: [MA-JID-06](https://github.com/MA-JID-06) <image src='https://avatars0.githubusercontent.com/u/258873685?s=460&v=4' width=20 height=20></image> | :x: | :x: |
-| :abacus: | \$\\frac{16}{33}\$ = 48.48% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 16 |
+| :abacus: | \$\\frac{17}{33}\$ = 51.52% | \$\displaystyle\sum_{i=1}^{33} s_i\$ = 17 |

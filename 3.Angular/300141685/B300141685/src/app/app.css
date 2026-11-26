@@ -1,0 +1,22 @@
+nav {
+  background: #1e3a8a;
+  padding: 16px 32px;
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 16px;
+}

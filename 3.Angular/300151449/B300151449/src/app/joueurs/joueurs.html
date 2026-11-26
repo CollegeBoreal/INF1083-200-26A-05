@@ -1,0 +1,11 @@
+﻿<h1>Les 10 joueurs du FC Barcelona</h1>
+
+<div class="cards">
+  @for (joueur of joueurs; track joueur.nom) {
+    <article>
+      <h2>{{ joueur.nom }}</h2>
+      <p>Nationalité : {{ joueur.pays }}</p>
+      <p>Poste : {{ joueur.poste }}</p>
+    </article>
+  }
+</div>

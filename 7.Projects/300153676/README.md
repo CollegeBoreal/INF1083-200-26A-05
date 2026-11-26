@@ -1,31 +1,43 @@
-# ParcLabo
+# ParcLabo · Inventaire du matériel informatique
 
-Lyes Medjahed · INF1083 · 300153676
+**Lyes Medjahed · 300153676 · INF1083**
 
-ParcLabo est une application mobile pour inventorier le matériel d’une salle informatique. Un technicien peut enregistrer un appareil, préciser sa salle et indiquer s’il est disponible ou déjà en service. L’inventaire est conservé sur le téléphone entre deux ouvertures.
+ParcLabo aide un technicien à identifier le matériel d’une salle. Il peut photographier un appareil, enregistrer son nom et sa salle, puis retrouver sa fiche dans l’inventaire. Le bilan compte les appareils disponibles et ceux en service.
 
-## Les trois pages
+## Parcours dans l’application
 
-| Onglet | Utilisation |
+| Onglet | Action |
 | --- | --- |
-| Matériel | Consulter le nom, la salle et la disponibilité des appareils. |
-| Ajouter | Saisir le nom et la salle, choisir la disponibilité et enregistrer l’appareil. |
-| Bilan | Consulter le nombre total d’appareils, le nombre disponible et le nombre en service. |
+| Ajouter | Saisir le nom et la salle, choisir la disponibilité, puis toucher **Prendre une photo**. Vérifier l’aperçu et toucher **Enregistrer**. La photo est facultative. |
+| Inventaire | Retrouver les appareils du plus récent au plus ancien. Chaque fiche indique le nom, la salle et le statut. Une miniature apparaît si une photo est associée. |
+| Bilan | Consulter le total d’appareils et leur répartition entre **Disponibles** et **En service**. |
 
-## Patron et plugins
+## Captures Android
 
-Le projet utilise le patron Angular à onglets `@nativescript/template-tab-navigation-ng`. L’intégration Angular repose sur `@nativescript/angular` et les styles sur `@nativescript/theme`. Le stockage local utilise `ApplicationSettings` de `@nativescript/core`.
+Ces deux captures proviennent du premier essai avec un routeur Cisco dans la salle C250, avant l’ajout de la caméra.
 
-## Exécution
+| 1 · Fiche du matériel enregistré | 2 · Bilan après l’ajout |
+| :---: | :---: |
+| <img src="images/materiel.png" alt="Routeur Cisco disponible dans la salle C250" width="235"> | <img src="images/bilan.png" alt="Un appareil disponible sur un total de un" width="235"> |
 
-Extraire le [projet ParcLabo](./ParcLabo-300153676.zip), ouvrir un terminal dans `b300153676`, puis lancer `npm ci` et `ns run android`.
+## Patron, plugins et stockage
 
-Pour essayer, ouvrir **Ajouter**, saisir **Routeur Cisco** et **C250**, laisser **Disponible** activé et toucher **Enregistrer**. Consulter ensuite **Matériel** et **Bilan**. Après la fermeture et la réouverture de l’application, le routeur doit toujours figurer dans la liste.
+| Élément | Utilisation |
+| --- | --- |
+| NativeScript avec Angular | Patron à onglets `@nativescript/template-tab-navigation-ng`. |
+| `@nativescript/camera` | Demande l’autorisation d’utiliser la caméra et ouvre l’appareil photo. |
+| `@nativescript-community/sqlite` | Enregistre chaque fiche dans la table `devices` de la base locale `parclabo.db`. |
+| `@nativescript/core` | Conserve les photos dans le dossier privé de l’application. La fiche SQLite contient le nom du fichier. À la première ouverture, les fiches de la version précédente sont importées depuis `ApplicationSettings`. |
 
-## Test sur Android
+## Lancer sur Android
 
-Depuis l’onglet Ajouter, j’ai enregistré un Routeur Cisco dans la salle C250 avec le statut Disponible. L’onglet Matériel affiche le routeur et le bilan indique un appareil au total, un disponible et zéro en service. Après avoir fermé puis rouvert ParcLabo, j’ai retrouvé le routeur dans la salle C250.
+Télécharger et extraire [ParcLabo-300153676.zip](./ParcLabo-300153676.zip). Dans le dossier `b300153676`, avec un téléphone Android connecté ou un émulateur démarré, exécuter les commandes suivantes.
 
-![Routeur Cisco disponible dans la salle C250](./images/materiel.png)
+```powershell
+npm ci
+ns.cmd run android
+```
 
-![Bilan du parc avec un appareil disponible et zéro en service](./images/bilan.png)
+## Vérification sur téléphone
+
+Dans **Ajouter**, photographier un appareil, renseigner sa salle et enregistrer sa fiche. Vérifier sa miniature dans **Inventaire**, puis le nouveau total dans **Bilan**. Fermer et rouvrir ParcLabo pour vérifier que la fiche et sa photo sont conservées. La prise de vue de cette version reste à vérifier sur Android.
