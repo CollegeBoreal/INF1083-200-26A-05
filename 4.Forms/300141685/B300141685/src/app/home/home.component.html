@@ -1,0 +1,18 @@
+<ActionBar title="B300141685 · ReactiveForms"></ActionBar>
+
+<StackLayout [formGroup]="signUpForm" class="page">
+    <Label text="Créer un compte" class="titre"></Label>
+    <Label text="Remplis les deux champs puis appuie sur SIGN UP." textWrap="true" class="aide"></Label>
+
+    <TextField formControlName="email" hint="Email" keyboardType="email"
+               autocorrect="false" autocapitalizationType="none" class="champ"></TextField>
+    <TextField formControlName="username" hint="Username"
+               autocorrect="false" autocapitalizationType="none" class="champ"></TextField>
+
+    <Button text="sign up" (tap)="onButtonTap()" class="bouton"></Button>
+
+    @if (message) {
+        <Label [text]="message" textWrap="true" class="resultat"
+               [color]="signUpForm.valid ? '#15803D' : '#B91C1C'"></Label>
+    }
+</StackLayout>
