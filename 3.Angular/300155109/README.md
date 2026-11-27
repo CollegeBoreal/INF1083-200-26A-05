@@ -26,6 +26,8 @@ Les outils utilisés pour réaliser ce laboratoire sont :
 | Visual Studio Code | Environnement de développement |
 | Navigateur | Google Chrome |
 
+![Installation du packet Angular](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%201%20instalation%20du%20packet%20angular.png?raw=true)
+
 ## 3. Création du projet Angular
 
 Le projet a été créé avec Angular CLI à l'aide de la commande :
@@ -38,6 +40,8 @@ Les options suivantes ont été sélectionnées :
 - Routage : activé
 - Feuilles de style : CSS
 - SSR/SSG : désactivé
+
+  ![Creation du composant aaccuiel](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/02-creation-composant-accueil.png?raw=true)
 
 ## 4. Fonctionnalités réalisées
 
@@ -84,23 +88,23 @@ Les captures d'écran du laboratoire seront enregistrées dans le dossier `image
 
 ### 5.1 Page d'accueil
 
-![Page d'accueil](images/accueil.png)
+![Page d'accueil](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%20angular%206.png?raw=true)
 
 ### 5.2 Fonctionnalités et événements Angular
 
-![Fonctionnalités Angular](images/fonctionnalites.png)
+![Fonctionnalités Angular](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%20angular%204.png?raw=true)
 
 ### 5.3 Navigation vers la page Utilisateurs
 
-![Navigation](images/navigation.png)
+![Navigation](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%20angular%206.png?raw=true)
 
 ### 5.4 Liste des utilisateurs récupérés depuis l'API
 
-![Liste des utilisateurs](images/utilisateurs.png)
+![Liste des utilisateurs](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%20angular%207.png?raw=true)
 
 ### 5.5 Interface finale
 
-![Interface finale](images/interface-finale.png)
+![Interface finale](https://github.com/CollegeBoreal/INF1083-200-26A-05/blob/main/3.Angular/300155109/images/capture%20angular%208.png?raw=true)
 
 ## 6. Lancement de l'application
 
