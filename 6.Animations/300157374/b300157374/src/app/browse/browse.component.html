@@ -1,0 +1,12 @@
+<ActionBar class="action-bar">
+  <NavigationButton visibility="hidden"></NavigationButton>
+  <GridLayout columns="50, *">
+    <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
+
+    <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+  </GridLayout>
+</ActionBar>
+<StackLayout>
+  <AbsoluteLayout width="300" height="300"><Image #cible width="40" height="40" src="res://icon"></Image></AbsoluteLayout>
+  <Button text="Animer" [isEnabled]="!active" (tap)="animate()"></Button>
+</StackLayout>

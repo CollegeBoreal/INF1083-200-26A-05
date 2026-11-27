@@ -1,0 +1,9 @@
+<ActionBar title="Nouvelle recette"></ActionBar>
+<ScrollView><StackLayout padding="16">
+  <TextField hint="Nom de la recette" [(ngModel)]="nom"></TextField>
+  <TextView hint="Un ingrédient par ligne" [(ngModel)]="ingredients" height="120"></TextView>
+  <TextView hint="Une étape par ligne" [(ngModel)]="etapes" height="150"></TextView>
+  <Label [text]="erreur" textWrap="true"></Label>
+  <Button text="Enregistrer" (tap)="enregistrer()"></Button>
+  <Button text="Annuler" (tap)="router.back()"></Button>
+</StackLayout></ScrollView>

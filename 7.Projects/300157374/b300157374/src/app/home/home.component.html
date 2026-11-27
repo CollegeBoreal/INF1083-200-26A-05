@@ -1,0 +1,10 @@
+<ActionBar title="TOQUÉ · Mon carnet"></ActionBar>
+<GridLayout rows="auto,auto,*" padding="16">
+  <Button [text]="favorisSeulement ? 'Toutes les recettes' : 'Mes favoris'" (tap)="favorisSeulement = !favorisSeulement"></Button>
+  <Button row="1" text="Ajouter une recette" (tap)="router.navigate(['/ajout'])"></Button>
+  <ScrollView row="2"><StackLayout>
+    @for (r of visibles(); track r.id) {
+      <Button [text]="r.nom" (tap)="router.navigate(['/fiche', r.id])"></Button>
+    } @empty { <Label text="Aucune recette favorite. Ouvre une fiche pour en ajouter une." textWrap="true"></Label> }
+  </StackLayout></ScrollView>
+</GridLayout>

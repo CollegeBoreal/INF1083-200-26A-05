@@ -1,0 +1,15 @@
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core'
+import { NativeScriptCommonModule } from '@nativescript/angular'
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  imports: [NativeScriptCommonModule],
+  schemas: [NO_ERRORS_SCHEMA]
+})
+export class HomeComponent {
+  readonly scientifiques = ['Ada Lovelace', 'Alan Turing', 'Grace Hopper']
+  readonly outils = ['Git', 'Visual Studio Code', 'NativeScript']
+  listePersonnelle = false
+  compteur = 0
+}

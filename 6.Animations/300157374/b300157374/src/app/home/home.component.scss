@@ -1,0 +1,9 @@
+@keyframes transitionCouleur {
+  from { background-color: red; }
+  to { background-color: green; }
+}
+.background {
+  animation-name: transitionCouleur;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}

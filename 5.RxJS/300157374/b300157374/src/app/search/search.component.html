@@ -1,0 +1,11 @@
+<ActionBar title="Recherche par capitale"></ActionBar>
+<GridLayout rows="auto,auto,auto,*" padding="16">
+  <TextField hint="Capitale, par exemple Ottawa" [(ngModel)]="name"></TextField>
+  <Button row="1" text="Rechercher" (tap)="searchCapital()"></Button>
+  <Label row="2" [text]="message"></Label>
+  <ListView row="3" [items]="countries">
+    <ng-template let-item="item"><StackLayout padding="10">
+      <Label [text]="item.name" fontWeight="bold"></Label><Label [text]="item.capital"></Label>
+    </StackLayout></ng-template>
+  </ListView>
+</GridLayout>
